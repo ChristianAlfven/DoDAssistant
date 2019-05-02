@@ -9,6 +9,7 @@ public class Character {
     public enum WeaponHand {Right, Left, Both}
     public enum Nationality {Human, Orc, Elf}
     public enum Environment{Nature, Country, City, Academic}
+    public enum SpecialTrait{Strength, Physique, Agility, Spirituality, Intelligence, Psyche, Charisma}
 
 
     Health health;
@@ -24,6 +25,9 @@ public class Character {
     private WeaponHand weaponHand;
     private Nationality nationality;
     private Environment environment;
+    private SpecialTrait positiveTrait1;
+    private SpecialTrait positiveTrait2;
+    private SpecialTrait negativeTrait;
 
     private String name;
     private int height;
@@ -179,5 +183,37 @@ public class Character {
 
     public void setUnusedExp(int unusedExp) {
         this.unusedExp = unusedExp;
+    }
+
+    public Environment getEnvironment() {
+        return environment;
+    }
+
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
+    }
+
+    public SpecialTrait getPositiveTrait1() {
+        return positiveTrait1;
+    }
+
+    public void setPositiveTrait1(SpecialTrait positiveTrait1) {
+        this.positiveTrait1 = positiveTrait1;
+    }
+
+    public SpecialTrait getPositiveTrait2() {
+        return positiveTrait2;
+    }
+
+    public void setPositiveTrait2(SpecialTrait positiveTrait2) {
+        this.positiveTrait2 = positiveTrait2;
+    }
+
+    public SpecialTrait getNegativeTrait() {
+        return negativeTrait;
+    }
+
+    public void setNegativeTrait(SpecialTrait negativeTrait) {
+        this.negativeTrait = negativeTrait;
     }
 }

@@ -2,26 +2,30 @@ package CharacterFile;
 
 public class Health {
 
+    private int total;
     private int head;
     private int rightArm;
     private int leftArm;
     private int chest;
-    private int body;
+    private int stomach;
     private int rightLeg;
     private int leftLeg;
 
     public Health(int health){
+        total = health;
         head = (health + 1) / 2;
         rightArm = head;
         leftArm = head;
         chest = health;
         if (health % 3 == 0) {
-            body = (health / 3) * 2;
+            stomach = (health / 3) * 2;
         } else{
-            body = (health / 3) + 1;
+            stomach = (health / 3) + 1;
             }
 
     }
+
+    public void setTotal(int total) { this.total = total; }
 
     public void setHead(int head) {
         this.head = head;
@@ -39,8 +43,8 @@ public class Health {
         this.chest = chest;
     }
 
-    public void setBody(int body) {
-        this.body = body;
+    public void setStomach(int stomach) {
+        this.stomach = stomach;
     }
 
     public void setRightLeg(int rightLeg) {
@@ -50,6 +54,8 @@ public class Health {
     public void setLeftLeg(int leftLeg) {
         this.leftLeg = leftLeg;
     }
+
+    public int getTotal() { return total; }
 
     public int getHead() {
         return head;
@@ -67,8 +73,8 @@ public class Health {
         return chest;
     }
 
-    public int getBody() {
-        return body;
+    public int getStomach() {
+        return stomach;
     }
 
     public int getRightLeg() {

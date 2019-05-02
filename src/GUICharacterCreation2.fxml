@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Light?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CharacterCreation2">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="609.0" layoutX="-1.0">
+         <image>
+            <Image url="@Resources/parchment.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="247.0" layoutY="37.0" text="Special Traits">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutX="204.0" layoutY="63.0" prefWidth="200.0" />
+      <Button fx:id="buttonStrength" layoutX="100.0" layoutY="109.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Strength">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="182.0" layoutY="66.0" text="Choose two positive traits and one negative">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="149.0" layoutY="76.0" text="+">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="439.0" layoutY="76.0" text="-">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonPsyche" layoutX="101.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Psyche">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonIntelligence" layoutX="101.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Intelligence">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonSpirituality" layoutX="101.0" layoutY="205.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Spirituality">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonAgility" layoutX="100.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Agility">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonPhysique" layoutX="100.0" layoutY="141.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Physique">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCharisma" layoutX="101.0" layoutY="301.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Charisma">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonNegStrength" layoutX="387.0" layoutY="109.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Strength">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonNegCharisma" layoutX="387.0" layoutY="301.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Charisma">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonNegPsyche" layoutX="387.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Psyche">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonNegIntelligence" layoutX="387.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Intelligence">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonNegSpirituality" layoutX="387.0" layoutY="205.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Spirituality">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonNegAgility" layoutX="387.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Agility">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonNegPhysique" layoutX="387.0" layoutY="141.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Physique">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <TextField editable="false" layoutX="82.0" layoutY="339.0" opacity="0.71" prefHeight="25.0" prefWidth="75.0" />
+      <TextField editable="false" layoutX="158.0" layoutY="339.0" opacity="0.71" prefHeight="25.0" prefWidth="75.0" />
+      <TextField editable="false" layoutX="407.0" layoutY="339.0" opacity="0.71" prefHeight="25.0" prefWidth="75.0" />
+   </children>
+</AnchorPane>

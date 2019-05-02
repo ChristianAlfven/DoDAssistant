@@ -112,63 +112,69 @@ public class CharacterCreator{
     public void setHuman(ActionEvent event){
         character.setRace(Character.Race.Human);
     }
-    public void setDwarf(){
+    public void setDwarf(ActionEvent event){
         character.setRace(Character.Race.Human);
 
     }
-    public void setElf(){
+    public void setElf(ActionEvent event){
         character.setRace(Character.Race.Elf);
     }
-    public void setHalfBlood(){
+    public void setHalfBlood(ActionEvent event){
         character.setRace(Character.Race.HalfBlood);
     }
 
     // SUBRACE METHODS
-    public void setKorpikalla(){
+    public void setKorpikalla(ActionEvent event){
         character.setSubrace(Character.SubRace.Korpikalla);
+
     }
-    public void setIllmalaina(){
+    public void setIllmalaina(ActionEvent event){
         character.setSubrace(Character.SubRace.Illmalaina);
     }
-    public void setBorjornikka(){
+    public void setBorjornikka(ActionEvent event){
         character.setSubrace(Character.SubRace.Borjornikka);
     }
-    public void setZvorda(){
+    public void setZvorda(ActionEvent event){
         character.setSubrace(Character.SubRace.Zvorda);
     }
-    public void setBuratja(){
+    public void setBuratja(ActionEvent event){
         character.setSubrace(Character.SubRace.Buratja);
     }
-    public void setStormlander(){
+    public void setStormlander(ActionEvent event){
         character.setSubrace(Character.SubRace.Stormlander);
     }
-    public void setMidlander(){
+    public void setMidlander(ActionEvent event){
         character.setSubrace(Character.SubRace.Midlander);
     }
-    public void setVirann(){
+    public void setVirann(ActionEvent event){
         character.setSubrace(Character.SubRace.Virann);
     }
-    public void setHalfOrc(){
+    public void setHalfOrc(ActionEvent event){
         character.setSubrace(Character.SubRace.HalfOrc);
     }
-    public void setHalfElf(){
+    public void setHalfElf(ActionEvent event){
         character.setSubrace(Character.SubRace.HalfElf);
     }
 
     // NATIONALITY METHODS (HALF BLOOD ONLY)
-    public void setNationalityHuman(){character.setNationality(Character.Nationality.Human);}
-    public void setNationalityElf(){character.setNationality(Character.Nationality.Elf);}
-    public void setNationalityOrc(){character.setNationality(Character.Nationality.Orc);}
+    public void setNationalityHuman(ActionEvent event){character.setNationality(Character.Nationality.Human);}
+    public void setNationalityElf(ActionEvent event){character.setNationality(Character.Nationality.Elf);}
+    public void setNationalityOrc(ActionEvent event){character.setNationality(Character.Nationality.Orc);}
 
     // PROFESSION METHODS
-    public void setWarrior(){character.setProfession(Character.Profession.Warrior);}
-    public void setMage(){character.setProfession(Character.Profession.Mage);}
-    public void setPeasant(){character.setProfession(Character.Profession.Peasant);}
-    public void setRogue(){character.setProfession(Character.Profession.Rogue);}
-    public void setPriest(){character.setProfession(Character.Profession.Priest);}
-    public void setBard(){character.setProfession(Character.Profession.Bard);}
-    public void setScholar(){character.setProfession(Character.Profession.Warrior);}
+    public void setWarrior(ActionEvent event){character.setProfession(Character.Profession.Warrior);}
+    public void setMage(ActionEvent event){character.setProfession(Character.Profession.Mage);}
+    public void setPeasant(ActionEvent event){character.setProfession(Character.Profession.Peasant);}
+    public void setRogue(ActionEvent event){character.setProfession(Character.Profession.Rogue);}
+    public void setPriest(ActionEvent event){character.setProfession(Character.Profession.Priest);}
+    public void setBard(ActionEvent event){character.setProfession(Character.Profession.Bard);}
+    public void setScholar(ActionEvent event){character.setProfession(Character.Profession.Warrior);}
 
+
+    //CONTINUE BUTTON
+    public void continueButton(ActionEvent event){
+
+    }
     // ENVIRONMENT METHODS
     /*
     public void setNature(){character.setEnvironment(CharacterFile.Profession.Warrior);}

@@ -6,7 +6,7 @@ public class Health {
     private int rightArm;
     private int leftArm;
     private int chest;
-    private int body;
+    private int stomach;
     private int rightLeg;
     private int leftLeg;
 
@@ -16,9 +16,9 @@ public class Health {
         leftArm = head;
         chest = health;
         if (health % 3 == 0) {
-            body = (health / 3) * 2;
+            stomach = (health / 3) * 2;
         } else{
-            body = (health / 3) + 1;
+            stomach = (health / 3) + 1;
             }
 
     }
@@ -39,8 +39,8 @@ public class Health {
         this.chest = chest;
     }
 
-    public void setBody(int body) {
-        this.body = body;
+    public void setStomach(int stomach) {
+        this.stomach = stomach;
     }
 
     public void setRightLeg(int rightLeg) {
@@ -67,8 +67,8 @@ public class Health {
         return chest;
     }
 
-    public int getBody() {
-        return body;
+    public int getStomach() {
+        return stomach;
     }
 
     public int getRightLeg() {

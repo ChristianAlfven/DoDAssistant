@@ -6,7 +6,7 @@ public class Armor {
     private int rightArm;
     private int leftArm;
     private int chest;
-    private int body;
+    private int stomach;
     private int rightLeg;
     private int leftLeg;
 
@@ -15,7 +15,7 @@ public class Armor {
         rightArm = 0;
         leftArm = 0;
         chest = 0;
-        body = 0;
+        stomach = 0;
         rightLeg = 0;
         leftLeg = 0;
     }
@@ -36,8 +36,8 @@ public class Armor {
         this.chest = chest;
     }
 
-    public void setBody(int body) {
-        this.body = body;
+    public void setStomach(int stomach) {
+        this.stomach = stomach;
     }
 
     public void setRightLeg(int rightLeg) {
@@ -64,8 +64,8 @@ public class Armor {
         return chest;
     }
 
-    public int getBody() {
-        return body;
+    public int getStomach() {
+        return stomach;
     }
 
     public int getRightLeg() {

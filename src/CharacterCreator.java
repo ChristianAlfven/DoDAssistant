@@ -1,12 +1,15 @@
 import CharacterFile.Character;
 import CharacterFile.Armor;
 import  CharacterFile.Health;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import CharacterFile.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -55,7 +58,7 @@ public class CharacterCreator{
     @FXML private RadioButton idMale;
     @FXML private ToggleGroup Gender;
     @FXML private RadioButton idFemale;
-
+    @FXML private TableView<Character> idCharacterTable;
 
 
     enum Profession{Warrior, Peasant, Mage, Rogue, Priest, Bard, Scholar}
@@ -89,12 +92,13 @@ public class CharacterCreator{
     int raud;
     int totalExp;
     int unusedExp;
+    String male;
     Scanner Scan = new Scanner(System.in);
 
 
-
     public Character createCharacter(){
-        System.out.println("CharacterFile Creation:\n");
+//        System.out.println("CharacterFile Creation:\n");
+
 
         /*
         chooseName();
@@ -173,9 +177,11 @@ public class CharacterCreator{
 
 
     //CONTINUE BUTTON
-    public void continueButton(ActionEvent event){
+    @FXML
+    void buttonContinue(ActionEvent event) {
 
     }
+
     // ENVIRONMENT METHODS
     /*
     public void setNature(){character.setEnvironment(CharacterFile.Profession.Warrior);}
@@ -188,16 +194,16 @@ public class CharacterCreator{
     // BACKGROUND METHODS
     //public void setBackground(){}
 
-    // NAME / AGE / HEIGHT / WEIGHT / GENDER METHODS
-    //public void setName(String name){this.name = name;}
-    //public void setAge(int age){this.age = age;}
-    //public void setHeight(int height){this.height = height;}
-    //public void setWeight(int weight){this.weight = weight;}
-    //public void setGender(boolean isMale){
-    //    if(isMale){gender = Gender.Male;}
-     //   else {gender = Gender.Female;}
-
-    //}
+//     NAME / AGE / HEIGHT / WEIGHT / GENDER METHODS
+//    public void setName(String name){this.name = name;}
+//    public void setAge(int age){this.age = age;}
+//    public void setHeight(int height){this.height = height;}
+//    public void setWeight(int weight){this.weight = weight;}
+//    public void setGender(boolean isMale){
+//        if(isMale){gender = Gender.Male;}
+//        else {gender = Gender.Female;}
+//
+//    }
 
 
 

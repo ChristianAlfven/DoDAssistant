@@ -16,7 +16,7 @@
             <Image url="@Resources/parchment.png" />
          </image>
       </ImageView>
-      <Button fx:id="newGame" alignment="CENTER" layoutX="219.0" layoutY="154.0" mnemonicParsing="false" onAction="#buttonNewGame" prefHeight="40.0" prefWidth="121.0" text="New Game">
+      <Button fx:id="idNewGame" alignment="CENTER" layoutX="219.0" layoutY="154.0" mnemonicParsing="false" onAction="#buttonNewGame" prefHeight="40.0" prefWidth="121.0" text="New Game">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
@@ -31,7 +31,7 @@
             </Lighting>
          </effect>
       </Button>
-      <Button fx:id="loadGame" alignment="CENTER" layoutX="219.0" layoutY="210.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" text="Load Game">
+      <Button fx:id="idLoadGame" alignment="CENTER" layoutX="219.0" layoutY="210.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" text="Load Game">
          <effect>
             <Lighting>
                <bumpInput>
@@ -46,7 +46,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="exit" alignment="CENTER" layoutX="219.0" layoutY="267.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" text="Exit">
+      <Button fx:id="idExit" alignment="CENTER" layoutX="219.0" layoutY="267.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" text="Exit">
          <effect>
             <Lighting>
                <bumpInput>

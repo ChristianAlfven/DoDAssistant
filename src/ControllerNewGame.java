@@ -40,7 +40,6 @@ public class ControllerNewGame {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
 
@@ -50,8 +49,15 @@ public class ControllerNewGame {
     }
 
     @FXML
-    void buttonBack(ActionEvent event) {
+    void buttonBack(ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
 
+        stage = (Stage) idNewCharacter.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("GUILobby.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 

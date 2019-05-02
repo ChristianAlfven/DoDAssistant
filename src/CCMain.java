@@ -8,12 +8,8 @@ public class CCMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Pane root;
+
         Pane root = FXMLLoader.load(getClass().getResource("GUICharacterCreation.fxml"));
-        //root = (AnchorPane)loader.load();
-
-        //Controller controller = loader.getController();
-
         primaryStage.setTitle("CharacterFile Creator");
         primaryStage.setScene(new Scene(root, 620 , 410));
         primaryStage.show();

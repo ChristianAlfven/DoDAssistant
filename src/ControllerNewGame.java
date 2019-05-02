@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class ControllerLobby {
+public class ControllerNewGame {
 
     @FXML
     private ResourceBundle resources;
@@ -19,24 +19,40 @@ public class ControllerLobby {
     private URL location;
 
     @FXML
-    private Button exit;
+    private Button idLoadCharacter;
 
     @FXML
-    private Button loadGame;
+    private Button idNewCharacter;
 
     @FXML
-    private Button newGame;
+    private Button idStartGame;
 
     @FXML
-    void buttonNewGame(ActionEvent event) throws IOException {
+    private Button idBack;
+
+    @FXML
+    void buttonNewCharacter(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
 
-        stage = (Stage) newGame.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
+        stage = (Stage) idNewCharacter.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("GUICharacterCreation.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
 
     }
+
+
+    @FXML
+    void buttonStartGame(ActionEvent event) {
+
+    }
+
+    @FXML
+    void buttonBack(ActionEvent event) {
+
+    }
+
+
 }

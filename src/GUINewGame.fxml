@@ -9,29 +9,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="404.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerLobby">
+<AnchorPane prefHeight="305.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerNewGame">
    <children>
-      <ImageView fitHeight="455.0" fitWidth="559.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="370.0" fitWidth="518.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Resources/parchment.png" />
          </image>
       </ImageView>
-      <Button fx:id="newGame" alignment="CENTER" layoutX="219.0" layoutY="154.0" mnemonicParsing="false" onAction="#buttonNewGame" prefHeight="40.0" prefWidth="121.0" text="New Game">
-         <font>
-            <Font name="System Bold Italic" size="16.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#ffbf80" />
-               </light>
-            </Lighting>
-         </effect>
-      </Button>
-      <Button fx:id="loadGame" alignment="CENTER" layoutX="219.0" layoutY="210.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" text="Load Game">
+      <Button fx:id="idNewCharacter" alignment="CENTER" layoutX="62.0" layoutY="130.0" mnemonicParsing="false" onAction="#buttonNewCharacter" prefHeight="40.0" prefWidth="160.0" text="New Character">
          <effect>
             <Lighting>
                <bumpInput>
@@ -46,7 +31,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="exit" alignment="CENTER" layoutX="219.0" layoutY="267.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" text="Exit">
+      <Button fx:id="idLoadCharacter" alignment="CENTER" layoutX="62.0" layoutY="185.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="Load Character">
          <effect>
             <Lighting>
                <bumpInput>
@@ -61,10 +46,35 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="129.0" layoutY="46.0" prefHeight="66.0" prefWidth="326.0" text="WELCOME HELLO">
+      <Button fx:id="idStartGame" alignment="CENTER" layoutX="62.0" layoutY="75.0" mnemonicParsing="false" onAction="#buttonStartGame" prefHeight="40.0" prefWidth="160.0" text="Start Game">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
          <font>
-            <Font size="30.0" />
+            <Font name="System Bold Italic" size="16.0" />
          </font>
-      </Label>
+      </Button>
+      <Button fx:id="idBack" alignment="CENTER" layoutX="27.0" layoutY="317.0" mnemonicParsing="false" onAction="#buttonBack" prefHeight="29.0" prefWidth="69.0" style="-fx-background-color:#FFF ;" text="&lt;&lt;Back">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#a19c9c" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

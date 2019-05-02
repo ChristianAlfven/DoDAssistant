@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class CharacterCreator{
 
-    //Image image = new Image("sample/sample.fxml");
+//    Image image = new Image("sample/sample.fxml");
     @FXML private ResourceBundle resources;
     @FXML private URL location;
     @FXML private Label idNameLabel;

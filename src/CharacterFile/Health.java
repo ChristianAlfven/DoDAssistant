@@ -2,6 +2,7 @@ package CharacterFile;
 
 public class Health {
 
+    private int total;
     private int head;
     private int rightArm;
     private int leftArm;
@@ -11,6 +12,7 @@ public class Health {
     private int leftLeg;
 
     public Health(int health){
+        total = health;
         head = (health + 1) / 2;
         rightArm = head;
         leftArm = head;
@@ -22,6 +24,8 @@ public class Health {
             }
 
     }
+
+    public void setTotal(int total) { this.total = total; }
 
     public void setHead(int head) {
         this.head = head;
@@ -50,6 +54,8 @@ public class Health {
     public void setLeftLeg(int leftLeg) {
         this.leftLeg = leftLeg;
     }
+
+    public int getTotal() { return total; }
 
     public int getHead() {
         return head;

@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Combat.Initiative">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../Resources/parchment.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="idNameLabel" layoutX="45.0" layoutY="55.0" text="Name">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idNamebox" layoutX="90.0" layoutY="53.0">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="idRaceLabel" layoutX="89.0" layoutY="101.0" text="Race">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idSubraceLabel" layoutX="79.0" layoutY="269.0" text="Subrace">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idProfessionLabel" layoutX="193.0" layoutY="101.0" text="Profession">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="410.0" layoutY="113.0" text="Environment">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idHeightLabel" layoutX="415.0" layoutY="56.0" text="Height">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idWeightLabel" layoutX="506.0" layoutY="56.0" text="Weight">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idAgeBox" layoutX="365.0" layoutY="53.0" prefHeight="17.0" prefWidth="40.0">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="0.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc285" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idHeightBox" layoutX="456.0" layoutY="53.0" prefHeight="25.0" prefWidth="40.0">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextArea fx:id="idBackgroundBox" layoutX="338.0" layoutY="226.0" prefHeight="95.0" prefWidth="239.0">
+         <effect>
+            <Lighting diffuseConstant="1.05" surfaceScale="1.51">
+               <bumpInput>
+                  <Shadow height="0.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextArea>
+      <Label fx:id="idBackgroundLabel" layoutX="413.0" layoutY="206.0" text="Background">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="idContinue" layoutX="382.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="Continue" textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idAgeLabel" layoutX="340.0" layoutY="57.0" text="Age">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idWeightBox" layoutX="550.0" layoutY="53.0" prefHeight="25.0" prefWidth="40.0">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <ToggleButton fx:id="idWarrior" layoutX="186.0" layoutY="128.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Warrior">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+         <toggleGroup>
+            <ToggleGroup fx:id="Profession" />
+         </toggleGroup>
+      </ToggleButton>
+      <ToggleButton fx:id="idScholar" layoutX="186.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Scholar">
+         <toggleGroup>
+            <ToggleGroup fx:id="Profession" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <ToggleButton fx:id="idBard" layoutX="186.0" layoutY="316.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Bard">
+         <toggleGroup>
+            <ToggleGroup fx:id="Profession" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <ToggleButton fx:id="idPriest" layoutX="186.0" layoutY="276.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Priest">
+         <toggleGroup>
+            <ToggleGroup fx:id="Profession" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <ToggleButton fx:id="idRogue" layoutX="186.0" layoutY="238.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Rogue">
+         <toggleGroup>
+            <ToggleGroup fx:id="Profession" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <ToggleButton fx:id="idMage" layoutX="186.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Mage">
+         <toggleGroup>
+            <ToggleGroup fx:id="Profession" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <ToggleButton fx:id="idPeasant" layoutX="186.0" layoutY="163.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Peasant">
+         <toggleGroup>
+            <ToggleGroup fx:id="Profession" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <ToggleButton fx:id="idHuman" layoutX="60.0" layoutY="128.0" mnemonicParsing="false" onAction="#setHuman" prefHeight="25.0" prefWidth="90.0" text="Human">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+         <toggleGroup>
+            <ToggleGroup fx:id="Race" />
+         </toggleGroup>
+      </ToggleButton>
+      <ToggleButton fx:id="idHalfBlood" layoutX="60.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Half-Blood">
+         <toggleGroup>
+            <ToggleGroup fx:id="Race" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <ToggleButton fx:id="idElf" layoutX="60.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Elf">
+         <toggleGroup>
+            <ToggleGroup fx:id="Race" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <ToggleButton fx:id="idDwarf" layoutX="60.0" layoutY="163.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Dwarf">
+         <toggleGroup>
+            <ToggleGroup fx:id="Race" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <ToggleButton fx:id="idBuratja" layoutX="60.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Buratja">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+         <toggleGroup>
+            <ToggleGroup fx:id="Subrace" />
+         </toggleGroup>
+      </ToggleButton>
+      <ToggleButton fx:id="idZvorda" layoutX="60.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Zvorda">
+         <toggleGroup>
+            <ToggleGroup fx:id="Subrace" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <ToggleButton fx:id="idBorjornikka" layoutX="60.0" layoutY="289.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Borjornikka">
+         <toggleGroup>
+            <ToggleGroup fx:id="Subrace" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.05">
+               <bumpInput>
+                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc180" />
+               </light>
+            </Lighting>
+         </effect>
+      </ToggleButton>
+      <RadioButton fx:id="idNature" layoutX="376.0" layoutY="140.0" mnemonicParsing="false" text="Nature">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf7f" />
+               </light>
+            </Lighting>
+         </effect>
+         <toggleGroup>
+            <ToggleGroup fx:id="Environment" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="idAcademic" layoutX="472.0" layoutY="163.0" mnemonicParsing="false" text="Academic">
+         <toggleGroup>
+            <ToggleGroup fx:id="Environment" />
+         </toggleGroup>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf7f" />
+               </light>
+            </Lighting>
+         </effect>
+      </RadioButton>
+      <RadioButton fx:id="idCity" layoutX="376.0" layoutY="163.0" mnemonicParsing="false" text="City">
+         <toggleGroup>
+            <ToggleGroup fx:id="Environment" />
+         </toggleGroup>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf7f" />
+               </light>
+            </Lighting>
+         </effect>
+      </RadioButton>
+      <RadioButton fx:id="idCountry" layoutX="471.0" layoutY="140.0" mnemonicParsing="false" text="Country">
+         <toggleGroup>
+            <ToggleGroup fx:id="Environment" />
+         </toggleGroup>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf7f" />
+               </light>
+            </Lighting>
+         </effect>
+      </RadioButton>
+      <RadioButton fx:id="idMale" layoutX="261.0" layoutY="45.0" mnemonicParsing="false" text="Male">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf7f" />
+               </light>
+            </Lighting>
+         </effect>
+         <toggleGroup>
+            <ToggleGroup fx:id="Gender" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="idFemale" layoutX="261.0" layoutY="67.0" mnemonicParsing="false" text="Female">
+         <toggleGroup>
+            <ToggleGroup fx:id="Gender" />
+         </toggleGroup>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf7f" />
+               </light>
+            </Lighting>
+         </effect>
+      </RadioButton>
+      <TableView layoutX="629.0" layoutY="8.0" prefHeight="257.0" prefWidth="225.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="Health" />
+            <TableColumn prefWidth="75.0" text="Name" />
+            <TableColumn prefWidth="75.0" text="Profession" />
+         </columns>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="84.0075" radius="46.506874999999994" width="104.02" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffcc99" />
+               </light>
+            </Lighting>
+         </effect>
+      </TableView>
+      <Button fx:id="buttonScenario" alignment="CENTER" layoutX="272.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Scenario">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonSave" alignment="CENTER" layoutX="396.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Save">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCreateCharacter" alignment="CENTER" layoutX="23.0" layoutY="463.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Create Character">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCreateEnemy" alignment="CENTER" layoutX="148.0" layoutY="463.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Create Enemy">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCreateItems" alignment="CENTER" layoutX="272.0" layoutY="463.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Create Items">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonPlayers" alignment="CENTER" layoutX="23.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Players">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCombat" alignment="CENTER" layoutX="148.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Combat">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

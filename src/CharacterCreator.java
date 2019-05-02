@@ -1,11 +1,12 @@
 import CharacterFile.Character;
 import CharacterFile.Armor;
 import  CharacterFile.Health;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import CharacterFile.*;
-import java.awt.event.ActionEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;

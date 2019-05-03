@@ -197,7 +197,7 @@ public class Combat {
         }
         if (dmg > 0) {
             hp.setTotal(hp.getTotal() - dmg);
-            enemy.setHealth(hp);
+//            enemy.setHealth(hp);
         }
         System.out.print(""
                 + "Head:\t          " +hp.getHead()

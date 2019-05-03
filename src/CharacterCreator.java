@@ -117,13 +117,10 @@ public class CharacterCreator{
 
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
-        name = idNamebox.getText();
-        System.out.println(name);
+        character.setName(idNamebox.getText());
+        System.out.println(character.getName());
     }
 
-    public CharacterCreator(String name) {
-        this.name = name;
-    }
 
 
 

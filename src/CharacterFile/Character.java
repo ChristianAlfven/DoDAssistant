@@ -14,7 +14,7 @@ public class Character {
 
     Health health;
     Armor armor;
-    //Skillset skillset;
+//    Skillset skillset;
     //SpecialTrait[] specialTraits;
     //Inventory inventory;
 
@@ -53,8 +53,8 @@ public class Character {
         return health;
     }
 
-    public void setHealth(Health health) {
-        this.health = health;
+    public void setHealth(int hp) {
+        Health health = new Health(hp);
     }
 
     public Armor getArmor() {

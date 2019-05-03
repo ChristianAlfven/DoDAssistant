@@ -16,7 +16,6 @@ public class Lobby extends Application {
         NPCList npcList = NPCList.createNPCList();
 
 
-
         Pane root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
         primaryStage.setTitle("Lobby");
         primaryStage.setScene(new Scene(root));

@@ -61,23 +61,6 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <TableView fx:id="idCharacterTable" layoutX="222.0" layoutY="57.0" prefHeight="257.0" prefWidth="225.0">
-         <columns>
-            <TableColumn prefWidth="75.0" text="Health" />
-            <TableColumn prefWidth="75.0" text="Name" />
-            <TableColumn prefWidth="75.0" text="Profession" />
-         </columns>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow height="84.0075" radius="46.506874999999994" width="104.02" />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#ffcc99" />
-               </light>
-            </Lighting>
-         </effect>
-      </TableView>
       <Button fx:id="idEdit" alignment="CENTER" layoutX="313.0" layoutY="314.0" mnemonicParsing="false" onAction="#buttonEdit" prefHeight="3.0" prefWidth="67.0" text="Edit">
          <effect>
             <Lighting>
@@ -124,5 +107,6 @@
          </font>
       </Button>
       <Button fx:id="idDummy" layoutX="133.0" layoutY="254.0" mnemonicParsing="false" onAction="#buttonDummy" text="Dummy" />
+      <ListView fx:id="idCharacterTable" layoutX="247.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

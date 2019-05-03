@@ -1,11 +1,23 @@
+package Creator;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import CharacterFile.Character;
 
-public class CharacterCreation2 {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class CharacterCreation2 implements Initializable {
 
     Character character;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //character = Party.getParty().getCharacter(0);
+    }
 
     @FXML
     private Button buttonStrength;
@@ -135,5 +147,6 @@ public class CharacterCreation2 {
     void pressPosStrength(ActionEvent event) {
 
     }
+
 
 }

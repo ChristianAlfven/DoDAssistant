@@ -11,7 +11,6 @@ public class Lobby extends Application {
 
         Party party = Party.getParty();
 
-
         Pane root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
         primaryStage.setTitle("Lobby");
         primaryStage.setScene(new Scene(root));

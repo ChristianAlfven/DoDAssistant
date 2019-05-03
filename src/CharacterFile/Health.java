@@ -1,5 +1,6 @@
 package CharacterFile;
 
+
 public class Health {
 
     private int total;

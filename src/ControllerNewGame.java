@@ -35,30 +35,8 @@ public class ControllerNewGame {
     @FXML private Button idLoadCharacter;
     @FXML private Button idEdit;
 
-
-
-    String name;
-    int age;
-    int height;
-    int weight;
-    int counter;
-
-    Character[] party;
-    ObservableList<Character> characterList = FXCollections.observableArrayList();
-
     @FXML
     void buttonDummy(ActionEvent event) {
-        Character character = new Character();
-        character.setName("Bo");
-        character.setAge(30);
-        character.setCombatPoints(3);
-        party = new Character[5];
-
-        characterList.add(party[0]);
-
-        party[counter] = character;
-
-        counter++;
 
     }
 

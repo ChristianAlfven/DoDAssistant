@@ -16,7 +16,7 @@
             <Image url="@Resources/parchment.png" />
          </image>
       </ImageView>
-      <Button fx:id="idNewCharacter" alignment="CENTER" layoutX="62.0" layoutY="130.0" mnemonicParsing="false" onAction="#buttonNewCharacter" prefHeight="40.0" prefWidth="160.0" text="New Character">
+      <Button fx:id="idNewCharacter" alignment="CENTER" layoutX="39.0" layoutY="132.0" mnemonicParsing="false" onAction="#buttonNewCharacter" prefHeight="40.0" prefWidth="160.0" text="New Character">
          <effect>
             <Lighting>
                <bumpInput>
@@ -31,7 +31,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="idLoadCharacter" alignment="CENTER" layoutX="62.0" layoutY="185.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="Load Character">
+      <Button fx:id="idLoadCharacter" alignment="CENTER" layoutX="39.0" layoutY="185.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="Load Character">
          <effect>
             <Lighting>
                <bumpInput>
@@ -46,7 +46,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="idStartGame" alignment="CENTER" layoutX="62.0" layoutY="75.0" mnemonicParsing="false" onAction="#buttonStartGame" prefHeight="40.0" prefWidth="160.0" text="Start Game">
+      <Button fx:id="idStartGame" alignment="CENTER" layoutX="39.0" layoutY="75.0" mnemonicParsing="false" onAction="#buttonStartGame" prefHeight="40.0" prefWidth="160.0" text="Start Game">
          <effect>
             <Lighting>
                <bumpInput>
@@ -76,5 +76,22 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
+      <TableView fx:id="idCharacterTable" layoutX="222.0" layoutY="57.0" prefHeight="257.0" prefWidth="225.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="Health" />
+            <TableColumn prefWidth="75.0" text="Name" />
+            <TableColumn prefWidth="75.0" text="Profession" />
+         </columns>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="84.0075" radius="46.506874999999994" width="104.02" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffcc99" />
+               </light>
+            </Lighting>
+         </effect>
+      </TableView>
    </children>
 </AnchorPane>

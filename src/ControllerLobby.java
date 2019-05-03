@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 public class ControllerLobby {
@@ -19,24 +20,27 @@ public class ControllerLobby {
     private URL location;
 
     @FXML
-    private Button exit;
+    private Button idExit;
 
     @FXML
-    private Button loadGame;
+    private Button idLoadGame;
 
     @FXML
-    private Button newGame;
+    private Button idNewGame;
+
+    @FXML
+    private TableView<?> idCharacterTable;
 
     @FXML
     void buttonNewGame(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
 
-        stage = (Stage) newGame.getScene().getWindow();
+        stage = (Stage) idNewGame.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
+
 }

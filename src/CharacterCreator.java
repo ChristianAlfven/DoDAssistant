@@ -100,6 +100,9 @@ public class CharacterCreator{
     String male;
     Scanner Scan = new Scanner(System.in);
 
+
+
+
     @FXML
     void buttonBack(ActionEvent event) throws IOException {
         Stage stage;
@@ -115,34 +118,27 @@ public class CharacterCreator{
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
         character.setName(idNamebox.getText());
-        character.setAge(Integer.parseInt(idAgeBox.getText()));
-        character.setHeight(Integer.parseInt(idAgeBox.getText()));
-        character.setWeight(Integer.parseInt(idAgeBox.getText()));
-        character.setBackground(idBackgroundBox.getText());
-
-
-        if(idNature.isSelected()) {
-            character.setEnvironment(Character.Environment.Nature);
-        } else if(idAcademic.isSelected()) {
-            character.setEnvironment(Character.Environment.Academic);
-        } else if(idCity.isSelected()) {
-            character.setEnvironment(Character.Environment.City);
-        } else if(idCountry.isSelected()) {
-            character.setEnvironment(Character.Environment.Country);
-        }
-
-        if(idMale.isSelected()){
-            character.setGender(Character.Gender.Male);
-        }else if (idFemale.isSelected()){
-            character.setGender(Character.Gender.Male);
-        }
-
-        System.out.println(character.toString());
-
+        System.out.println(character.getName());
     }
 
-    public CharacterCreator(String name) {
-        this.name = name;
+
+
+
+    public Character createCharacter(){
+//        System.out.println("CharacterFile Creation:\n");
+
+
+        /*
+        chooseName();
+        chooseGender();
+        chooseRace();
+        chooseSkills();
+        chooseEnvironment();
+        chooseBackground();
+        chooseProfession();
+         */
+
+        return character;
     }
 
     // RACE METHODS
@@ -207,6 +203,12 @@ public class CharacterCreator{
     public void setBard(ActionEvent event){character.setProfession(Character.Profession.Bard);}
     public void setScholar(ActionEvent event){character.setProfession(Character.Profession.Warrior);}
 
+
+    //CONTINUE BUTTON
+//    @FXML
+//    void buttonContinue(ActionEvent event) {
+//
+//    }
 
     // ENVIRONMENT METHODS
     /*

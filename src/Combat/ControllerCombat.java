@@ -1,5 +1,6 @@
 package Combat;
 
+        import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.scene.control.Button;
         import javafx.scene.control.Label;
@@ -10,7 +11,7 @@ package Combat;
         import javafx.scene.control.ToggleButton;
         import javafx.scene.control.ToggleGroup;
 
-public class Initiative {
+public class ControllerCombat {
 
     @FXML
     private Label idActiveCharLabel;

@@ -5,7 +5,7 @@ import javafx.scene.control.TextField;
 
 public class CharacterCreation2 {
 
-
+    Character character;
 
     @FXML
     private Button buttonStrength;

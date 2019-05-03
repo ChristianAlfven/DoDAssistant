@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -18,7 +19,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class CharacterCreator{
+public class CharacterCreator implements Initializable {
 
 //    Image image = new Image("sample/sample.fxml");
     @FXML private ResourceBundle resources;
@@ -64,6 +65,11 @@ public class CharacterCreator{
     @FXML private RadioButton idFemale;
     @FXML private TableView<Character> idCharacterTable;
     @FXML private Button idBack;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        character = new Character();
+    }
 
 
     enum Profession{Warrior, Peasant, Mage, Rogue, Priest, Bard, Scholar}
@@ -118,10 +124,37 @@ public class CharacterCreator{
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
         character.setName(idNamebox.getText());
-        System.out.println(character.getName());
+        character.setBackground(idBackgroundBox.getText());
+        character.setHeight(Integer.parseInt(idHeightBox.getText()));
+        character.setWeight(Integer.parseInt(idWeightBox.getText()));
+        character.setAge(Integer.parseInt(idAgeBox.getText()));
+
+        if(idMale.isSelected()) {
+            character.setGender(Character.Gender.Male);
+        }else if(idFemale.isSelected()) {
+            character.setGender(Character.Gender.Female);
+        }
+
+        if(idCountry.isSelected()) {
+            character.setEnvironment(Character.Environment.Country);
+        }else if(idCity.isSelected()) {
+            character.setEnvironment(Character.Environment.City);
+        }else if(idAcademic.isSelected()) {
+            character.setEnvironment(Character.Environment.Academic);
+        }else if(idNature.isSelected()) {
+            character.setEnvironment(Character.Environment.Nature);
+        }
+
+        System.out.println(character.toString());
+
+        Stage stage = (Stage) idContinue.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("GUICharacterCreation2.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+        Party.getParty().addCharacter(character);
     }
-
-
 
 
     public Character createCharacter(){

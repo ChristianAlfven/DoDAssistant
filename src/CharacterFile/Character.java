@@ -216,4 +216,20 @@ public class Character {
     public void setNegativeTrait(SpecialTrait negativeTrait) {
         this.negativeTrait = negativeTrait;
     }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "profession=" + profession +
+                ", gender=" + gender +
+                ", race=" + race +
+                ", subrace=" + subrace +
+                ", environment=" + environment +
+                ", name='" + name + '\'' +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", age=" + age +
+                ", background='" + background + '\'' +
+                '}';
+    }
 }

@@ -133,7 +133,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="idContinue" layoutX="372.0" layoutY="340.0" mnemonicParsing="false" onAction="#continueButton" prefHeight="25.0" prefWidth="145.0" text="Continue" textAlignment="CENTER">
+      <Button fx:id="idContinue" layoutX="372.0" layoutY="340.0" mnemonicParsing="false" onAction="#buttonContinue" prefHeight="25.0" prefWidth="145.0" text="Continue..." textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <light>
@@ -168,7 +168,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <ToggleButton fx:id="idWarrior" layoutX="176.0" layoutY="118.0" mnemonicParsing="false" onAction="#setWarrior" prefHeight="25.0" prefWidth="82.0" text="Warrior">
+      <ToggleButton fx:id="idWarrior" layoutX="176.0" layoutY="118.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Warrior">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -186,7 +186,7 @@
             <ToggleGroup fx:id="Profession" />
          </toggleGroup>
       </ToggleButton>
-      <ToggleButton fx:id="idScholar" layoutX="176.0" layoutY="345.0" mnemonicParsing="false" onAction="#setScholar" prefHeight="25.0" prefWidth="82.0" text="Scholar" toggleGroup="$Profession">
+      <ToggleButton fx:id="idScholar" layoutX="176.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Scholar" toggleGroup="$Profession">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -201,7 +201,7 @@
             </Lighting>
          </effect>
       </ToggleButton>
-      <ToggleButton fx:id="idBard" layoutX="176.0" layoutY="306.0" mnemonicParsing="false" onAction="#setBard" prefHeight="25.0" prefWidth="82.0" text="Bard" toggleGroup="$Profession">
+      <ToggleButton fx:id="idBard" layoutX="176.0" layoutY="306.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Bard" toggleGroup="$Profession">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -216,7 +216,7 @@
             </Lighting>
          </effect>
       </ToggleButton>
-      <ToggleButton fx:id="idPriest" layoutX="176.0" layoutY="266.0" mnemonicParsing="false" onAction="#setPriest" prefHeight="25.0" prefWidth="82.0" text="Priest" toggleGroup="$Profession">
+      <ToggleButton fx:id="idPriest" layoutX="176.0" layoutY="266.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Priest" toggleGroup="$Profession">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -231,7 +231,7 @@
             </Lighting>
          </effect>
       </ToggleButton>
-      <ToggleButton fx:id="idRogue" layoutX="176.0" layoutY="228.0" mnemonicParsing="false" onAction="#setRogue" prefHeight="25.0" prefWidth="82.0" text="Rogue" toggleGroup="$Profession">
+      <ToggleButton fx:id="idRogue" layoutX="176.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Rogue" toggleGroup="$Profession">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -294,7 +294,7 @@
             <ToggleGroup fx:id="Race" />
          </toggleGroup>
       </ToggleButton>
-      <ToggleButton fx:id="idHalfBlood" layoutX="50.0" layoutY="227.0" mnemonicParsing="false" onAction="#setHalfBlood" prefHeight="25.0" prefWidth="90.0" text="Half-Blood" toggleGroup="$Race">
+      <ToggleButton fx:id="idHalfBlood" layoutX="50.0" layoutY="227.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Half-Blood" toggleGroup="$Race">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -309,7 +309,7 @@
             </Lighting>
          </effect>
       </ToggleButton>
-      <ToggleButton fx:id="idElf" layoutX="50.0" layoutY="190.0" mnemonicParsing="false" onAction="#setElf" prefHeight="25.0" prefWidth="90.0" text="Elf" toggleGroup="$Race">
+      <ToggleButton fx:id="idElf" layoutX="50.0" layoutY="190.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Elf" toggleGroup="$Race">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -324,7 +324,7 @@
             </Lighting>
          </effect>
       </ToggleButton>
-      <ToggleButton fx:id="idDwarf" layoutX="50.0" layoutY="153.0" mnemonicParsing="false" onAction="#setDwarf" prefHeight="25.0" prefWidth="90.0" text="Dwarf" toggleGroup="$Race">
+      <ToggleButton fx:id="idDwarf" layoutX="50.0" layoutY="153.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Dwarf" toggleGroup="$Race">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -339,7 +339,7 @@
             </Lighting>
          </effect>
       </ToggleButton>
-      <ToggleButton fx:id="idBuratja" layoutX="50.0" layoutY="345.0" mnemonicParsing="false" onAction="#setBuratja" prefHeight="25.0" prefWidth="90.0" text="Buratja">
+      <ToggleButton fx:id="idBuratja" layoutX="50.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Buratja">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -357,7 +357,7 @@
             <ToggleGroup fx:id="Subrace" />
          </toggleGroup>
       </ToggleButton>
-      <ToggleButton fx:id="idZvorda" layoutX="50.0" layoutY="312.0" mnemonicParsing="false" onAction="#setZvorda" prefHeight="25.0" prefWidth="90.0" text="Zvorda" toggleGroup="$Subrace">
+      <ToggleButton fx:id="idZvorda" layoutX="50.0" layoutY="312.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Zvorda" toggleGroup="$Subrace">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -372,7 +372,7 @@
             </Lighting>
          </effect>
       </ToggleButton>
-      <ToggleButton fx:id="idBorjornikka" layoutX="50.0" layoutY="279.0" mnemonicParsing="false" onAction="#setBorjornikka" prefHeight="25.0" prefWidth="90.0" text="Borjornikka" toggleGroup="$Subrace">
+      <ToggleButton fx:id="idBorjornikka" layoutX="50.0" layoutY="279.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Borjornikka" toggleGroup="$Subrace">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -468,7 +468,7 @@
       <TableView fx:id="idCharacterTable" layoutX="619.0" layoutY="-2.0" prefHeight="257.0" prefWidth="225.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Health" />
-          <TableColumn prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="idTableName" prefWidth="75.0" text="Name" />
             <TableColumn prefWidth="75.0" text="Profession" />
         </columns>
          <effect>
@@ -580,6 +580,21 @@
                </bumpInput>
                <light>
                   <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idBack" alignment="CENTER" layoutX="546.0" layoutY="416.0" mnemonicParsing="false" onAction="#buttonBack" prefHeight="29.0" prefWidth="69.0" style="-fx-background-color:#FFF ;" text="&lt;&lt;Back">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#a19c9c" />
                </light>
             </Lighting>
          </effect>

@@ -468,7 +468,7 @@
       <TableView fx:id="idCharacterTable" layoutX="619.0" layoutY="-2.0" prefHeight="257.0" prefWidth="225.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Health" />
-          <TableColumn prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="idTableName" prefWidth="75.0" text="Name" />
             <TableColumn prefWidth="75.0" text="Profession" />
         </columns>
          <effect>

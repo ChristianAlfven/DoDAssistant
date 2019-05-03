@@ -27,7 +27,7 @@
          </font>
       </Label>
       <Separator layoutX="204.0" layoutY="63.0" prefWidth="200.0" />
-      <Button fx:id="buttonStrength" layoutX="100.0" layoutY="109.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Strength">
+      <Button fx:id="buttonStrength" layoutX="100.0" layoutY="109.0" mnemonicParsing="false" onAction="#pressPosStrength" prefHeight="25.0" prefWidth="114.0" text="Strength">
          <effect>
             <Lighting>
                <bumpInput>
@@ -57,7 +57,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="buttonPsyche" layoutX="101.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Psyche">
+      <Button fx:id="buttonPsyche" layoutX="101.0" layoutY="269.0" mnemonicParsing="false" onAction="#pressPosPsyche" prefHeight="25.0" prefWidth="114.0" text="Psyche">
          <effect>
             <Lighting>
                <bumpInput>
@@ -72,7 +72,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonIntelligence" layoutX="101.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Intelligence">
+      <Button fx:id="buttonIntelligence" layoutX="101.0" layoutY="237.0" mnemonicParsing="false" onAction="#pressPosIntelligence" prefHeight="25.0" prefWidth="114.0" text="Intelligence">
          <effect>
             <Lighting>
                <bumpInput>
@@ -87,7 +87,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonSpirituality" layoutX="101.0" layoutY="205.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Spirituality">
+      <Button fx:id="buttonSpirituality" layoutX="101.0" layoutY="205.0" mnemonicParsing="false" onAction="#pressPosSpirituality" prefHeight="25.0" prefWidth="114.0" text="Spirituality">
          <effect>
             <Lighting>
                <bumpInput>
@@ -102,7 +102,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonAgility" layoutX="100.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Agility">
+      <Button fx:id="buttonAgility" layoutX="100.0" layoutY="173.0" mnemonicParsing="false" onAction="#pressPosAgility" prefHeight="25.0" prefWidth="114.0" text="Agility">
          <effect>
             <Lighting>
                <bumpInput>
@@ -117,7 +117,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonPhysique" layoutX="100.0" layoutY="141.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Physique">
+      <Button fx:id="buttonPhysique" layoutX="100.0" layoutY="141.0" mnemonicParsing="false" onAction="#pressPosPhysique" prefHeight="25.0" prefWidth="114.0" text="Physique">
          <effect>
             <Lighting>
                <bumpInput>
@@ -132,7 +132,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonCharisma" layoutX="101.0" layoutY="301.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Charisma">
+      <Button fx:id="buttonCharisma" layoutX="101.0" layoutY="301.0" mnemonicParsing="false" onAction="#pressPosCharisma" prefHeight="25.0" prefWidth="114.0" text="Charisma">
          <effect>
             <Lighting>
                <bumpInput>
@@ -147,7 +147,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonNegStrength" layoutX="387.0" layoutY="109.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Strength">
+      <Button fx:id="buttonNegStrength" layoutX="387.0" layoutY="109.0" mnemonicParsing="false" onAction="#pressNegStrength" prefHeight="25.0" prefWidth="114.0" text="Strength">
          <effect>
             <Lighting>
                <bumpInput>
@@ -162,7 +162,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonNegCharisma" layoutX="387.0" layoutY="301.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Charisma">
+      <Button fx:id="buttonNegCharisma" layoutX="387.0" layoutY="301.0" mnemonicParsing="false" onAction="#pressNegCharisma" prefHeight="25.0" prefWidth="114.0" text="Charisma">
          <effect>
             <Lighting>
                <bumpInput>
@@ -177,7 +177,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonNegPsyche" layoutX="387.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Psyche">
+      <Button fx:id="buttonNegPsyche" layoutX="387.0" layoutY="269.0" mnemonicParsing="false" onAction="#pressNegPsyche" prefHeight="25.0" prefWidth="114.0" text="Psyche">
          <effect>
             <Lighting>
                <bumpInput>
@@ -192,7 +192,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonNegIntelligence" layoutX="387.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Intelligence">
+      <Button fx:id="buttonNegIntelligence" layoutX="387.0" layoutY="237.0" mnemonicParsing="false" onAction="#pressNegIntelligence" prefHeight="25.0" prefWidth="114.0" text="Intelligence">
          <effect>
             <Lighting>
                <bumpInput>
@@ -207,7 +207,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonNegSpirituality" layoutX="387.0" layoutY="205.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Spirituality">
+      <Button fx:id="buttonNegSpirituality" layoutX="387.0" layoutY="205.0" mnemonicParsing="false" onAction="#pressNegSpirituality" prefHeight="25.0" prefWidth="114.0" text="Spirituality">
          <effect>
             <Lighting>
                <bumpInput>
@@ -222,7 +222,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonNegAgility" layoutX="387.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Agility">
+      <Button fx:id="buttonNegAgility" layoutX="387.0" layoutY="173.0" mnemonicParsing="false" onAction="#pressNegAgility" prefHeight="25.0" prefWidth="114.0" text="Agility">
          <effect>
             <Lighting>
                <bumpInput>
@@ -237,7 +237,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonNegPhysique" layoutX="387.0" layoutY="141.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Physique">
+      <Button fx:id="buttonNegPhysique" layoutX="387.0" layoutY="141.0" mnemonicParsing="false" onAction="#pressNegPhysique" prefHeight="25.0" prefWidth="114.0" text="Physique">
          <effect>
             <Lighting>
                <bumpInput>
@@ -252,8 +252,23 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <TextField editable="false" layoutX="82.0" layoutY="339.0" opacity="0.71" prefHeight="25.0" prefWidth="75.0" />
-      <TextField editable="false" layoutX="158.0" layoutY="339.0" opacity="0.71" prefHeight="25.0" prefWidth="75.0" />
-      <TextField editable="false" layoutX="407.0" layoutY="339.0" opacity="0.71" prefHeight="25.0" prefWidth="75.0" />
+      <TextField fx:id="posTrait1" editable="false" layoutX="82.0" layoutY="339.0" opacity="0.71" prefHeight="25.0" prefWidth="75.0" />
+      <TextField fx:id="posTrait2" editable="false" layoutX="158.0" layoutY="339.0" opacity="0.71" prefHeight="25.0" prefWidth="75.0" />
+      <TextField fx:id="negTrait" editable="false" layoutX="407.0" layoutY="339.0" opacity="0.71" prefHeight="25.0" prefWidth="75.0" />
+      <Button fx:id="idContinue" layoutX="251.0" layoutY="352.0" mnemonicParsing="false" onAction="#pressContinue" prefHeight="25.0" prefWidth="106.0" text="Continue" textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

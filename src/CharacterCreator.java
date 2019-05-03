@@ -5,9 +5,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import CharacterFile.*;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -59,6 +63,7 @@ public class CharacterCreator{
     @FXML private ToggleGroup Gender;
     @FXML private RadioButton idFemale;
     @FXML private TableView<Character> idCharacterTable;
+    @FXML private Button idBack;
 
 
     enum Profession{Warrior, Peasant, Mage, Rogue, Priest, Bard, Scholar}
@@ -95,23 +100,50 @@ public class CharacterCreator{
     String male;
     Scanner Scan = new Scanner(System.in);
 
+    @FXML
+    void buttonBack(ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
 
-    //public Character createCharacter(){
-//        System.out.println("CharacterFile Creation:\n");
+        stage = (Stage) idBack.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void buttonContinue(ActionEvent event) throws IOException {
+        character.setName(idNamebox.getText());
+        character.setAge(Integer.parseInt(idAgeBox.getText()));
+        character.setHeight(Integer.parseInt(idAgeBox.getText()));
+        character.setWeight(Integer.parseInt(idAgeBox.getText()));
+        character.setBackground(idBackgroundBox.getText());
 
 
-        /*
-        chooseName();
-        chooseGender();
-        chooseRace();
-        chooseSkills();
-        chooseEnvironment();
-        chooseBackground();
-        chooseProfession();
-         */
+        if(idNature.isSelected()) {
+            character.setEnvironment(Character.Environment.Nature);
+        } else if(idAcademic.isSelected()) {
+            character.setEnvironment(Character.Environment.Academic);
+        } else if(idCity.isSelected()) {
+            character.setEnvironment(Character.Environment.City);
+        } else if(idCountry.isSelected()) {
+            character.setEnvironment(Character.Environment.Country);
+        }
 
-      //  return character;
-    //}
+        if(idMale.isSelected()){
+            character.setGender(Character.Gender.Male);
+        }else if (idFemale.isSelected()){
+            character.setGender(Character.Gender.Male);
+        }
+
+        System.out.println(character.toString());
+
+    }
+
+    public CharacterCreator(String name) {
+        this.name = name;
+    }
 
     // RACE METHODS
     public void setHuman(ActionEvent event){
@@ -175,12 +207,6 @@ public class CharacterCreator{
     public void setBard(ActionEvent event){character.setProfession(Character.Profession.Bard);}
     public void setScholar(ActionEvent event){character.setProfession(Character.Profession.Warrior);}
 
-
-    //CONTINUE BUTTON
-    @FXML
-    void buttonContinue(ActionEvent event) {
-        //TODO: Environment, Age, Height, Weight, Background, Name, Gender
-    }
 
     // ENVIRONMENT METHODS
     /*

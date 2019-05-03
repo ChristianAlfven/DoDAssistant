@@ -53,6 +53,10 @@ public class Character {
         return health;
     }
 
+    public void constructHealth(int hp){
+        health = new Health(hp);
+    }
+
     public void setHealth(Health health) {
         this.health = health;
     }
@@ -215,5 +219,20 @@ public class Character {
 
     public void setNegativeTrait(SpecialTrait negativeTrait) {
         this.negativeTrait = negativeTrait;
+    }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "profession=" + profession +
+                ", gender=" + gender +
+                ", race=" + race +
+                ", subrace=" + subrace +
+                ", name='" + name + '\'' +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", age=" + age +
+                ", background='" + background + '\'' +
+                '}';
     }
 }

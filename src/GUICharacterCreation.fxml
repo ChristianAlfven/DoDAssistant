@@ -133,7 +133,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="idContinue" layoutX="372.0" layoutY="340.0" mnemonicParsing="false" onAction="#buttonContinue" prefHeight="25.0" prefWidth="145.0" text="Continue" textAlignment="CENTER">
+      <Button fx:id="idContinue" layoutX="372.0" layoutY="340.0" mnemonicParsing="false" onAction="#buttonContinue" prefHeight="25.0" prefWidth="145.0" text="Continue..." textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <light>
@@ -580,6 +580,21 @@
                </bumpInput>
                <light>
                   <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idBack" alignment="CENTER" layoutX="546.0" layoutY="416.0" mnemonicParsing="false" onAction="#buttonBack" prefHeight="29.0" prefWidth="69.0" style="-fx-background-color:#FFF ;" text="&lt;&lt;Back">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#a19c9c" />
                </light>
             </Lighting>
          </effect>

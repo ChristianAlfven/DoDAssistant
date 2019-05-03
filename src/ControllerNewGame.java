@@ -53,7 +53,7 @@ public class ControllerNewGame {
         Stage stage;
         Parent root;
 
-        stage = (Stage) idNewCharacter.getScene().getWindow();
+        stage = (Stage) idBack.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("GUILobby.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);

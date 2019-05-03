@@ -5,9 +5,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import CharacterFile.*;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -59,6 +63,7 @@ public class CharacterCreator{
     @FXML private ToggleGroup Gender;
     @FXML private RadioButton idFemale;
     @FXML private TableView<Character> idCharacterTable;
+    @FXML private Button idBack;
 
 
     enum Profession{Warrior, Peasant, Mage, Rogue, Priest, Bard, Scholar}
@@ -94,6 +99,32 @@ public class CharacterCreator{
     int unusedExp;
     String male;
     Scanner Scan = new Scanner(System.in);
+
+
+
+
+    @FXML
+    void buttonBack(ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
+
+        stage = (Stage) idBack.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void buttonContinue(ActionEvent event) throws IOException {
+        name = idNamebox.getText();
+        System.out.println(name);
+    }
+
+    public CharacterCreator(String name) {
+        this.name = name;
+    }
+
 
 
     public Character createCharacter(){
@@ -177,10 +208,10 @@ public class CharacterCreator{
 
 
     //CONTINUE BUTTON
-    @FXML
-    void buttonContinue(ActionEvent event) {
-
-    }
+//    @FXML
+//    void buttonContinue(ActionEvent event) {
+//
+//    }
 
     // ENVIRONMENT METHODS
     /*

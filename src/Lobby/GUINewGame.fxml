@@ -9,11 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="409.0" prefWidth="493.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerNewGame">
+<AnchorPane prefHeight="409.0" prefWidth="493.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Lobby.ControllerNewGame">
    <children>
       <ImageView fitHeight="370.0" fitWidth="518.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Resources/parchment.png" />
+            <Image url="@../Resources/parchment.png" />
          </image>
       </ImageView>
       <Button fx:id="idNewCharacter" alignment="CENTER" layoutX="39.0" layoutY="132.0" mnemonicParsing="false" onAction="#buttonNewCharacter" prefHeight="40.0" prefWidth="160.0" text="New Character">

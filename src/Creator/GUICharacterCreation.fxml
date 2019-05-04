@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?package Resources.parchment.png?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
@@ -25,11 +26,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="445.0" prefWidth="588.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CharacterCreator">
+
+<AnchorPane prefHeight="445.0" prefWidth="588.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Creator.CharacterCreator">
    <children>
       <ImageView fitHeight="415.0" fitWidth="620.0" layoutY="-3.0">
          <image>
-            <Image url="@Resources/parchment.png" />
+            <Image url="@../Resources/parchment.png" />
          </image>
       </ImageView>
       

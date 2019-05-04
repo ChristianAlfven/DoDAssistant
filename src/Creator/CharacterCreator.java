@@ -1,8 +1,9 @@
-import CharacterFile.Character;
+package Creator;
+
+import ActiveChars.Party;
 import CharacterFile.Armor;
-import  CharacterFile.Health;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import CharacterFile.Character;
+import CharacterFile.Health;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +11,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import CharacterFile.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;

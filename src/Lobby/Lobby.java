@@ -1,4 +1,7 @@
+package Lobby;
+
 import ActiveChars.NPCList;
+import ActiveChars.Party;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,7 +19,7 @@ public class Lobby extends Application {
         NPCList npcList = NPCList.createNPCList();
 
 
-        Pane root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
+        Pane root = FXMLLoader.load(getClass().getResource("/Lobby/GUINewGame.fxml"));
         primaryStage.setTitle("Lobby");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

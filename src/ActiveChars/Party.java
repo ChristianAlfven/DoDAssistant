@@ -1,3 +1,5 @@
+package ActiveChars;
+
 import CharacterFile.Character;
 
 import java.util.ArrayList;

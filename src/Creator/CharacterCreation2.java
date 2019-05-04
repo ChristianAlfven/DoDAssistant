@@ -1,11 +1,13 @@
 package Creator;
 
+import ActiveChars.Party;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import CharacterFile.Character;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +18,7 @@ public class CharacterCreation2 implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //character = Party.getParty().getCharacter(0);
+        character = Party.getParty().getCharacter(0);
     }
 
     @FXML

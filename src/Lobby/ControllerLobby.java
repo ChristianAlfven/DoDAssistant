@@ -1,3 +1,5 @@
+package Lobby;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -37,7 +39,7 @@ public class ControllerLobby {
         Parent root;
 
         stage = (Stage) idNewGame.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
+        root = FXMLLoader.load(getClass().getResource("Lobby/GUINewGame.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

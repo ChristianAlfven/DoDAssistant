@@ -6,8 +6,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
@@ -18,17 +16,27 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Combat.Initiative">
    <children>
-      <ImageView fitHeight="477.0" fitWidth="600.0">
+      <ImageView fitHeight="477.0" fitWidth="633.0" layoutX="-3.0">
          <image>
             <Image url="@../Resources/parchment.png" />
          </image>
       </ImageView>
-      <Label fx:id="idActiveCharLabel" layoutX="246.0" layoutY="35.0" text="Active ">
+      <Label fx:id="idCombatHeader" layoutX="39.0" layoutY="56.0" text="Combat Phase">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="idAttackerLabel" layoutX="246.0" layoutY="35.0" text="Attacker">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="idActiveCharText" editable="false" layoutX="246.0" layoutY="61.0">
+      <Label fx:id="idDefenderLabel" layoutX="423.0" layoutY="35.0" text="Defender">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idAttackerText" editable="false" layoutX="246.0" layoutY="61.0">
          <effect>
             <Lighting diffuseConstant="1.07">
                <bumpInput>
@@ -43,37 +51,27 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <Label fx:id="idPhaseLabel" layoutX="41.0" layoutY="35.0" text="Combat phase">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="idActionLabel" layoutX="34.0" layoutY="151.0" text="Action">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="idCombatPointsLabel" layoutX="281.0" layoutY="161.0" text="Combat points">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="idCombatPhaseText" alignment="CENTER" editable="false" layoutX="36.0" layoutY="54.0" prefHeight="25.0" prefWidth="160.0" text="Initiative">
+      <TextField fx:id="idDefenderText" layoutX="423.0" layoutY="61.0" prefHeight="25.0" prefWidth="146.0">
          <effect>
             <Lighting diffuseConstant="1.07">
                <bumpInput>
-                  <Shadow height="0.0" radius="0.0" width="0.0" />
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
                </bumpInput>
                <light>
-                  <Light.Distant color="#ffc285" />
+                  <Light.Distant color="#ffc07d" />
                </light>
             </Lighting>
          </effect>
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="idTotPointsText" editable="false" layoutX="282.0" layoutY="191.0" prefHeight="25.0" prefWidth="94.0">
+      <Label fx:id="idCombatPointsLabel" layoutX="208.0" layoutY="121.0" text="Combat Points">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idTotAttackerPointsText" editable="false" layoutX="314.0" layoutY="119.0" prefHeight="25.0" prefWidth="94.0">
          <effect>
             <Lighting diffuseConstant="1.07">
                <bumpInput>
@@ -88,7 +86,152 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextArea fx:id="idHealthText" editable="false" layoutX="41.0" layoutY="270.0" prefHeight="120.0" prefWidth="186.0">
+      <TextField fx:id="idTotDefenderPointsText" editable="false" layoutX="423.0" layoutY="119.0" prefHeight="25.0" prefWidth="94.0">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="idPointsUsedLabel" layoutX="227.0" layoutY="151.0" text="Points Used">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idUseAttackerPointsText" layoutX="314.0" layoutY="149.0" prefHeight="25.0" prefWidth="94.0">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idUseDefenderPointsText" layoutX="423.0" layoutY="149.0" prefHeight="25.0" prefWidth="94.0">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="idCombatPointsButton" layoutX="368.0" layoutY="185.0" mnemonicParsing="false" onAction="#confirmCombatPoints" prefHeight="25.0" prefWidth="97.0" text="Accept" textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idDiceValueLabel" layoutX="368.0" layoutY="230.0" text="Dice Value (D20)">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idDiceValueText" layoutX="495.0" layoutY="227.0" prefHeight="25.0" prefWidth="45.0">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="idAttackLocationLabel" layoutX="338.0" layoutY="263.0" text="Attack Location (D20)">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idAttackLocationText" layoutX="495.0" layoutY="261.0" prefHeight="25.0" prefWidth="45.0">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="idDamageValueLabel" layoutX="383.0" layoutY="296.0" text="Damage (D10)">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idDamageValueText" layoutX="495.0" layoutY="293.0" prefHeight="25.0" prefWidth="45.0">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="idAttackButton" disable="true" layoutX="368.0" layoutY="329.0" mnemonicParsing="false" onAction="#confirmAttack" prefHeight="25.0" prefWidth="97.0" text="Accept" textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idAttackerHealthLabel" layoutX="41.0" layoutY="121.0" text="Attacker Health">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="idAttackerHealthText" editable="false" layoutX="41.0" layoutY="146.0" prefHeight="134.0" prefWidth="133.0">
          <effect>
             <Lighting diffuseConstant="1.05" surfaceScale="1.51">
                <bumpInput>
@@ -103,49 +246,125 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </TextArea>
-      <Label fx:id="idBackgroundLabel" layoutX="41.0" layoutY="240.0" text="Remaining health">
+      <Label fx:id="idDefenderHealthLabel" layoutX="39.0" layoutY="286.0" text="Defender Health">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <ToggleButton fx:id="idAction2" disable="true" layoutX="135.0" layoutY="169.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Standby">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
+      <TextArea fx:id="idDefenderHealthText" editable="false" layoutX="41.0" layoutY="306.0" prefHeight="134.0" prefWidth="133.0">
          <effect>
-            <Lighting diffuseConstant="1.05">
+            <Lighting diffuseConstant="1.05" surfaceScale="1.51">
                <bumpInput>
-                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+                  <Shadow height="0.0" radius="0.0" width="0.0" />
                </bumpInput>
                <light>
-                  <Light.Distant color="#ffc180" />
+                  <Light.Distant color="#ffbf80" />
                </light>
             </Lighting>
          </effect>
-         <toggleGroup>
-            <ToggleGroup fx:id="Action" />
-         </toggleGroup>
-      </ToggleButton>
-      <ToggleButton fx:id="idAction1" disable="true" layoutX="34.0" layoutY="169.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Attack" toggleGroup="$Action">
          <font>
-            <Font name="System Bold Italic" size="12.0" />
+            <Font name="System Italic" size="12.0" />
          </font>
+      </TextArea>
+      <Label fx:id="idAttackInfoLabel" layoutX="203.0" layoutY="354.0" text="Attack Information">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idAttackInfoText" editable="false" layoutX="200.0" layoutY="374.0" prefHeight="25.0" prefWidth="208.0">
          <effect>
-            <Lighting diffuseConstant="1.05">
+            <Lighting diffuseConstant="1.07">
                <bumpInput>
-                  <Shadow height="8.925" radius="3.98125" width="9.0" />
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
                </bumpInput>
                <light>
-                  <Light.Distant color="#ffc180" />
+                  <Light.Distant color="#ffc07d" />
                </light>
             </Lighting>
          </effect>
-      </ToggleButton>
-      <TableView fx:id="idCombatTable" layoutX="602.0" layoutY="36.0" prefHeight="441.0" prefWidth="252.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="idNewAttackButton" disable="true" layoutX="198.0" layoutY="422.0" mnemonicParsing="false" onAction="#newAttack" prefHeight="25.0" prefWidth="97.0" text="New Attack" textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idNextAttackerButton" layoutX="302.0" layoutY="422.0" mnemonicParsing="false" onAction="#nextAttacker" prefHeight="25.0" prefWidth="97.0" text="Next Attacker" textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idFinishTurnButton" disable="true" layoutX="405.0" layoutY="422.0" mnemonicParsing="false" onAction="#finishTurn" prefHeight="25.0" prefWidth="97.0" text="Finish Turn" textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idEndCombatButton" layoutX="508.0" layoutY="422.0" mnemonicParsing="false" onAction="#endCombat" prefHeight="25.0" prefWidth="97.0" text="End Combat" textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="idCombatOrderLabel" alignment="CENTER" editable="false" layoutX="633.0" layoutY="2.0" prefHeight="25.0" prefWidth="200.0" text="Combat order">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="idCombatOrderTable" layoutX="633.0" layoutY="30.0" prefHeight="441.0" prefWidth="200.0">
          <columns>
-            <TableColumn fx:id="idCharTypeColumn" prefWidth="75.0" text="Combatant" />
-            <TableColumn fx:id="idCharNameColumn" prefWidth="75.0" text="Name" />
-            <TableColumn fx:id="idCharInitiativeColumn" prefWidth="75.0" text="Initiative" />
+            <TableColumn fx:id="idCombatantColumn" editable="false" prefWidth="100.0" sortable="false" text="Combatant" />
+            <TableColumn fx:id="idInitiativeColumn" editable="false" prefWidth="100.0" sortable="false" text="Initiative" />
          </columns>
          <effect>
             <Lighting>
@@ -158,240 +377,5 @@
             </Lighting>
          </effect>
       </TableView>
-      <TextField fx:id="idCombatOrder" alignment="CENTER" editable="false" layoutX="602.0" layoutY="14.0" prefHeight="25.0" prefWidth="252.0" text="Combat order">
-         <effect>
-            <Lighting diffuseConstant="1.07">
-               <bumpInput>
-                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#ffc07d" />
-               </light>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </TextField>
-      <Button fx:id="idAttackPhaseButton" disable="true" layoutX="122.0" layoutY="421.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Start Attack Phase" textAlignment="CENTER">
-         <effect>
-            <Lighting diffuseConstant="1.26">
-               <light>
-                  <Light.Distant color="#ff9640" />
-               </light>
-               <bumpInput>
-                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
-               </bumpInput>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="idFinishTurnButton" disable="true" layoutX="314.0" layoutY="421.0" mnemonicParsing="false" onAction="#finishTurn" prefHeight="25.0" prefWidth="109.0" text="Finish Turn" textAlignment="CENTER">
-         <effect>
-            <Lighting diffuseConstant="1.26">
-               <light>
-                  <Light.Distant color="#ff9640" />
-               </light>
-               <bumpInput>
-                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
-               </bumpInput>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="idEndCombatButton" layoutX="453.0" layoutY="421.0" mnemonicParsing="false" onAction="#endCombat" prefHeight="25.0" prefWidth="109.0" text="End Combat" textAlignment="CENTER">
-         <effect>
-            <Lighting diffuseConstant="1.26">
-               <light>
-                  <Light.Distant color="#ff9640" />
-               </light>
-               <bumpInput>
-                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
-               </bumpInput>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="idContinueButton" disable="true" layoutX="34.0" layoutY="204.0" mnemonicParsing="false" onAction="#continueTurn" prefHeight="25.0" prefWidth="109.0" text="Accept" textAlignment="CENTER">
-         <effect>
-            <Lighting diffuseConstant="1.26">
-               <light>
-                  <Light.Distant color="#ff9640" />
-               </light>
-               <bumpInput>
-                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
-               </bumpInput>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Label fx:id="idPointsUsedLabel" layoutX="406.0" layoutY="161.0" text="Points used">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="idActionPointsText" layoutX="406.0" layoutY="191.0" prefHeight="25.0" prefWidth="94.0">
-         <effect>
-            <Lighting diffuseConstant="1.07">
-               <bumpInput>
-                  <Shadow height="1.0" radius="0.0" width="0.0" />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#ffc07d" />
-               </light>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </TextField>
-      <Label fx:id="idOpponentLabel" layoutX="423.0" layoutY="35.0" text="Opponent">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="idOpponentText" layoutX="423.0" layoutY="61.0" prefHeight="25.0" prefWidth="146.0">
-         <effect>
-            <Lighting diffuseConstant="1.07">
-               <bumpInput>
-                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#ffc07d" />
-               </light>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="idDiceValueText" layoutX="282.0" layoutY="328.0" prefHeight="25.0" prefWidth="45.0">
-         <effect>
-            <Lighting diffuseConstant="1.07">
-               <bumpInput>
-                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#ffc07d" />
-               </light>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </TextField>
-      <Label fx:id="idDiceValueLabel" layoutX="280.0" layoutY="300.0" text="Dice Value (D20)">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <Button fx:id="idContinueButton1" disable="true" layoutX="282.0" layoutY="237.0" mnemonicParsing="false" onAction="#continueTurn" prefHeight="25.0" prefWidth="109.0" text="Accept" textAlignment="CENTER">
-         <effect>
-            <Lighting diffuseConstant="1.26">
-               <light>
-                  <Light.Distant color="#ff9640" />
-               </light>
-               <bumpInput>
-                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
-               </bumpInput>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="idContinueButton2" disable="true" layoutX="282.0" layoutY="365.0" mnemonicParsing="false" onAction="#continueTurn" prefHeight="25.0" prefWidth="127.0" text="Continue Attacking" textAlignment="CENTER">
-         <effect>
-            <Lighting diffuseConstant="1.26">
-               <light>
-                  <Light.Distant color="#ff9640" />
-               </light>
-               <bumpInput>
-                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
-               </bumpInput>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="idContinueButton3" disable="true" layoutX="430.0" layoutY="365.0" mnemonicParsing="false" onAction="#continueTurn" prefHeight="25.0" prefWidth="133.0" text="Next Combatant" textAlignment="CENTER">
-         <effect>
-            <Lighting diffuseConstant="1.26">
-               <light>
-                  <Light.Distant color="#ff9640" />
-               </light>
-               <bumpInput>
-                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
-               </bumpInput>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="idContinueButton4" layoutX="100.0" layoutY="116.0" mnemonicParsing="false" onAction="#continueTurn" prefHeight="25.0" prefWidth="112.0" text="Next Combatant" textAlignment="CENTER">
-         <effect>
-            <Lighting diffuseConstant="1.26">
-               <light>
-                  <Light.Distant color="#ff9640" />
-               </light>
-               <bumpInput>
-                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
-               </bumpInput>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <TextField fx:id="idDiceValueText1" layoutX="40.0" layoutY="116.0" prefHeight="25.0" prefWidth="45.0">
-         <effect>
-            <Lighting diffuseConstant="1.07">
-               <bumpInput>
-                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#ffc07d" />
-               </light>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </TextField>
-      <Label fx:id="idDiceValueLabel1" layoutX="41.0" layoutY="96.0" text="Initiative value (D10)">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="idDiceValueLabel2" layoutX="428.0" layoutY="300.0" text="Attack Location (D20)">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="idDiceValueText2" layoutX="431.0" layoutY="328.0" prefHeight="25.0" prefWidth="45.0">
-         <effect>
-            <Lighting diffuseConstant="1.07">
-               <bumpInput>
-                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#ffc07d" />
-               </light>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </TextField>
    </children>
 </AnchorPane>

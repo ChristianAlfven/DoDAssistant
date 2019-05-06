@@ -1,81 +1,85 @@
 package Combat;
 
-        import CharacterFile.NPC;
-        import ActiveChars.NPCList;
-        import javafx.event.ActionEvent;
-        import javafx.fxml.FXML;
-        import javafx.fxml.FXMLLoader;
-        import javafx.scene.Parent;
-        import javafx.scene.Scene;
-        import javafx.scene.control.Button;
-        import javafx.scene.control.Label;
-        import javafx.scene.control.TableColumn;
-        import javafx.scene.control.TableView;
-        import javafx.scene.control.TextArea;
-        import javafx.scene.control.TextField;
-        import javafx.scene.control.ToggleButton;
-        import javafx.scene.control.ToggleGroup;
-        import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-        import java.io.IOException;
-        import java.net.URL;
-        import java.util.ArrayList;
-        import java.util.ResourceBundle;
-
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class ControllerCombat {
 
-    @FXML private Label idActiveCharLabel;
-    @FXML private TextField idActiveCharText;
-    @FXML private Label idPhaseLabel;
-    @FXML private Label idActionLabel;
+    @FXML private Label idCombatHeader;
+    @FXML private Label idAttackerLabel;
+    @FXML private Label idDefenderLabel;
+    @FXML private TextField idAttackerText;
+    @FXML private TextField idDefenderText;
+
     @FXML private Label idCombatPointsLabel;
-    @FXML private TextField idCombatPhaseText;
-    @FXML private TextField idTotPointsText;
-    @FXML private TextArea idHealthText;
-    @FXML private Label idBackgroundLabel;
-    @FXML private Button idInitiativeButton;
-    @FXML private ToggleButton idAction2;
-    @FXML private ToggleGroup Action;
-    @FXML private ToggleButton idAction1;
-    @FXML private TableView<?> idCombatTable;
-    @FXML private TableColumn<?, ?> idCharTypeColumn;
-    @FXML private TableColumn<?, ?> idCharNameColumn;
-    @FXML private TableColumn<?, ?> idCharInitiativeColumn;
-    @FXML private TextField idCombatOrder;
-    @FXML private Button idAttackPhaseButton;
+    @FXML private TextField idTotAttackerPointsText;
+    @FXML private TextField idTotDefenderPointsText;
+    @FXML private Label idPointsUsedLabel;
+    @FXML private TextField idUseAttackerPointsText;
+    @FXML private TextField idUseDefenderPointsText;
+    @FXML private Button idCombatPointsButton;
+
+    @FXML private Label idDiceValueLabel;
+    @FXML private TextField idDiceValueText;
+    @FXML private Label idAttackLocationLabel;
+    @FXML private TextField idAttackLocationText;
+    @FXML private Label idDamageValueLabel;
+    @FXML private TextField idDamageValueText;
+    @FXML private Button idAttackButton;
+
+    @FXML private Label idAttackerHealthLabel;
+    @FXML private TextArea idAttackerHealthText;
+    @FXML private Label idDefenderHealthLabel;
+    @FXML private TextArea idDefenderHealthText;
+    @FXML private Label idAttackInfoLabel;
+    @FXML private TextField idAttackInfoText;
+
+    @FXML private Button idNewAttackButton;
+    @FXML private Button idNextAttackerButton;
     @FXML private Button idFinishTurnButton;
     @FXML private Button idEndCombatButton;
-    @FXML private Button idContinueButton;
-    @FXML private Label idPointsUsedLabel;
-    @FXML private TextField idActionPointsText;
-    @FXML private Label idOpponentLabel;
-    @FXML private TextField idOpponentText;
-    @FXML private TextField idDiceValueText;
-    @FXML private Label idDiceValueLabel;
 
-    ArrayList<NPC> npcList;
-    NPCList instance = NPCList.createNPCList();
+    @FXML private TextField idCombatOrderLabel;
+    @FXML private TableView<?> idCombatOrderTable;
+    @FXML private TableColumn<?, ?> idCombatantColumn;
+    @FXML private TableColumn<?, ?> idInitiativeColumn;
 
 
-    public void initialize(URL url, ResourceBundle rb) {
-    npcList = instance.getNpcList();
+    @FXML
+    void confirmAttack(ActionEvent event) {
+
     }
 
     @FXML
-    void continueTurn(ActionEvent event) {
+    void confirmCombatPoints(ActionEvent event) {
 
     }
-
 
     @FXML
     void finishTurn(ActionEvent event) {
 
+    }
+
+    @FXML
+    void newAttack(ActionEvent event) {
 
     }
 
     @FXML
-    void initiativePhase(ActionEvent event) {
+    void nextAttacker(ActionEvent event) {
 
     }
 
@@ -89,7 +93,24 @@ public class ControllerCombat {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+
+    public void startAttack(){
+        idAttackerText.setText("");
+        idTotAttackerPointsText.setText("");
 
     }
-}
 
+    public void printHealthPoints(){
+        idAttackerHealthText.setText("" +
+                "Total:     " +
+                "Head:      " +
+                "Right Arm: " +
+                "Left Arm:  " +
+                "Chest:     " +
+                "Stomach:   " +
+                "Right Leg: " +
+                "Left Leg:  ");
+    }
+}

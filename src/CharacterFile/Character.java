@@ -217,8 +217,8 @@ public class Character {
         this.negativeTrait = negativeTrait;
     }
 
-    @Override
-    public String toString() {
+
+    public String debug() {
         return "Character{" +
                 "profession=" + profession +
                 ", gender=" + gender +
@@ -232,4 +232,10 @@ public class Character {
                 ", background='" + background + '\'' +
                 '}';
     }
+
+    @Override
+    public String toString() {
+        return "" + name + " the " + race + " " + profession;
+    }
+
 }

@@ -151,7 +151,7 @@ public class ControllerInitiative {
     }
 
     private void orderList(){
-        combatList.sort(combatList, combatant.getInitiative());
+//        combatList.sort(combatList, combatant.getInitiative());
         Combatant a;
         Combatant b;
         for(m=0; m<combatList.size(); m++){

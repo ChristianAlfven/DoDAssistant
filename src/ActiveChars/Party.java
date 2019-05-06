@@ -20,7 +20,7 @@ public class Party {
     ArrayList<Character> party;
 
     private Party() {
-        party = new ArrayList<Character>();
+        party = new ArrayList<Character>(6);
     }
 
     public void addCharacter(Character character){

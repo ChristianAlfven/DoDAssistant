@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class CharacterCreator implements Initializable {
+public class CharacterCreation implements Initializable {
 
 //    Image image = new Image("sample/sample.fxml");
     @FXML private ResourceBundle resources;
@@ -67,6 +67,9 @@ public class CharacterCreator implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Stage stage;
+        Parent root;
+        Scene scene;
         character = new Character();
     }
 
@@ -122,7 +125,39 @@ public class CharacterCreator implements Initializable {
 
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
-        character.setName(idNamebox.getText());
+        try{
+            character.setName(idNamebox.getText());
+            character.setBackground(idBackgroundBox.getText());
+            character.setHeight(Integer.parseInt(idHeightBox.getText()));
+            character.setWeight(Integer.parseInt(idWeightBox.getText()));
+            character.setAge(Integer.parseInt(idAgeBox.getText()));
+
+            if(idMale.isSelected()) {
+                character.setGender(Character.Gender.Male);
+            }else if(idFemale.isSelected()) {
+                character.setGender(Character.Gender.Female);
+            }
+
+            if(idCountry.isSelected()) {
+                character.setEnvironment(Character.Environment.Country);
+            }else if(idCity.isSelected()) {
+                character.setEnvironment(Character.Environment.City);
+            }else if(idAcademic.isSelected()) {
+                character.setEnvironment(Character.Environment.Academic);
+            }else if(idNature.isSelected()) {
+                character.setEnvironment(Character.Environment.Nature);
+            }
+
+            System.out.println(character.toString());
+
+            Stage stage = (Stage) idContinue.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("GUICharacterCreation2.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+            Party.getParty().addCharacter(character);
+
         character.setBackground(idBackgroundBox.getText());
         character.setHeight(Integer.parseInt(idHeightBox.getText()));
         character.setWeight(Integer.parseInt(idWeightBox.getText()));
@@ -146,13 +181,17 @@ public class CharacterCreator implements Initializable {
 
         System.out.println(character.toString());
 
-        Stage stage = (Stage) idContinue.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("GUICharacterCreation2.fxml"));
-        Scene scene = new Scene(root);
+        stage = (Stage) idContinue.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("GUICharacterCreation2.fxml"));
+        scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
 
         Party.getParty().addCharacter(character);
+    }catch(Exception exception){
+            exception.printStackTrace();
+        }
+
     }
 
 

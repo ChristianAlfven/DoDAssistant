@@ -2,7 +2,6 @@ package Lobby;
 
 import java.io.File;
 import java.io.IOException;
-import Creator.CharacterCreator;
 import CharacterFile.Character;
 import CharacterFile.Armor;
 import CharacterFile.Health;
@@ -55,8 +54,6 @@ public class ControllerNewGame {
     @FXML
     void buttonNewCharacter(ActionEvent event) throws IOException {
         Stage stage;
-
-        //CharacterCreator characterCreator = new CharacterCreator();
 
         stage = (Stage) idNewCharacter.getScene().getWindow();
         URL url = new File("src/Creator/GUICharacterCreation.fxml").toURI().toURL();

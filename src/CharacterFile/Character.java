@@ -14,8 +14,7 @@ public class Character {
 
     Health health;
     Armor armor;
-//    Skillset skillset;
-    //SpecialTrait[] specialTraits;
+    Skillset skillset;
     //Inventory inventory;
 
     private Profession profession;

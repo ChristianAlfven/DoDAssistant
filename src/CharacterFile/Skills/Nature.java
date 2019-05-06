@@ -1,37 +1,21 @@
 package CharacterFile.Skills;
 
-public class Culture extends Skill{
+public class Nature extends Skill{
 
-    private int elvish;
-    private int dwarfish;
     private int westlands;
     private int midlands;
     private int eastheim;
-    private int orcish;
+    private int soj;
+    private int nhordlands;
+    private int underworld;
 
-    public Culture(){
-        elvish = 0;
-        dwarfish = 0;
+    public Nature(){
         westlands = 0;
         midlands = 0;
         eastheim = 0;
-        orcish = 0;
-    }
-
-    public int getElvish() {
-        return elvish;
-    }
-
-    public void setElvish(int elvish) {
-        this.elvish = elvish;
-    }
-
-    public int getDwarfish() {
-        return dwarfish;
-    }
-
-    public void setDwarfish(int dwarfish) {
-        this.dwarfish = dwarfish;
+        soj = 0;
+        nhordlands = 0;
+        underworld = 0;
     }
 
     public int getWestlands() {
@@ -58,11 +42,27 @@ public class Culture extends Skill{
         this.eastheim = eastheim;
     }
 
-    public int getOrcish() {
-        return orcish;
+    public int getSoj() {
+        return soj;
     }
 
-    public void setOrcish(int orcish) {
-        this.orcish = orcish;
+    public void setSoj(int soj) {
+        this.soj = soj;
+    }
+
+    public int getNhordlands() {
+        return nhordlands;
+    }
+
+    public void setNhordlands(int nhordlands) {
+        this.nhordlands = nhordlands;
+    }
+
+    public int getUnderworld() {
+        return underworld;
+    }
+
+    public void setUnderworld(int underworld) {
+        this.underworld = underworld;
     }
 }

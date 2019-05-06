@@ -1,11 +1,11 @@
 package CharacterFile.Skills;
 
-public class Geography {
+public class Geography extends Skill{
 
     private int westland;
     private int midland;
     private int eastheim;
-    private int nhoordland;
+    private int nhordland;
     private int soj;
     private int underworld;
 
@@ -13,7 +13,7 @@ public class Geography {
         westland = 0;
         midland = 0;
         eastheim = 0;
-        nhoordland = 0;
+        nhordland = 0;
         soj = 0;
         underworld = 0;
     }
@@ -43,11 +43,11 @@ public class Geography {
     }
 
     public int getNhoordland() {
-        return nhoordland;
+        return nhordland;
     }
 
     public void setNhoordland(int nhoordland) {
-        this.nhoordland = nhoordland;
+        this.nhordland = nhoordland;
     }
 
     public int getSoj() {

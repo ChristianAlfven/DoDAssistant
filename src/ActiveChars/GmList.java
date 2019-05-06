@@ -33,6 +33,10 @@ public class GmList {
         return gmList;
     }
 
+    public void setGmList(ArrayList<Combatant> gmList){
+        this.gmList = gmList;
+    }
+
     private void createTestUnits(){
         Combatant orc = new Combatant("Orc1", 20, 25);
         gmList.add(orc);

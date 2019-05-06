@@ -1,5 +1,6 @@
 package Combat;
 
+import CharacterFile.Combatant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,7 +60,11 @@ public class ControllerCombat {
 
     private Stage stage;
     private Parent root;
+    public Combatant[] combatOrder;
 
+    public void initialize() {
+
+    }
 
     @FXML
     void confirmAttack(ActionEvent event) {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Party {
 
-    ObservableList<Integer> index;
+    int index;
     ArrayList<Character> party;
     private static Party ourParty = null;
 
@@ -35,12 +35,12 @@ public class Party {
     }
 
 
-    public void setIndex(ObservableList<Integer> index) {
+    public void setIndex(int index) {
         this.index = index;
     }
 
     public int getIndex() {
-        return Integer.parseInt(String.valueOf(index));
+        return index;
     }
 
 }

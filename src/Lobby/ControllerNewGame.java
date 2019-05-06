@@ -60,6 +60,7 @@ public class ControllerNewGame implements Initializable {
         character3.setCombatPoints(321);
         character3.setRace(Character.Race.Human);
 
+        Party.getParty().addCharacter(character3);
         for (int i = 0; i < Party.getParty().getArray(); i++) {
             list.add(Party.getParty().getCharacter(i));
         }
@@ -77,6 +78,7 @@ public class ControllerNewGame implements Initializable {
         character1.setAge(12);
         character1.setProfession(Character.Profession.Priest);
         character1.setRace(Character.Race.Human);
+        character1.setGender(Character.Gender.Female);
 
         Party.getParty().addCharacter(character1);
 
@@ -111,7 +113,7 @@ public class ControllerNewGame implements Initializable {
 
     @FXML
     void buttonEdit(ActionEvent event) throws IOException, URISyntaxException {
-        Party.getParty().setIndex(idCharacterTable.getSelectionModel().getSelectedIndices());
+        Party.getParty().setIndex(idCharacterTable.getSelectionModel().getSelectedIndex());
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("GUIEdit.fxml"));

@@ -3,17 +3,19 @@ package CharacterFile;
 public class Combatant {
     private String name;
     private String race;
-    private int combatPoints;
+    private int totCombatPoints;
+    private int remainingCombatPoints;
     private int damageBonus;
     private Health health;
     private Armor armor;
     private int initiative;
 
 
-    public Combatant(String name, int combatPoints, int health) {
+    public Combatant(String name, int totCombatPoints, int health) {
         this.name = name;
-        this.combatPoints = combatPoints;
+        this.totCombatPoints = totCombatPoints;
         this.health = new Health(health);
+        this.remainingCombatPoints = totCombatPoints;
 
         armor = new Armor();
         armor.setHead(4);
@@ -41,12 +43,12 @@ public class Combatant {
         this.race = race;
     }
 
-    public int getCombatPoints() {
-        return combatPoints;
+    public int getTotCombatPoints() {
+        return totCombatPoints;
     }
 
-    public void setCombatPoints(int combatPoints) {
-        this.combatPoints = combatPoints;
+    public void setTotCombatPoints(int totCombatPoints) {
+        this.totCombatPoints = totCombatPoints;
     }
 
     public int getDamageBonus() {
@@ -80,4 +82,8 @@ public class Combatant {
     public void setInitiative(int initiative) {
         this.initiative = initiative;
     }
+
+    public int getRemainingCombatPoints() { return remainingCombatPoints; }
+
+    public void setRemainingCombatPoints(int remainingCombatPoints) { this.remainingCombatPoints = remainingCombatPoints; }
 }

@@ -57,6 +57,9 @@ public class ControllerCombat {
     @FXML private TableColumn<?, ?> idCombatantColumn;
     @FXML private TableColumn<?, ?> idInitiativeColumn;
 
+    private Stage stage;
+    private Parent root;
+
 
     @FXML
     void confirmAttack(ActionEvent event) {
@@ -69,7 +72,12 @@ public class ControllerCombat {
     }
 
     @FXML
-    void finishTurn(ActionEvent event) {
+    void finishTurn(ActionEvent event) throws IOException {
+        stage = (Stage) idEndCombatButton.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("GUIInitiative.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 
@@ -85,11 +93,10 @@ public class ControllerCombat {
 
     @FXML
     void endCombat(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
+
 
         stage = (Stage) idEndCombatButton.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Lobby/GUINewGame.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

@@ -17,7 +17,12 @@ public class Party {
         return ourParty;
     }
 
+
     ArrayList<Character> party;
+
+    public int getArray() {
+        return party.size();
+    }
 
     private Party() {
         party = new ArrayList<Character>(6);

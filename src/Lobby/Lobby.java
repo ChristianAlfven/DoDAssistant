@@ -1,6 +1,6 @@
 package Lobby;
 
-import ActiveChars.NpcList;
+import ActiveChars.GmList;
 import ActiveChars.Party;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,7 @@ public class Lobby extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         Party party = Party.getParty();
-        NpcList npcList = NpcList.getNpcList();
+        GmList gmList = GmList.createGmList();
 
 
         Pane root = FXMLLoader.load(getClass().getResource("/Lobby/GUINewGame.fxml"));

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Combat.Initiative">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Combat.ControllerCombat">
    <children>
       <ImageView fitHeight="477.0" fitWidth="633.0" layoutX="-3.0">
          <image>
@@ -211,7 +211,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <Button fx:id="idAttackButton" disable="true" layoutX="368.0" layoutY="329.0" mnemonicParsing="false" onAction="#confirmAttack" prefHeight="25.0" prefWidth="97.0" text="Accept" textAlignment="CENTER">
+      <Button fx:id="idAttackButton" layoutX="368.0" layoutY="329.0" mnemonicParsing="false" onAction="#confirmAttack" prefHeight="25.0" prefWidth="97.0" text="Accept" textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <light>
@@ -286,7 +286,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <Button fx:id="idNewAttackButton" disable="true" layoutX="198.0" layoutY="422.0" mnemonicParsing="false" onAction="#newAttack" prefHeight="25.0" prefWidth="97.0" text="New Attack" textAlignment="CENTER">
+      <Button fx:id="idNewAttackButton" layoutX="198.0" layoutY="422.0" mnemonicParsing="false" onAction="#newAttack" prefHeight="25.0" prefWidth="97.0" text="New Attack" textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <light>
@@ -316,7 +316,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idFinishTurnButton" disable="true" layoutX="405.0" layoutY="422.0" mnemonicParsing="false" onAction="#finishTurn" prefHeight="25.0" prefWidth="97.0" text="Finish Turn" textAlignment="CENTER">
+      <Button fx:id="idFinishTurnButton" layoutX="405.0" layoutY="422.0" mnemonicParsing="false" onAction="#finishTurn" prefHeight="25.0" prefWidth="97.0" text="Finish Turn" textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <light>

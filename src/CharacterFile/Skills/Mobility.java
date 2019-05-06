@@ -1,10 +1,10 @@
 package CharacterFile.Skills;
 
-public class Jester extends Skill{
+public class Mobility extends Skill{
 
     private int skillLevel;
 
-    public Jester(){
+    public Mobility(){
         skillLevel = 0;
     }
 

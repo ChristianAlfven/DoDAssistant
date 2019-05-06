@@ -125,74 +125,65 @@ public class CharacterCreation implements Initializable {
 
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
-        try{
-            character.setName(idNamebox.getText());
-            character.setBackground(idBackgroundBox.getText());
-            character.setHeight(Integer.parseInt(idHeightBox.getText()));
-            character.setWeight(Integer.parseInt(idWeightBox.getText()));
-            character.setAge(Integer.parseInt(idAgeBox.getText()));
 
-            if(idMale.isSelected()) {
-                character.setGender(Character.Gender.Male);
-            }else if(idFemale.isSelected()) {
-                character.setGender(Character.Gender.Female);
+        System.out.println(character.toString());
+
+        if ((idNamebox.getText()!=null)&&(idAgeBox.getText()!=null)
+                &&(idBackgroundBox.getText()!=null)&&(idHeightBox.getText()!=null)
+                &&(idWeightBox.getText()!=null)&&(character.getProfession()!=null)
+                &&(character.getRace()!=null)&&(character.getSubrace()!=null)
+                &&(idNature.isSelected()||idCity.isSelected()||idCountry.isSelected()||idAcademic.isSelected())
+                &&(idMale.isSelected()||idFemale.isSelected()))
+        {
+            try {
+                character.setName(idNamebox.getText());
+                character.setBackground(idBackgroundBox.getText());
+                character.setHeight(Integer.parseInt(idHeightBox.getText()));
+                character.setWeight(Integer.parseInt(idWeightBox.getText()));
+                character.setAge(Integer.parseInt(idAgeBox.getText()));
+
+                if (idMale.isSelected()) {
+                    character.setGender(Character.Gender.Male);
+                } else if (idFemale.isSelected()) {
+                    character.setGender(Character.Gender.Female);
+                }
+
+                if (idCountry.isSelected()) {
+                    character.setEnvironment(Character.Environment.Country);
+                } else if (idCity.isSelected()) {
+                    character.setEnvironment(Character.Environment.City);
+                } else if (idAcademic.isSelected()) {
+                    character.setEnvironment(Character.Environment.Academic);
+                } else if (idNature.isSelected()) {
+                    character.setEnvironment(Character.Environment.Nature);
+                }
+
+                System.out.println(character.toString());
+
+                Party.getParty().addCharacter(character);
+
+            }catch(Exception exception){
+                Alert errorAlert = new Alert(Alert.AlertType.WARNING);
+                errorAlert.setHeaderText("Error");
+                errorAlert.setContentText("Please choose correct attributes");
+                errorAlert.showAndWait();
             }
-
-            if(idCountry.isSelected()) {
-                character.setEnvironment(Character.Environment.Country);
-            }else if(idCity.isSelected()) {
-                character.setEnvironment(Character.Environment.City);
-            }else if(idAcademic.isSelected()) {
-                character.setEnvironment(Character.Environment.Academic);
-            }else if(idNature.isSelected()) {
-                character.setEnvironment(Character.Environment.Nature);
-            }
-
-            System.out.println(character.toString());
 
             Stage stage = (Stage) idContinue.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("GUICharacterCreation2.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+        }else {
+            Alert errorAlert = new Alert(Alert.AlertType.WARNING);
+            errorAlert.setHeaderText("Error");
+            errorAlert.setContentText("Please choose all attributes");
+            errorAlert.showAndWait();
 
-            Party.getParty().addCharacter(character);
-
-        character.setBackground(idBackgroundBox.getText());
-        character.setHeight(Integer.parseInt(idHeightBox.getText()));
-        character.setWeight(Integer.parseInt(idWeightBox.getText()));
-        character.setAge(Integer.parseInt(idAgeBox.getText()));
-
-        if(idMale.isSelected()) {
-            character.setGender(Character.Gender.Male);
-        }else if(idFemale.isSelected()) {
-            character.setGender(Character.Gender.Female);
         }
-
-        if(idCountry.isSelected()) {
-            character.setEnvironment(Character.Environment.Country);
-        }else if(idCity.isSelected()) {
-            character.setEnvironment(Character.Environment.City);
-        }else if(idAcademic.isSelected()) {
-            character.setEnvironment(Character.Environment.Academic);
-        }else if(idNature.isSelected()) {
-            character.setEnvironment(Character.Environment.Nature);
-        }
-
-        System.out.println(character.toString());
-
-        stage = (Stage) idContinue.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("GUICharacterCreation2.fxml"));
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-        Party.getParty().addCharacter(character);
-    }catch(Exception exception){
-            exception.printStackTrace();
-        }
-
     }
+
+
 
 
     public Character createCharacter(){
@@ -217,8 +208,7 @@ public class CharacterCreation implements Initializable {
         character.setRace(Character.Race.Human);
     }
     public void setDwarf(ActionEvent event){
-        character.setRace(Character.Race.Human);
-
+        character.setRace(Character.Race.Dwarf);
     }
     public void setElf(ActionEvent event){
         character.setRace(Character.Race.Elf);
@@ -230,7 +220,6 @@ public class CharacterCreation implements Initializable {
     // SUBRACE METHODS
     public void setKorpikalla(ActionEvent event){
         character.setSubrace(Character.SubRace.Korpikalla);
-
     }
     public void setIllmalaina(ActionEvent event){
         character.setSubrace(Character.SubRace.Illmalaina);

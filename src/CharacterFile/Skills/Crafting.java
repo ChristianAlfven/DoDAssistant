@@ -1,6 +1,6 @@
 package CharacterFile.Skills;
 
-public class Crafting {
+public class Crafting extends Skill{
 
     private int metal;
     private int soft;
@@ -14,4 +14,35 @@ public class Crafting {
         wood = 0;
     }
 
+    public int getMetal() {
+        return metal;
+    }
+
+    public void setMetal(int metal) {
+        this.metal = metal;
+    }
+
+    public int getSoft() {
+        return soft;
+    }
+
+    public void setSoft(int soft) {
+        this.soft = soft;
+    }
+
+    public int getStone() {
+        return stone;
+    }
+
+    public void setStone(int stone) {
+        this.stone = stone;
+    }
+
+    public int getWood() {
+        return wood;
+    }
+
+    public void setWood(int wood) {
+        this.wood = wood;
+    }
 }

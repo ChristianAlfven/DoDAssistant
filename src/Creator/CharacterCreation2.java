@@ -3,11 +3,15 @@ package Creator;
 import ActiveChars.Party;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import CharacterFile.Character;
+import javafx.stage.Stage;
 
 
 import javax.swing.event.InternalFrameListener;
@@ -83,13 +87,27 @@ public class CharacterCreation2 implements Initializable {
 
     @FXML
     void pressContinue(ActionEvent event) {
-        if ((pos2 == null)||(neg == null)){
+        if ((pos2 == null) || (neg == null)) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Error");
             errorAlert.setContentText("Please choose all special traits");
             errorAlert.showAndWait();
+        } else {
+            character.setPositiveTrait1(pos1);
+            character.setPositiveTrait2(pos2);
+            character.setNegativeTrait(neg);
+            try {
+                Stage stage = (Stage) idContinue.getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("GUICharacterCreation3.fxml"));
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }
+
 
     @FXML
     void pressNegAgility(ActionEvent event) {

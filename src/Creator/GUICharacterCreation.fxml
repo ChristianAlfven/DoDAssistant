@@ -50,7 +50,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="idSubraceLabel" layoutX="69.0" layoutY="259.0" text="Subrace">
+      <Label fx:id="idSubraceLabel" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="46.0" layoutY="259.0" prefHeight="20.0" prefWidth="99.0" text="Subrace" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
@@ -331,7 +331,7 @@
             </Lighting>
          </effect>
       </ToggleButton>
-      <ToggleButton fx:id="idBuratja" layoutX="50.0" layoutY="345.0" mnemonicParsing="false" onAction="#setBuratja" prefHeight="25.0" prefWidth="90.0" text="Buratja">
+      <ToggleButton fx:id="idSubrace3" disable="true" layoutX="50.0" layoutY="345.0" mnemonicParsing="false" onAction="#setSubrace3" prefHeight="25.0" prefWidth="90.0">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -349,7 +349,7 @@
             <ToggleGroup fx:id="Subrace" />
          </toggleGroup>
       </ToggleButton>
-      <ToggleButton fx:id="idZvorda" layoutX="50.0" layoutY="312.0" mnemonicParsing="false" onAction="#setZvorda" prefHeight="25.0" prefWidth="90.0" text="Zvorda" toggleGroup="$Subrace">
+      <ToggleButton fx:id="idSubrace2" disable="true" layoutX="50.0" layoutY="312.0" mnemonicParsing="false" onAction="#setSubrace2" prefHeight="25.0" prefWidth="90.0" toggleGroup="$Subrace">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -364,7 +364,7 @@
             </Lighting>
          </effect>
       </ToggleButton>
-      <ToggleButton fx:id="idBorjornikka" layoutX="50.0" layoutY="279.0" mnemonicParsing="false" onAction="#setBorjornikka" prefHeight="25.0" prefWidth="90.0" selected="true" text="Borjornikka" toggleGroup="$Subrace">
+      <ToggleButton fx:id="idSubrace1" disable="true" layoutX="50.0" layoutY="279.0" mnemonicParsing="false" onAction="#setSubrace1" prefHeight="25.0" prefWidth="90.0" toggleGroup="$Subrace">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>

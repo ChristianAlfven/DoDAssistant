@@ -104,7 +104,7 @@ public class ControllerNewGame implements Initializable {
     @FXML
     void buttonNewCharacter(ActionEvent event) throws IOException {
         Stage stage = (Stage) idNewCharacter.getScene().getWindow();
-        URL url = new File("C:\\Users\\hejpe\\IdeaProjects\\DoDAssistant\\src\\Creator\\GUICharacterCreation.fxml").toURI().toURL();
+        URL url = new File("src/Creator/GUICharacterCreation.fxml").toURI().toURL();
         Pane root = FXMLLoader.load((url));
         Scene scene = new Scene(root);
         stage.setScene(scene);

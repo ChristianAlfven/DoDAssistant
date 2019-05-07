@@ -145,6 +145,7 @@ public class ControllerEdit implements Initializable {
     private ToggleButton idMage;
     private Character.Gender Male;
 
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -1,6 +1,7 @@
 package Lobby;
 
 import ActiveChars.Party;
+import CharacterFile.Character;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,7 +11,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,9 +21,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class ControllerEdit implements Initializable {
 
@@ -146,12 +143,31 @@ public class ControllerEdit implements Initializable {
 
     @FXML
     private ToggleButton idMage;
-
+    private Character.Gender Male;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println(Party.getParty().getCharacter(Party.getParty().getIndex()).getName());
+        idNamebox.setText(Party.getParty().getCharacter(Party.getParty().getIndex()).getName());
+
+        if (Party.getParty().getCharacter(Party.getParty().getIndex()).getGender() == Male) {
+            idMale.setSelected(true);
+        } else if (Party.getParty().getCharacter(Party.getParty().getIndex()).getGender() == Character.Gender.Female) {
+            idFemale.setSelected(true);
+        }
+
+        idAgeBox.setText(String.valueOf(Party.getParty().getCharacter(Party.getParty().getIndex()).getAge()));
+
+        if (Party.getParty().getCharacter(Party.getParty().getIndex()).getRace() == Character.Race.Human) {
+            idHuman.setSelected(true);
+        } else if (Party.getParty().getCharacter(Party.getParty().getIndex()).getRace() == Character.Race.Dwarf) {
+            idDwarf.setSelected(true);
+        } else if (Party.getParty().getCharacter(Party.getParty().getIndex()).getRace() == Character.Race.Elf) {
+            idElf.setSelected(true);
+        } else if (Party.getParty().getCharacter(Party.getParty().getIndex()).getRace() == Character.Race.HalfBlood) {
+            idHalfBlood.setSelected(true);
+        }
+
     }
 
 
@@ -169,6 +185,7 @@ public class ControllerEdit implements Initializable {
 
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
+        System.out.println(Party.getParty().getCharacter(Party.getParty().getIndex()).debug());
 
     }
 

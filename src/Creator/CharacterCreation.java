@@ -126,7 +126,7 @@ public class CharacterCreation implements Initializable {
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
 
-        System.out.println(character.toString());
+        System.out.println(character.debug());
 
         if ((idNamebox.getText()!=null)&&(idAgeBox.getText()!=null)
                 &&(idBackgroundBox.getText()!=null)&&(idHeightBox.getText()!=null)

@@ -9,13 +9,16 @@ public class Combatant {
     private Health health;
     private Armor armor;
     private int initiative;
+    private boolean isPlayer;
+    private int playerIndex;
 
 
-    public Combatant(String name, int totCombatPoints, int health) {
+    public Combatant(String name, int totCombatPoints, int health, boolean isPlayer) {
         this.name = name;
         this.totCombatPoints = totCombatPoints;
         this.health = new Health(health);
         this.remainingCombatPoints = totCombatPoints;
+        this.isPlayer = isPlayer;
 
         armor = new Armor();
         armor.setHead(4);
@@ -86,4 +89,10 @@ public class Combatant {
     public int getRemainingCombatPoints() { return remainingCombatPoints; }
 
     public void setRemainingCombatPoints(int remainingCombatPoints) { this.remainingCombatPoints = remainingCombatPoints; }
+
+    public boolean isPlayer() { return isPlayer; }
+
+    public int getPlayerIndex() { return playerIndex; }
+
+    public void setPlayerIndex(int playerIndex) { this.playerIndex = playerIndex; }
 }

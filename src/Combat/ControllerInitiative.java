@@ -62,6 +62,8 @@ public class ControllerInitiative {
     private int j = 0;
     private int k = 0;
 
+    private boolean isAttacking;
+
 
     public void initialize() {
         i = 0;
@@ -89,8 +91,7 @@ public class ControllerInitiative {
                     "\n" + combatList.get(1).getName()+
                     "\n" + combatList.get(2).getName());
             i = 0;
-            actionChoice();
-
+            idActivityText.setText(combatList.get(k).getName());
 
         }else{
             idInitiativeText.setText(combatList.get(i).getName());
@@ -100,20 +101,41 @@ public class ControllerInitiative {
 
     @FXML
     void attacking(ActionEvent event) {
-        if(k < combatList.size()) {
-            combatOrder[i] = combatList.get(k-1);
-            i += 1;
-        }
-        actionChoice();
+        actionChoice(true);
     }
 
     @FXML
     void standby(ActionEvent event) {
-        if(k < combatList.size()) {
-            combatOrder[j] = combatList.get(k-1);
-            j -= 1;
+        actionChoice(false);
+    }
+
+    private void actionChoice(boolean attacking){
+        System.out.println("i = " + i +
+                "j = " + j +
+                "k = " + k);
+        if(k < combatList.size()-1 && attacking){
+            combatOrder[i] = combatList.get(k);
+            i++;
+            k += 1;
+            idActivityText.setText(combatList.get(k).getName());
+
+
+        }else if(k < combatList.size()-1 && !attacking){
+            combatOrder[j] = combatList.get(k);
+            j--;
+            k += 1;
+            idActivityText.setText(combatList.get(k).getName());
+
+        }else{
+            combatOrder[i] = combatList.get(k);
+            idActivityText.clear();
+            idAttackButton.setDisable(true);
+            idStandbyButton.setDisable(true);
+
+            System.out.println(combatOrder[0].getName());
+            System.out.println(combatOrder[1].getName());
+            System.out.println(combatOrder[2].getName());
         }
-        actionChoice();
     }
 
 
@@ -121,7 +143,8 @@ public class ControllerInitiative {
     private void gatherParty(){
         while (party.getCharacter(i) != null){
             player = Party.getParty().getCharacter(i);
-            combatant = new Combatant(player.getName(), player.getCombatPoints(), player.getHealth().getTotal());
+            combatant = new Combatant(player.getName(), player.getCombatPoints(), player.getHealth().getTotal(), true);
+            combatant.setPlayerIndex(i);
             combatant.setArmor(player.getArmor());
             combatList.add(combatant);
             i += i;
@@ -130,23 +153,6 @@ public class ControllerInitiative {
 
     private void gatherGmList() {
         combatList = gmInstance.getGmList();
-    }
-
-    private void actionChoice(){
-        System.out.println("i = " + i +
-                            "j = " + j +
-                            "k = " + k);
-
-        if(k == combatList.size()){
-            idActivityText.clear();
-            idAttackButton.setDisable(true);
-            idStandbyButton.setDisable(true);
-
-            System.out.println(combatOrder[0].getName());
-        }else{
-            idActivityText.setText(combatList.get(k).getName());
-            k += 1;
-        }
     }
 
     private void orderList(){
@@ -163,6 +169,14 @@ public class ControllerInitiative {
 
     @FXML
     void enterAttackPhase(ActionEvent event) throws IOException {
+        combatList.clear();
+        for(i=0; i<combatOrder.length; i++){
+            if(combatOrder[i] != null){
+                combatList.add(combatOrder[i]);
+            }
+        }
+        gmInstance.setGmList(combatList);
+
         stage = (Stage) idEndCombatButton.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("GUICombat.fxml"));
         Scene scene = new Scene(root);

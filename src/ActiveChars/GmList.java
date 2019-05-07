@@ -38,11 +38,11 @@ public class GmList {
     }
 
     private void createTestUnits(){
-        Combatant orc = new Combatant("Orc1", 20, 25);
+        Combatant orc = new Combatant("Orc1", 20, 25, false);
         gmList.add(orc);
-        orc = new Combatant("Orc2", 20, 25);
+        orc = new Combatant("Orc2", 20, 25, false);
         gmList.add(orc);
-        orc = new Combatant("Orc3", 20, 25);
+        orc = new Combatant("Orc3", 20, 25, false);
         gmList.add(orc);
     }
 }

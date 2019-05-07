@@ -54,18 +54,23 @@ public class ControllerNewGame implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Character character3 = new Character();
-
-        character3.setAge(2);
-        character3.setCombatPoints(321);
-        character3.setRace(Character.Race.Human);
-
-        Party.getParty().addCharacter(character3);
         for (int i = 0; i < Party.getParty().getArray(); i++) {
+            Party.getParty().addCharacter(Party.getParty().getCharacter(i));
             list.add(Party.getParty().getCharacter(i));
         }
 
         idCharacterTable.setItems(list);
+
+        //        Character character3 = new Character();
+//
+//        character3.setAge(2);
+//        character3.setCombatPoints(321);
+//        character3.setRace(Character.Race.Human);
+//
+//        Party.getParty().addCharacter(character3);
+//        for (int i = 0; i < Party.getParty().getArray(); i++) {
+//        }
+
 
     }
 
@@ -99,7 +104,7 @@ public class ControllerNewGame implements Initializable {
     @FXML
     void buttonNewCharacter(ActionEvent event) throws IOException {
         Stage stage = (Stage) idNewCharacter.getScene().getWindow();
-        URL url = new File("src/Creator/GUICharacterCreation.fxml").toURI().toURL();
+        URL url = new File("C:\\Users\\hejpe\\IdeaProjects\\DoDAssistant\\src\\Creator\\GUICharacterCreation.fxml").toURI().toURL();
         Pane root = FXMLLoader.load((url));
         Scene scene = new Scene(root);
         stage.setScene(scene);

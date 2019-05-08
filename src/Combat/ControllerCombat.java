@@ -168,7 +168,7 @@ public class ControllerCombat {
 
 
         stage = (Stage) idEndCombatButton.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("/Lobby/GUINewGame.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Game/GUIGameLobby.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

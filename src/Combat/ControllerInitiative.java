@@ -138,8 +138,6 @@ public class ControllerInitiative {
         }
     }
 
-
-
     private void gatherParty(){
         while (party.getCharacter(i) != null){
             player = Party.getParty().getCharacter(i);
@@ -188,7 +186,7 @@ public class ControllerInitiative {
     @FXML
     void endCombat(ActionEvent event) throws IOException {
         stage = (Stage) idEndCombatButton.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("/Lobby/GUINewGame.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Game/GUIGameLobby.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

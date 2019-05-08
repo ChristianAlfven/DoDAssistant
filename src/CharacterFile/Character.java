@@ -52,9 +52,11 @@ public class Character {
         return health;
     }
 
-    public void setHealth(int hp) {
-        Health health = new Health(hp);
+    public void setHealth(Health health) {
+        this.health = health;
     }
+
+    public void constructHealth(int hp){Health health = new Health(hp);}
 
     public Armor getArmor() {
         return armor;

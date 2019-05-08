@@ -1,20 +1,24 @@
 package Combat;
 
+import ActiveChars.GmList;
+import ActiveChars.Party;
+import CharacterFile.Combatant;
+import com.sun.jdi.Value;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class ControllerCombat {
 
@@ -53,13 +57,44 @@ public class ControllerCombat {
     @FXML private Button idEndCombatButton;
 
     @FXML private TextField idCombatOrderLabel;
-    @FXML private TableView<?> idCombatOrderTable;
-    @FXML private TableColumn<?, ?> idCombatantColumn;
-    @FXML private TableColumn<?, ?> idInitiativeColumn;
+    @FXML private TableView<Combatant> idCombatOrderTable;
+    @FXML private TableColumn<String, Combatant> idCombatantColumn;
+    @FXML private TableColumn<Integer, Combatant> idInitiativeColumn;
 
     private Stage stage;
     private Parent root;
+    private Party party = Party.getParty();
+    private GmList gmInstance = GmList.createGmList();
+    private ObservableList<Combatant> combatList;
 
+    private int listIndex;
+    private String input;
+    private String output;
+
+    public void initialize() {
+        combatList = FXCollections.observableArrayList();
+        combatList.addAll(gmInstance.getGmList());
+        idAttackerText.setText(combatList.get(listIndex).getName());
+        idTotAttackerPointsText.setText(String.valueOf(combatList.get(listIndex).getTotCombatPoints()));
+
+        idCombatOrderTable.setItems(combatList);
+
+        //idCombatantColumn = new TableColumn<>("Name");
+        //idCombatantColumn.setCellFactory(new PropertyValueFactory<>("name"));
+
+        //idInitiativeColumn = new TableColumn<>("Initiative");
+
+
+        for(int i=0; i<combatList.size(); i++) {
+
+            idCombatantColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            //idCombatantColumn.setText(combatList.get(i).getName());
+            idInitiativeColumn.setCellValueFactory(new PropertyValueFactory<>("initiative"));
+            //idInitiativeColumn.setText(String.valueOf(combatList.get(i).getInitiative()));
+
+        }
+        listIndex++;
+    }
 
     @FXML
     void confirmAttack(ActionEvent event) {

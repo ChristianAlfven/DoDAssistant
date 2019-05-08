@@ -136,7 +136,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <Button fx:id="idCombatPointsButton" layoutX="368.0" layoutY="185.0" mnemonicParsing="false" onAction="#confirmCombatPoints" prefHeight="25.0" prefWidth="97.0" text="Accept" textAlignment="CENTER">
+      <Button fx:id="idCombatPointsButton" layoutX="368.0" layoutY="223.0" mnemonicParsing="false" onAction="#confirmCombatPoints" prefHeight="25.0" prefWidth="97.0" text="Accept" textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <light>
@@ -151,12 +151,12 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="idDiceValueLabel" layoutX="368.0" layoutY="230.0" text="Dice Value (D20)">
+      <Label fx:id="idDiceValueLabel" layoutX="270.0" layoutY="190.0" text="Dice Value (D20)">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="idDiceValueText" layoutX="495.0" layoutY="227.0" prefHeight="25.0" prefWidth="45.0">
+      <TextField fx:id="idDiceValueText" layoutX="394.0" layoutY="187.0" prefHeight="25.0" prefWidth="45.0">
          <effect>
             <Lighting diffuseConstant="1.07">
                <bumpInput>
@@ -226,12 +226,12 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="idAttackerHealthLabel" layoutX="41.0" layoutY="121.0" text="Attacker Health">
+      <Label fx:id="idAttackerHealthLabel" layoutX="41.0" layoutY="251.0" text="Attacker Health">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TextArea fx:id="idAttackerHealthText" editable="false" layoutX="41.0" layoutY="146.0" prefHeight="134.0" prefWidth="133.0">
+      <TextArea fx:id="idAttackerHealthText" editable="false" layoutX="41.0" layoutY="275.0" prefHeight="134.0" prefWidth="133.0">
          <effect>
             <Lighting diffuseConstant="1.05" surfaceScale="1.51">
                <bumpInput>
@@ -246,12 +246,12 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </TextArea>
-      <Label fx:id="idDefenderHealthLabel" layoutX="39.0" layoutY="286.0" text="Defender Health">
+      <Label fx:id="idDefenderHealthLabel" layoutX="192.0" layoutY="251.0" text="Defender Health">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TextArea fx:id="idDefenderHealthText" editable="false" layoutX="41.0" layoutY="306.0" prefHeight="134.0" prefWidth="133.0">
+      <TextArea fx:id="idDefenderHealthText" editable="false" layoutX="190.0" layoutY="275.0" prefHeight="134.0" prefWidth="133.0">
          <effect>
             <Lighting diffuseConstant="1.05" surfaceScale="1.51">
                <bumpInput>
@@ -266,12 +266,12 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </TextArea>
-      <Label fx:id="idAttackInfoLabel" layoutX="203.0" layoutY="354.0" text="Attack Information">
+      <Label fx:id="idAttackInfoLabel" layoutX="39.0" layoutY="175.0" text="Attack Information">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="idAttackInfoText" editable="false" layoutX="200.0" layoutY="374.0" prefHeight="25.0" prefWidth="208.0">
+      <TextField fx:id="idAttackInfoText" editable="false" layoutX="39.0" layoutY="198.0" prefHeight="25.0" prefWidth="208.0">
          <effect>
             <Lighting diffuseConstant="1.07">
                <bumpInput>

@@ -3,7 +3,6 @@ package Combat;
 import ActiveChars.GmList;
 import ActiveChars.Party;
 import CharacterFile.Combatant;
-import com.sun.jdi.Value;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,11 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
 
 public class ControllerCombat {
 
@@ -67,43 +63,77 @@ public class ControllerCombat {
     private GmList gmInstance = GmList.createGmList();
     private ObservableList<Combatant> combatList;
 
-    private int listIndex;
+    private int attackerIndex;
+    private int defenderIndex;
     private String input;
     private String output;
+    private Combatant defender;
+    private boolean attackHit = false;
+    private boolean attackDmg = false;
+    private int pointReduction;
 
     public void initialize() {
         combatList = FXCollections.observableArrayList();
         combatList.addAll(gmInstance.getGmList());
-        idAttackerText.setText(combatList.get(listIndex).getName());
-        idTotAttackerPointsText.setText(String.valueOf(combatList.get(listIndex).getTotCombatPoints()));
+        setAttacker();
 
         idCombatOrderTable.setItems(combatList);
 
-        //idCombatantColumn = new TableColumn<>("Name");
-        //idCombatantColumn.setCellFactory(new PropertyValueFactory<>("name"));
-
-        //idInitiativeColumn = new TableColumn<>("Initiative");
-
-
         for(int i=0; i<combatList.size(); i++) {
-
             idCombatantColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-            //idCombatantColumn.setText(combatList.get(i).getName());
             idInitiativeColumn.setCellValueFactory(new PropertyValueFactory<>("initiative"));
-            //idInitiativeColumn.setText(String.valueOf(combatList.get(i).getInitiative()));
-
         }
-        listIndex++;
     }
 
     @FXML
     void confirmAttack(ActionEvent event) {
-
+        attackHit = false;
     }
 
     @FXML
     void confirmCombatPoints(ActionEvent event) {
+        if(attackHit){
+            if(Integer.parseInt(idDiceValueText.getText()) <= Integer.parseInt(idUseDefenderPointsText.getText())){
+                successfulParry();
+            }else{
+                idAttackInfoText.setText("Parry failed!");
+                idAttackButton.setDisable(false);
+            }
+        }else{
+            if(Integer.parseInt(idDiceValueText.getText()) <= Integer.parseInt(idUseAttackerPointsText.getText())){
+                successfulAttack();
+            }else{
+                idAttackInfoText.setText("Attack missed!");
+            }
+            pointReduction = combatList.get(attackerIndex).getRemainingCombatPoints() - Integer.parseInt(idUseAttackerPointsText.getText());
+            combatList.get(attackerIndex).setRemainingCombatPoints(pointReduction);
+        }
+    }
 
+    public int getDefenderIndex(){
+        int i = 0;
+        while(i < combatList.size()){
+            if(idDefenderText.equals(combatList.get(i).getName())){
+                return i;
+            }
+            i++;
+        }
+        idAttackInfoText.setText("No opponent with that name!");
+        return 0; //This has to be changed later
+    }
+
+    public void successfulAttack(){
+        attackHit = true;
+        idAttackInfoText.setText("Attack Successful!");
+        defenderIndex = getDefenderIndex();
+        idTotDefenderPointsText.setText(String.valueOf(combatList.get(defenderIndex).getRemainingCombatPoints()));
+        idTotAttackerPointsText.clear();
+        idUseAttackerPointsText.clear();
+        idDiceValueText.clear();
+    }
+    public void successfulParry(){
+        attackHit = false;
+        idAttackInfoText.setText("Parry Successful!");
     }
 
     @FXML
@@ -118,12 +148,19 @@ public class ControllerCombat {
 
     @FXML
     void newAttack(ActionEvent event) {
-
+        setAttacker();
     }
 
     @FXML
     void nextAttacker(ActionEvent event) {
+        attackerIndex++;
+        setAttacker();
+    }
 
+    public void setAttacker(){
+        idAttackerText.setText(combatList.get(attackerIndex).getName());
+        idTotAttackerPointsText.setText(String.valueOf(combatList.get(attackerIndex).getRemainingCombatPoints()));
+        idAttackButton.setDisable(true);
     }
 
     @FXML
@@ -144,7 +181,7 @@ public class ControllerCombat {
 
     }
 
-    public void printHealthPoints(){
+    public void printHealthPoints(int index){
         idAttackerHealthText.setText("" +
                 "Total:     " +
                 "Head:      " +

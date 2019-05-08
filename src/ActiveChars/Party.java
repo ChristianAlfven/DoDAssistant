@@ -1,7 +1,6 @@
 package ActiveChars;
 
 import CharacterFile.Character;
-import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 
@@ -28,6 +27,10 @@ public class Party {
 
     public void addCharacter(Character character){
         party.add(character);
+    }
+
+    public void removeCharacter(int character) {
+        party.remove(character);
     }
 
     public Character getCharacter(int i){

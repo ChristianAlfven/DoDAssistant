@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +21,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class ControllerEdit implements Initializable {
@@ -178,7 +180,7 @@ public class ControllerEdit implements Initializable {
         Parent root;
 
         stage = (Stage) idBack.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Lobby/GUINewGame.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -187,6 +189,13 @@ public class ControllerEdit implements Initializable {
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
         System.out.println(Party.getParty().getCharacter(Party.getParty().getIndex()).debug());
+
+        Stage stage = (Stage) idContinue.getScene().getWindow();
+        URL url = new File("C:\\Users\\hejpe\\IdeaProjects\\DoDAssistant\\src\\Lobby\\GUINewGame.fxml").toURI().toURL();
+        Pane root = FXMLLoader.load((url));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 

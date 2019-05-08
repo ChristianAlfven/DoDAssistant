@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -95,12 +96,19 @@ public class CharacterCreation2 implements Initializable {
             errorAlert.setContentText("Please choose all special traits");
             errorAlert.showAndWait();
         } else {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("C:\\Users\\hejpe\\IdeaProjects\\DoDAssistant\\src\\Lobby\\GUILobby.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = new Stage();
+            Stage stage = (Stage) idContinue.getScene().getWindow();
+            URL url = new File("C:\\Users\\hejpe\\IdeaProjects\\DoDAssistant\\src\\Lobby\\GUINewGame.fxml").toURI().toURL();
+            Pane root = FXMLLoader.load((url));
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+
+//            FXMLLoader fxmlLoader = new FXMLLoader();
+//            fxmlLoader.setLocation(getClass().getResource());
+//            Scene scene = new Scene(fxmlLoader.load());
+//            Stage stage = new Stage();
+//            stage.setScene(scene);
+//            stage.show();
         }
     }
 

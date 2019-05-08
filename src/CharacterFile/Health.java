@@ -85,4 +85,11 @@ public class Health {
     public int getLeftLeg() {
         return leftLeg;
     }
+
+    @Override
+    public String toString() {
+        return "" + total;
+    }
+
+
 }

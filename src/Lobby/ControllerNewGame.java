@@ -38,6 +38,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
+
 public class ControllerNewGame implements Initializable {
     Character character;
 
@@ -52,60 +53,89 @@ public class ControllerNewGame implements Initializable {
 
     ObservableList<Character> list = FXCollections.observableArrayList();
 
+//    DB_Connector db_connector = new DB_Connector();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (int i = 0; i < Party.getParty().getArray(); i++) {
-            Party.getParty().addCharacter(Party.getParty().getCharacter(i));
+        idCharacterTable.getItems().clear();
+        for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
             list.add(Party.getParty().getCharacter(i));
         }
-
         idCharacterTable.setItems(list);
-
-        //        Character character3 = new Character();
-//
-//        character3.setAge(2);
-//        character3.setCombatPoints(321);
-//        character3.setRace(Character.Race.Human);
-//
-//        Party.getParty().addCharacter(character3);
-//        for (int i = 0; i < Party.getParty().getArray(); i++) {
-//        }
+    }
 
 
+    int y = 0;
+
+    void createDummy() {
+        if (y==0) {
+            Character character1 = new Character();
+
+            character1.setName("Pelle");
+            character1.setGender(Character.Gender.Female);
+            character1.setAge(12);
+            character1.setHeight(123);
+            character1.setWeight(10);
+            character1.setRace(Character.Race.Human);
+            character1.setSubrace(Character.SubRace.Borjornikka);
+            character1.setProfession(Character.Profession.Priest);
+            character1.setEnvironment(Character.Environment.City);
+            character1.setBackground("Hej");
+
+            Party.getParty().addCharacter(character1);
+            y++;
+        } else {
+            Character character2 = new Character();
+
+            character2.setName("Ost");
+            character2.setGender(Character.Gender.Male);
+            character2.setAge(321);
+            character2.setHeight(100);
+            character2.setWeight(300);
+            character2.setRace(Character.Race.Dwarf);
+            character2.setSubrace(Character.SubRace.Illmalaina);
+            character2.setProfession(Character.Profession.Peasant);
+            character2.setEnvironment(Character.Environment.Academic);
+            character2.setBackground("Då");
+
+            Party.getParty().addCharacter(character2);
+            y--;
+        }
     }
 
     @FXML
     void buttonDummy(ActionEvent event) {
         idCharacterTable.getItems().clear();
-        Character character1 = new Character();
-
-        character1.setName("Pelle");
-        character1.setAge(12);
-        character1.setProfession(Character.Profession.Priest);
-        character1.setRace(Character.Race.Human);
-        character1.setGender(Character.Gender.Female);
-
-        Party.getParty().addCharacter(character1);
-
+        createDummy();
         for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
             list.add(Party.getParty().getCharacter(i));
         }
-
         idCharacterTable.setItems(list);
 
     }
 
 
+
     @FXML
-    void buttonStartGame(ActionEvent event) {
+    void buttonStartGame(ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
+
+        stage = (Stage) idStartGame.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("../Game/GUIGameLobby.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 
     @FXML
     void buttonNewCharacter(ActionEvent event) throws IOException {
-        Stage stage = (Stage) idNewCharacter.getScene().getWindow();
-        URL url = new File("C:\\Users\\hejpe\\IdeaProjects\\DoDAssistant\\src\\Creator\\GUICharacterCreation.fxml").toURI().toURL();
-        Pane root = FXMLLoader.load((url));
+        Stage stage;
+        Parent root;
+
+        stage = (Stage) idNewCharacter.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("../Creator/GUICharacterCreation.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -130,6 +160,14 @@ public class ControllerNewGame implements Initializable {
 
     @FXML
     void buttonRemove(ActionEvent event) {
+        Party.getParty().setIndex(idCharacterTable.getSelectionModel().getSelectedIndex());
+        Party.getParty().removeCharacter(Party.getParty().getIndex());
+
+        idCharacterTable.getItems().clear();
+        for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
+            list.add(Party.getParty().getCharacter(i));
+        }
+        idCharacterTable.setItems(list);
 
     }
 
@@ -137,7 +175,6 @@ public class ControllerNewGame implements Initializable {
     void buttonExit(ActionEvent event) {
         Runtime.getRuntime().exit(0);
     }
-
 
 
 

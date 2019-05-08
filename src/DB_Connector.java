@@ -10,13 +10,13 @@ The string “Qa1”, means: Queen moves to A1.
 import java.sql.DriverManager;
 import java.sql.*;
 
-public class DB_Connector {
+class DB_Connector {
 
     String url = "jdbc:mysql://localhost:3306/dod_db?user=root&password=root&serverTimezone=UTC";
 
     Statement statement;
 
-    public DB_Connector() {
+    DB_Connector() {
         try {
             Connection c = DriverManager.getConnection(url);
             statement = c.createStatement();
@@ -25,4 +25,6 @@ public class DB_Connector {
             ex.printStackTrace();
         }
     }
+
 }
+

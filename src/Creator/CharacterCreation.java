@@ -117,7 +117,7 @@ public class CharacterCreation implements Initializable {
         Parent root;
 
         stage = (Stage) idBack.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("GUINewGame.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Lobby/GUINewGame.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -126,7 +126,6 @@ public class CharacterCreation implements Initializable {
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
 
-        System.out.println(character.debug());
 
         if ((idNamebox.getText()!=null)&&(idAgeBox.getText()!=null)
                 &&(idBackgroundBox.getText()!=null)&&(idHeightBox.getText()!=null)
@@ -158,7 +157,7 @@ public class CharacterCreation implements Initializable {
                     character.setEnvironment(Character.Environment.Nature);
                 }
 
-                System.out.println(character.toString());
+                System.out.println(character.debug());
 
                 Party.getParty().addCharacter(character);
 

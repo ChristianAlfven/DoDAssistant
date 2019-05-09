@@ -3,6 +3,8 @@ package Combat;
 import ActiveChars.GmList;
 import ActiveChars.Party;
 import CharacterFile.Combatant;
+import CharacterFile.Health;
+import CharacterFile.Armor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -91,12 +93,11 @@ public class ControllerCombat {
 
     @FXML
     void confirmAttack(ActionEvent event) {
-        pointReduction = combatList.get(attackerIndex).getRemainingCombatPoints() - Integer.parseInt(idUseAttackerPointsText.getText());
-        combatList.get(attackerIndex).setRemainingCombatPoints(pointReduction);
-
         if(Integer.parseInt(idDiceValueText.getText()) <= Integer.parseInt(idUseAttackerPointsText.getText())){
             successfulAttack();
         }else{
+            pointReduction = combatList.get(attackerIndex).getRemainingCombatPoints() - Integer.parseInt(idUseAttackerPointsText.getText());
+            combatList.get(attackerIndex).setRemainingCombatPoints(pointReduction);
             idAttackInfoText.setText("Attack missed!");
         }
     }
@@ -114,28 +115,38 @@ public class ControllerCombat {
 
     @FXML
     void confirmDamage(ActionEvent event) {
+        int damage;
+        int hitPlace;
 
+        damage = Integer.parseInt(idDamageValueText.getText());
+        hitPlace = Integer.parseInt(idAttackLocationText.getText());
+        combatList.get(defenderIndex).setHealth(hitTable(hitPlace, damage));
     }
 
-    public int getDefenderIndex(){
+    public void getDefenderIndex(){
         int i = 0;
         while(i < combatList.size()){
             if(idDefenderText.getText().equals(combatList.get(i).getName())){
-                return i;
+                defenderIndex = i;
+                i = combatList.size();
+                pointReduction = combatList.get(attackerIndex).getRemainingCombatPoints() - Integer.parseInt(idUseAttackerPointsText.getText());
+                combatList.get(attackerIndex).setRemainingCombatPoints(pointReduction);
+            }else if(i == combatList.size()-1){
+                idAttackInfoText.setText("No opponent with that name!");
             }
             i++;
         }
-        idAttackInfoText.setText("No opponent with that name!");
-        return 0; //This has to be changed later
     }
 
     public void successfulAttack(){
         idAttackInfoText.setText("Attack Successful!");
-        defenderIndex = getDefenderIndex();
+        getDefenderIndex();
         idTotDefenderPointsText.setText(String.valueOf(combatList.get(defenderIndex).getRemainingCombatPoints()));
         idTotAttackerPointsText.clear();
         idUseAttackerPointsText.clear();
         idDiceValueText.clear();
+
+        printDefenderHealth(combatList.get(defenderIndex));
     }
 
     public void successfulParry(){
@@ -157,6 +168,7 @@ public class ControllerCombat {
 
     @FXML
     void newAttack(ActionEvent event) {
+        idTotDefenderPointsText.clear();
         setAttacker();
     }
 
@@ -169,6 +181,8 @@ public class ControllerCombat {
     public void setAttacker(){
         idAttackerText.setText(combatList.get(attackerIndex).getName());
         idTotAttackerPointsText.setText(String.valueOf(combatList.get(attackerIndex).getRemainingCombatPoints()));
+
+        printAttackerHealth(combatList.get(attackerIndex));
     }
 
     @FXML
@@ -180,22 +194,79 @@ public class ControllerCombat {
         stage.show();
     }
 
-
-    public void startAttack(){
-        idAttackerText.setText("");
-        idTotAttackerPointsText.setText("");
-
+    public void printAttackerHealth(Combatant combatant){
+        idAttackerHealthText.setText("" +
+                "Total:     " + combatant.getHealth().getTotal() +
+                "\nHead:      " + combatant.getHealth().getHead() +
+                "\nRight Arm: " + combatant.getHealth().getRightArm() +
+                "\nLeft Arm:  " + combatant.getHealth().getLeftArm() +
+                "\nChest:     " + combatant.getHealth().getChest() +
+                "\nStomach:   " + combatant.getHealth().getStomach() +
+                "\nRight Leg: " + combatant.getHealth().getRightLeg() +
+                "\nLeft Leg:  " + combatant.getHealth().getLeftLeg());
     }
 
-    public void printHealthPoints(int index){
-        idAttackerHealthText.setText("" +
-                "Total:     " +
-                "Head:      " +
-                "Right Arm: " +
-                "Left Arm:  " +
-                "Chest:     " +
-                "Stomach:   " +
-                "Right Leg: " +
-                "Left Leg:  ");
+    public void printDefenderHealth(Combatant combatant){
+        idDefenderHealthText.setText("" +
+                "Total:     " + combatant.getHealth().getTotal() +
+                "\nHead:      " + combatant.getHealth().getHead() +
+                "\nRight Arm: " + combatant.getHealth().getRightArm() +
+                "\nLeft Arm:  " + combatant.getHealth().getLeftArm() +
+                "\nChest:     " + combatant.getHealth().getChest() +
+                "\nStomach:   " + combatant.getHealth().getStomach() +
+                "\nRight Leg: " + combatant.getHealth().getRightLeg() +
+                "\nLeft Leg:  " + combatant.getHealth().getLeftLeg());
+    }
+
+    public Health hitTable(int diceValue, int dmg) {
+        Health hp = combatList.get(defenderIndex).getHealth();
+        Armor armor = combatList.get(defenderIndex).getArmor();
+        switch (diceValue) {
+            case 1:
+            case 2:
+                dmg = dmg - armor.getHead();
+                hp.setHead(hp.getHead()-dmg);
+                break;
+            case 3:
+            case 4:
+                dmg = dmg - armor.getRightArm();
+                hp.setRightArm(hp.getRightArm()-dmg);
+                break;
+            case 5:
+            case 6:
+                dmg = dmg - armor.getLeftArm();
+                hp.setRightArm(hp.getLeftArm()-dmg);
+                break;
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+                dmg = dmg - armor.getChest();
+                hp.setRightArm(hp.getChest()-dmg);
+                break;
+            case 12:
+            case 13:
+            case 14:
+                dmg = dmg - armor.getStomach();
+                hp.setRightArm(hp.getStomach()-dmg);
+                break;
+            case 15:
+            case 16:
+            case 17:
+                dmg = dmg - armor.getRightLeg();
+                hp.setRightArm(hp.getRightLeg()-dmg);
+                break;
+            case 18:
+            case 19:
+            case 20:
+                dmg = dmg - armor.getLeftLeg();
+                hp.setRightArm(hp.getLeftLeg()-dmg);
+                break;
+            default:
+                return hp;
+        }
+        hp.setTotal(hp.getTotal()-dmg);
+        return hp;
     }
 }

@@ -136,7 +136,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <Button fx:id="idCombatPointsButton" layoutX="368.0" layoutY="223.0" mnemonicParsing="false" onAction="#confirmCombatPoints" prefHeight="25.0" prefWidth="97.0" text="Accept" textAlignment="CENTER">
+      <Button fx:id="idAttackButton" layoutX="355.0" layoutY="223.0" mnemonicParsing="false" onAction="#confirmAttack" prefHeight="25.0" prefWidth="56.0" text="Attack" textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <light>
@@ -211,7 +211,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <Button fx:id="idAttackButton" layoutX="368.0" layoutY="329.0" mnemonicParsing="false" onAction="#confirmAttack" prefHeight="25.0" prefWidth="97.0" text="Accept" textAlignment="CENTER">
+      <Button fx:id="idDamageButton" layoutX="368.0" layoutY="329.0" mnemonicParsing="false" onAction="#confirmDamage" prefHeight="25.0" prefWidth="97.0" text="Accept" textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <light>
@@ -377,5 +377,20 @@
             </Lighting>
          </effect>
       </TableView>
+      <Button fx:id="idParryButton" layoutX="425.0" layoutY="223.0" mnemonicParsing="false" onAction="#confirmParry" prefHeight="25.0" prefWidth="56.0" text="Parry" textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

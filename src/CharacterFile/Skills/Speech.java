@@ -6,8 +6,10 @@ public class Speech extends Skill{
     private int rona;
     private int eika;
     private int futhark;
+    private int orcish;
 
     public Speech(){
+        orcish = 0;
         vrok = 0;
         rona = 0;
         eika = 0;
@@ -16,6 +18,14 @@ public class Speech extends Skill{
 
     public int getVrok() {
         return vrok;
+    }
+
+    public int getOrcish() {
+        return orcish;
+    }
+
+    public void setOrcish(int orcish) {
+        this.orcish = orcish;
     }
 
     public void setVrok(int vrok) {

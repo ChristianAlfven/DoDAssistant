@@ -23,7 +23,8 @@ public class Health {
         } else{
             stomach = (health / 3) + 1;
             }
-
+        leftLeg = stomach;
+        rightLeg = stomach;
     }
 
     public void setTotal(int total) { this.total = total; }

@@ -9,6 +9,7 @@ public class Character {
     public enum WeaponHand {Right, Left, Both}
     public enum Nationality {Human, Orc, Elf}
     public enum Environment{Nature, Country, City, Academic}
+    public enum Region {Eastheim, Midlands, Westlands}
     public enum SpecialTrait{Strength, Physique, Agility, Spirituality, Intelligence, Psyche, Charisma}
 
 
@@ -17,6 +18,7 @@ public class Character {
     Skillset skillset;
     //Inventory inventory;
 
+    private Region region;
     private Profession profession;
     private Gender gender;
     private Race race;
@@ -27,6 +29,9 @@ public class Character {
     private SpecialTrait positiveTrait1;
     private SpecialTrait positiveTrait2;
     private SpecialTrait negativeTrait;
+    private int posTrait1Level;
+    private int PosTrait2Level;
+    private int negTraitLevel;
 
     private String name;
     private int height;
@@ -222,6 +227,37 @@ public class Character {
         this.negativeTrait = negativeTrait;
     }
 
+    public int getPosTrait1Level() {
+        return posTrait1Level;
+    }
+
+    public void setPosTrait1Level(int posTrait1Level) {
+        this.posTrait1Level = posTrait1Level;
+    }
+
+    public int getPosTrait2Level() {
+        return PosTrait2Level;
+    }
+
+    public void setPosTrait2Level(int posTrait2Level) {
+        PosTrait2Level = posTrait2Level;
+    }
+
+    public int getNegTraitLevel() {
+        return negTraitLevel;
+    }
+
+    public void setNegTraitLevel(int negTraitLevel) {
+        this.negTraitLevel = negTraitLevel;
+    }
+
+    public Region getRegion() {
+        return region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
+    }
 
     public String debug() {
         return "Character{" +

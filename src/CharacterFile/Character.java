@@ -40,6 +40,10 @@ public class Character {
     private int unusedExp;
 
 
+    public Skillset getSkillset() {
+        return skillset;
+    }
+
     public String getName() {
         return name;
     }

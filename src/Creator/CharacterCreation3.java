@@ -172,6 +172,17 @@ public class CharacterCreation3 implements Initializable {
 
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
+
+        if(idCombatBox.getText()!= null && idPosBox1.getText() != null && idPosBox2.getText() != null && idSpeechBox != null
+                && idRidingBox.getText() != null && idNatureBox.getText() != null && idMobilityBox.getText() != null
+                && idGeographyBox.getText() != null && idCrimeBox.getText() != null && idNegBox.getText() != null
+                && idEntertainmentBox.getText() != null)
+
+        try{
+            character.getSkillset().getCombat().setSkillLevel(Integer.parseInt(idCombatBox.getText()));
+        } catch (Exception e){}
+
+
         Stage stage;
         Parent root;
 

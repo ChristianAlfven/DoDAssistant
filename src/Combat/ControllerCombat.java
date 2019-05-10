@@ -74,8 +74,6 @@ public class ControllerCombat {
     private String input;
     private String output;
     private Combatant defender;
-    //private boolean attackHit = false;
-    //private boolean attackDmg = false;
     private int pointReduction;
 
     public void initialize() {
@@ -93,7 +91,9 @@ public class ControllerCombat {
 
     @FXML
     void confirmAttack(ActionEvent event) {
+        idAttackButton.setDisable(true);
         if(Integer.parseInt(idDiceValueText.getText()) <= Integer.parseInt(idUseAttackerPointsText.getText())){
+            idParryButton.setDisable(false);
             successfulAttack();
         }else{
             pointReduction = combatList.get(attackerIndex).getRemainingCombatPoints() - Integer.parseInt(idUseAttackerPointsText.getText());
@@ -104,23 +104,28 @@ public class ControllerCombat {
 
     @FXML
     void confirmParry(ActionEvent event) {
+        idParryButton.setDisable(true);
         pointReduction = combatList.get(defenderIndex).getRemainingCombatPoints() - Integer.parseInt(idUseDefenderPointsText.getText());
         combatList.get(defenderIndex).setRemainingCombatPoints(pointReduction);
         if(Integer.parseInt(idDiceValueText.getText()) <= Integer.parseInt(idUseDefenderPointsText.getText())){
             successfulParry();
         }else{
             idAttackInfoText.setText("Parry failed!");
+            idDamageButton.setDisable(false);
         }
     }
 
     @FXML
     void confirmDamage(ActionEvent event) {
+        idDamageButton.setDisable(true);
         int damage;
         int hitPlace;
 
         damage = Integer.parseInt(idDamageValueText.getText());
         hitPlace = Integer.parseInt(idAttackLocationText.getText());
         combatList.get(defenderIndex).setHealth(hitTable(hitPlace, damage));
+
+        printDefenderHealth(combatList.get(defenderIndex));
     }
 
     public void getDefenderIndex(){
@@ -176,9 +181,20 @@ public class ControllerCombat {
     void nextAttacker(ActionEvent event) {
         attackerIndex++;
         setAttacker();
+        idDefenderText.clear();
     }
 
     public void setAttacker(){
+        idAttackButton.setDisable(false);
+        idParryButton.setDisable(true);
+        idDamageButton.setDisable(true);
+        idTotDefenderPointsText.clear();
+        idUseDefenderPointsText.clear();
+        idUseAttackerPointsText.clear();
+        idDiceValueText.clear();
+        idDamageValueText.clear();
+        idAttackLocationText.clear();
+
         idAttackerText.setText(combatList.get(attackerIndex).getName());
         idTotAttackerPointsText.setText(String.valueOf(combatList.get(attackerIndex).getRemainingCombatPoints()));
 
@@ -226,16 +242,19 @@ public class ControllerCombat {
             case 2:
                 dmg = dmg - armor.getHead();
                 hp.setHead(hp.getHead()-dmg);
+                idAttackInfoText.setText(dmg + " damage dealt to Head!");
                 break;
             case 3:
             case 4:
                 dmg = dmg - armor.getRightArm();
                 hp.setRightArm(hp.getRightArm()-dmg);
+                idAttackInfoText.setText(dmg + " damage dealt to Right Arm!");
                 break;
             case 5:
             case 6:
                 dmg = dmg - armor.getLeftArm();
-                hp.setRightArm(hp.getLeftArm()-dmg);
+                hp.setLeftArm(hp.getLeftArm()-dmg);
+                idAttackInfoText.setText(dmg + " damage dealt to Left Arm!");
                 break;
             case 7:
             case 8:
@@ -243,25 +262,29 @@ public class ControllerCombat {
             case 10:
             case 11:
                 dmg = dmg - armor.getChest();
-                hp.setRightArm(hp.getChest()-dmg);
+                hp.setChest(hp.getChest()-dmg);
+                idAttackInfoText.setText(dmg + " damage dealt to Chest!");
                 break;
             case 12:
             case 13:
             case 14:
                 dmg = dmg - armor.getStomach();
-                hp.setRightArm(hp.getStomach()-dmg);
+                hp.setStomach(hp.getStomach()-dmg);
+                idAttackInfoText.setText(dmg + " damage dealt to Stomach!");
                 break;
             case 15:
             case 16:
             case 17:
                 dmg = dmg - armor.getRightLeg();
-                hp.setRightArm(hp.getRightLeg()-dmg);
+                hp.setRightLeg(hp.getRightLeg()-dmg);
+                idAttackInfoText.setText(dmg + " damage dealt to Right Leg!");
                 break;
             case 18:
             case 19:
             case 20:
                 dmg = dmg - armor.getLeftLeg();
-                hp.setRightArm(hp.getLeftLeg()-dmg);
+                hp.setLeftLeg(hp.getLeftLeg()-dmg);
+                idAttackInfoText.setText(dmg + " damage dealt to Left Leg!");
                 break;
             default:
                 return hp;

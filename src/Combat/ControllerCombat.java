@@ -71,9 +71,6 @@ public class ControllerCombat {
 
     private int attackerIndex;
     private int defenderIndex;
-    private String input;
-    private String output;
-    private Combatant defender;
     private int pointReduction;
 
     public void initialize() {

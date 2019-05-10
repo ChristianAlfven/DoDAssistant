@@ -1,5 +1,6 @@
 package Game;
 
+import ActiveChars.GmList;
 import ActiveChars.Party;
 import CharacterFile.Character;
 import javafx.collections.FXCollections;
@@ -26,6 +27,10 @@ public class GameLobby implements Initializable {
     @FXML private Button idScenario;
     @FXML private Button idLobby;
 
+    private GmList gmInstance;
+    private Stage stage;
+    private Parent root;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         idCharacterTable.getItems().clear();
@@ -33,13 +38,13 @@ public class GameLobby implements Initializable {
             list.add(Party.getParty().getCharacter(i));
         }
         idCharacterTable.setItems(list);
+        gmInstance = GmList.createGmList();
+
+        idScenario.setDisable(true); //Disabled until scenario is implemented.
     }
 
     @FXML
     void buttonLobby(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
-
         stage = (Stage) idLobby.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("../Lobby/GUINewGame.fxml"));
         Scene scene = new Scene(root);
@@ -47,20 +52,15 @@ public class GameLobby implements Initializable {
         stage.show();
     }
 
-
-
     @FXML
     void buttonCombat(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
-
+        gmInstance.setPlayersAdded(false);
         stage = (Stage) idCombat.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("../Combat/GUICombat.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../Combat/GUIInitiative.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-
 
     @FXML
     void buttonScenario(ActionEvent event) {

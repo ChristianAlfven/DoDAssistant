@@ -1,11 +1,13 @@
 package ActiveChars;
 
 import CharacterFile.Combatant;
+import CharacterFile.Health;
 
 import java.util.ArrayList;
 
 public class GmList {
-    ArrayList<Combatant> gmList;
+    private ArrayList<Combatant> gmList;
+    private boolean playersAdded = false;
 
     private static GmList ourInstance = null;
 
@@ -38,11 +40,16 @@ public class GmList {
     }
 
     private void createTestUnits(){
-        Combatant orc = new Combatant("Orc1", 20, 25, false);
+        Health hp = new Health(25);
+        Combatant orc = new Combatant("Orc1", 20, hp, false);
         gmList.add(orc);
-        orc = new Combatant("Orc2", 20, 25, false);
+        orc = new Combatant("Orc2", 20, hp, false);
         gmList.add(orc);
-        orc = new Combatant("Orc3", 20, 25, false);
+        orc = new Combatant("Orc3", 20, hp, false);
         gmList.add(orc);
     }
+
+    public boolean isPlayersAdded() { return playersAdded; }
+
+    public void setPlayersAdded(boolean playersAdded) { this.playersAdded = playersAdded; }
 }

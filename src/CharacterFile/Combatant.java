@@ -13,10 +13,10 @@ public class Combatant {
     private int playerIndex;
 
 
-    public Combatant(String name, int totCombatPoints, int health, boolean isPlayer) {
+    public Combatant(String name, int totCombatPoints, Health health, boolean isPlayer) {
         this.name = name;
         this.totCombatPoints = totCombatPoints;
-        this.health = new Health(health);
+        this.health = health;
         this.remainingCombatPoints = totCombatPoints;
         this.isPlayer = isPlayer;
 

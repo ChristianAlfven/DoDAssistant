@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class Party {
 
-    int index;
-    ArrayList<Character> party;
+    private int index;
+    private ArrayList<Character> party;
     private static Party ourParty = null;
 
     public static Party getParty() {
@@ -37,6 +37,9 @@ public class Party {
         return party.get(i);
     }
 
+    public void setPartyList(ArrayList<Character> party) { this.party = party; }
+
+    public ArrayList<Character> getPartyList(){ return party; }
 
     public void setIndex(int index) {
         this.index = index;

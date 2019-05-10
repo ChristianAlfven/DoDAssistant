@@ -65,4 +65,6 @@ public class Culture extends Skill{
     public void setOrcish(int orcish) {
         this.orcish = orcish;
     }
+
+
 }

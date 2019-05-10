@@ -1,6 +1,9 @@
 package CharacterFile.Skills;
 
-public class Geography extends Skill{
+import CharacterFile.Character;
+import CharacterFile.*;
+
+public class Geography extends Skill {
 
     private int westland;
     private int midland;
@@ -9,7 +12,7 @@ public class Geography extends Skill{
     private int soj;
     private int underworld;
 
-    public Geography(){
+    public Geography() {
         westland = 0;
         midland = 0;
         eastheim = 0;
@@ -65,4 +68,43 @@ public class Geography extends Skill{
     public void setUnderworld(int underworld) {
         this.underworld = underworld;
     }
+
+    public void addHomeland(Character character, int value) {
+        switch (character.getRace()) {
+            case Human:
+                if (character.getSubrace() == Character.SubRace.Stormlander) {
+                    setEastheim(getEastheim() + value);
+                } else if (character.getSubrace() == Character.SubRace.Midlander) {
+                    setMidland(getMidland() + value);
+                } else {
+                    setWestland(getWestland() + value);
+                }
+                break;
+            case Elf:
+                setSoj(getSoj() + value);
+                break;
+            case Dwarf:
+                setUnderworld(getUnderworld() + value);
+                break;
+            case HalfBlood:
+                switch (character.getNationality()) {
+                    case Human:
+                    case Orc:
+                        if (character.getRegion() == Character.Region.Eastheim) {
+                            setEastheim(getEastheim() + value);
+                        } else if (character.getRegion() == Character.Region.Westlands) {
+                            setWestland(getWestland() + value);
+                        } else {
+                            setMidland(getMidland() + value);
+                        }
+                        break;
+                    case Elf:
+                        setSoj(getSoj() + value);
+                        break;
+                }
+                break;
+
+        }
+    }
 }
+

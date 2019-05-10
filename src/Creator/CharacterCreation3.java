@@ -309,10 +309,11 @@ public class CharacterCreation3 implements Initializable {
                 errorAlert.setContentText("Wrongful input");
                 errorAlert.showAndWait();
             }
-
-
-
-
+        } else {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setHeaderText("Warning");
+            errorAlert.setContentText("Please roll all values");
+            errorAlert.showAndWait();
         }
 
 

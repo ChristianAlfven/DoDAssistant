@@ -45,4 +45,20 @@ public class Crafting extends Skill{
     public void setWood(int wood) {
         this.wood = wood;
     }
+
+    public void addSkillMetal(int value){
+        this.metal += value;
+    }
+
+    public void addSkillWood(int value){
+        this.wood += value;
+    }
+
+    public void addSkillStone(int value){
+        this.stone += value;
+    }
+
+    public void addSkillSoft(int value){
+        this.soft += value;
+    }
 }

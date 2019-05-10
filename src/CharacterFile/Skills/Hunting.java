@@ -16,4 +16,8 @@ public class Hunting extends Skill{
         this.skillLevel = skillLevel;
     }
 
+
+    public void addSkillLevel(int value){
+        this.skillLevel += value;
+    }
 }

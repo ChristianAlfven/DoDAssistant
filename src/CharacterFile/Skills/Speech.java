@@ -1,4 +1,6 @@
 package CharacterFile.Skills;
+import CharacterFile.Character;
+
 
 public class Speech extends Skill{
 
@@ -54,5 +56,40 @@ public class Speech extends Skill{
 
     public void setFuthark(int futhark) {
         this.futhark = futhark;
+    }
+
+    public void addMotherTongue(Character character, int value){
+        switch (character.getRace()){
+            case Human:
+                if (character.getSubrace()== Character.SubRace.Stormlander){
+                    setRona(getRona() + value);
+                } else {
+                    setVrok(getVrok() + value);
+                }
+                break;
+            case Elf:
+                setEika(getEika() + value);
+                break;
+            case Dwarf:
+                setFuthark(getFuthark() + value);
+                break;
+            case HalfBlood:
+                switch (character.getNationality()){
+                    case Human:
+                        if (character.getRegion() == Character.Region.Eastheim){
+                            setRona(getRona()+value);
+                        }else {
+                            setVrok(getVrok()+value);
+                        }
+                        break;
+                    case Elf:
+                        setEika(getEika()+value);
+                        break;
+                    case Orc:
+                        setOrcish(getOrcish()+value);
+                        break;
+                }break;
+
+        }
     }
 }

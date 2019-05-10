@@ -301,18 +301,17 @@ public class CharacterCreation3 implements Initializable {
                 stage.setScene(scene);
                 stage.show();
 
-
-
             }catch (Exception e){
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Warning");
                 errorAlert.setContentText("Wrongful input");
                 errorAlert.showAndWait();
             }
-
-
-
-
+        } else {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setHeaderText("Warning");
+            errorAlert.setContentText("Please roll all values");
+            errorAlert.showAndWait();
         }
 
 

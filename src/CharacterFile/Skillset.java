@@ -29,6 +29,7 @@ public class Skillset {
     private Trade trade;
 
 
+
     public Alchemy getAlchemy() {
         if (alchemy == null){
             alchemy = new Alchemy();

@@ -17,7 +17,7 @@ public class Management extends Skill{
     }
 
     public void setFarm(int farm) {
-        this.farm = farm;
+        this.farm += farm;
     }
 
     public int getCity() {
@@ -25,7 +25,7 @@ public class Management extends Skill{
     }
 
     public void setCity(int city) {
-        this.city = city;
+        this.city += city;
     }
 
     public int getWar() {
@@ -33,7 +33,7 @@ public class Management extends Skill{
     }
 
     public void setWar(int war) {
-        this.war = war;
+        this.war += war;
     }
 }
 

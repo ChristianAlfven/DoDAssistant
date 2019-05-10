@@ -15,4 +15,8 @@ public class Seafaring extends Skill{
     public void setSkillLevel(int skillLevel) {
         this.skillLevel = skillLevel;
     }
+
+    public void addSkillLevel(int value){
+        this.skillLevel += value;
+    }
 }

@@ -301,8 +301,6 @@ public class CharacterCreation3 implements Initializable {
                 stage.setScene(scene);
                 stage.show();
 
-
-
             }catch (Exception e){
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Warning");

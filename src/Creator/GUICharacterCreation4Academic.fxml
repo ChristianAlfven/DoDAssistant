@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Light?>
+<?import javafx.scene.effect.Light?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
@@ -21,7 +22,7 @@
             <Image url="@../Resources/parchment.png" />
          </image>
       </ImageView>
-      <Button fx:id="idContinue" layoutX="237.0" layoutY="367.0" mnemonicParsing="false" onAction="#buttonContinue" prefHeight="25.0" prefWidth="145.0" text="Continue..." textAlignment="CENTER">
+      <Button fx:id="idContinue" layoutX="417.0" layoutY="358.0" mnemonicParsing="false" onAction="#buttonContinue" prefHeight="25.0" prefWidth="145.0" text="Continue..." textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <light>

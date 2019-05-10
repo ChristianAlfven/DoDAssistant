@@ -1,15 +1,18 @@
 package Creator;
 
 import ActiveChars.Party;
-import CharacterFile.*;
 import CharacterFile.Character;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -82,13 +85,46 @@ public class CharacterCreation4Nature implements Initializable {
     private Button idGeographyBtn;
 
     @FXML
+    private TextField idCultureBox;
+
+    @FXML
+    private Button idRidingBtn;
+
+    @FXML
+    private Button idCultureBtn;
+
+    @FXML
+    private Button idSpeechBtn;
+
+    @FXML
+    private Button idMetalBtn;
+
+    @FXML
+    private Button idManagementBtn;
+
+    @FXML
+    private Button idSoftBtn;
+
+    @FXML
+    private Button idWoodBtn;
+
+    @FXML
+    private Button idStoneBtn;
+
+    @FXML
+    private TextField idCraftingBox;
+
+    @FXML
+    private TextField idManagementBox;
+
+    @FXML
+    private TextField idRidingBox;
+
+    @FXML
     private Button idHuntingBtn;
 
     @FXML
     private Button idNatureBtn;
-
-    @FXML
-    private Button idSpeechBtn;
 
     @FXML
     private Button idCombatBtn;
@@ -157,6 +193,8 @@ public class CharacterCreation4Nature implements Initializable {
     @FXML
     private Label idRaud;
 
+    int craftingType = 0;
+
     @FXML
     void buttonBack(ActionEvent event) {
 
@@ -164,30 +202,91 @@ public class CharacterCreation4Nature implements Initializable {
 
     @FXML
     void buttonContinue(ActionEvent event) {
-        if (idCombatBox.getText()==null&&idRaudBox.getText()==null&&idSurvivalBox.getText()==null&&idSpeechBox.getText()==null
-                &&idHPBox.getText()==null&&idSeafaringBox.getText()==null&&idNatureBox.getText()==null&&idHuntingBox.getText()==null
-                &&idGeographyBox.getText()==null){
-            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setHeaderText("Warning");
-            errorAlert.setContentText("Please Roll all values");
-            errorAlert.showAndWait();
-        } else {
-            try{
-                character.getSkillset().getCombat().addSkillLevel(Integer.parseInt(idCombatBox.getText()));         //COMBAT
-                character.getSkillset().getSurvival().addSkillLevel(Integer.parseInt(idSurvivalBox.getText()));     //SURVIVAL
-                character.getSkillset().getSeafaring().addSkillLevel(Integer.parseInt(idSeafaringBox.getText()));   //SEAFARING
-                character.getSkillset().getHunting().addSkillLevel(Integer.parseInt(idHuntingBox.getText()));       //HUNTING
-                character.getSkillset().getNature().addHomeland(character, Integer.parseInt(idNatureBox.getText()));//NATURE
-                character.setRaud(Integer.parseInt(idRaud.getText()));                                              //RAUD
+        switch (character.getEnvironment()){
+            case Nature:
+                if (idCombatBox.getText()==null&&idRaudBox.getText()==null&&idSurvivalBox.getText()==null&&idSpeechBox.getText()==null
+                        &&idHPBox.getText()==null&&idSeafaringBox.getText()==null&&idNatureBox.getText()==null&&idHuntingBox.getText()==null
+                        &&idGeographyBox.getText()==null){
+                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                    errorAlert.setHeaderText("Warning");
+                    errorAlert.setContentText("Please Roll all values");
+                    errorAlert.showAndWait();
+                } else {
+                    try{
+                        character.getSkillset().getCombat().addSkillLevel(Integer.parseInt(idCombatBox.getText()));         //COMBAT
+                        character.getSkillset().getSurvival().addSkillLevel(Integer.parseInt(idSurvivalBox.getText()));     //SURVIVAL
+                        character.getSkillset().getSeafaring().addSkillLevel(Integer.parseInt(idSeafaringBox.getText()));   //SEAFARING
+                        character.getSkillset().getHunting().addSkillLevel(Integer.parseInt(idHuntingBox.getText()));       //HUNTING
+                        character.getSkillset().getNature().addHomeland(character, Integer.parseInt(idNatureBox.getText()));//NATURE
+                        character.setRaud(Integer.parseInt(idRaud.getText()));                                              //RAUD
 
-                character.getSkillset().getSpeech().addMotherTongue(character,Integer.parseInt(idSpeechBox.getText())); //SPEECH
-                character.getSkillset().getGeography().addHomeland(character,Integer.parseInt(idGeographyBox.getText()));//GEOGRAPHY
+                        character.getSkillset().getSpeech().addMotherTongue(character,Integer.parseInt(idSpeechBox.getText())); //SPEECH
+                        character.getSkillset().getGeography().addHomeland(character,Integer.parseInt(idGeographyBox.getText()));//GEOGRAPHY
 
-            }catch(Exception e){
 
-            }
+                        Stage stage = (Stage) idContinue.getScene().getWindow();
+                        Parent root = FXMLLoader.load(getClass().getResource("../Lobby/GUINewGame.fxml"));
+                        Scene scene = new Scene(root);
+                        stage.setScene(scene);
+                        stage.show();
+
+                    }catch(Exception e){
+                        e.printStackTrace();
+                        Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                        errorAlert.setHeaderText("Warning");
+                        errorAlert.setContentText("Invalid values");
+                        errorAlert.showAndWait();
+                    }
+                }
+                break;
+
+            //---------COUNTRY----------
+            case Country:
+
+                if (idRidingBox.getText()==null&&idRaudBox.getText()==null&&idManagementBox.getText()==null&&idSpeechBox.getText()==null
+                        &&idHPBox.getText()==null&&idCultureBox.getText()==null&&idCraftingBox.getText()==null){
+                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                    errorAlert.setHeaderText("Warning");
+                    errorAlert.setContentText("Please Roll all values");
+                    errorAlert.showAndWait();
+                } else {
+                    try{
+                        character.getSkillset().getRiding().addSkillLevel(Integer.parseInt(idRidingBox.getText()));         //COMBAT
+                        character.getSkillset().getManagement().setFarm(Integer.parseInt(idSurvivalBox.getText()));     //SURVIVAL
+                        character.getSkillset().getSpeech().addMotherTongue(character,Integer.parseInt(idSeafaringBox.getText()));   //SEAFARING
+                        character.getSkillset().getCulture().addHomeland(character,Integer.parseInt(idHuntingBox.getText()));       //HUNTING
+                        character.setRaud(Integer.parseInt(idRaud.getText()));                                              //RAUD
+
+
+                        Stage stage = (Stage) idContinue.getScene().getWindow();
+                        Parent root = FXMLLoader.load(getClass().getResource("../Lobby/GUINewGame.fxml"));
+                        Scene scene = new Scene(root);
+                        stage.setScene(scene);
+                        stage.show();
+
+                    }catch(Exception e){
+                        e.printStackTrace();
+                        Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                        errorAlert.setHeaderText("Warning");
+                        errorAlert.setContentText("Invalid values");
+                        errorAlert.showAndWait();
+                    }
+                }
+                break;
+
+            //---------CITY----------
+            case City:
+                break;
+
+            //---------ACADEMIC----------
+            case Academic:
+                break;
         }
+
+
     }
+
+    //-------------------------------NATURE----------------------------------
 
     @FXML
     void rollCombat(ActionEvent event) {
@@ -238,6 +337,93 @@ public class CharacterCreation4Nature implements Initializable {
         idSurvivalBox.setEditable(false);
     }
 
+
+
+    //------------------------------COUNTRY---------------------------------
+
+    @FXML
+    void rollManagement(ActionEvent event) {
+        idManagementBox.setText(Integer.toString(rollDice(6)));
+        idManagementBtn.setDisable(true);
+        idManagementBox.setEditable(false);
+    }
+
+    @FXML
+    void rollCulture(ActionEvent event) {
+        idCultureBox.setText(Integer.toString(rollDice(6)));
+        idCultureBtn.setDisable(true);
+        idCultureBox.setEditable(false);
+    }
+
+    @FXML
+    void rollRiding(ActionEvent event) {
+        idRidingBox.setText(Integer.toString(rollDice(6)));
+        idRidingBtn.setDisable(true);
+        idRidingBox.setEditable(false);
+    }
+
+    void rollCrafting(){
+        idMetalBtn.setDisable(true);
+        idStoneBtn.setDisable(true);
+        idSoftBtn.setDisable(true);
+        idWoodBtn.setDisable(true);
+        idCraftingBox.setEditable(false);
+    }
+
+    @FXML
+    void rollMetal(ActionEvent event) {
+        if (idCraftingBox.getText()==null) {
+            idCraftingBox.setText(Integer.toString(rollDice(6)));
+            rollCrafting();
+        } else {
+            rollCrafting();
+        }
+        character.getSkillset().getCrafting().setMetal(Integer.parseInt(idGeographyBox.getText()));
+    }
+
+    @FXML
+    void rollStone(ActionEvent event) {
+        if (idCraftingBox.getText()==null) {
+            idCraftingBox.setText(Integer.toString(rollDice(6)));
+            rollCrafting();
+        } else {
+            rollCrafting();
+        }
+
+        character.getSkillset().getCrafting().setStone(Integer.parseInt(idGeographyBox.getText()));
+    }
+
+    @FXML
+    void rollWood(ActionEvent event) {
+        if (idCraftingBox.getText()==null) {
+            idCraftingBox.setText(Integer.toString(rollDice(6)));
+            rollCrafting();
+        } else {
+            rollCrafting();
+        }
+        character.getSkillset().getCrafting().setWood(Integer.parseInt(idGeographyBox.getText()));
+    }
+
+    @FXML
+    void rollSoft(ActionEvent event) {
+        if (idCraftingBox.getText()==null) {
+            idCraftingBox.setText(Integer.toString(rollDice(6)));
+            rollCrafting();
+        } else {
+            rollCrafting();
+        }
+
+        character.getSkillset().getCrafting().setSoft(Integer.parseInt(idGeographyBox.getText()));
+    }
+
+
+    //--------------------------------CITY-----------------------------------
+
+
+
+    //------------------------------ACADEMIC---------------------------------
+
+
     @FXML
     void rollRaud(ActionEvent event){
         idRaudBox.setText(Integer.toString(rollDice(5)));
@@ -272,7 +458,11 @@ public class CharacterCreation4Nature implements Initializable {
                 raudValue -= 1;
             }
         }
+        if (character.getGender()== Character.Gender.Female){
+            raudValue++;
+        }
         if (raudValue < 0){ raudValue = 0;}
+
 
         idRaud.setText(Integer.toString(raudValue));
     }
@@ -338,7 +528,7 @@ public class CharacterCreation4Nature implements Initializable {
     }
 
 
-    public int rollDice(int sides){
+    private int rollDice(int sides){
         return (int)((Math.random()*sides) + 1);
     }
 

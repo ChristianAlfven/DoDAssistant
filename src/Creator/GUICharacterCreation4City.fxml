@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="445.0" prefWidth="588.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Creator.CharacterCreation4Nature">
+<AnchorPane prefHeight="445.0" prefWidth="588.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Creator.CharacterCreation4">
    <children>
       <ImageView fitHeight="415.0" fitWidth="620.0" layoutX="-1.0" layoutY="-3.0">
          <image>
@@ -77,7 +77,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="idCultureBox" alignment="CENTER" layoutX="197.0" layoutY="119.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+      <TextField fx:id="idSpeechChoiceBtn" alignment="CENTER" layoutX="197.0" layoutY="119.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
          <effect>
             <Lighting diffuseConstant="1.07">
                <bumpInput>
@@ -122,7 +122,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="idManagementBox" alignment="CENTER" layoutX="290.0" layoutY="75.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+      <TextField fx:id="idTradeBox" alignment="CENTER" layoutX="290.0" layoutY="75.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
          <effect>
             <Lighting diffuseConstant="1.07">
                <bumpInput>
@@ -142,12 +142,12 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="idRaceLabel211" layoutX="113.0" layoutY="416.0" text="(You can either manually roll a die and input the value or simply press the roll button)" textFill="#f0c022cd">
+      <Label fx:id="idRaceLabel211" layoutX="113.0" layoutY="416.0" text="(When faced with multiple choices, enter the roll value and make your choice)" textFill="#f0c022cd">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="idCultureBtn" layoutX="241.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollCulture" prefHeight="25.0" prefWidth="52.0" text="Vrok">
+      <Button fx:id="idVrokBtn" layoutX="243.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollVrok" prefHeight="25.0" prefWidth="52.0" text="Vrok">
          <effect>
             <Lighting>
                <bumpInput>
@@ -177,7 +177,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idMetalBtn" layoutX="241.0" layoutY="153.0" mnemonicParsing="false" onAction="#rollMetal" prefHeight="25.0" prefWidth="52.0" text="Metal">
+      <Button fx:id="idMetalBtn" layoutX="243.0" layoutY="153.0" mnemonicParsing="false" onAction="#rollMetal" prefHeight="25.0" prefWidth="52.0" text="Metal">
          <effect>
             <Lighting>
                <bumpInput>
@@ -192,7 +192,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idManagementBtn" layoutX="333.0" layoutY="75.0" mnemonicParsing="false" onAction="#rollManagement" prefHeight="25.0" prefWidth="40.0" text="Roll">
+      <Button fx:id="idTradeBtn" layoutX="333.0" layoutY="75.0" mnemonicParsing="false" onAction="#rollTrade" prefHeight="25.0" prefWidth="40.0" text="Roll">
          <effect>
             <Lighting>
                <bumpInput>
@@ -380,7 +380,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idStoneBtn" layoutX="300.0" layoutY="153.0" mnemonicParsing="false" onAction="#rollStone" prefHeight="25.0" prefWidth="52.0" text="Stone">
+      <Button fx:id="idStoneBtn" layoutX="301.0" layoutY="153.0" mnemonicParsing="false" onAction="#rollStone" prefHeight="25.0" prefWidth="52.0" text="Stone">
          <effect>
             <Lighting>
                <bumpInput>
@@ -430,7 +430,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idCultureBtn1" layoutX="417.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollCulture" prefHeight="25.0" prefWidth="52.0" text="Orcish">
+      <Button fx:id="idOrcishBtn" layoutX="417.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollOrcish" prefHeight="25.0" prefWidth="52.0" text="Orcish">
          <effect>
             <Lighting>
                <bumpInput>
@@ -445,7 +445,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idCultureBtn2" layoutX="477.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollCulture" prefHeight="25.0" prefWidth="63.0" text="Futhark">
+      <Button fx:id="idFutharkBtn" layoutX="477.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollFuthark" prefHeight="25.0" prefWidth="63.0" text="Futhark">
          <effect>
             <Lighting>
                <bumpInput>
@@ -460,7 +460,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idCultureBtn3" layoutX="358.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollCulture" prefHeight="25.0" prefWidth="52.0" text="Eika">
+      <Button fx:id="idEikaBtn" layoutX="358.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollEika" prefHeight="25.0" prefWidth="52.0" text="Eika">
          <effect>
             <Lighting>
                <bumpInput>
@@ -475,7 +475,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idCultureBtn4" layoutX="300.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollCulture" prefHeight="25.0" prefWidth="52.0" text="Rona">
+      <Button fx:id="idRonaBtn" layoutX="301.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollRona" prefHeight="25.0" prefWidth="52.0" text="Rona">
          <effect>
             <Lighting>
                <bumpInput>

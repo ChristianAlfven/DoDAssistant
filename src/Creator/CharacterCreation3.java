@@ -1,6 +1,7 @@
 package Creator;
 
 import ActiveChars.Party;
+import Lobby.Lobby;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -296,12 +297,30 @@ public class CharacterCreation3 implements Initializable {
                 Parent root;
 
                 stage = (Stage) idContinue.getScene().getWindow();
-                root = FXMLLoader.load(getClass().getResource("../Lobby/GUINewGame.fxml"));
+                switch (character.getEnvironment()){
+                    case Nature:
+                        root = FXMLLoader.load(getClass().getResource("GUICharacterCreation4Nature.fxml"));
+                        break;
+                    case City:
+                        root = FXMLLoader.load(getClass().getResource("GUICharacterCreation4City.fxml"));
+                        break;
+                    case Country:
+                        root = FXMLLoader.load(getClass().getResource("GUICharacterCreation4Country.fxml"));
+                        break;
+                    case Academic:
+                        root = FXMLLoader.load(getClass().getResource("GUICharacterCreation4Academic.fxml"));
+                        break;
+                    default:
+                        root = FXMLLoader.load(getClass().getResource("../Lobby/GUINewGame.fxml"));
+                        break;
+
+                }
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
 
             }catch (Exception e){
+                e.printStackTrace();
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Warning");
                 errorAlert.setContentText("Wrongful input");

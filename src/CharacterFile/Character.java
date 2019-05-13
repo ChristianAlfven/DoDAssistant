@@ -15,7 +15,7 @@ public class Character {
 
     Health health;
     Armor armor;
-    Skillset skillset;
+    Skillset skillset = new Skillset();
     //Inventory inventory;
 
     private Region region;
@@ -65,7 +65,7 @@ public class Character {
         this.health = health;
     }
 
-    public void constructHealth(int hp){Health health = new Health(hp);}
+    public void constructHealth(int hp){this.health = new Health(hp);}
 
     public Armor getArmor() {
         return armor;

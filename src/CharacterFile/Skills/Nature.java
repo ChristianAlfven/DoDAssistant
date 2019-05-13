@@ -25,7 +25,7 @@ public class Nature extends Skill{
     }
 
     public void setWestlands(int westlands) {
-        this.westlands = westlands;
+        this.westlands += westlands;
     }
 
     public int getMidlands() {
@@ -33,7 +33,7 @@ public class Nature extends Skill{
     }
 
     public void setMidlands(int midlands) {
-        this.midlands = midlands;
+        this.midlands += midlands;
     }
 
     public int getEastheim() {
@@ -41,7 +41,7 @@ public class Nature extends Skill{
     }
 
     public void setEastheim(int eastheim) {
-        this.eastheim = eastheim;
+        this.eastheim += eastheim;
     }
 
     public int getSoj() {
@@ -49,7 +49,7 @@ public class Nature extends Skill{
     }
 
     public void setSoj(int soj) {
-        this.soj = soj;
+        this.soj += soj;
     }
 
     public int getNhordlands() {
@@ -57,7 +57,7 @@ public class Nature extends Skill{
     }
 
     public void setNhordlands(int nhordlands) {
-        this.nhordlands = nhordlands;
+        this.nhordlands += nhordlands;
     }
 
     public int getUnderworld() {
@@ -65,7 +65,7 @@ public class Nature extends Skill{
     }
 
     public void setUnderworld(int underworld) {
-        this.underworld = underworld;
+        this.underworld += underworld;
     }
 
     public void addHomeland(Character character, int value){

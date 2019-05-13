@@ -8,8 +8,8 @@ public class Geography extends Skill {
     private int westland;
     private int midland;
     private int eastheim;
-    private int nhordland;
     private int soj;
+    private int nhordland;
     private int underworld;
 
     public Geography() {
@@ -26,7 +26,7 @@ public class Geography extends Skill {
     }
 
     public void setWestland(int westland) {
-        this.westland = westland;
+        this.westland += westland;
     }
 
     public int getMidland() {
@@ -34,7 +34,7 @@ public class Geography extends Skill {
     }
 
     public void setMidland(int midland) {
-        this.midland = midland;
+        this.midland += midland;
     }
 
     public int getEastheim() {
@@ -42,7 +42,7 @@ public class Geography extends Skill {
     }
 
     public void setEastheim(int eastheim) {
-        this.eastheim = eastheim;
+        this.eastheim += eastheim;
     }
 
     public int getNhoordland() {
@@ -50,7 +50,7 @@ public class Geography extends Skill {
     }
 
     public void setNhoordland(int nhoordland) {
-        this.nhordland = nhoordland;
+        this.nhordland += nhoordland;
     }
 
     public int getSoj() {
@@ -58,7 +58,7 @@ public class Geography extends Skill {
     }
 
     public void setSoj(int soj) {
-        this.soj = soj;
+        this.soj += soj;
     }
 
     public int getUnderworld() {
@@ -66,7 +66,7 @@ public class Geography extends Skill {
     }
 
     public void setUnderworld(int underworld) {
-        this.underworld = underworld;
+        this.underworld += underworld;
     }
 
     public void addHomeland(Character character, int value) {

@@ -8,7 +8,7 @@ import CharacterFile.Skills.Management;
 public class Skillset {
 
     private Alchemy alchemy;
-    private Combat combat;
+    private Combat combat = new Combat();
     private Crafting crafting;
     private Crime crime;
     private Culture culture;
@@ -18,7 +18,7 @@ public class Skillset {
     private Jester jester;
     private Management management;
     private Medicine medicine;
-    private Mobility mobility;
+    private Mobility mobility = new Mobility();
     private Nature nature;
     private Religion religion;
     private Riding riding;
@@ -32,140 +32,140 @@ public class Skillset {
 
     public Alchemy getAlchemy() {
         if (alchemy == null){
-            alchemy = new Alchemy();
+            this.alchemy = new Alchemy();
         }
         return alchemy;
     }
 
     public Combat getCombat() {
         if (combat == null){
-            combat = new Combat();
+            this.combat = new Combat();
         }
         return combat;
     }
 
     public Crafting getCrafting() {
         if (crafting == null){
-            crafting = new Crafting();
+            this.crafting = new Crafting();
         }
         return crafting;
     }
 
     public Crime getCrime() {
         if (crime == null){
-            crime = new Crime();
+            this.crime = new Crime();
         }
         return crime;
     }
 
     public Culture getCulture() {
         if (culture == null){
-            culture = new Culture();
+            this.culture = new Culture();
         }
         return culture;
     }
 
     public Entertainment getEntertainment() {
         if (entertainment == null){
-            entertainment = new Entertainment();
+            this.entertainment = new Entertainment();
         }
         return entertainment;
     }
 
     public Geography getGeography() {
         if (geography == null){
-            geography = new Geography();
+            this.geography = new Geography();
         }
         return geography;
     }
 
     public Hunting getHunting() {
         if (hunting == null){
-            hunting = new Hunting();
+            this.hunting = new Hunting();
         }
         return hunting;
     }
 
     public Jester getJester() {
         if (jester == null){
-            jester = new Jester();
+            this.jester = new Jester();
         }
         return jester;
     }
 
     public Management getManagement() {
         if (management == null){
-            management = new Management();
+            this.management = new Management();
         }
         return management;
     }
 
     public Medicine getMedicine() {
         if (medicine == null){
-            medicine = new Medicine();
+            this.medicine = new Medicine();
         }
         return medicine;
     }
 
     public Mobility getMobility() {
         if (mobility == null){
-            mobility = new Mobility();
+            this.mobility = new Mobility();
         }
         return mobility;
     }
 
     public Nature getNature() {
         if (nature == null){
-            nature = new Nature();
+            this.nature = new Nature();
         }
         return nature;
     }
 
     public Religion getReligion() {
         if (religion == null){
-            religion = new Religion();
+            this.religion = new Religion();
         }
         return religion;
     }
 
     public Riding getRiding() {
         if (riding == null){
-            riding = new Riding();
+            this.riding = new Riding();
         }
         return riding;
     }
 
     public Seafaring getSeafaring() {
         if (seafaring == null){
-            seafaring = new Seafaring();
+            this.seafaring = new Seafaring();
         }
         return seafaring;
     }
 
     public Speech getSpeech() {
         if (speech == null){
-            speech = new Speech();
+            this.speech = new Speech();
         }
         return speech;
     }
 
     public Spellcasting getSpellcasting() {
         if (spellcasting == null){
-            spellcasting = new Spellcasting();
+            this.spellcasting = new Spellcasting();
         }
         return spellcasting;
     }
 
     public Survival getSurvival() {
         if (survival == null){
-            survival = new Survival();
+            this.survival = new Survival();
         }
         return survival;
     }
 
     public Trade getTrade() {
         if (trade == null){
-            trade = new Trade();
+            this.trade = new Trade();
         }
         return trade;
     }

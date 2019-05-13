@@ -34,8 +34,12 @@ public class InspectCharacter implements Initializable {
         idSpcTraitMinus.setText(String.valueOf(Party.getParty().getCharacter(Party.getParty().getIndex()).getNegativeTrait()));
         idPointsTotalText.setText(String.valueOf(Party.getParty().getCharacter(Party.getParty().getIndex()).getCombatPoints()));
         idBackground.setText(String.valueOf(Party.getParty().getCharacter(Party.getParty().getIndex()).getBackground()));
+        idSkillset.setText(String.valueOf(Party.getParty().getCharacter(Party.getParty().getIndex()).getSkillset()));
 
     }
+
+    @FXML
+    private TextField idSkillset;
 
     @FXML
     private TextArea idBackground;

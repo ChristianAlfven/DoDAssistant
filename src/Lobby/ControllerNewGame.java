@@ -1,6 +1,5 @@
 package Lobby;
 
-import java.io.File;
 import java.io.IOException;
 
 import ActiveChars.Party;
@@ -51,15 +50,7 @@ public class ControllerNewGame implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        idCharacterTable.getItems().clear();
-        for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
-            list.add(Party.getParty().getCharacter(i));
-        }
-        idTableView.setItems(list);
-        for (int i = 0; i < list.size(); i++) {
-            idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
-            idCharacterColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        }
+        getCharacters();
     }
 
 
@@ -68,11 +59,6 @@ public class ControllerNewGame implements Initializable {
     @FXML
     void buttonDummy(ActionEvent event) {
         createDummy();
-//        idTableView.getItems().clear();
-//        for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
-//            list.add(Party.getParty().getCharacter(i));
-//        }
-//        idCharacterTable.setItems(list);
 
         list.add(Party.getParty().getCharacter(index));
 
@@ -117,7 +103,7 @@ public class ControllerNewGame implements Initializable {
     }
 
     @FXML
-    void buttonEdit(ActionEvent event) throws IOException {
+    void buttonInspect(ActionEvent event) throws IOException {
         Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
 
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -130,15 +116,11 @@ public class ControllerNewGame implements Initializable {
 
     @FXML
     void buttonRemove(ActionEvent event) {
-//        Party.getParty().setIndex(idCharacterTable.getSelectionModel().getSelectedIndex());
-//        Party.getParty().removeCharacter(Party.getParty().getIndex());
-//
-//        idTableView.getItems().clear();
-//        for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
-//            list.add(Party.getParty().getCharacter(i));
-//        }
-//        idTableView.setItems(list);
+        Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
+        Party.getParty().removeCharacter(Party.getParty().getIndex());
 
+        idTableView.getItems().clear();
+        getCharacters();
     }
 
     @FXML
@@ -147,8 +129,19 @@ public class ControllerNewGame implements Initializable {
     }
 
 
-    int y = 0;
+    void getCharacters() {
+        for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
+            list.add(Party.getParty().getCharacter(i));
+        }
+        idTableView.setItems(list);
+        for (int i = 0; i < list.size(); i++) {
+            idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
+            idCharacterColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        }
+    }
 
+
+    int y = 0;
     void createDummy() {
         if (y==0) {
             Character character1 = new Character();
@@ -162,27 +155,45 @@ public class ControllerNewGame implements Initializable {
             character1.setSubrace(Character.SubRace.Borjornikka);
             character1.setProfession(Character.Profession.Priest);
             character1.setEnvironment(Character.Environment.City);
-            character1.setBackground("Hej");
+            character1.setBackground("Background lorem ipsum");
+            character1.setPositiveTrait1(Character.SpecialTrait.Charisma);
+            character1.setPositiveTrait2(Character.SpecialTrait.Psyche);
+            character1.setPosTrait1Level(10);
+            character1.setPosTrait2Level(15);
+            character1.setNegativeTrait(Character.SpecialTrait.Agility);
+            character1.setNegTraitLevel(30);
+            character1.setNationality(Character.Nationality.Human);
             character1.constructHealth(100);
-//            character1.setTotalExp(100);
+            character1.setTotalExp(100);
+            character1.setCharacteristics("Characteristics");
+            character1.setCombatPoints(2000);
 
             Party.getParty().addCharacter(character1);
             y++;
         } else {
             Character character2 = new Character();
 
-            character2.setName("Ost");
+            character2.setName("Lorem ipsum");
             character2.setGender(Character.Gender.Male);
-            character2.setAge(321);
-            character2.setHeight(100);
-            character2.setWeight(300);
+            character2.setAge(1);
+            character2.setHeight(2);
+            character2.setWeight(3);
             character2.setRace(Character.Race.Dwarf);
-            character2.setSubrace(Character.SubRace.Illmalaina);
-            character2.setProfession(Character.Profession.Peasant);
-            character2.setEnvironment(Character.Environment.Academic);
-            character2.setBackground("Då");
-            character2.constructHealth(200);
-//            character2.setTotalExp(100);
+            character2.setSubrace(Character.SubRace.Virann);
+            character2.setProfession(Character.Profession.Mage);
+            character2.setEnvironment(Character.Environment.Nature);
+            character2.setBackground("Background lorem ipsum 2");
+            character2.setPositiveTrait1(Character.SpecialTrait.Agility);
+            character2.setPositiveTrait2(Character.SpecialTrait.Spirituality);
+            character2.setPosTrait1Level(13);
+            character2.setPosTrait2Level(3);
+            character2.setNegativeTrait(Character.SpecialTrait.Strength);
+            character2.setNegTraitLevel(1);
+            character2.setNationality(Character.Nationality.Orc);
+            character2.constructHealth(3);
+            character2.setTotalExp(32);
+            character2.setCharacteristics("Characteristics 2");
+            character2.setCombatPoints(3);
 
             Party.getParty().addCharacter(character2);
             y--;

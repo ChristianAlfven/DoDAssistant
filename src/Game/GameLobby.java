@@ -3,6 +3,7 @@ package Game;
 import ActiveChars.GmList;
 import ActiveChars.Party;
 import CharacterFile.Character;
+import groovy.transform.ToString;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,8 +12,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,7 +25,11 @@ import java.util.ResourceBundle;
 public class GameLobby implements Initializable {
 
     ObservableList<Character> list = FXCollections.observableArrayList();
-    @FXML private ListView<Character> idCharacterTable = new ListView<>();
+
+    @FXML private TableView<Character> idTableView;
+    @FXML private TableColumn<Integer, Character> idHealthColumn;
+    @FXML private TableColumn<ToString, Character> idCharacterColumn;
+
     @FXML private Button idCombat;
     @FXML private Button idScenario;
     @FXML private Button idLobby;
@@ -36,11 +41,14 @@ public class GameLobby implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        idCharacterTable.getItems().clear();
         for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
             list.add(Party.getParty().getCharacter(i));
         }
-        idCharacterTable.setItems(list);
+        idTableView.setItems(list);
+        for (int i = 0; i < list.size(); i++) {
+            idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
+            idCharacterColumn.getCellFactory();   //Why isn't this working properly, want to call toString in Class.Character
+        }
         gmInstance = GmList.createGmList();
 
         idScenario.setDisable(true); //Disabled until scenario is implemented.
@@ -72,7 +80,7 @@ public class GameLobby implements Initializable {
 
     @FXML
     void buttonInspect(ActionEvent event) throws IOException {
-        Party.getParty().setIndex(idCharacterTable.getSelectionModel().getSelectedIndex());
+        Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("GUIInspectCharacter.fxml"));

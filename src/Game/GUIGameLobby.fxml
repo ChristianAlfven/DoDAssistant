@@ -17,7 +17,7 @@
             <Image url="@../Resources/StartGameBackground.png" />
          </image>
       </ImageView>
-      <Button fx:id="idLobby" layoutX="622.0" layoutY="258.0" mnemonicParsing="false" onAction="#buttonLobby" prefHeight="25.0" prefWidth="97.0" text="LOBBY" textAlignment="CENTER" textFill="#0a0a0a">
+      <Button fx:id="idLobby" layoutX="622.0" layoutY="361.0" mnemonicParsing="false" onAction="#buttonLobby" prefHeight="25.0" prefWidth="97.0" text="LOBBY" textAlignment="CENTER" textFill="#0a0a0a">
          <effect>
             <Lighting diffuseConstant="1.26">
                <bumpInput>
@@ -32,7 +32,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idCombat" layoutX="622.0" layoutY="328.0" mnemonicParsing="false" onAction="#buttonCombat" prefHeight="25.0" prefWidth="97.0" text="COMBAT" textAlignment="CENTER">
+      <Button fx:id="idCombat" layoutX="622.0" layoutY="290.0" mnemonicParsing="false" onAction="#buttonCombat" prefHeight="25.0" prefWidth="97.0" text="COMBAT" textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <bumpInput>
@@ -47,7 +47,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idScenario" layoutX="622.0" layoutY="361.0" mnemonicParsing="false" onAction="#buttonScenario" prefHeight="25.0" prefWidth="97.0" text="SCENARIO" textAlignment="CENTER">
+      <Button fx:id="idScenario" layoutX="622.0" layoutY="325.0" mnemonicParsing="false" onAction="#buttonScenario" prefHeight="25.0" prefWidth="97.0" text="SCENARIO" textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <bumpInput>
@@ -62,34 +62,36 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <ListView fx:id="idCharacterTable" layoutX="622.0" layoutY="23.0" prefHeight="228.0" prefWidth="200.0">
+      <Button fx:id="idInspect" layoutX="622.0" layoutY="255.0" mnemonicParsing="false" onAction="#buttonInspect" prefHeight="25.0" prefWidth="97.0" text="INSPECT" textAlignment="CENTER" textFill="#0a0a0a">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TableView fx:id="idTableView" layoutX="619.0" layoutY="7.0" prefHeight="242.0" prefWidth="200.0">
+         <columns>
+            <TableColumn fx:id="idHealthColumn" editable="false" prefWidth="33.0" sortable="false" text="HP" />
+            <TableColumn fx:id="idCharacterColumn" editable="false" prefWidth="166.0" sortable="false" text="Character" />
+         </columns>
          <effect>
             <Lighting>
                <bumpInput>
-                  <Shadow />
+                  <Shadow height="84.0075" radius="46.506874999999994" width="104.02" />
                </bumpInput>
                <light>
-                  <Light.Distant />
+                  <Light.Distant color="#ffcc99" />
                </light>
             </Lighting>
          </effect>
-      </ListView>
-      <Label layoutX="651.0" layoutY="6.0" prefHeight="17.0" prefWidth="64.0" text="Characters" />
-      <Label layoutX="622.0" layoutY="6.0" text="HP" />
-      <Button fx:id="idInspect" layoutX="622.0" layoutY="293.0" mnemonicParsing="false" onAction="#buttonInspect" prefHeight="25.0" prefWidth="97.0" text="INSPECT" textAlignment="CENTER" textFill="#0a0a0a">
-         <effect>
-            <Lighting diffuseConstant="1.26">
-               <bumpInput>
-                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
-               </bumpInput>
-               <light>
-                  <Light.Distant />
-               </light>
-            </Lighting>
-         </effect>
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
+      </TableView>
    </children>
 </AnchorPane>

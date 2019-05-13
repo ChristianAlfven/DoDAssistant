@@ -16,7 +16,7 @@
             <Image url="@../Resources/parchment.png" />
          </image>
       </ImageView>
-      <Button fx:id="idNewCharacter" alignment="CENTER" layoutX="39.0" layoutY="132.0" mnemonicParsing="false" onAction="#buttonNewCharacter" prefHeight="40.0" prefWidth="160.0" text="New Character">
+      <Button fx:id="idNewCharacter" alignment="CENTER" layoutX="66.0" layoutY="132.0" mnemonicParsing="false" onAction="#buttonNewCharacter" prefHeight="40.0" prefWidth="160.0" text="New Character">
          <effect>
             <Lighting>
                <bumpInput>
@@ -31,7 +31,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="idLoadCharacter" alignment="CENTER" layoutX="39.0" layoutY="185.0" mnemonicParsing="false" onAction="#buttonLoadCharacter" prefHeight="40.0" prefWidth="160.0" text="Load Character">
+      <Button fx:id="idLoadCharacter" alignment="CENTER" layoutX="66.0" layoutY="185.0" mnemonicParsing="false" onAction="#buttonLoadCharacter" prefHeight="40.0" prefWidth="160.0" text="Load Character">
          <effect>
             <Lighting>
                <bumpInput>
@@ -46,7 +46,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="idStartGame" alignment="CENTER" layoutX="39.0" layoutY="75.0" mnemonicParsing="false" onAction="#buttonStartGame" prefHeight="40.0" prefWidth="160.0" text="Start Game">
+      <Button fx:id="idStartGame" alignment="CENTER" layoutX="66.0" layoutY="80.0" mnemonicParsing="false" onAction="#buttonStartGame" prefHeight="40.0" prefWidth="160.0" text="Start Game">
          <effect>
             <Lighting>
                <bumpInput>
@@ -61,34 +61,34 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="idEdit" alignment="CENTER" layoutX="313.0" layoutY="314.0" mnemonicParsing="false" onAction="#buttonEdit" prefHeight="3.0" prefWidth="67.0" text="Edit">
+      <Button fx:id="idInspect" alignment="CENTER" layoutX="338.0" layoutY="249.0" mnemonicParsing="false" onAction="#buttonInspect" prefHeight="25.0" prefWidth="48.0" text="Inspect" textFill="#0a0a0a">
          <effect>
             <Lighting>
                <bumpInput>
                   <Shadow />
                </bumpInput>
                <light>
-                  <Light.Distant color="#ffbf80" />
+                  <Light.Distant />
                </light>
             </Lighting>
          </effect>
          <font>
-            <Font name="System Bold Italic" size="12.0" />
+            <Font name="System Bold Italic" size="10.0" />
          </font>
       </Button>
-      <Button fx:id="idRemove" alignment="CENTER" layoutX="380.0" layoutY="314.0" mnemonicParsing="false" onAction="#buttonRemove" prefHeight="15.0" prefWidth="67.0" text="Remove">
+      <Button fx:id="idRemove" alignment="CENTER" layoutX="388.0" layoutY="249.0" mnemonicParsing="false" onAction="#buttonRemove" prefHeight="25.0" prefWidth="67.0" text="Remove" textFill="#0a0a0a">
          <effect>
             <Lighting>
                <bumpInput>
                   <Shadow />
                </bumpInput>
                <light>
-                  <Light.Distant color="#ffbf80" />
+                  <Light.Distant />
                </light>
             </Lighting>
          </effect>
          <font>
-            <Font name="System Bold Italic" size="12.0" />
+            <Font name="System Bold Italic" size="10.0" />
          </font>
       </Button>
       <Button fx:id="idExit" alignment="CENTER" layoutX="14.0" layoutY="370.0" mnemonicParsing="false" onAction="#buttonExit" prefHeight="25.0" prefWidth="67.0" text="Exit">
@@ -106,11 +106,11 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="idDummy" layoutX="133.0" layoutY="254.0" mnemonicParsing="false" onAction="#buttonDummy" text="Dummy" />
-      <TableView fx:id="idTableView" layoutX="287.0" layoutY="80.0" prefHeight="184.0" prefWidth="160.0">
+      <Button fx:id="idDummy" layoutX="208.0" layoutY="264.0" mnemonicParsing="false" onAction="#buttonDummy" text="Dummy" />
+      <TableView fx:id="idTableView" layoutX="257.0" layoutY="58.0" prefHeight="189.0" prefWidth="200.0">
          <columns>
             <TableColumn fx:id="idHealthColumn" editable="false" prefWidth="33.0" sortable="false" text="HP" />
-            <TableColumn fx:id="idCharacterColumn" editable="false" prefWidth="126.0" sortable="false" text="Character" />
+            <TableColumn fx:id="idCharacterColumn" editable="false" prefWidth="166.0" sortable="false" text="Character" />
          </columns>
          <effect>
             <Lighting>

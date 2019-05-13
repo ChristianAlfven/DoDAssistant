@@ -31,19 +31,19 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="37.0" layoutY="94.0" text="Age: ">
+      <Label layoutX="52.0" layoutY="90.0" text="Age: ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label layoutX="37.0" layoutY="108.0" text="Height: ">
+      <Label layoutX="52.0" layoutY="104.0" text="Height: ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label layoutX="37.0" layoutY="124.0" text="Weight: ">
+      <Label layoutX="52.0" layoutY="120.0" text="Weight: ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label layoutX="37.0" layoutY="141.0" text="Environment:">
+      <Label layoutX="52.0" layoutY="137.0" text="Environment:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
@@ -54,33 +54,33 @@
       <Label layoutX="350.0" layoutY="233.0" text="+" />
       <Label layoutX="350.0" layoutY="248.0" text="+" />
       <Label layoutX="352.0" layoutY="263.0" text="-" />
-      <Label layoutX="37.0" layoutY="158.0" text="Adventure Points:">
+      <Label layoutX="52.0" layoutY="154.0" text="Adventure Points:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <TextField fx:id="idAgeText" layoutX="65.0" layoutY="93.0" prefHeight="19.0" prefWidth="70.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="123">
+      <TextField fx:id="idAgeText" layoutX="80.0" layoutY="89.0" prefHeight="19.0" prefWidth="153.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="123">
          <font>
             <Font size="11.0" />
          </font></TextField>
-      <TextField fx:id="idHeightText" layoutX="80.0" layoutY="108.0" prefHeight="19.0" prefWidth="70.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="321">
+      <TextField fx:id="idHeightText" layoutX="95.0" layoutY="104.0" prefHeight="19.0" prefWidth="136.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="321">
          <font>
             <Font size="11.0" />
          </font></TextField>
-      <TextField fx:id="idWeightText" layoutX="81.0" layoutY="123.0" prefHeight="19.0" prefWidth="70.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="231">
+      <TextField fx:id="idWeightText" layoutX="96.0" layoutY="119.0" prefHeight="19.0" prefWidth="136.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="231">
          <font>
             <Font size="11.0" />
          </font></TextField>
-      <TextField fx:id="idEnvironmentText" layoutX="111.0" layoutY="140.0" prefHeight="19.0" prefWidth="112.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="lorem ipsum">
+      <TextField fx:id="idEnvironmentText" layoutX="126.0" layoutY="136.0" prefHeight="19.0" prefWidth="112.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="lorem ipsum">
          <font>
             <Font size="11.0" />
          </font></TextField>
-      <TextField fx:id="idSubRaceText" layoutX="152.0" layoutY="71.0" prefHeight="27.0" prefWidth="145.0" style="-fx-background-color: none; -fx-text-transform: uppercase; -fx-padding: 1 3; -fx-text-fill: #8e0000;" text="STORMLANDER">
+      <TextField fx:id="idSubRaceText" layoutX="87.0" layoutY="62.0" prefHeight="27.0" prefWidth="145.0" style="-fx-background-color: none; -fx-text-transform: uppercase; -fx-padding: 1 3; -fx-text-fill: #8e0000;" text="STORMLANDER">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="idGenderText" alignment="CENTER_RIGHT" layoutX="108.0" layoutY="75.0" prefHeight="19.0" prefWidth="45.0" style="-fx-background-color: none; -fx-padding: 1 3; -fx-text-fill: #8e0000;" text="Female" />
-      <TextField fx:id="idPointsTotalText" layoutX="138.0" layoutY="157.0" prefHeight="19.0" prefWidth="42.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="3000">
+      <TextField fx:id="idGenderText" alignment="CENTER_RIGHT" layoutX="43.0" layoutY="67.0" prefHeight="19.0" prefWidth="45.0" style="-fx-background-color: none; -fx-padding: 1 3; -fx-text-fill: #8e0000;" text="Female" />
+      <TextField fx:id="idPointsTotalText" layoutX="153.0" layoutY="153.0" prefHeight="19.0" prefWidth="76.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="3000">
          <font>
             <Font size="11.0" />
          </font></TextField>
@@ -96,25 +96,35 @@
          <font>
             <Font size="11.0" />
          </font></TextField>
-      <Label layoutX="38.0" layoutY="219.0" text="Skills">
+      <Label layoutX="47.0" layoutY="195.0" text="Skills">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="idCharacter" layoutX="35.0" layoutY="45.0" prefHeight="32.0" prefWidth="426.0" style="-fx-background-color: none; -fx-padding: 1 3; -fx-text-fill: #000;" text="Ostron the Human Warrior">
+      <TextField fx:id="idCharacter" layoutX="35.0" layoutY="41.0" prefHeight="32.0" prefWidth="426.0" style="-fx-background-color: none; -fx-padding: 1 3; -fx-text-fill: #000;" text="Ostron the Human Warrior">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </TextField>
-      <Label layoutX="228.0" layoutY="94.0" text="Background">
+      <Label layoutX="221.0" layoutY="86.0" text="Background">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextArea fx:id="idBackground" editable="false" layoutX="223.0" layoutY="110.0" prefHeight="84.0" prefWidth="221.0" style="-fx-background-color: transparent;" text="Background lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum" wrapText="true">
+      <TextArea fx:id="idBackground" editable="false" layoutX="216.0" layoutY="102.0" prefHeight="84.0" prefWidth="221.0" style="-fx-background-color: transparent;" text="Background lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum" wrapText="true">
          <font>
             <Font size="10.0" />
          </font>
       </TextArea>
+      <Label layoutX="51.0" layoutY="218.0" text="Skillset:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idSkillset" layoutX="102.0" layoutY="217.0" prefHeight="19.0" prefWidth="76.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="3000">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

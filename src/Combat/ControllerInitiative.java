@@ -2,10 +2,12 @@ package Combat;
 
 import ActiveChars.GmList;
 import ActiveChars.Party;
+import CharacterFile.Armor;
 import CharacterFile.Combatant;
 import CharacterFile.Character;
 
 
+import CharacterFile.Health;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,34 +47,46 @@ public class ControllerInitiative {
     @FXML private Button idAttackPhaseButton;
     @FXML private Button idEndCombatButton;
 
-    private Party party = Party.getParty();
-    private GmList gmInstance = GmList.createGmList();
+    private Party partyInstance;
+    private GmList gmInstance;
 
     public ArrayList<Combatant> combatList;
+    public ArrayList<Character> partyList;
     public Combatant[] combatOrder;
     private Combatant combatant;
-    int input;
-    Stage stage;
-    Parent root;
+    private int input;
+    private Character player;
 
-    Character player;
-
+    private Stage stage;
+    private Parent root;
 
     private int i = 0;
     private int j = 0;
     private int k = 0;
 
-    private boolean isAttacking;
-
 
     public void initialize() {
-        i = 0;
+        partyInstance = Party.getParty();
+        gmInstance = GmList.createGmList();
         combatList = gmInstance.getGmList();
-        combatOrder = new Combatant[combatList.size()];
+        partyList = partyInstance.getPartyList();
+
+        //dummyPlayer();
+
+        i = 0;
+
+        combatOrder = new Combatant[combatList.size()+partyList.size()];
         gatherGmList();
+        if (!gmInstance.isPlayersAdded()) {
+            gatherParty();
+        }
 
         idInitiativeText.setText(combatList.get(i).getName());
         j = combatList.size() - 1;
+
+        idAttackPhaseButton.setDisable(true);
+        idAttackButton.setDisable(true);
+        idStandbyButton.setDisable(true);
     }
 
     @FXML
@@ -80,16 +94,15 @@ public class ControllerInitiative {
         input = Integer.parseInt(idInitiativeValueText.getText());
         combatList.get(i).setInitiative(input);
         i += 1;
-        System.out.println(i);
 
         if(i == combatList.size()) {
             idInitiativeText.clear();
             idInitiativeValueText.clear();
             idInitiativeButton.setDisable(true);
+            idAttackButton.setDisable(false);
+            idStandbyButton.setDisable(false);
             orderList();
-            System.out.println(combatList.get(0).getName() +
-                    "\n" + combatList.get(1).getName()+
-                    "\n" + combatList.get(2).getName());
+
             i = 0;
             idActivityText.setText(combatList.get(k).getName());
 
@@ -110,9 +123,6 @@ public class ControllerInitiative {
     }
 
     private void actionChoice(boolean attacking){
-        System.out.println("i = " + i +
-                "j = " + j +
-                "k = " + k);
         if(k < combatList.size()-1 && attacking){
             combatOrder[i] = combatList.get(k);
             i++;
@@ -131,22 +141,24 @@ public class ControllerInitiative {
             idActivityText.clear();
             idAttackButton.setDisable(true);
             idStandbyButton.setDisable(true);
-
-            System.out.println(combatOrder[0].getName());
-            System.out.println(combatOrder[1].getName());
-            System.out.println(combatOrder[2].getName());
+            idAttackPhaseButton.setDisable(false);
         }
     }
 
     private void gatherParty(){
-        while (party.getCharacter(i) != null){
-            player = Party.getParty().getCharacter(i);
-            combatant = new Combatant(player.getName(), player.getCombatPoints(), player.getHealth().getTotal(), true);
-            combatant.setPlayerIndex(i);
-            combatant.setArmor(player.getArmor());
-            combatList.add(combatant);
-            i += i;
+        gmInstance.setPlayersAdded(true);
+        i = 0;
+        while (i < partyList.size()){
+            player = partyList.get(i);
+            if(player != null) {
+                combatant = new Combatant(player.getName(), player.getCombatPoints(), player.getHealth(), true);
+                combatant.setPlayerIndex(i);
+                combatant.setArmor(player.getArmor());
+                combatList.add(combatant);
+            }
+            i++;
         }
+        i = 0;
     }
 
     private void gatherGmList() {
@@ -185,10 +197,53 @@ public class ControllerInitiative {
 
     @FXML
     void endCombat(ActionEvent event) throws IOException {
+        int playerIndex;
+        for(int i = 0; i < combatList.size(); i++){
+            //combatList.get(i).setRemainingCombatPoints(combatList.get(i).getTotCombatPoints());
+            if(combatList.get(i).isPlayer()){
+                playerIndex = combatList.get(i).getPlayerIndex();
+                partyInstance.getCharacter(playerIndex).setHealth(combatList.get(i).getHealth());
+
+                combatList.remove(i);
+                gmInstance.getGmList().remove(i);
+            }
+        }
+
         stage = (Stage) idEndCombatButton.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("/Game/GUIGameLobby.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void dummyPlayer(){
+        Health hp = new Health(30);
+        Armor armor = new Armor();
+        armor.setHead(10);
+        armor.setRightArm(5);
+        armor.setLeftArm(5);
+        armor.setChest(10);
+        armor.setStomach(8);
+        armor.setRightLeg(7);
+        armor.setLeftLeg(7);
+
+        Character character1 = new Character();
+
+        character1.setName("Pelle2");
+        character1.setGender(Character.Gender.Female);
+        character1.setAge(12);
+        character1.setHeight(123);
+        character1.setWeight(10);
+        character1.setRace(Character.Race.Human);
+        character1.setSubrace(Character.SubRace.Borjornikka);
+        character1.setProfession(Character.Profession.Priest);
+        character1.setEnvironment(Character.Environment.City);
+        character1.setBackground("Hej");
+        character1.setCombatPoints(100);
+        character1.setHealth(hp);
+        character1.setArmor(armor);
+
+        partyList.add(character1);
+        partyInstance.setPartyList(partyList);
     }
 }

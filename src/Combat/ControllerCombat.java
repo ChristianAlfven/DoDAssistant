@@ -2,6 +2,7 @@ package Combat;
 
 import ActiveChars.GmList;
 import ActiveChars.Party;
+import CharacterFile.Character;
 import CharacterFile.Combatant;
 import CharacterFile.Health;
 import CharacterFile.Armor;
@@ -17,6 +18,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ControllerCombat {
 
@@ -65,9 +67,11 @@ public class ControllerCombat {
 
     private Stage stage;
     private Parent root;
-    private Party party = Party.getParty();
+    private Party partyInstance = Party.getParty();
     private GmList gmInstance = GmList.createGmList();
+
     private ObservableList<Combatant> combatList;
+    public ArrayList<Character> partyList;
 
     private int attackerIndex;
     private int defenderIndex;
@@ -76,6 +80,7 @@ public class ControllerCombat {
     public void initialize() {
         combatList = FXCollections.observableArrayList();
         combatList.addAll(gmInstance.getGmList());
+        partyList = partyInstance.getPartyList();
         setAttacker();
 
         idCombatOrderTable.setItems(combatList);
@@ -160,12 +165,15 @@ public class ControllerCombat {
 
     @FXML
     void finishTurn(ActionEvent event) throws IOException {
+        for(int i = 0; i < combatList.size(); i++) {
+            combatList.get(i).setRemainingCombatPoints(combatList.get(i).getTotCombatPoints());
+        }
+
         stage = (Stage) idEndCombatButton.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("GUIInitiative.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     @FXML
@@ -179,6 +187,10 @@ public class ControllerCombat {
         attackerIndex++;
         setAttacker();
         idDefenderText.clear();
+
+        if(attackerIndex >= combatList.size()-1){
+            idNextAttackerButton.setDisable(true);
+        }
     }
 
     public void setAttacker(){
@@ -200,6 +212,18 @@ public class ControllerCombat {
 
     @FXML
     void endCombat(ActionEvent event) throws IOException {
+        int playerIndex;
+        for(int i = 0; i < combatList.size(); i++){
+            combatList.get(i).setRemainingCombatPoints(combatList.get(i).getTotCombatPoints());
+            if(combatList.get(i).isPlayer()){
+                playerIndex = combatList.get(i).getPlayerIndex();
+                partyInstance.getCharacter(playerIndex).setHealth(combatList.get(i).getHealth());
+
+                combatList.remove(i);
+                gmInstance.getGmList().remove(i);
+            }
+        }
+
         stage = (Stage) idEndCombatButton.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("/Game/GUIGameLobby.fxml"));
         Scene scene = new Scene(root);

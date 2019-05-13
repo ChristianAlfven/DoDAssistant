@@ -12,7 +12,7 @@ public class CombatTest extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Pane root = FXMLLoader.load(getClass().getResource("GUIInitiative.fxml"));
+        Pane root = FXMLLoader.load(getClass().getResource("GUICombat.fxml"));
         primaryStage.setTitle("Initiative");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

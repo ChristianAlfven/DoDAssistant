@@ -69,6 +69,16 @@ public class ControllerNewGame implements Initializable {
 
     void createDummy() {
         if (y==0) {
+            Health hp = new Health(30);
+            Armor armor = new Armor();
+            armor.setHead(10);
+            armor.setRightArm(5);
+            armor.setLeftArm(5);
+            armor.setChest(10);
+            armor.setStomach(8);
+            armor.setRightLeg(7);
+            armor.setLeftLeg(7);
+
             Character character1 = new Character();
 
             character1.setName("Pelle");
@@ -81,6 +91,9 @@ public class ControllerNewGame implements Initializable {
             character1.setProfession(Character.Profession.Priest);
             character1.setEnvironment(Character.Environment.City);
             character1.setBackground("Hej");
+            character1.setCombatPoints(100);
+            character1.setHealth(hp);
+            character1.setArmor(armor);
 
             Party.getParty().addCharacter(character1);
             y++;

@@ -26,7 +26,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="idContinue" layoutX="238.0" layoutY="358.0" mnemonicParsing="false" onAction="#buttonContinue" prefHeight="25.0" prefWidth="145.0" text="Continue..." textAlignment="CENTER">
+      <Button fx:id="idContinue" layoutX="373.0" layoutY="357.0" mnemonicParsing="false" onAction="#buttonContinue" prefHeight="25.0" prefWidth="145.0" text="Continue..." textAlignment="CENTER">
          <effect>
             <Lighting diffuseConstant="1.26">
                <light>
@@ -147,7 +147,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="idRaceLabel132" layoutX="117.0" layoutY="206.0" text="Crafting">
+      <Label fx:id="idRaceLabel132" layoutX="41.0" layoutY="359.0" text="Crafting">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
@@ -157,7 +157,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="idRaceLabel134" layoutX="117.0" layoutY="313.0" text="Combat">
+      <Label fx:id="idRaceLabel134" layoutX="122.0" layoutY="205.0" text="Combat">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
@@ -262,7 +262,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="idCombatBox" alignment="CENTER" layoutX="182.0" layoutY="310.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+      <TextField fx:id="idCombatBox" alignment="CENTER" layoutX="182.0" layoutY="204.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
          <effect>
             <Lighting diffuseConstant="1.07">
                <bumpInput>
@@ -307,7 +307,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="idCraftingBox" alignment="CENTER" layoutX="182.0" layoutY="203.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+      <TextField fx:id="idMetalBox" alignment="CENTER" layoutX="104.0" layoutY="357.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
          <effect>
             <Lighting diffuseConstant="1.07">
                <bumpInput>
@@ -443,7 +443,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idCraftingBtn" layoutX="226.0" layoutY="204.0" mnemonicParsing="false" onAction="#rollCrafting" prefHeight="25.0" prefWidth="40.0" text="Roll">
+      <Button fx:id="idCraftingBtn" layoutX="277.0" layoutY="357.0" mnemonicParsing="false" onAction="#rollCrafting" prefHeight="25.0" prefWidth="40.0" text="Roll">
          <effect>
             <Lighting>
                <bumpInput>
@@ -533,7 +533,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="idCombatBtn" layoutX="226.0" layoutY="310.0" mnemonicParsing="false" onAction="#rollCombat" prefHeight="25.0" prefWidth="40.0" text="Roll">
+      <Button fx:id="idCombatBtn" layoutX="226.0" layoutY="204.0" mnemonicParsing="false" onAction="#rollCombat" prefHeight="25.0" prefWidth="40.0" text="Roll">
          <effect>
             <Lighting>
                <bumpInput>
@@ -563,5 +563,70 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
+      <TextField fx:id="idSoftBox" alignment="CENTER" layoutX="233.0" layoutY="357.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idStoneBox" alignment="CENTER" layoutX="190.0" layoutY="357.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idWoodBox" alignment="CENTER" layoutX="147.0" layoutY="357.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="idRaceLabel1323" layoutX="153.0" layoutY="342.0" text="Wood">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel1324" layoutX="110.0" layoutY="342.0" text="Metal">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel13241" layoutX="197.0" layoutY="341.0" text="Stone">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel13242" layoutX="244.0" layoutY="341.0" text="Soft">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -18,6 +18,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+import static CharacterFile.Character.Nationality.Human;
+
 public class CharacterCreation implements Initializable {
 
 //    Image image = new Image("sample/sample.fxml");
@@ -125,7 +127,6 @@ public class CharacterCreation implements Initializable {
 
     @FXML
     void buttonContinue(ActionEvent event) throws IOException {
-
 
         if ((idNamebox.getText()!=null)&&(idAgeBox.getText()!=null)
                 &&(idBackgroundBox.getText()!=null)&&(idHeightBox.getText()!=null)
@@ -247,15 +248,14 @@ public class CharacterCreation implements Initializable {
     }
 
     // SUBRACE METHODS
-    public void setSubrace1(ActionEvent event){
-        if(character.getRace()== Character.Race.Human) {
+    public void setSubrace1(ActionEvent event) {
+        if (character.getRace() == Character.Race.Human) {
             character.setSubrace(Character.SubRace.Stormlander);
-        }else if (character.getRace()== Character.Race.Elf) {
+        } else if (character.getRace() == Character.Race.Elf) {
             character.setSubrace(Character.SubRace.Korpikalla);
-        }else if (character.getRace()== Character.Race.Dwarf) {
+        } else if (character.getRace() == Character.Race.Dwarf) {
             character.setSubrace(Character.SubRace.Borjornikka);
-        }
-        else if ((character.getRace()==Character.Race.HalfBlood)&&(character.getSubrace()==null)){
+        } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == null)) {
             character.setSubrace(Character.SubRace.HalfElf);
             idSubrace1.setSelected(false);
             idSubrace3.setDisable(true);
@@ -263,20 +263,36 @@ public class CharacterCreation implements Initializable {
             idSubrace1.setText("Human");
             idSubrace2.setText("Elf");
             idSubraceLabel.setText("Nationality");
-        }else if ((character.getRace()==Character.Race.HalfBlood) && (character.getSubrace()== Character.SubRace.HalfElf)) {
-            character.setNationality(Character.Nationality.Human);
-        }else if ((character.getRace()==Character.Race.HalfBlood) && (character.getSubrace()== Character.SubRace.HalfOrc)) {
-            character.setNationality(Character.Nationality.Human);
+        } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfElf)) {
+            character.setNationality(Human);
+            idSubrace2.setSelected(false);
+            idSubrace3.setDisable(false);
+            idSubrace3.setText("Eastheim");
+            idSubrace1.setText("Westlands");
+            idSubrace2.setText("Midlands");
+            idSubraceLabel.setText("Region");
+        } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfOrc)) {
+            character.setNationality(Human);
+            idSubrace2.setSelected(false);
+            idSubrace3.setDisable(false);
+            idSubrace3.setText("Eastheim");
+            idSubrace1.setText("Westlands");
+            idSubrace2.setText("Midlands");
+            idSubraceLabel.setText("Region");
+        } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfOrc) && character.getRegion() == null) {
+            character.setRegion(Character.Region.Westlands);
+        } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfElf) && character.getRegion() == null) {
+            character.setRegion(Character.Region.Westlands);
         }
     }
-    public void setSubrace2(ActionEvent event){
+        public void setSubrace2 (ActionEvent event){
             if (character.getRace() == Character.Race.Human) {
                 character.setSubrace(Character.SubRace.Midlander);
             } else if (character.getRace() == Character.Race.Elf) {
                 character.setSubrace(Character.SubRace.Illmalaina);
             } else if (character.getRace() == Character.Race.Dwarf) {
                 character.setSubrace(Character.SubRace.Zvorda);
-            } else if ((character.getRace() == Character.Race.HalfBlood)&&(character.getSubrace()==null)) {
+            } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == null)) {
                 character.setSubrace(Character.SubRace.HalfOrc);
                 idSubrace2.setSelected(false);
                 idSubrace3.setDisable(true);
@@ -288,20 +304,35 @@ public class CharacterCreation implements Initializable {
                 character.setNationality(Character.Nationality.Elf);
             } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfOrc)) {
                 character.setNationality(Character.Nationality.Orc);
+                character.setSubrace(Character.SubRace.HalfOrc);
+                idSubrace2.setSelected(false);
+                idSubrace3.setDisable(false);
+                idSubrace3.setText("Eastheim");
+                idSubrace1.setText("Westlands");
+                idSubrace2.setText("Midlands");
+                idSubraceLabel.setText("Region");
+            } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfOrc) && character.getNationality() == Human) {
+                character.setRegion(Character.Region.Midlands);
+            } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfElf) && character.getNationality() == Human)
+                character.setRegion(Character.Region.Midlands);
+        }
+
+        public void setSubrace3 (ActionEvent event){
+            if (character.getRace() == Character.Race.Human) {
+                character.setSubrace(Character.SubRace.Virann);
+            } else if (character.getRace() == Character.Race.Dwarf) {
+                character.setSubrace(Character.SubRace.Buratja);
+            } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfOrc) && character.getNationality() == Human) {
+                character.setRegion(Character.Region.Eastheim);
+            } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfElf) && character.getNationality() == Human) {
+                character.setRegion(Character.Region.Eastheim);
             }
         }
 
-    public void setSubrace3(ActionEvent event){
-        if(character.getRace()== Character.Race.Human) {
-            character.setSubrace(Character.SubRace.Virann);
-        }else if (character.getRace()== Character.Race.Dwarf) {
-            character.setSubrace(Character.SubRace.Buratja);
-        }
-    }
 
 
     // NATIONALITY METHODS (HALF BLOOD ONLY)
-    public void setNationalityHuman(ActionEvent event){character.setNationality(Character.Nationality.Human);}
+    public void setNationalityHuman(ActionEvent event){character.setNationality(Human);}
     public void setNationalityElf(ActionEvent event){character.setNationality(Character.Nationality.Elf);}
     public void setNationalityOrc(ActionEvent event){character.setNationality(Character.Nationality.Orc);}
 

@@ -1,15 +1,18 @@
 package CharacterFile.Skills;
 
-public class Geography extends Skill{
+import CharacterFile.Character;
+import CharacterFile.*;
+
+public class Geography extends Skill {
 
     private int westland;
     private int midland;
     private int eastheim;
-    private int nhordland;
     private int soj;
+    private int nhordland;
     private int underworld;
 
-    public Geography(){
+    public Geography() {
         westland = 0;
         midland = 0;
         eastheim = 0;
@@ -23,7 +26,7 @@ public class Geography extends Skill{
     }
 
     public void setWestland(int westland) {
-        this.westland = westland;
+        this.westland += westland;
     }
 
     public int getMidland() {
@@ -31,7 +34,7 @@ public class Geography extends Skill{
     }
 
     public void setMidland(int midland) {
-        this.midland = midland;
+        this.midland += midland;
     }
 
     public int getEastheim() {
@@ -39,7 +42,7 @@ public class Geography extends Skill{
     }
 
     public void setEastheim(int eastheim) {
-        this.eastheim = eastheim;
+        this.eastheim += eastheim;
     }
 
     public int getNhoordland() {
@@ -47,7 +50,7 @@ public class Geography extends Skill{
     }
 
     public void setNhoordland(int nhoordland) {
-        this.nhordland = nhoordland;
+        this.nhordland += nhoordland;
     }
 
     public int getSoj() {
@@ -55,7 +58,7 @@ public class Geography extends Skill{
     }
 
     public void setSoj(int soj) {
-        this.soj = soj;
+        this.soj += soj;
     }
 
     public int getUnderworld() {
@@ -63,6 +66,45 @@ public class Geography extends Skill{
     }
 
     public void setUnderworld(int underworld) {
-        this.underworld = underworld;
+        this.underworld += underworld;
+    }
+
+    public void addHomeland(Character character, int value) {
+        switch (character.getRace()) {
+            case Human:
+                if (character.getSubrace() == Character.SubRace.Stormlander) {
+                    setEastheim(getEastheim() + value);
+                } else if (character.getSubrace() == Character.SubRace.Midlander) {
+                    setMidland(getMidland() + value);
+                } else {
+                    setWestland(getWestland() + value);
+                }
+                break;
+            case Elf:
+                setSoj(getSoj() + value);
+                break;
+            case Dwarf:
+                setUnderworld(getUnderworld() + value);
+                break;
+            case HalfBlood:
+                switch (character.getNationality()) {
+                    case Human:
+                    case Orc:
+                        if (character.getRegion() == Character.Region.Eastheim) {
+                            setEastheim(getEastheim() + value);
+                        } else if (character.getRegion() == Character.Region.Westlands) {
+                            setWestland(getWestland() + value);
+                        } else {
+                            setMidland(getMidland() + value);
+                        }
+                        break;
+                    case Elf:
+                        setSoj(getSoj() + value);
+                        break;
+                }
+                break;
+
+        }
     }
 }
+

@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?package Resources.parchment.png?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Light?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="445.0" prefWidth="588.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Creator.CharacterCreation4">
+   <children>
+      <ImageView fitHeight="415.0" fitWidth="620.0" layoutX="-1.0" layoutY="-3.0">
+         <image>
+            <Image url="@../Resources/parchment.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="idContinue" layoutX="237.0" layoutY="362.0" mnemonicParsing="false" onAction="#buttonContinue" prefHeight="25.0" prefWidth="145.0" text="Continue..." textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idBack" alignment="CENTER" layoutX="16.0" layoutY="412.0" mnemonicParsing="false" onAction="#buttonBack" prefHeight="17.0" prefWidth="69.0" style="-fx-background-color:#FFF ;" text="&lt;&lt;Back">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#a19c9c" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idRaceLabel2" layoutX="289.0" layoutY="23.0" text="Skills">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="217.0" layoutY="48.0" prefWidth="200.0" />
+      <Label fx:id="idRaceLabel13" layoutX="437.0" layoutY="76.0" text="Speech">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel133" layoutX="61.0" layoutY="121.0" text="Speech">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel134" layoutX="255.0" layoutY="79.0" text="Nature">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel137" layoutX="70.0" layoutY="167.0" text="Theoretical Skills">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idSpeechChoiceBtn" alignment="CENTER" layoutX="197.0" layoutY="119.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idSpeechBox" alignment="CENTER" layoutX="489.0" layoutY="74.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idTheoreticalBox1" alignment="CENTER" layoutX="249.0" layoutY="164.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idNatureBox" alignment="CENTER" layoutX="310.0" layoutY="76.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="idRaceLabel21" layoutX="332.0" layoutY="27.0" opacity="0.46" text="(Academic)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel211" layoutX="113.0" layoutY="416.0" text="(When faced with multiple choices, enter the roll value and make your choice)" textFill="#f0c022cd">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="idVrokBtn" layoutX="243.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollVrok" prefHeight="25.0" prefWidth="52.0" text="Vrok">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idSpeechBtn" layoutX="530.0" layoutY="74.0" mnemonicParsing="false" onAction="#rollSpeech" prefHeight="25.0" prefWidth="40.0" text="Roll">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idTheoreticalBtn1" layoutX="301.0" layoutY="164.0" mnemonicParsing="false" onAction="#rollTheoretical1" prefHeight="25.0" prefWidth="85.0" text="Alchemy">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idNatureBtn" layoutX="353.0" layoutY="76.0" mnemonicParsing="false" onAction="#rollNature" prefHeight="25.0" prefWidth="40.0" text="Roll">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idRaceLabel22" layoutX="136.0" layoutY="210.0" text="Health">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="61.0" layoutY="234.0" prefWidth="200.0" />
+      <TextField fx:id="idHPBox" alignment="CENTER" layoutX="118.0" layoutY="246.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="idHPBtn" layoutX="161.0" layoutY="246.0" mnemonicParsing="false" onAction="#rollHealth" prefHeight="25.0" prefWidth="40.0" text="Roll">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idRaceLabel221" layoutX="118.0" layoutY="338.0" text="Chest:">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel2212" layoutX="119.0" layoutY="319.0" text="Arms:">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel2213" layoutX="100.0" layoutY="357.0" text="Stomach:">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel2214" layoutX="119.0" layoutY="300.0" text="Head:">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel22131" layoutX="124.0" layoutY="374.0" text="Legs:">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idHeadHP" layoutX="162.0" layoutY="300.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idLegsHP" layoutX="160.0" layoutY="375.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idStomachHP" layoutX="160.0" layoutY="357.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idChestHP" layoutX="160.0" layoutY="338.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idArmsHP" layoutX="163.0" layoutY="319.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel221311" layoutX="116.0" layoutY="277.0" text="Total:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idTotalHP" layoutX="165.0" layoutY="277.0">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel222" layoutX="431.0" layoutY="234.0" text="Raud">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="350.0" layoutY="257.0" prefWidth="200.0" />
+      <TextField fx:id="idRaudBox" alignment="CENTER" layoutX="408.0" layoutY="275.0" prefHeight="25.0" prefWidth="40.0" promptText="D5">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="idRaudBtn" layoutX="453.0" layoutY="275.0" mnemonicParsing="false" onAction="#rollRaud" prefHeight="25.0" prefWidth="40.0" text="Roll">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idRaceLabel2213111" layoutX="407.0" layoutY="309.0" text="Value:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaud" layoutX="450.0" layoutY="309.0">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label text="Label" />
+      <Button fx:id="idTheoreticalBtn3" layoutX="487.0" layoutY="165.0" mnemonicParsing="false" onAction="#rollTheoretical3" prefHeight="25.0" prefWidth="85.0" text="Spellcasting">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idTheoreticalBtn2" layoutX="395.0" layoutY="165.0" mnemonicParsing="false" onAction="#rollTheoretical2" prefHeight="25.0" prefWidth="85.0" text="Speech">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idTheoreticalBtn4" layoutX="301.0" layoutY="192.0" mnemonicParsing="false" onAction="#rollTheoretical4" prefHeight="25.0" prefWidth="85.0" text="Medicine">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idRaceLabel1311" layoutX="71.0" layoutY="77.0" text="Medicine">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idMedicineBox" alignment="CENTER" layoutX="135.0" layoutY="74.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="idMedicineBtn" layoutX="178.0" layoutY="74.0" mnemonicParsing="false" onAction="#rollMedicine" prefHeight="25.0" prefWidth="40.0" text="Roll">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idOrcishBtn" layoutX="417.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollOrcish" prefHeight="25.0" prefWidth="52.0" text="Orcish">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idFutharkBtn" layoutX="477.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollFuthark" prefHeight="25.0" prefWidth="63.0" text="Futhark">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idEikaBtn" layoutX="358.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollEika" prefHeight="25.0" prefWidth="52.0" text="Eika">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idRonaBtn" layoutX="301.0" layoutY="119.0" mnemonicParsing="false" onAction="#rollRona" prefHeight="25.0" prefWidth="52.0" text="Rona">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idSpeechType" alignment="CENTER" layoutX="435.0" layoutY="92.0" opacity="0.66" text="(Futhark)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel1331" layoutX="108.0" layoutY="122.0" opacity="0.67" text="(Choose one)">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel13311" layoutX="81.0" layoutY="182.0" opacity="0.67" text="(Choose two)">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idTheoreticalBox2" alignment="CENTER" disable="true" editable="false" layoutX="249.0" layoutY="192.0" prefHeight="25.0" prefWidth="40.0" promptText="D6">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="189.0" layoutY="147.0" prefHeight="3.0" prefWidth="359.0" />
+      <Button fx:id="idTheoreticalBtn5" layoutX="395.0" layoutY="192.0" mnemonicParsing="false" onAction="#rollTheoretical5" prefHeight="25.0" prefWidth="85.0" text="Nature">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="idTheoreticalBtn6" layoutX="488.0" layoutY="192.0" mnemonicParsing="false" onAction="#rollTheoretical6" prefHeight="25.0" prefWidth="85.0" text="Geography">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idSkill1" alignment="CENTER_RIGHT" layoutX="184.0" layoutY="169.0" prefHeight="15.0" prefWidth="59.0" text="Alchemy">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="idSkill2" alignment="CENTER_RIGHT" layoutX="184.0" layoutY="195.0" prefHeight="15.0" prefWidth="59.0" text="Nature">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

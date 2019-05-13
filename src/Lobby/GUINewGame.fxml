@@ -107,17 +107,21 @@
          </font>
       </Button>
       <Button fx:id="idDummy" layoutX="133.0" layoutY="254.0" mnemonicParsing="false" onAction="#buttonDummy" text="Dummy" />
-      <ListView fx:id="idCharacterTable" layoutX="247.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="idTableView" layoutX="287.0" layoutY="80.0" prefHeight="184.0" prefWidth="160.0">
+         <columns>
+            <TableColumn fx:id="idHealthColumn" editable="false" prefWidth="33.0" sortable="false" text="HP" />
+            <TableColumn fx:id="idCharacterColumn" editable="false" prefWidth="126.0" sortable="false" text="Character" />
+         </columns>
          <effect>
             <Lighting>
                <bumpInput>
-                  <Shadow />
+                  <Shadow height="84.0075" radius="46.506874999999994" width="104.02" />
                </bumpInput>
                <light>
-                  <Light.Distant />
+                  <Light.Distant color="#ffcc99" />
                </light>
             </Lighting>
          </effect>
-      </ListView>
+      </TableView>
    </children>
 </AnchorPane>

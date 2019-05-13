@@ -60,7 +60,10 @@ public class Character {
         this.health = health;
     }
 
-    public void constructHealth(int hp){Health health = new Health(hp);}
+    public void constructHealth(int hp){
+        Health health = new Health(hp);
+        this.health = health;
+    }
 
     public Armor getArmor() {
         return armor;

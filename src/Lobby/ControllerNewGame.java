@@ -35,8 +35,12 @@ import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+
+import static com.intellij.ui.content.ContentManagerEvent.ContentOperation.add;
 
 
 public class ControllerNewGame implements Initializable {
@@ -48,8 +52,10 @@ public class ControllerNewGame implements Initializable {
     @FXML private Button idExit;
     @FXML private Button idLoadCharacter;
     @FXML private Button idEdit;
-    @FXML private ListView<Character> idCharacterTable = new ListView<>();
 
+    @FXML private TableView<Character> idTableView;
+    @FXML private TableColumn<Integer, Character> idHealthColumn;
+    @FXML private TableColumn<String, Character> idCharacterColumn;
 
     ObservableList<Character> list = FXCollections.observableArrayList();
 
@@ -57,61 +63,37 @@ public class ControllerNewGame implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        idCharacterTable.getItems().clear();
+//        idCharacterTable.getItems().clear();
         for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
             list.add(Party.getParty().getCharacter(i));
         }
-        idCharacterTable.setItems(list);
-    }
-
-
-    int y = 0;
-
-    void createDummy() {
-        if (y==0) {
-            Character character1 = new Character();
-
-            character1.setName("Pelle");
-            character1.setGender(Character.Gender.Female);
-            character1.setAge(12);
-            character1.setHeight(123);
-            character1.setWeight(10);
-            character1.setRace(Character.Race.Human);
-            character1.setSubrace(Character.SubRace.Borjornikka);
-            character1.setProfession(Character.Profession.Priest);
-            character1.setEnvironment(Character.Environment.City);
-            character1.setBackground("Hej");
-
-            Party.getParty().addCharacter(character1);
-            y++;
-        } else {
-            Character character2 = new Character();
-
-            character2.setName("Ost");
-            character2.setGender(Character.Gender.Male);
-            character2.setAge(321);
-            character2.setHeight(100);
-            character2.setWeight(300);
-            character2.setRace(Character.Race.Dwarf);
-            character2.setSubrace(Character.SubRace.Illmalaina);
-            character2.setProfession(Character.Profession.Peasant);
-            character2.setEnvironment(Character.Environment.Academic);
-            character2.setBackground("Då");
-
-            Party.getParty().addCharacter(character2);
-            y--;
+        idTableView.setItems(list);
+        for (int i = 0; i < list.size(); i++) {
+            idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
+            idCharacterColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         }
     }
 
+
+
+    int index = 0;
     @FXML
     void buttonDummy(ActionEvent event) {
-        idCharacterTable.getItems().clear();
         createDummy();
-        for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
-            list.add(Party.getParty().getCharacter(i));
-        }
-        idCharacterTable.setItems(list);
+//        idTableView.getItems().clear();
+//        for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
+//            list.add(Party.getParty().getCharacter(i));
+//        }
+//        idCharacterTable.setItems(list);
 
+        list.add(Party.getParty().getCharacter(index));
+
+        idTableView.setItems(list);
+        for (int i = 0; i < list.size(); i++) {
+            idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
+            idCharacterColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        }
+        index++;
     }
 
 
@@ -147,11 +129,11 @@ public class ControllerNewGame implements Initializable {
     }
 
     @FXML
-    void buttonEdit(ActionEvent event) throws IOException, URISyntaxException {
-        Party.getParty().setIndex(idCharacterTable.getSelectionModel().getSelectedIndex());
+    void buttonEdit(ActionEvent event) throws IOException {
+        Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
 
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("GUIEdit.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("../Game/GUIInspectCharacter.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -160,20 +142,63 @@ public class ControllerNewGame implements Initializable {
 
     @FXML
     void buttonRemove(ActionEvent event) {
-        Party.getParty().setIndex(idCharacterTable.getSelectionModel().getSelectedIndex());
-        Party.getParty().removeCharacter(Party.getParty().getIndex());
-
-        idCharacterTable.getItems().clear();
-        for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
-            list.add(Party.getParty().getCharacter(i));
-        }
-        idCharacterTable.setItems(list);
+//        Party.getParty().setIndex(idCharacterTable.getSelectionModel().getSelectedIndex());
+//        Party.getParty().removeCharacter(Party.getParty().getIndex());
+//
+//        idTableView.getItems().clear();
+//        for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
+//            list.add(Party.getParty().getCharacter(i));
+//        }
+//        idTableView.setItems(list);
 
     }
 
     @FXML
     void buttonExit(ActionEvent event) {
         Runtime.getRuntime().exit(0);
+    }
+
+
+    int y = 0;
+
+    void createDummy() {
+        if (y==0) {
+            Character character1 = new Character();
+
+            character1.setName("Pelle");
+            character1.setGender(Character.Gender.Female);
+            character1.setAge(12);
+            character1.setHeight(123);
+            character1.setWeight(10);
+            character1.setRace(Character.Race.Human);
+            character1.setSubrace(Character.SubRace.Borjornikka);
+            character1.setProfession(Character.Profession.Priest);
+            character1.setEnvironment(Character.Environment.City);
+            character1.setBackground("Hej");
+            character1.constructHealth(100);
+//            character1.setTotalExp(100);
+
+            Party.getParty().addCharacter(character1);
+            y++;
+        } else {
+            Character character2 = new Character();
+
+            character2.setName("Ost");
+            character2.setGender(Character.Gender.Male);
+            character2.setAge(321);
+            character2.setHeight(100);
+            character2.setWeight(300);
+            character2.setRace(Character.Race.Dwarf);
+            character2.setSubrace(Character.SubRace.Illmalaina);
+            character2.setProfession(Character.Profession.Peasant);
+            character2.setEnvironment(Character.Environment.Academic);
+            character2.setBackground("Då");
+            character2.constructHealth(200);
+//            character2.setTotalExp(100);
+
+            Party.getParty().addCharacter(character2);
+            y--;
+        }
     }
 
 

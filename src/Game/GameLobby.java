@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+
 public class GameLobby implements Initializable {
 
     ObservableList<Character> list = FXCollections.observableArrayList();
@@ -25,6 +27,7 @@ public class GameLobby implements Initializable {
     @FXML private Button idCombat;
     @FXML private Button idScenario;
     @FXML private Button idLobby;
+    @FXML private Button idInspect;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -55,7 +58,7 @@ public class GameLobby implements Initializable {
         Parent root;
 
         stage = (Stage) idCombat.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("../Combat/GUICombat.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../Combat/GUIInitiative.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -67,5 +70,16 @@ public class GameLobby implements Initializable {
 
     }
 
+    @FXML
+    void buttonInspect(ActionEvent event) throws IOException {
+        Party.getParty().setIndex(idCharacterTable.getSelectionModel().getSelectedIndex());
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("GUIInspectCharacter.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }

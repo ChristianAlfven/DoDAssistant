@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="454.0" prefWidth="620.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.InspectCharacter">
+   <children>
+      <ImageView fitHeight="415.0" fitWidth="620.0">
+         <image>
+            <Image url="@../Resources/parchment.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="idClose" alignment="CENTER" layoutX="14.0" layoutY="421.0" mnemonicParsing="false" onAction="#buttonClose" prefHeight="17.0" prefWidth="69.0" style="-fx-background-color:#FFF ;" text="Close">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#a19c9c" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="37.0" layoutY="94.0" text="Age: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="37.0" layoutY="108.0" text="Height: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="37.0" layoutY="124.0" text="Weight: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="37.0" layoutY="141.0" text="Environment:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="350.0" layoutY="218.0" text="Special traits">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="350.0" layoutY="233.0" text="+" />
+      <Label layoutX="350.0" layoutY="248.0" text="+" />
+      <Label layoutX="352.0" layoutY="263.0" text="-" />
+      <Label layoutX="37.0" layoutY="158.0" text="Adventure Points:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextField fx:id="idAgeText" layoutX="65.0" layoutY="93.0" prefHeight="19.0" prefWidth="70.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="123">
+         <font>
+            <Font size="11.0" />
+         </font></TextField>
+      <TextField fx:id="idHeightText" layoutX="80.0" layoutY="108.0" prefHeight="19.0" prefWidth="70.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="321">
+         <font>
+            <Font size="11.0" />
+         </font></TextField>
+      <TextField fx:id="idWeightText" layoutX="81.0" layoutY="123.0" prefHeight="19.0" prefWidth="70.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="231">
+         <font>
+            <Font size="11.0" />
+         </font></TextField>
+      <TextField fx:id="idEnvironmentText" layoutX="111.0" layoutY="140.0" prefHeight="19.0" prefWidth="112.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="lorem ipsum">
+         <font>
+            <Font size="11.0" />
+         </font></TextField>
+      <TextField fx:id="idSubRaceText" layoutX="152.0" layoutY="71.0" prefHeight="27.0" prefWidth="145.0" style="-fx-background-color: none; -fx-text-transform: uppercase; -fx-padding: 1 3; -fx-text-fill: #8e0000;" text="STORMLANDER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idGenderText" alignment="CENTER_RIGHT" layoutX="108.0" layoutY="75.0" prefHeight="19.0" prefWidth="45.0" style="-fx-background-color: none; -fx-padding: 1 3; -fx-text-fill: #8e0000;" text="Female" />
+      <TextField fx:id="idPointsTotalText" layoutX="138.0" layoutY="157.0" prefHeight="19.0" prefWidth="42.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="3000">
+         <font>
+            <Font size="11.0" />
+         </font></TextField>
+      <TextField fx:id="idSpcTraitPlus1" layoutX="359.0" layoutY="233.0" prefHeight="19.0" prefWidth="70.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="lorem ipsum">
+         <font>
+            <Font size="11.0" />
+         </font></TextField>
+      <TextField fx:id="idSpcTraitPlus2" layoutX="359.0" layoutY="247.0" prefHeight="19.0" prefWidth="70.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="lorem ipsum">
+         <font>
+            <Font size="11.0" />
+         </font></TextField>
+      <TextField fx:id="idSpcTraitMinus" layoutX="359.0" layoutY="262.0" prefHeight="19.0" prefWidth="70.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="lorem ipsum">
+         <font>
+            <Font size="11.0" />
+         </font></TextField>
+      <Label layoutX="38.0" layoutY="219.0" text="Skills">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idCharacter" layoutX="35.0" layoutY="45.0" prefHeight="32.0" prefWidth="426.0" style="-fx-background-color: none; -fx-padding: 1 3; -fx-text-fill: #000;" text="Ostron the Human Warrior">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="228.0" layoutY="94.0" text="Background">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="idBackground" editable="false" layoutX="223.0" layoutY="110.0" prefHeight="84.0" prefWidth="221.0" style="-fx-background-color: transparent;" text="Background lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>

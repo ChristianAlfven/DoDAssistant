@@ -4,6 +4,7 @@ import CharacterFile.Character;
 
 public class Nature extends Skill{
 
+    private int skillLevel;
     private int westlands;
     private int midlands;
     private int eastheim;
@@ -69,6 +70,7 @@ public class Nature extends Skill{
     }
 
     public void addHomeland(Character character, int value){
+        value = skillLevel;
         switch (character.getRace()){
             case Human:
                 if (character.getSubrace()== Character.SubRace.Stormlander){
@@ -101,8 +103,31 @@ public class Nature extends Skill{
                         setSoj(getSoj()+value);
                         break;
                 }break;
-
         }
     }
+
+    public int getSkillLevel() {
+        return skillLevel;
+    }
+
+    public String getHomeland() {
+        String homeland = null;
+        if (westlands != 0) {
+            homeland = "(Westland):";
+        } else if (midlands != 0) {
+            homeland = "(Midland):";
+        } else if (eastheim != 0) {
+            homeland = "(Eastheim):";
+        } else if (nhordlands != 0) {
+            homeland = "(Nhordland):";
+        } else if (soj != 0) {
+            homeland = "(Soj):";
+        } else if (underworld != 0) {
+            homeland = "(Underworld):";
+        }
+        return homeland;
+    }
+
+
 }
 

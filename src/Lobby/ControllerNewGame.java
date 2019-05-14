@@ -178,11 +178,12 @@ public class ControllerNewGame implements Initializable {
             character2.setAge(1);
             character2.setHeight(2);
             character2.setWeight(3);
+            character2.setRegion(Character.Region.Eastheim);
             character2.setRace(Character.Race.Dwarf);
             character2.setSubrace(Character.SubRace.Virann);
             character2.setProfession(Character.Profession.Mage);
             character2.setEnvironment(Character.Environment.Nature);
-            character2.setBackground("Background lorem ipsum 2");
+            character2.setBackground("lorem ipsum 2");
             character2.setPositiveTrait1(Character.SpecialTrait.Agility);
             character2.setPositiveTrait2(Character.SpecialTrait.Spirituality);
             character2.setPosTrait1Level(13);
@@ -192,8 +193,19 @@ public class ControllerNewGame implements Initializable {
             character2.setNationality(Character.Nationality.Orc);
             character2.constructHealth(3);
             character2.setTotalExp(32);
-            character2.setCharacteristics("Characteristics 2");
             character2.setCombatPoints(3);
+            character2.getSkillset().getSpeech().setRona(10);
+            character2.getSkillset().getNature().setMidlands(10);
+            character2.getSkillset().getCulture().setMidlands(1);
+            character2.getSkillset().getSpellcasting().setSkillLevel(10);
+            character2.getSkillset().getAlchemy().setSkillLevel(3);
+            character2.setWeaponHand(Character.WeaponHand.Right);
+            character2.getSkillset().getCrafting().setMetal(1);
+            character2.getSkillset().getCrafting().setSoft(2);
+            character2.getSkillset().getCrafting().setStone(3);
+            character2.getSkillset().getCrafting().setWood(4);
+            character2.getSkillset().getGeography().addHomeland(character2,2);
+
 
             Party.getParty().addCharacter(character2);
             y--;

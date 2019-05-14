@@ -2,6 +2,7 @@ package Game;
 
 import ActiveChars.Party;
 import CharacterFile.Character;
+import CharacterFile.Health;
 import CharacterFile.Skillset;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,11 +19,13 @@ import java.util.ResourceBundle;
 public class InspectCharacter implements Initializable {
     Character character;
     Skillset skillset;
+    Health health;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         character = Party.getParty().getCharacter(Party.getParty().getIndex());
         skillset = character.getSkillset();
+        health = character.getHealth();
 
         //TOP LEFT
         idCharacter.setText(String.valueOf(character.toString()));
@@ -79,6 +82,17 @@ public class InspectCharacter implements Initializable {
         idNatureSub.setText(skillset.getNature().getHomeland());
         idNature.setText(String.valueOf(skillset.getNature().getSkillLevel()));
         idSurvival.setText(String.valueOf(skillset.getSurvival().getSkillLevel()));
+
+        //MID SCREEN CURRENT HP
+        idCurrentHead.setText(String.valueOf(health.getHead()));
+        idCurrentRightArm.setText(String.valueOf(health.getRightArm()));
+        idCurrentLeftArm.setText(String.valueOf(health.getLeftArm()));
+        idCurrentChest.setText(String.valueOf(health.getChest()));
+        idCurrentStomach.setText(String.valueOf(health.getStomach()));
+        idCurrentRightLeg.setText(String.valueOf(health.getRightLeg()));
+        idCurrentLeftLeg.setText(String.valueOf(health.getLeftLeg()));
+        //MAX HP
+
     }
 
     @FXML
@@ -91,10 +105,13 @@ public class InspectCharacter implements Initializable {
     private TextField idCombat;
 
     @FXML
+    private TextField idCurrentHead;
+
+    @FXML
     private TextField idCulture;
 
     @FXML
-    private TextField idReligionSub1;
+    private TextField idMaxLeftArm;
 
     @FXML
     private TextField idCultureSub;
@@ -106,10 +123,16 @@ public class InspectCharacter implements Initializable {
     private TextField idManagementCity;
 
     @FXML
+    private TextField idCurrentLeftLeg;
+
+    @FXML
     private TextField idSpcTraitMinus;
 
     @FXML
     private TextField idSpeech;
+
+    @FXML
+    private TextField idMaxRightArm;
 
     @FXML
     private TextField idRiding;
@@ -127,13 +150,31 @@ public class InspectCharacter implements Initializable {
     private TextField idSpcTraitMinusValue;
 
     @FXML
+    private TextField idCurrentRightLeg;
+
+    @FXML
     private TextField idSpcTraitPlus2Value;
 
     @FXML
     private TextField idEntertainment;
 
     @FXML
+    private TextField idNatureSub;
+
+    @FXML
+    private TextField idCurrentChest;
+
+    @FXML
+    private TextField idMaxRightLeg;
+
+    @FXML
     private TextArea idBackground;
+
+    @FXML
+    private TextField idMaxStomach;
+
+    @FXML
+    private TextField idMaxLeftLeg;
 
     @FXML
     private TextField idHeightText;
@@ -148,6 +189,12 @@ public class InspectCharacter implements Initializable {
     private TextField idSpellCasting;
 
     @FXML
+    private TextField idMaxChest;
+
+    @FXML
+    private TextField idMaxHead;
+
+    @FXML
     private TextField idSeafaring;
 
     @FXML
@@ -160,6 +207,9 @@ public class InspectCharacter implements Initializable {
     private TextField idManagementFarm;
 
     @FXML
+    private TextField idCurrentLeftArm;
+
+    @FXML
     private TextField idPointsTotalText;
 
     @FXML
@@ -167,6 +217,9 @@ public class InspectCharacter implements Initializable {
 
     @FXML
     private TextField idNature;
+
+    @FXML
+    private TextField idCurrentStomach;
 
     @FXML
     private TextField idCraftingSoft;
@@ -196,9 +249,6 @@ public class InspectCharacter implements Initializable {
     private TextField idSubRaceText;
 
     @FXML
-    private TextField idNatureSub;
-
-    @FXML
     private TextField idRaud;
 
     @FXML
@@ -209,6 +259,9 @@ public class InspectCharacter implements Initializable {
 
     @FXML
     private TextField idCrime;
+
+    @FXML
+    private TextField idCurrentRightArm;
 
     @FXML
     private TextField idSpcTraitPlus2;
@@ -230,6 +283,7 @@ public class InspectCharacter implements Initializable {
 
     @FXML
     private TextField idReligion;
+
     @FXML
     void buttonClose(ActionEvent event) {
         Node source = (Node) event.getSource();

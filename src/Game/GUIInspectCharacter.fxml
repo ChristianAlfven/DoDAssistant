@@ -9,9 +9,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1029.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.InspectCharacter">
+<AnchorPane prefHeight="629.0" prefWidth="570.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.InspectCharacter">
    <children>
-      <Button fx:id="idClose" alignment="CENTER" layoutX="953.0" layoutY="616.0" mnemonicParsing="false" onAction="#buttonClose" prefHeight="17.0" prefWidth="69.0" style="-fx-background-color:#FFF ;" text="Close">
+      <Button fx:id="idClose" alignment="CENTER" layoutX="491.0" layoutY="613.0" mnemonicParsing="false" onAction="#buttonClose" prefHeight="17.0" prefWidth="69.0" style="-fx-background-color:#FFF ;" text="Close">
          <effect>
             <Lighting>
                <bumpInput>
@@ -101,12 +101,12 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </TextField>
-      <Label layoutX="580.0" layoutY="64.0" text="Background">
+      <Label layoutX="259.0" layoutY="384.0" text="Background">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextArea fx:id="idBackground" editable="false" layoutX="576.0" layoutY="82.0" prefHeight="128.0" prefWidth="338.0" style="-fx-background-color: transparent;" text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum" wrapText="true">
+      <TextArea fx:id="idBackground" editable="false" layoutX="255.0" layoutY="402.0" prefHeight="195.0" prefWidth="295.0" style="-fx-background-color: transparent;" text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum" wrapText="true">
          <font>
             <Font size="10.0" />
          </font>
@@ -437,6 +437,131 @@
          </font>
       </TextField>
       <TextField fx:id="idSurvival" layoutX="188.0" layoutY="625.0" prefHeight="19.0" prefWidth="76.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <Label layoutX="319.0" layoutY="192.0" text="Hitpoints">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="217.0" prefHeight="17.0" prefWidth="71.0" text="Body Part">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="394.0" layoutY="217.0" prefHeight="17.0" prefWidth="71.0" text="Current HP">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="467.0" layoutY="217.0" prefHeight="17.0" prefWidth="71.0" text="Max HP">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="234.0" prefHeight="17.0" prefWidth="71.0" text="Head:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="251.0" prefHeight="17.0" prefWidth="71.0" text="Right Arm:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="285.0" prefHeight="17.0" prefWidth="71.0" text="Chest:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="268.0" prefHeight="17.0" prefWidth="71.0" text="Left Arm:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="317.0" prefHeight="17.0" prefWidth="71.0" text="Right Leg:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="334.0" prefHeight="17.0" prefWidth="71.0" text="Left Leg:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="300.0" prefHeight="17.0" prefWidth="71.0" text="Stomach:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idCurrentLeftLeg" layoutX="392.0" layoutY="335.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idCurrentStomach" layoutX="392.0" layoutY="301.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idCurrentRightLeg" layoutX="392.0" layoutY="318.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idCurrentLeftArm" layoutX="392.0" layoutY="267.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idCurrentChest" layoutX="392.0" layoutY="284.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idCurrentRightArm" layoutX="392.0" layoutY="249.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idCurrentHead" layoutX="392.0" layoutY="232.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idMaxHead" layoutX="465.0" layoutY="232.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idMaxRightArm" layoutX="465.0" layoutY="249.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idMaxChest" layoutX="465.0" layoutY="284.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idMaxLeftArm" layoutX="465.0" layoutY="267.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idMaxRightLeg" layoutX="465.0" layoutY="318.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idMaxStomach" layoutX="465.0" layoutY="301.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idMaxLeftLeg" layoutX="465.0" layoutY="335.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>

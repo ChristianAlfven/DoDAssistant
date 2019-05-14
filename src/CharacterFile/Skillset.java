@@ -21,9 +21,9 @@ public class Skillset {
     private Mobility mobility = new Mobility();
     private Nature nature;
     private Religion religion;
-    private Riding riding;
+    private Riding riding = new Riding();
     private Seafaring seafaring;
-    private Speech speech;
+    private Speech speech = new Speech();
     private Spellcasting spellcasting;
     private Survival survival;
     private Trade trade;

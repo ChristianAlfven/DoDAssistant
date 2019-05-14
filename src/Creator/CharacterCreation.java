@@ -279,9 +279,9 @@ public class CharacterCreation implements Initializable {
             idSubrace1.setText("Westlands");
             idSubrace2.setText("Midlands");
             idSubraceLabel.setText("Region");
-        } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfOrc) && character.getRegion() == null) {
+        } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfOrc) && character.getNationality() == Human) {
             character.setRegion(Character.Region.Westlands);
-        } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfElf) && character.getRegion() == null) {
+        } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfElf) && character.getNationality() == Human) {
             character.setRegion(Character.Region.Westlands);
         }
     }

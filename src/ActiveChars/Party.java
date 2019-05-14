@@ -37,6 +37,8 @@ public class Party {
         return party.get(i);
     }
 
+    public Character getLastCharacter() { return party.get(party.size()-1);}
+
     public void setPartyList(ArrayList<Character> party) { this.party = party; }
 
     public ArrayList<Character> getPartyList(){ return party; }

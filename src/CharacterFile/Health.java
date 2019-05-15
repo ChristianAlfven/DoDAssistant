@@ -12,6 +12,15 @@ public class Health {
     private int rightLeg;
     private int leftLeg;
 
+    private int maxTotal;
+    private int maxHead;
+    private int maxRightArm;
+    private int maxLeftArm;
+    private int maxChest;
+    private int maxStomach;
+    private int maxRightLeg;
+    private int maxLeftLeg;
+
     public Health(int health){
         total = health;
         head = (health + 1) / 2;
@@ -25,6 +34,15 @@ public class Health {
             }
         leftLeg = stomach;
         rightLeg = stomach;
+
+        maxTotal = total;
+        maxHead = head;
+        maxRightArm = rightArm;
+        maxLeftArm = leftArm;
+        maxChest = chest;
+        maxStomach = stomach;
+        maxRightLeg = rightLeg;
+        maxLeftLeg = leftLeg;
     }
 
     public void setTotal(int total) { this.total = total; }
@@ -85,6 +103,70 @@ public class Health {
 
     public int getLeftLeg() {
         return leftLeg;
+    }
+
+    public int getMaxTotal() {
+        return maxTotal;
+    }
+
+    public void setMaxTotal(int maxTotal) {
+        this.maxTotal = maxTotal;
+    }
+
+    public int getMaxHead() {
+        return maxHead;
+    }
+
+    public void setMaxHead(int maxHead) {
+        this.maxHead = maxHead;
+    }
+
+    public int getMaxRightArm() {
+        return maxRightArm;
+    }
+
+    public void setMaxRightArm(int maxRightArm) {
+        this.maxRightArm = maxRightArm;
+    }
+
+    public int getMaxLeftArm() {
+        return maxLeftArm;
+    }
+
+    public void setMaxLeftArm(int maxLeftArm) {
+        this.maxLeftArm = maxLeftArm;
+    }
+
+    public int getMaxChest() {
+        return maxChest;
+    }
+
+    public void setMaxChest(int maxChest) {
+        this.maxChest = maxChest;
+    }
+
+    public int getMaxStomach() {
+        return maxStomach;
+    }
+
+    public void setMaxStomach(int maxStomach) {
+        this.maxStomach = maxStomach;
+    }
+
+    public int getMaxRightLeg() {
+        return maxRightLeg;
+    }
+
+    public void setMaxRightLeg(int maxRightLeg) {
+        this.maxRightLeg = maxRightLeg;
+    }
+
+    public int getMaxLeftLeg() {
+        return maxLeftLeg;
+    }
+
+    public void setMaxLeftLeg(int maxLeftLeg) {
+        this.maxLeftLeg = maxLeftLeg;
     }
 
     @Override

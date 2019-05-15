@@ -47,7 +47,8 @@ public class GameLobby implements Initializable {
         idTableView.setItems(list);
         for (int i = 0; i < list.size(); i++) {
             idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
-            idCharacterColumn.getCellFactory();   //Why isn't this working properly, want to call toString in Class.Character
+//            idCharacterColumn.getCellFactory();   //Why isn't this working properly, want to call toString in Class.Character
+            idCharacterColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         }
         gmInstance = GmList.createGmList();
 

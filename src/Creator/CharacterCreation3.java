@@ -176,6 +176,14 @@ public class CharacterCreation3 implements Initializable {
     @FXML
     private Button idCrimeBtn;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        character = Party.getParty().getLastCharacter();
+        idPosTrait1.setText(character.getPositiveTrait1().toString());
+        idPosTrait2.setText(character.getPositiveTrait2().toString());
+        idNegTrait.setText(character.getNegativeTrait().toString());
+    }
+
     @FXML
     void buttonBack(ActionEvent event) {
 
@@ -440,13 +448,7 @@ public class CharacterCreation3 implements Initializable {
         IdWpnBox.setEditable(false);
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        character = Party.getParty().getCharacter(0);
-        idPosTrait1.setText(character.getPositiveTrait1().toString());
-        idPosTrait2.setText(character.getPositiveTrait2().toString());
-        idNegTrait.setText(character.getNegativeTrait().toString());
-    }
+
 
     public int rollDice(int sides){
         return (int)((Math.random()*sides) + 1);

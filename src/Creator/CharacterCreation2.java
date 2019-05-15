@@ -29,7 +29,7 @@ public class CharacterCreation2 implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        character = Party.getParty().getCharacter(0);
+        character = Party.getParty().getLastCharacter();
     }
 
     Character.SpecialTrait pos1;

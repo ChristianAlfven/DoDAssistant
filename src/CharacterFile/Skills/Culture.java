@@ -4,6 +4,7 @@ import CharacterFile.Character;
 
 public class Culture extends Skill{
 
+    private int skillLevel;
     private int elvish;
     private int dwarfish;
     private int westlands;
@@ -104,5 +105,29 @@ public class Culture extends Skill{
                 break;
 
         }
+        skillLevel = value;
     }
+
+    public int getSkillLevel() {
+        return skillLevel;
+    }
+
+    public String getHomeland() {
+        String homeland = null;
+        if (elvish != 0) {
+            homeland = "(Elvish):";
+        } else if (dwarfish != 0) {
+            homeland = "(Dwarfish):";
+        } else if (westlands != 0) {
+            homeland = "(Westlands):";
+        } else if (midlands != 0) {
+            homeland = "(Midlands):";
+        } else if (eastheim != 0) {
+            homeland = "(Eastheim):";
+        } else if (orcish != 0) {
+            homeland = "(Orcish):";
+        }
+        return homeland;
+    }
+
 }

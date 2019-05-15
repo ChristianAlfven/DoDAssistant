@@ -4,6 +4,7 @@ import CharacterFile.Character;
 
 public class Speech extends Skill{
 
+    private int skillLevel;
     private int Vrok;
     private int Rona;
     private int Eika;
@@ -93,35 +94,41 @@ public class Speech extends Skill{
                 }break;
 
         }
+        skillLevel = value;
     }
 
     public String getMotherTongue(Character character){
         switch (character.getRace()){
             case Human:
                 if (character.getSubrace()== Character.SubRace.Stormlander){
-                    return "Rona";
+                    return "(Rona):";
                 } else {
-                    return "Vrok";
+                    return "(Vrok):";
                 }
             case Elf:
-                return "Eika";
+                return "(Eika):";
             case Dwarf:
-                return "Futhark";
+                return "(Futhark):";
             case HalfBlood:
                 switch (character.getNationality()){
                     case Human:
                         if (character.getRegion() == Character.Region.Eastheim){
-                            return "Rona";
+                            return "(Rona):";
                         }else {
-                            return "Vrok";
+                            return "(Vrok):";
                         }
                     case Elf:
-                        return "Eika";
+                        return "(Eika):";
                     case Orc:
-                        return "Orcish";
+                        return "(Orcish):";
                 }
 
         }
         return null;
     }
+
+    public int getSkillLevel() {
+        return skillLevel;
+    }
+
 }

@@ -5,6 +5,7 @@ import CharacterFile.*;
 
 public class Geography extends Skill {
 
+    private int skillLevel;
     private int westland;
     private int midland;
     private int eastheim;
@@ -105,6 +106,29 @@ public class Geography extends Skill {
                 break;
 
         }
+        skillLevel = value;
+    }
+
+    public int getSkillLevel() {
+        return skillLevel;
+    }
+
+    public String getHomeland() {
+        String homeland = null;
+        if (westland != 0) {
+            homeland = "(Westland):";
+        } else if (midland != 0) {
+            homeland = "(Midland):";
+        } else if (eastheim != 0) {
+            homeland = "(Eastheim):";
+        } else if (nhordland != 0) {
+            homeland = "(Nhordland):";
+        } else if (soj != 0) {
+            homeland = "(Soj):";
+        } else if (underworld != 0) {
+            homeland = "(Underworld):";
+        }
+        return homeland;
     }
 }
 

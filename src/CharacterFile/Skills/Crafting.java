@@ -19,7 +19,7 @@ public class Crafting extends Skill{
     }
 
     public void setMetal(int metal) {
-        this.metal = metal;
+        this.metal += metal;
     }
 
     public int getSoft() {
@@ -27,7 +27,7 @@ public class Crafting extends Skill{
     }
 
     public void setSoft(int soft) {
-        this.soft = soft;
+        this.soft += soft;
     }
 
     public int getStone() {
@@ -35,7 +35,7 @@ public class Crafting extends Skill{
     }
 
     public void setStone(int stone) {
-        this.stone = stone;
+        this.stone += stone;
     }
 
     public int getWood() {
@@ -43,22 +43,6 @@ public class Crafting extends Skill{
     }
 
     public void setWood(int wood) {
-        this.wood = wood;
-    }
-
-    public void addSkillMetal(int value){
-        this.metal += value;
-    }
-
-    public void addSkillWood(int value){
-        this.wood += value;
-    }
-
-    public void addSkillStone(int value){
-        this.stone += value;
-    }
-
-    public void addSkillSoft(int value){
-        this.soft += value;
+        this.wood += wood;
     }
 }

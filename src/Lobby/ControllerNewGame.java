@@ -38,7 +38,6 @@ public class ControllerNewGame implements Initializable {
 
     private Party partyInstance = Party.getParty();
     private LoadCharacter charLoader = LoadCharacter.charLoader();
-    private Character player = new Character();
 
     @FXML private Button idRemove;
     @FXML private Button idNewCharacter;
@@ -52,8 +51,6 @@ public class ControllerNewGame implements Initializable {
     @FXML private TableColumn<String, Character> idCharacterColumn;
 
     ObservableList<Character> list = FXCollections.observableArrayList();
-
-//    DB_Connector db_connector = new DB_Connector();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

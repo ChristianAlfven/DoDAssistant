@@ -254,7 +254,7 @@ public class LoadCharacter {
 
         //Set Character values
         player.setDbCharId(dbCharId);
-        //player.setPlayerName(playerName);
+        player.setPlayerName(playerName);
         player.setName(name);
         player.setProfession(profession);
         player.setGender(gender);
@@ -271,8 +271,8 @@ public class LoadCharacter {
         player.setBackground(background);
         player.setCharacteristics(characteristics);
         player.setRaud(raud);
-        //player.setMovement(movement);
-        //player.setReligion(religion);
+        player.setMovement(movement);
+        player.setReligion(religion);
 
 
         //Set Health & Armor values

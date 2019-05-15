@@ -75,5 +75,10 @@ public class Armor {
     public int getLeftLeg() {
         return leftLeg;
     }
+
+    public int getTotal(){
+        int total = head + rightArm + leftArm + chest + stomach + rightLeg + leftLeg;
+        return total;
+    }
 }
 

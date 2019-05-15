@@ -35,16 +35,19 @@ public class Character {
 
 
     private int dbCharId;
+    private String playerName;
     private String name;
     private int height;
     private int weight;
     private int age;
     private int combatPoints;
-    private String background;
-    private String Characteristics;
+    private String background = null;
+    private String Characteristics = null;
     private int raud;
     private int totalExp;
     private int unusedExp;
+    private int movement;
+    private String religion;
 
 
     public int getDbCharId() {
@@ -267,6 +270,30 @@ public class Character {
 
     public void setRegion(Region region) {
         this.region = region;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
+    public int getMovement() {
+        return movement;
+    }
+
+    public void setMovement(int movement) {
+        this.movement = movement;
+    }
+
+    public String getReligion() {
+        return religion;
+    }
+
+    public void setReligion(String religion) {
+        this.religion = religion;
     }
 
     public String debug() {

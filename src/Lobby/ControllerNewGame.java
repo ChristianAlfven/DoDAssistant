@@ -6,6 +6,7 @@ import ActiveChars.Party;
 import CharacterFile.Character;
 import CharacterFile.Armor;
 import CharacterFile.Health;
+import Database.LoadCharacter;
 
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
@@ -17,6 +18,7 @@ import Database.LoadCharacter;
 import com.sun.javafx.scene.control.IntegerField;
 import javafx.fxml.Initializable;
 
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -35,8 +37,8 @@ public class ControllerNewGame implements Initializable {
     Character character;
 
     private Party partyInstance = Party.getParty();
-    private LoadCharacter charLoader;
-    private Character player;
+    private LoadCharacter charLoader = LoadCharacter.charLoader();
+    private Character player = new Character();
 
     @FXML private Button idRemove;
     @FXML private Button idNewCharacter;
@@ -59,7 +61,7 @@ public class ControllerNewGame implements Initializable {
     }
 
 
-
+    int index = 0;
     @FXML
     void buttonDummy(ActionEvent event) {
         createDummy();
@@ -68,13 +70,13 @@ public class ControllerNewGame implements Initializable {
 
     @FXML
     void buttonLoadCharacter(ActionEvent event) {
-        charLoader = LoadCharacter.charLoader();
         charLoader.loadCharacter(1);
-
+        updateTable();
+        charLoader.loadCharacter(2);
         updateTable();
     }
 
-    int index = 0;
+
     private void updateTable(){
 
         list.add(Party.getParty().getCharacter(index));
@@ -180,7 +182,7 @@ public class ControllerNewGame implements Initializable {
             character1.setCharacteristics("Characteristics");
             character1.setCombatPoints(2000);
 
-            Party.getParty().addCharacter(character1);
+            partyInstance.addCharacter(character1);
             y++;
         } else {
             Character character2 = new Character();
@@ -219,7 +221,7 @@ public class ControllerNewGame implements Initializable {
             character2.getSkillset().getGeography().addHomeland(character2,2);
 
 
-            Party.getParty().addCharacter(character2);
+            partyInstance.addCharacter(character2);
             y--;
         }
     }

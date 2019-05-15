@@ -8,9 +8,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoadCharacter {
-    private Party partyInstance = Party.getParty();
-    private Character player = new Character();
     private DB_Connector connector = new DB_Connector();
+    private Party partyInstance = Party.getParty();
+    private Character player;
 
     // Character table
     private int dbCharId;
@@ -63,6 +63,7 @@ public class LoadCharacter {
     private String scriptTraits;
     private String scriptExperience;
 
+
     private static LoadCharacter ourInstance = null;
 
     public static LoadCharacter charLoader() {
@@ -73,6 +74,7 @@ public class LoadCharacter {
     }
 
     public void loadCharacter(int index){
+        player = new Character();
         writeScripts(index);
         getValues();
         setValues();

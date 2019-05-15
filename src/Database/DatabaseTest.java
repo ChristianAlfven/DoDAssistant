@@ -13,6 +13,9 @@ public class DatabaseTest {
         charLoader.loadCharacter(1);
         player = partyInstance.getCharacter(0);
         System.out.println(player.toString());
+        charLoader.loadCharacter(2);
+        player = partyInstance.getCharacter(1);
+        System.out.println(player.toString());
     }
 
     public static void main(String[] args) {

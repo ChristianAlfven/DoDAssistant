@@ -4,8 +4,12 @@ import ActiveChars.Party;
 import CharacterFile.Character;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -825,6 +829,16 @@ public class CharacterCreation5 implements Initializable {
 
     @FXML
     void buttonContinue(ActionEvent event) {
+        saveSkills();
+        try {
+            Stage stage = (Stage) idContinue.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("../Lobby/GUINewGame.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 
@@ -1039,5 +1053,58 @@ public class CharacterCreation5 implements Initializable {
         errorAlert.setHeaderText("Warning");
         errorAlert.setContentText("Not enough Skill Points");
         errorAlert.showAndWait();
+    }
+
+    void saveSkills(){
+        character.getSkillset().getAlchemy().setSkillLevel(alchemy);
+        character.getSkillset().getReligion().setMainReligion(religion);
+        character.getSkillset().getCombat().setSkillLevel(combat);
+        character.getSkillset().getCrime().setSkillLevel(crime);
+        character.getSkillset().getEntertainment().setSkillLevel(entertainment);
+        character.getSkillset().getHunting().setSkillLevel(hunting);
+        character.getSkillset().getJester().setSkillLevel(jester);
+        character.getSkillset().getMedicine().setSkillLevel(medicine);
+        character.getSkillset().getMobility().setSkillLevel(mobility);
+        character.getSkillset().getRiding().setSkillLevel(riding);
+        character.getSkillset().getSeafaring().setSkillLevel(seafaring);
+        character.getSkillset().getSpellcasting().setSkillLevel(spellcasting);
+        character.getSkillset().getSurvival().setSkillLevel(survival);
+        character.getSkillset().getTrade().setSkillLevel(trade);
+        character.getSkillset().getManagement().setFarm(manFarm);
+        character.getSkillset().getManagement().setCity(manCity);
+        character.getSkillset().getManagement().setWar(manWar);
+
+        character.getSkillset().getNature().setUnderworld(natUnderworld);
+        character.getSkillset().getNature().setNhordlands(natNhordlands);
+        character.getSkillset().getNature().setWestlands(natWestlands);
+        character.getSkillset().getNature().setSoj(natSoj);
+        character.getSkillset().getNature().setMidlands(natMidlands);
+        character.getSkillset().getNature().setEastheim(natEastheim);
+
+        character.getSkillset().getSpeech().setOrcish(orcish);
+        character.getSkillset().getSpeech().setFuthark(futhark);
+        character.getSkillset().getSpeech().setEika(eika);
+        character.getSkillset().getSpeech().setRona(rona);
+        character.getSkillset().getSpeech().setVrok(vrok);
+
+        character.getSkillset().getGeography().setUnderworld(geoUnderworld);
+        character.getSkillset().getGeography().setNhoordland(geoNhordlands);
+        character.getSkillset().getGeography().setSoj(geoSoj);
+        character.getSkillset().getGeography().setWestland(geoWestlands);
+        character.getSkillset().getGeography().setEastheim(geoEastheim);
+        character.getSkillset().getGeography().setMidland(geoMidlands);
+
+        character.getSkillset().getCrafting().setSoft(soft);
+        character.getSkillset().getCrafting().setWood(wood);
+        character.getSkillset().getCrafting().setMetal(metal);
+        character.getSkillset().getCrafting().setStone(stone);
+
+        character.getSkillset().getCulture().setMidlands(cultMidlands);
+        character.getSkillset().getCulture().setEastheim(cultEastheim);
+        character.getSkillset().getCulture().setElvish(cultElvish);
+        character.getSkillset().getCulture().setWestlands(cultWestlands);
+        character.getSkillset().getCulture().setDwarfish(cultDwarfish);
+        character.getSkillset().getCulture().setOrcish(cultOrcish);
+
     }
 }

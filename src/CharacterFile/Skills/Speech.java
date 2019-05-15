@@ -30,11 +30,11 @@ public class Speech extends Skill{
     }
 
     public void setOrcish(int orcish) {
-        this.Orcish = orcish;
+        this.Orcish += orcish;
     }
 
     public void setVrok(int vrok) {
-        this.Vrok = vrok;
+        this.Vrok += vrok;
     }
 
     public int getRona() {
@@ -42,7 +42,7 @@ public class Speech extends Skill{
     }
 
     public void setRona(int rona) {
-        this.Rona = rona;
+        this.Rona += rona;
     }
 
     public int getEika() {
@@ -50,7 +50,7 @@ public class Speech extends Skill{
     }
 
     public void setEika(int eika) {
-        this.Eika = eika;
+        this.Eika += eika;
     }
 
     public int getFuthark() {
@@ -58,7 +58,7 @@ public class Speech extends Skill{
     }
 
     public void setFuthark(int futhark) {
-        this.Futhark = futhark;
+        this.Futhark += futhark;
     }
 
     public void addMotherTongue(Character character, int value){

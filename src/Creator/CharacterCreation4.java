@@ -213,10 +213,10 @@ public class CharacterCreation4 implements Initializable {
                     errorAlert.showAndWait();
                 } else {
                     try {
-                        character.getSkillset().getCombat().addSkillLevel(Integer.parseInt(idCombatBox.getText()));         //COMBAT
+                        character.getSkillset().getCombat().setSkillLevel(Integer.parseInt(idCombatBox.getText()));         //COMBAT
                         character.getSkillset().getSurvival().addSkillLevel(Integer.parseInt(idSurvivalBox.getText()));     //SURVIVAL
-                        character.getSkillset().getSeafaring().addSkillLevel(Integer.parseInt(idSeafaringBox.getText()));   //SEAFARING
-                        character.getSkillset().getHunting().addSkillLevel(Integer.parseInt(idHuntingBox.getText()));       //HUNTING
+                        character.getSkillset().getSeafaring().setSkillLevel(Integer.parseInt(idSeafaringBox.getText()));   //SEAFARING
+                        character.getSkillset().getHunting().setSkillLevel(Integer.parseInt(idHuntingBox.getText()));       //HUNTING
                         character.getSkillset().getNature().addHomeland(character, Integer.parseInt(idNatureBox.getText()));//NATURE
                         character.setRaud(Integer.parseInt(idRaudBox.getText()));                                           // RAUD
 
@@ -252,7 +252,7 @@ public class CharacterCreation4 implements Initializable {
                     errorAlert.showAndWait();
                 } else {
                     try {
-                        character.getSkillset().getRiding().addSkillLevel(Integer.parseInt(idRidingBox.getText()));         //COMBAT
+                        character.getSkillset().getRiding().setSkillLevel(Integer.parseInt(idRidingBox.getText()));         //COMBAT
                         character.getSkillset().getManagement().setFarm(Integer.parseInt(idManagementBox.getText()));     //MANAGEMENT
                         character.getSkillset().getSpeech().addMotherTongue(character, Integer.parseInt(idSpeechBox.getText()));   //SEAFARING
                         character.getSkillset().getCulture().addHomeland(character, Integer.parseInt(idCultureBox.getText()));       //HUNTING

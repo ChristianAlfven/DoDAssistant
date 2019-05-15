@@ -6,7 +6,7 @@ public class Character {
     public enum Gender {Male, Female}
     public enum Race {Human, Elf, Dwarf, HalfBlood}
     public enum SubRace {Stormlander, Midlander, Virann, Illmalaina, Korpikalla, Buratja, Borjornikka, Zvorda, HalfOrc, HalfElf}
-    public enum WeaponHand {Right, Left, Both}
+    public enum WeaponHand {Right, Left, Dual}
     public enum Nationality {Human, Orc, Elf}
     public enum Environment{Nature, Country, City, Academic}
     public enum Region {Eastheim, Midlands, Westlands}
@@ -279,4 +279,115 @@ public class Character {
         return "" + name + " the " + race + " " + profession;
     }
 
+
+    public String getTraitDescription(SpecialTrait specialTrait, int value){
+        switch (specialTrait){
+            case Strength:
+                switch (value){
+                    case -4:
+                        return "Decrepit";
+                    case -2:
+                        return "Puny";
+                    case -1:
+                        return "Weak";
+                    case 1:
+                        return "Strong";
+                    case 2:
+                        return "Very Strong";
+                    case 4:
+                        return "Giantstrength";
+                }
+            case Physique:
+                switch (value){
+                    case -4:
+                        return "Sickly";
+                    case -2:
+                        return "Fragile";
+                    case -1:
+                        return "Sensitive";
+                    case 1:
+                        return "Hardened";
+                    case 2:
+                        return "Tough";
+                    case 4:
+                        return "Resilient";
+                }
+            case Agility:
+                switch (value){
+                    case -4:
+                        return "Immobile";
+                    case -2:
+                        return "Clumsy";
+                    case -1:
+                        return "Stiff";
+                    case 1:
+                        return "Nimble";
+                    case 2:
+                        return "Agile";
+                    case 4:
+                        return "Graceful";
+                }
+            case Charisma:
+                switch (value){
+                    case -4:
+                        return "Despicable";
+                    case -2:
+                        return "Repulsive";
+                    case -1:
+                        return "Unpleasant";
+                    case 1:
+                        return "Pleasant";
+                    case 2:
+                        return "Charming";
+                    case 4:
+                        return "Glamorous";
+                }
+            case Intelligence:
+                switch (value){
+                    case -4:
+                        return "Brainless";
+                    case -2:
+                        return "Stupid";
+                    case -1:
+                        return "Dimwitted";
+                    case 1:
+                        return "Clever";
+                    case 2:
+                        return "Smart";
+                    case 4:
+                        return "Brilliant";
+                }
+            case Psyche:
+                switch (value){
+                    case -4:
+                        return "Spineless";
+                    case -2:
+                        return "Weak-willed";
+                    case -1:
+                        return "Indecissive";
+                    case 1:
+                        return "Determined";
+                    case 2:
+                        return "Steadfast";
+                    case 4:
+                        return "Resolute";
+                }
+            case Spirituality:
+                switch (value){
+                    case -4:
+                        return "Heretic";
+                    case -2:
+                        return "Wicked";
+                    case -1:
+                        return "Doubter";
+                    case 1:
+                        return "Devout";
+                    case 2:
+                        return "Holy";
+                    case 4:
+                        return "Divine";
+                }
+        }
+        return "Error";
+    }
 }

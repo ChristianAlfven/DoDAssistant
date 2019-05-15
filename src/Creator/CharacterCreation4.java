@@ -225,7 +225,7 @@ public class CharacterCreation4 implements Initializable {
 
 
                         Stage stage = (Stage) idContinue.getScene().getWindow();
-                        Parent root = FXMLLoader.load(getClass().getResource("../Lobby/GUINewGame.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("GUICharacterCreation5.fxml"));
                         Scene scene = new Scene(root);
                         stage.setScene(scene);
                         stage.show();
@@ -261,7 +261,7 @@ public class CharacterCreation4 implements Initializable {
 
 
                         Stage stage = (Stage) idContinue.getScene().getWindow();
-                        Parent root = FXMLLoader.load(getClass().getResource("../Lobby/GUINewGame.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("GUICharacterCreation5.fxml"));
                         Scene scene = new Scene(root);
                         stage.setScene(scene);
                         stage.show();
@@ -289,7 +289,7 @@ public class CharacterCreation4 implements Initializable {
                         character.setRaud(Integer.parseInt(idRaudBox.getText()));
 
                         Stage stage = (Stage) idContinue.getScene().getWindow();
-                        Parent root = FXMLLoader.load(getClass().getResource("../Lobby/GUINewGame.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("GUICharacterCreation5.fxml"));
                         Scene scene = new Scene(root);
                         stage.setScene(scene);
                         stage.show();
@@ -316,7 +316,7 @@ public class CharacterCreation4 implements Initializable {
                         character.setRaud(Integer.parseInt(idRaudBox.getText()));
 
                         Stage stage = (Stage) idContinue.getScene().getWindow();
-                        Parent root = FXMLLoader.load(getClass().getResource("../Lobby/GUINewGame.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("GUICharacterCreation5.fxml"));
                         Scene scene = new Scene(root);
                         stage.setScene(scene);
                         stage.show();
@@ -331,8 +331,6 @@ public class CharacterCreation4 implements Initializable {
                 }
                 break;
         }
-
-
     }
 
     //-------------------------------NATURE----------------------------------
@@ -545,10 +543,9 @@ public class CharacterCreation4 implements Initializable {
     void rollEika(ActionEvent event) {
         if (idSpeechChoiceBox.getText().isEmpty()) {
             idSpeechChoiceBox.setText(Integer.toString(rollDice(6)));
-            disableSpeech();
-        } else {
-            disableSpeech();
         }
+        disableSpeech();
+
         character.getSkillset().getSpeech().setEika(Integer.parseInt(idSpeechChoiceBox.getText()));
     }
 

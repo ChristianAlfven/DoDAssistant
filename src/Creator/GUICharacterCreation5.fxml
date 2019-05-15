@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?package Resources.parchment.png?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Light?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="445.0" prefWidth="666.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Creator.CharacterCreation5">
+   <children>
+      <ImageView fitHeight="610.0" fitWidth="712.0" layoutX="-9.0" layoutY="-9.0">
+         <image>
+            <Image url="@../Resources/parchment.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="idContinue" layoutX="265.0" layoutY="543.0" mnemonicParsing="false" onAction="#buttonContinue" prefHeight="25.0" prefWidth="145.0" text="Continue..." textAlignment="CENTER">
+         <effect>
+            <Lighting diffuseConstant="1.26">
+               <light>
+                  <Light.Distant color="#ff9640" />
+               </light>
+               <bumpInput>
+                  <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="idRaceLabel2" layoutX="295.0" layoutY="14.0" text="Upgrade Skills">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="250.0" layoutY="36.0" prefWidth="200.0">
+         <effect>
+            <SepiaTone />
+         </effect></Separator>
+      <Label fx:id="idRaceLabel131" layoutX="80.0" layoutY="225.0" text="Geography:">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idHunting" layoutX="537.0" layoutY="40.0" text="Hunting (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idSeafaring" layoutX="536.0" layoutY="136.0" text="Seafaring (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idSurvival" layoutX="50.0" layoutY="185.0" text="Survival (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCrime" layoutX="52.0" layoutY="136.0" text="Crime (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel138" layoutX="318.0" layoutY="226.0" text="Nature:">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRaceLabel211" layoutX="176.0" layoutY="527.0" text="(Choose skills to upgrade. Cost is the same as new skill level)" textFill="#000000cc">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idSkillPoints" alignment="CENTER" editable="false" layoutX="190.0" layoutY="543.0" prefHeight="25.0" prefWidth="40.0" text="100">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <ProgressBar fx:id="idSeafaringProgress" layoutX="529.0" layoutY="155.0" prefHeight="18.0" prefWidth="113.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Label fx:id="idRaceLabel13" layoutX="317.0" layoutY="386.0" text="Speech:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCombat" layoutX="201.0" layoutY="40.0" text="Combat (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idEntertainment" layoutX="377.0" layoutY="40.0" text="Entertainment (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idJester" layoutX="534.0" layoutY="91.0" text="Jestering (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idSpellcasting" layoutX="50.0" layoutY="90.0" text="Spellcasting (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idMedicine" layoutX="198.0" layoutY="90.0" text="Medicine (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idMobility" layoutX="378.0" layoutY="90.0" text="Mobility (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idReligion" layoutX="200.0" layoutY="136.0" text="Religion (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idRiding" layoutX="382.0" layoutY="136.0" text="Riding (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="idAlchemyProgress" layoutX="51.0" layoutY="61.0" prefHeight="17.0" prefWidth="113.0" progress="0.16">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idSpellcastingProgress" layoutX="51.0" layoutY="109.0" prefHeight="18.0" prefWidth="113.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idCrimeProgress" layoutX="51.0" layoutY="153.0" prefHeight="18.0" prefWidth="113.0" progress="0.24">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Label fx:id="idAlchemy" layoutX="57.0" layoutY="40.0" text="Alchemy (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="idSpellcastingBtn" layoutX="157.0" layoutY="107.0" mnemonicParsing="false" onAction="#addSpellcasting" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCrimeBtn" layoutX="157.0" layoutY="152.0" mnemonicParsing="false" onAction="#addCrime" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="idCombatProgress" layoutX="207.0" layoutY="60.0" prefHeight="18.0" prefWidth="113.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idMedicineProgress" layoutX="207.0" layoutY="109.0" prefHeight="18.0" prefWidth="113.0" progress="0.0">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idEntertainmentProgress" layoutX="376.0" layoutY="60.0" prefHeight="18.0" prefWidth="113.0" progress="0.0">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idCombatBtn" layoutX="318.0" layoutY="57.0" mnemonicParsing="false" onAction="#addCombat" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idAlchemyBtn" layoutX="156.0" layoutY="58.0" mnemonicParsing="false" onAction="#addAlchemy" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idMedicineBtn" layoutX="319.0" layoutY="106.0" mnemonicParsing="false" onAction="#addMedicine" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="idReligionProgress" layoutX="207.0" layoutY="153.0" prefHeight="18.0" prefWidth="113.0" progress="0.17">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idMobilityProgress" layoutX="376.0" layoutY="110.0" prefHeight="18.0" prefWidth="113.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idRidingProgress" layoutX="376.0" layoutY="155.0" prefHeight="18.0" prefWidth="113.0" progress="0.78">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idHuntingProgress" layoutX="530.0" layoutY="61.0" prefHeight="18.0" prefWidth="113.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idJesterProgress" layoutX="529.0" layoutY="109.0" prefHeight="18.0" prefWidth="113.0" progress="0.28">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idSurvivalProgress" layoutX="48.0" layoutY="202.0" prefHeight="18.0" prefWidth="113.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idReligionBtn" layoutX="319.0" layoutY="152.0" mnemonicParsing="false" onAction="#addReligion" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idEntertainmentBtn" layoutX="487.0" layoutY="58.0" mnemonicParsing="false" onAction="#addEntertainment" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idMobilityBtn" layoutX="488.0" layoutY="106.0" mnemonicParsing="false" onAction="#addMobility" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idRidingBtn" layoutX="488.0" layoutY="152.0" mnemonicParsing="false" onAction="#addRiding" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idHuntingBtn" layoutX="640.0" layoutY="57.0" mnemonicParsing="false" onAction="#addHunting" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idJesterBtn" layoutX="640.0" layoutY="106.0" mnemonicParsing="false" onAction="#addJester" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idSeafaringBtn" layoutX="640.0" layoutY="152.0" mnemonicParsing="false" onAction="#addSeafaring" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Label fx:id="idManWar" layoutX="378.0" layoutY="185.0" text="Man. War (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idManFarm" layoutX="210.0" layoutY="185.0" text="Man. Farm (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idManCity" layoutX="536.0" layoutY="185.0" text="Man. City (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="idManFarmProgress" layoutX="207.0" layoutY="202.0" prefHeight="18.0" prefWidth="113.0" progress="0.16">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idManWarProgress" layoutX="376.0" layoutY="203.0" prefHeight="18.0" prefWidth="113.0" progress="0.76">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idManCityProgress" layoutX="529.0" layoutY="203.0" prefHeight="18.0" prefWidth="113.0" progress="0.32">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idSurvivalBtn" layoutX="156.0" layoutY="199.0" mnemonicParsing="false" onAction="#addSurvival" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idManFarmBtn" layoutX="320.0" layoutY="200.0" mnemonicParsing="false" onAction="#addManFarm" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idManWarBtn" layoutX="487.0" layoutY="199.0" mnemonicParsing="false" onAction="#addManWar" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idManCityBtn" layoutX="640.0" layoutY="200.0" mnemonicParsing="false" onAction="#addManCity" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Label fx:id="idGeoWestlands" layoutX="25.0" layoutY="243.0" text="Westlands (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="idGeoWestlandsProgress" layoutX="23.0" layoutY="260.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idGeoWestlandsBtn" layoutX="92.0" layoutY="260.0" mnemonicParsing="false" onAction="#addGeoWestlands" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Label fx:id="idGeoMidlands" layoutX="128.0" layoutY="243.0" text="Midlands (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="idGeoMidlandsProgress" layoutX="130.0" layoutY="260.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idGeoMidlandsBtn" layoutX="195.0" layoutY="260.0" mnemonicParsing="false" onAction="#addGeoMidlands" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Label fx:id="idGeoEastheim" layoutX="25.0" layoutY="290.0" text="Eastheim (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idGeoNhordlands" layoutX="127.0" layoutY="292.0" text="Nhordland (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idGeoSoj" layoutX="30.0" layoutY="338.0" text="Soj (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idGeoUnderworld" layoutX="124.0" layoutY="338.0" text="Underworld (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="idGeoEastheimProgress" layoutX="22.0" layoutY="309.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idGeoNhordlandsProgress" layoutX="130.0" layoutY="309.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idGeoSojProgress" layoutX="23.0" layoutY="357.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idGeoUnderworldProgress" layoutX="130.0" layoutY="358.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idGeoEastheimBtn" layoutX="92.0" layoutY="307.0" mnemonicParsing="false" onAction="#addGeoEastheim" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idGeoNhordlandsBtn" layoutX="195.0" layoutY="307.0" mnemonicParsing="false" onAction="#addGeoNhordlands" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idGeoSojBtn" layoutX="92.0" layoutY="354.0" mnemonicParsing="false" onAction="#addGeoSoj" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idGeoUnderworldBtn" layoutX="195.0" layoutY="355.0" mnemonicParsing="false" onAction="#addGeoUnderworld" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Separator layoutX="19.0" layoutY="242.0" prefHeight="3.0" prefWidth="662.0">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </Separator>
+      <Label fx:id="idRaceLabel1382" layoutX="530.0" layoutY="226.0" text="Culture:">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idNatWestlands" layoutX="235.0" layoutY="245.0" text="Westlands (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idNatMidlands" layoutX="342.0" layoutY="244.0" text="Midlands (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idNatEastheim" layoutX="236.0" layoutY="292.0" text="Eastheim (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idNatNhordland" layoutX="337.0" layoutY="292.0" text="Nhordland (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Separator layoutX="228.0" layoutY="242.0" orientation="VERTICAL" prefHeight="166.0" prefWidth="6.0">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </Separator>
+      <Label fx:id="idNatSoj" layoutX="245.0" layoutY="338.0" text="Soj (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idNatUnderworld" layoutX="334.0" layoutY="338.0" text="Underworld (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="idNatWestlandsProgress" layoutX="238.0" layoutY="263.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idNatMidlandsProgress" layoutX="342.0" layoutY="263.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idNatEastheimProgress" layoutX="238.0" layoutY="310.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idNatNhordlandProgress" layoutX="342.0" layoutY="309.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idNatSojProgress" layoutX="238.0" layoutY="358.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idNatUnderworldProgress" layoutX="342.0" layoutY="358.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idNatWestlandsBtn" layoutX="303.0" layoutY="260.0" mnemonicParsing="false" onAction="#addNatWestlands" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idNatEastheimBtn" layoutX="303.0" layoutY="307.0" mnemonicParsing="false" onAction="#addNatEastheim" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idNatSojBtn" layoutX="303.0" layoutY="355.0" mnemonicParsing="false" onAction="#addNatSoj" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idNatMidlandsBtn" layoutX="411.0" layoutY="260.0" mnemonicParsing="false" onAction="#addNatMidlands" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idNatNhordlandBtn" layoutX="411.0" layoutY="305.0" mnemonicParsing="false" onAction="#addNatNhordlands" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idNatUnderworldBtn" layoutX="411.0" layoutY="355.0" mnemonicParsing="false" onAction="#addNatUnderworld" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Separator layoutX="443.0" layoutY="242.0" orientation="VERTICAL" prefHeight="166.0" prefWidth="6.0">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </Separator>
+      <Separator layoutX="17.0" layoutY="406.0" prefHeight="3.0" prefWidth="583.0">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </Separator>
+      <Label fx:id="idCultWestlands" layoutX="451.0" layoutY="247.0" text="Westlands (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCultMidlands" layoutX="564.0" layoutY="247.0" text="Midlands (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCultEastheim" layoutX="452.0" layoutY="292.0" text="Eastheim (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCultElvish" layoutX="561.0" layoutY="292.0" text="Elvish (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCultDwarfish" layoutX="452.0" layoutY="338.0" text="Dwarfish (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCultOrcish" layoutX="562.0" layoutY="340.0" text="Orcish (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="idCultWestlandsProgress" layoutX="452.0" layoutY="263.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idCultEastheimProgress" layoutX="453.0" layoutY="310.0" prefHeight="18.0" prefWidth="69.0" progress="0.0">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idCultMidlandsProgress" layoutX="562.0" layoutY="263.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idCultElvishProgress" layoutX="564.0" layoutY="308.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idCultDwarfishProgress" layoutX="453.0" layoutY="358.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idCultOrcishProgress" layoutX="562.0" layoutY="358.0" prefHeight="18.0" prefWidth="69.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Label fx:id="idRaceLabel135" layoutX="24.0" layoutY="543.0" text="Available Skillpoints:">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+         <effect>
+            <InnerShadow color="RED" />
+         </effect>
+      </Label>
+      <Label fx:id="idSpeechVrok" layoutX="45.0" layoutY="411.0" text="Vrok (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idSpeechRona" layoutX="171.0" layoutY="411.0" text="Rona (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idSpeechEika" layoutX="296.0" layoutY="411.0" text="Eika (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idSpeechFuthark" layoutX="418.0" layoutY="411.0" text="Futhark (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idSpeechOrcish" layoutX="550.0" layoutY="411.0" text="Orcish (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="idSpeechVrokProgress" layoutX="26.0" layoutY="429.0" prefHeight="18.0" prefWidth="95.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idSpeechVrokBtn" layoutX="118.0" layoutY="427.0" mnemonicParsing="false" onAction="#addSpeechVrok" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="idSpeechRonaProgress" layoutX="154.0" layoutY="429.0" prefHeight="18.0" prefWidth="95.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idSpeechEikaProgress" layoutX="280.0" layoutY="429.0" prefHeight="18.0" prefWidth="95.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idSpeechFutharkProgress" layoutX="417.0" layoutY="430.0" prefHeight="18.0" prefWidth="95.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idSpeechOrcishProgress" layoutX="543.0" layoutY="429.0" prefHeight="18.0" prefWidth="95.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idSpeechRonaBtn" layoutX="249.0" layoutY="426.0" mnemonicParsing="false" onAction="#addSpeechRona" prefHeight="24.0" prefWidth="18.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idSpeechEikaBtn" layoutX="375.0" layoutY="426.0" mnemonicParsing="false" onAction="#addSpeechEika" prefHeight="24.0" prefWidth="18.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idSpeechFutharkBtn" layoutX="509.0" layoutY="426.0" mnemonicParsing="false" onAction="#addSpeechFuthark" prefHeight="24.0" prefWidth="18.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idSpeechOrcishBtn" layoutX="638.0" layoutY="426.0" mnemonicParsing="false" onAction="#addSpeechOrcish" prefHeight="24.0" prefWidth="18.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCultWestlandsBtn" layoutX="521.0" layoutY="260.0" mnemonicParsing="false" onAction="#addCultWestlands" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCultEastheimBtn" layoutX="521.0" layoutY="306.0" mnemonicParsing="false" onAction="#addCultEastheim" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCultDwarfishBtn" layoutX="521.0" layoutY="354.0" mnemonicParsing="false" onAction="#addCultDwarfish" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCultMidlandsBtn" layoutX="632.0" layoutY="260.0" mnemonicParsing="false" onAction="#addCultMidlands" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCultElvishBtn" layoutX="632.0" layoutY="307.0" mnemonicParsing="false" onAction="#addCultElvish" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCultOrcishBtn" layoutX="631.0" layoutY="355.0" mnemonicParsing="false" onAction="#addCultOrcish" prefHeight="3.0" prefWidth="5.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Separator layoutX="16.0" layoutY="473.0" prefHeight="3.0" prefWidth="662.0">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </Separator>
+      <Label fx:id="idRaceLabel132" layoutX="312.0" layoutY="456.0" text="Crafting:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCraftingMetal" layoutX="42.0" layoutY="476.0" text="Metal (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCraftingStone" layoutX="164.0" layoutY="476.0" text="Stone (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCraftingWood" layoutX="290.0" layoutY="476.0" text="Wood (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCraftingSoft" layoutX="430.0" layoutY="476.0" text="Soft (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="idCraftingMetalProgress" layoutX="24.0" layoutY="495.0" prefHeight="18.0" prefWidth="95.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idCraftingStoneProgress" layoutX="154.0" layoutY="495.0" prefHeight="18.0" prefWidth="95.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idCraftingWoodProgress" layoutX="281.0" layoutY="495.0" prefHeight="18.0" prefWidth="95.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="idCraftingSoftProgress" layoutX="415.0" layoutY="495.0" prefHeight="18.0" prefWidth="95.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idCraftingMetalBtn" layoutX="118.0" layoutY="492.0" mnemonicParsing="false" onAction="#addCraftingMetal" prefHeight="24.0" prefWidth="18.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCraftingStoneBtn" layoutX="249.0" layoutY="492.0" mnemonicParsing="false" onAction="#addCraftingStone" prefHeight="24.0" prefWidth="18.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCraftingWoodBtn" layoutX="376.0" layoutY="492.0" mnemonicParsing="false" onAction="#addCraftingWood" prefHeight="24.0" prefWidth="18.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCraftingSoftBtn" layoutX="510.0" layoutY="492.0" mnemonicParsing="false" onAction="#addCraftingSoft" prefHeight="24.0" prefWidth="18.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Label fx:id="idTrade" layoutX="558.0" layoutY="476.0" text="Trade (0/20)">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="idTradeProgress" layoutX="543.0" layoutY="495.0" prefHeight="18.0" prefWidth="95.0" progress="0.43">
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ProgressBar>
+      <Button fx:id="idTradeBtn" layoutX="638.0" layoutY="492.0" mnemonicParsing="false" onAction="#addTrade" prefHeight="24.0" prefWidth="18.0" text="+">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow height="9.0" radius="4.0" width="9.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc182" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

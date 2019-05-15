@@ -13,6 +13,7 @@ import java.net.URL;
 import Creator.*;
 
 
+import Database.LoadCharacter;
 import com.sun.javafx.scene.control.IntegerField;
 import javafx.fxml.Initializable;
 
@@ -32,6 +33,10 @@ import javafx.stage.Stage;
 
 public class ControllerNewGame implements Initializable {
     Character character;
+
+    private Party partyInstance = Party.getParty();
+    private LoadCharacter charLoader;
+    private Character player;
 
     @FXML private Button idRemove;
     @FXML private Button idNewCharacter;
@@ -55,10 +60,22 @@ public class ControllerNewGame implements Initializable {
 
 
 
-    int index = 0;
     @FXML
     void buttonDummy(ActionEvent event) {
         createDummy();
+        updateTable();
+    }
+
+    @FXML
+    void buttonLoadCharacter(ActionEvent event) {
+        charLoader = LoadCharacter.charLoader();
+        charLoader.loadCharacter(1);
+
+        updateTable();
+    }
+
+    int index = 0;
+    private void updateTable(){
 
         list.add(Party.getParty().getCharacter(index));
 
@@ -95,11 +112,6 @@ public class ControllerNewGame implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    @FXML
-    void buttonLoadCharacter(ActionEvent event) {
-
     }
 
     @FXML

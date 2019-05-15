@@ -7,7 +7,7 @@ public class Character {
     public enum Race {Human, Elf, Dwarf, HalfBlood}
     public enum SubRace {Stormlander, Midlander, Virann, Illmalaina, Korpikalla, Buratja, Borjornikka, Zvorda, HalfOrc, HalfElf}
     public enum WeaponHand {Right, Left, Both}
-    public enum Nationality {Human, Orc, Elf}
+    public enum Nationality {Human, Orc, Elf, Dwarf}
     public enum Environment{Nature, Country, City, Academic}
     public enum Region {Eastheim, Midlands, Westlands}
     public enum SpecialTrait{Strength, Physique, Agility, Spirituality, Intelligence, Psyche, Charisma}
@@ -33,6 +33,8 @@ public class Character {
     private int PosTrait2Level;
     private int negTraitLevel;
 
+
+    private int dbCharId;
     private String name;
     private int height;
     private int weight;
@@ -44,6 +46,14 @@ public class Character {
     private int totalExp;
     private int unusedExp;
 
+
+    public int getDbCharId() {
+        return dbCharId;
+    }
+
+    public void setDbCharId(int dbCharId) {
+        this.dbCharId = dbCharId;
+    }
 
     public Skillset getSkillset() {
         return skillset;

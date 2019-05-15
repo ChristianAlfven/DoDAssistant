@@ -2,15 +2,11 @@ package CharacterFile.Skills;
 
 public class Management extends Skill{
 
-    int farm;
-    int city;
-    int war;
+    int farm = 0;
+    int city = 0;
+    int war = 0;
 
-    public Management(){
-        farm = 0;
-        city = 0;
-        war = 0;
-    }
+    public Management(){    }
 
     public int getFarm() {
         return farm;

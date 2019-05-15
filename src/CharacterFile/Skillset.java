@@ -5,6 +5,8 @@ import CharacterFile.Skills.Crafting;
 import CharacterFile.Skills.Geography;
 import CharacterFile.Skills.Management;
 
+import java.util.ArrayList;
+
 public class Skillset {
 
     private Alchemy alchemy;
@@ -21,14 +23,12 @@ public class Skillset {
     private Mobility mobility = new Mobility();
     private Nature nature;
     private Religion religion;
-    private Riding riding;
+    private Riding riding = new Riding();
     private Seafaring seafaring;
-    private Speech speech;
+    private Speech speech = new Speech();
     private Spellcasting spellcasting;
     private Survival survival;
     private Trade trade;
-
-
 
     public Alchemy getAlchemy() {
         if (alchemy == null){

@@ -628,5 +628,23 @@
             <Font name="System Bold Italic" size="10.0" />
          </font>
       </Label>
+      <Label fx:id="idWeaponHand" layoutX="518.0" layoutY="90.0" prefHeight="17.0" prefWidth="72.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="idNegTraitDescription" layoutX="518.0" layoutY="59.0" prefHeight="17.0" prefWidth="72.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="idPosTraitDescription1" alignment="CENTER_RIGHT" layoutX="18.0" layoutY="59.0" prefHeight="17.0" prefWidth="80.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="idPosTraitDescription2" alignment="CENTER_RIGHT" layoutX="18.0" layoutY="89.0" prefHeight="17.0" prefWidth="80.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

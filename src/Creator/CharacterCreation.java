@@ -23,6 +23,7 @@ import static CharacterFile.Character.Nationality.Human;
 public class CharacterCreation implements Initializable {
 
 //    Image image = new Image("sample/sample.fxml");
+
     @FXML private ResourceBundle resources;
     @FXML private URL location;
     @FXML private Label idNameLabel;
@@ -64,6 +65,12 @@ public class CharacterCreation implements Initializable {
     @FXML private RadioButton idMale;
     @FXML private ToggleGroup Gender;
     @FXML private RadioButton idFemale;
+    @FXML private RadioButton idGerbanis;
+    @FXML private RadioButton idNidendomen;
+    @FXML private RadioButton idOstroseden;
+    @FXML private RadioButton idThuldom;
+    @FXML private RadioButton idHamingjes;
+    @FXML private ToggleGroup Religion;
     @FXML private TableView<Character> idCharacterTable;
     @FXML private Button idBack;
 
@@ -133,7 +140,8 @@ public class CharacterCreation implements Initializable {
                 &&(idWeightBox.getText()!=null)&&(character.getProfession()!=null)
                 &&(character.getRace()!=null)&&(character.getSubrace()!=null)
                 &&(idNature.isSelected()||idCity.isSelected()||idCountry.isSelected()||idAcademic.isSelected())
-                &&(idMale.isSelected()||idFemale.isSelected()))
+                &&(idMale.isSelected()||idFemale.isSelected())&&(idGerbanis.isSelected() || idOstroseden.isSelected()
+                || idThuldom.isSelected() || idNidendomen.isSelected() || idHamingjes.isSelected()))
         {
             try {
                 character.setName(idNamebox.getText());
@@ -156,6 +164,18 @@ public class CharacterCreation implements Initializable {
                     character.setEnvironment(Character.Environment.Academic);
                 } else if (idNature.isSelected()) {
                     character.setEnvironment(Character.Environment.Nature);
+                }
+
+                if (idGerbanis.isSelected()) {
+                    character.getSkillset().getReligion().setMainReligion(1);
+                } else if (idOstroseden.isSelected()){
+                    character.getSkillset().getReligion().setMainReligion(2);
+                } else if (idNidendomen.isSelected()){
+                    character.getSkillset().getReligion().setMainReligion(3);
+                } else if (idHamingjes.isSelected()){
+                    character.getSkillset().getReligion().setMainReligion(4);
+                } else if (idThuldom.isSelected()){
+                    character.getSkillset().getReligion().setMainReligion(5);
                 }
 
                 System.out.println(character.debug());

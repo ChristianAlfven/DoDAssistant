@@ -22,6 +22,10 @@ import java.util.ResourceBundle;
 public class CharacterCreation3 implements Initializable {
 
     Character character;
+    int pos1;
+    int pos2;
+    int neg;
+
 
     @FXML
     private Label idRaceLabel;
@@ -36,7 +40,19 @@ public class CharacterCreation3 implements Initializable {
     private Button idBack;
 
     @FXML
+    private Label idWeaponHand;
+
+    @FXML
     private Label idPosTrait1;
+
+    @FXML
+    private Label idNegTraitDescription;
+
+    @FXML
+    private Label idPosTraitDescription1;
+
+    @FXML
+    private Label idPosTraitDescription2;
 
     @FXML
     private Label idPosTrait2;
@@ -211,6 +227,37 @@ public class CharacterCreation3 implements Initializable {
                 character.getSkillset().getCrafting().setStone(Integer.parseInt(idStoneBox.getText()));
                 character.getSkillset().getCrafting().setSoft(Integer.parseInt(idSoftBox.getText()));
                 character.getSkillset().getCrafting().setWood(Integer.parseInt(idWoodBox.getText()));
+                if (Integer.parseInt(IdWpnBox.getText()) <= 14) {
+                    character.setWeaponHand(Character.WeaponHand.Right);
+                }else if (Integer.parseInt(IdWpnBox.getText()) <= 18){
+                    character.setWeaponHand(Character.WeaponHand.Left);
+                }else {
+                    character.setWeaponHand(Character.WeaponHand.Dual);
+                }
+
+                if (Integer.parseInt(idPosBox1.getText()) <= 3) {
+                    character.setPosTrait1Level(4);
+                }else if (Integer.parseInt(idPosBox1.getText()) <= 10){
+                    character.setPosTrait1Level(2);
+                }else {
+                    character.setPosTrait1Level(1);
+                }
+
+                if (Integer.parseInt(idPosBox2.getText()) <= 3) {
+                    character.setPosTrait2Level(4);
+                }else if (Integer.parseInt(idPosBox2.getText()) <= 10){
+                    character.setPosTrait2Level(2);
+                }else {
+                    character.setPosTrait2Level(1);
+                }
+
+                if (Integer.parseInt(idNegBox.getText()) <= 10) {
+                    character.setNegTraitLevel(-1);
+                }else if (Integer.parseInt(idPosBox1.getText()) <= 17){
+                    character.setNegTraitLevel(-2);
+                }else {
+                    character.setNegTraitLevel(-4);
+                }
 
                 switch(character.getRace()){
                     case Human:
@@ -411,6 +458,13 @@ public class CharacterCreation3 implements Initializable {
         idNegBox.setText(Integer.toString(rollDice(20)));
         idNegBtn.setDisable(true);
         idNegBox.setEditable(false);
+        if (Integer.parseInt(idNegBox.getText())<= 10){
+            idNegTraitDescription.setText("(" + character.getTraitDescription(character.getNegativeTrait(),-1) + ")");
+        } else if (Integer.parseInt(idNegBox.getText())<= 17){
+            idNegTraitDescription.setText("(" + character.getTraitDescription(character.getNegativeTrait(),-2) + ")");
+        } else if (Integer.parseInt(idNegBox.getText())<= 20){
+            idNegTraitDescription.setText("(" + character.getTraitDescription(character.getNegativeTrait(),-4) + ")");
+        }
     }
 
     @FXML
@@ -418,6 +472,13 @@ public class CharacterCreation3 implements Initializable {
         idPosBox1.setText(Integer.toString(rollDice(20)));
         idPosBtn1.setDisable(true);
         idPosBox1.setEditable(false);
+        if (Integer.parseInt(idPosBox1.getText())<= 3){
+            idPosTraitDescription1.setText("(" + character.getTraitDescription(character.getPositiveTrait1(),4) + ")");
+        } else if (Integer.parseInt(idPosBox1.getText())<= 10){
+            idPosTraitDescription1.setText("(" + character.getTraitDescription(character.getPositiveTrait1(),2) + ")");
+        } else if (Integer.parseInt(idPosBox1.getText())<= 20){
+            idPosTraitDescription1.setText("(" + character.getTraitDescription(character.getPositiveTrait1(),1) + ")");
+        }
     }
 
     @FXML
@@ -425,6 +486,13 @@ public class CharacterCreation3 implements Initializable {
         idPosBox2.setText(Integer.toString(rollDice(20)));
         idPosBtn2.setDisable(true);
         idPosBox2.setEditable(false);
+        if (Integer.parseInt(idPosBox2.getText())<= 3){
+            idPosTraitDescription2.setText("(" + character.getTraitDescription(character.getPositiveTrait2(),4) + ")");
+        } else if (Integer.parseInt(idPosBox2.getText())<= 10){
+            idPosTraitDescription2.setText("(" + character.getTraitDescription(character.getPositiveTrait2(),2) + ")");
+        } else if (Integer.parseInt(idPosBox2.getText())<= 20){
+            idPosTraitDescription2.setText("(" + character.getTraitDescription(character.getPositiveTrait2(),1) + ")");
+        }
     }
 
     @FXML
@@ -446,6 +514,13 @@ public class CharacterCreation3 implements Initializable {
         IdWpnBox.setText(Integer.toString(rollDice(20)));
         idWpnBtn.setDisable(true);
         IdWpnBox.setEditable(false);
+        if (Integer.parseInt(IdWpnBox.getText()) <= 14) {
+            idWeaponHand.setText("(Right)");
+        }else if (Integer.parseInt(IdWpnBox.getText()) <= 18){
+            idWeaponHand.setText("(Left)");
+        }else {
+            idWeaponHand.setText("(Dual)");
+        }
     }
 
 

@@ -74,6 +74,7 @@ public class ControllerNewGame implements Initializable {
         updateTable();
         charLoader.loadCharacter(2);
         updateTable();
+        //idLoadCharacter.setDisable(true);
     }
 
 

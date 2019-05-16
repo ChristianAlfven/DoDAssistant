@@ -308,6 +308,7 @@ public class Character {
                 ", weight=" + weight +
                 ", age=" + age +
                 ", background='" + background + '\'' +
+                ", region = " + region + "' Nationality = " + nationality +
                 '}';
     }
 

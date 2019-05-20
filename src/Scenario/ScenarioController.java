@@ -235,7 +235,7 @@ public class ScenarioController implements Initializable {
                 break;
             case "Religion":
                 for (int i = 0; i < party.getArray(); i++){
-                    playerValues[i] = party.getCharacter(i).getSkillset().getReligion().getMain();
+                    playerValues[i] = party.getCharacter(i).getSkillset().getReligion().getMainReligion();
                 }
                 break;
             case "Riding":

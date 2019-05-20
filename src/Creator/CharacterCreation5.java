@@ -859,7 +859,7 @@ public class CharacterCreation5 implements Initializable {
         idCombat.setText("Combat (" + combat + "/20)");
         idCombatProgress.setProgress((double)combat / 20);
 
-        idCrime.setText("Combat (" + crime + "/20)");
+        idCrime.setText("Crime (" + crime + "/20)");
         idCrimeProgress.setProgress((double)crime / 20);
 
         idEntertainment.setText("Entertainment (" + entertainment + "/20)");

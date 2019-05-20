@@ -49,11 +49,11 @@ public class LoadCharacter {
     // Health & Armor table
     private enum BODYPART{Total, Head, RightArm, LeftArm, Chest, Stomach, RightLeg, LeftLeg}
     private BODYPART bodypart;
-    private Health hp = new Health(0);
-    private Armor armor = new Armor();
+    private Health hp;
+    private Armor armor;
 
     // Skills table
-    private Skillset skills = new Skillset();
+    private Skillset skills;
 
     // MySQL script
     private String scriptBackpack;
@@ -75,6 +75,9 @@ public class LoadCharacter {
 
     public void loadCharacter(int index){
         player = new Character();
+        hp = new Health(0);
+        armor = new Armor();
+        skills = new Skillset();
         writeScripts(index);
         getValues();
         setValues();

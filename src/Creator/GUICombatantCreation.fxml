@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?package Resources.parchment.png?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="414.0" prefWidth="510.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Creator.CombatantCreation">
+    <children>
+        <ImageView fitHeight="381.0" fitWidth="520.0" layoutX="-1.0">
+            <image>
+                <Image url="@../Resources/parchment.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="idConfirmButton" layoutX="174.0" layoutY="330.0" mnemonicParsing="false" onAction="#createCombatant" prefHeight="25.0" prefWidth="145.0" text="Confirm Combatant" textAlignment="CENTER">
+            <effect>
+                <Lighting diffuseConstant="1.26">
+                    <light>
+                        <Light.Distant color="#ff9640" />
+                    </light>
+                    <bumpInput>
+                        <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+                    </bumpInput>
+                </Lighting>
+            </effect>
+            <font>
+                <Font name="System Bold Italic" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="idBackButton" alignment="CENTER" layoutX="14.0" layoutY="381.0" mnemonicParsing="false" onAction="#buttonBack" prefHeight="17.0" prefWidth="69.0" style="-fx-background-color:#FFF ;" text="&lt;&lt;Back">
+            <effect>
+                <Lighting>
+                    <bumpInput>
+                        <Shadow />
+                    </bumpInput>
+                    <light>
+                        <Light.Distant color="#a19c9c" />
+                    </light>
+                </Lighting>
+            </effect>
+            <font>
+                <Font name="System Bold Italic" size="12.0" />
+            </font>
+        </Button>
+      <Label layoutX="109.0" layoutY="68.0" text="Name">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idNameText" layoutX="113.0" layoutY="97.0" text="TestCombatant">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="113.0" layoutY="128.0" text="Race">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idRaceText" layoutX="113.0" layoutY="156.0" prefHeight="25.0" prefWidth="97.0" text="TestOrc">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="113.0" layoutY="188.0" text="Combat Points">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idCombatPointText" layoutX="113.0" layoutY="220.0" prefHeight="25.0" prefWidth="97.0" text="25">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="112.0" layoutY="256.0" text="Damage Bonus">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idDamageBonusText" layoutX="113.0" layoutY="283.0" prefHeight="25.0" prefWidth="99.0" text="2">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="340.0" layoutY="68.0" text="Total Health">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idHealthTotal" layoutX="340.0" layoutY="97.0" prefHeight="25.0" prefWidth="97.0" text="30">
+         <effect>
+            <Lighting diffuseConstant="1.07">
+               <bumpInput>
+                  <Shadow height="2.285" radius="0.07125000000000004" width="0.0" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffc07d" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="340.0" layoutY="138.0" text="Armor">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="165.0" prefHeight="17.0" prefWidth="71.0" text="Body Part">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="182.0" prefHeight="17.0" prefWidth="71.0" text="Head:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="199.0" prefHeight="17.0" prefWidth="71.0" text="Right Arm:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="233.0" prefHeight="17.0" prefWidth="71.0" text="Chest:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="216.0" prefHeight="17.0" prefWidth="71.0" text="Left Arm:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="265.0" prefHeight="17.0" prefWidth="71.0" text="Right Leg:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="282.0" prefHeight="17.0" prefWidth="71.0" text="Left Leg:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="248.0" prefHeight="17.0" prefWidth="71.0" text="Stomach:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="415.0" layoutY="164.0" prefHeight="17.0" prefWidth="71.0" text="Armor">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idArmorHead" layoutX="412.0" layoutY="180.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="5">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorRightArm" layoutX="411.0" layoutY="197.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="3">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorChest" layoutX="411.0" layoutY="232.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="4">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorLeftArm" layoutX="411.0" layoutY="215.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="3">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorRightLeg" layoutX="411.0" layoutY="266.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="2">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorStomach" layoutX="411.0" layoutY="249.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="4">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorLeftLeg" layoutX="411.0" layoutY="283.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="2">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+    </children>
+</AnchorPane>

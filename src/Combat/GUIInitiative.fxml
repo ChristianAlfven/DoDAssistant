@@ -23,7 +23,7 @@
       <TableView fx:id="idPlayerTable" prefHeight="400.0" prefWidth="200.0">
          <columns>
             <TableColumn fx:id="idPlayerNameColumn" editable="false" prefWidth="100.0" sortable="false" text="Player" />
-            <TableColumn fx:id="idPlayerInitiativeColumn" editable="false" prefWidth="100.0" sortable="false" text="Initiative" />
+            <TableColumn fx:id="idPlayerCombatPointColumn" editable="false" prefWidth="100.0" sortable="false" text="Combat Points" />
          </columns>
          <effect>
             <Lighting>
@@ -39,7 +39,7 @@
       <TableView fx:id="idCombatantTable" layoutX="500.0" prefHeight="400.0" prefWidth="200.0">
          <columns>
             <TableColumn fx:id="idCombatantNameColumn" editable="false" prefWidth="100.0" sortable="false" text="Combatant" />
-            <TableColumn fx:id="idCombatantInitiativeColumn" editable="false" prefWidth="100.0" sortable="false" text="Initiative" />
+            <TableColumn fx:id="idCombatantCombatPointColumn" editable="false" prefWidth="100.0" sortable="false" text="Combat Points" />
          </columns>
          <effect>
             <Lighting>

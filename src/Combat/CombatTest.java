@@ -12,8 +12,8 @@ public class CombatTest extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Pane root = FXMLLoader.load(getClass().getResource("GUICombat.fxml"));
-        primaryStage.setTitle("Initiative");
+        Pane root = FXMLLoader.load(getClass().getResource("/Creator/GUICombatantCreation.fxml"));
+        primaryStage.setTitle("Combatant Creation");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 

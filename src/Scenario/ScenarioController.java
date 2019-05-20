@@ -370,7 +370,7 @@ public class ScenarioController implements Initializable {
                 break;
             case "Geography: Midlands":
                 for (int i = 0; i < party.getArray(); i++){
-                    playerValues[i] = party.getCharacter(i).getSkillset().getGeography().getMidland();
+                    playerValues[i] = party.getCharacter(i).getSkillset().getGeography().getMidlands();
                 }
                 break;
             case "Geography: Nhordlands":

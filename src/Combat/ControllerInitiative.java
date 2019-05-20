@@ -8,6 +8,9 @@ import CharacterFile.Character;
 
 
 import CharacterFile.Health;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,22 +21,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
 
 public class ControllerInitiative {
 
-    @FXML private TableView<?> idPlayerTable;
-    @FXML private TableColumn<?, ?> idPlayerNameColumn;
-    @FXML private TableColumn<?, ?> idPlayerInitiativeColumn;
-    @FXML private TableView<?> idCombatantTable;
-    @FXML private TableColumn<?, ?> idCombatantNameColumn;
-    @FXML private TableColumn<?, ?> idCombatantInitiativeColumn;
     @FXML private Label idInitiativeHeading;
     @FXML private Label idInitiativeLabel;
     @FXML private TextField idInitiativeText;
@@ -47,11 +43,23 @@ public class ControllerInitiative {
     @FXML private Button idAttackPhaseButton;
     @FXML private Button idEndCombatButton;
 
+    @FXML private TableView<Combatant> idPlayerTable;
+    @FXML private TableColumn<String, Combatant> idPlayerNameColumn;
+    @FXML private TableColumn<Integer, Combatant> idPlayerCombatPointColumn;
+    @FXML private TableView<Combatant> idCombatantTable;
+    @FXML private TableColumn<String, Combatant> idCombatantNameColumn;
+    @FXML private TableColumn<Integer, Combatant> idCombatantCombatPointColumn;
+
+
     private Party partyInstance;
     private GmList gmInstance;
 
     public ArrayList<Combatant> combatList;
     public ArrayList<Character> partyList;
+    //private ObservableList<Combatant> playerTableList;
+    //private ObservableList<Combatant> combatantTableList;
+
+
     public Combatant[] combatOrder;
     private Combatant combatant;
     private int input;
@@ -71,6 +79,7 @@ public class ControllerInitiative {
         combatList = gmInstance.getGmList();
         partyList = partyInstance.getPartyList();
 
+
         //dummyPlayer();
 
         i = 0;
@@ -87,6 +96,40 @@ public class ControllerInitiative {
         idAttackPhaseButton.setDisable(true);
         idAttackButton.setDisable(true);
         idStandbyButton.setDisable(true);
+
+        setPlayerTable();
+        setCombatantTable();
+    }
+
+    private void setPlayerTable(){
+        ObservableList<Combatant> playerTableList = FXCollections.observableArrayList();
+        for(int i=0; i<combatList.size(); i++) {
+            combatant = combatList.get(i);
+            if(combatant.isPlayer()){
+                playerTableList.add(combatant);
+            }
+        }
+
+        idPlayerTable.setItems(playerTableList);
+        for(int i=0; i<playerTableList.size(); i++) {
+            idPlayerNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            idPlayerCombatPointColumn.setCellValueFactory(new PropertyValueFactory<>("totCombatPoints"));
+        }
+    }
+    private void setCombatantTable(){
+        ObservableList<Combatant> combatantTableList = FXCollections.observableArrayList();
+        for(int i=0; i<combatList.size(); i++) {
+            combatant = combatList.get(i);
+            if(!combatant.isPlayer()){
+                combatantTableList.add(combatant);
+            }
+        }
+
+        idCombatantTable.setItems(combatantTableList);
+        for(int i=0; i<combatantTableList.size(); i++) {
+            idCombatantNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            idCombatantCombatPointColumn.setCellValueFactory(new PropertyValueFactory<>("totCombatPoints"));
+        }
     }
 
     @FXML

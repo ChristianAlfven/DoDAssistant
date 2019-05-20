@@ -42,7 +42,7 @@ public class Character {
     private int age;
     private int combatPoints;
     private String background = "";
-    private String Characteristics = "";
+    //private String Characteristics = "";
     private int raud;
     private int totalExp;
     private int unusedExp;
@@ -90,6 +90,10 @@ public class Character {
 
     public void setArmor(Armor armor) {
         this.armor = armor;
+    }
+
+    public void constructArmor(){
+        this.armor = new Armor();
     }
 
     public Profession getProfession() {
@@ -180,13 +184,13 @@ public class Character {
         this.background = background;
     }
 
-    public String getCharacteristics() {
-        return Characteristics;
-    }
+    //public String getCharacteristics() {
+    //    return Characteristics;
+    //}
 
-    public void setCharacteristics(String characteristics) {
-        Characteristics = characteristics;
-    }
+    //public void setCharacteristics(String characteristics) {
+    //    Characteristics = characteristics;
+    //}
 
     public int getRaud() {
         return raud;
@@ -297,7 +301,7 @@ public class Character {
     }
 
     public void setReligion(String religion) {
-        this.religion = religion;
+        this.religion = skillset.getReligion().getReligionName();
     }
 
     public String debug() {

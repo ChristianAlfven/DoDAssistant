@@ -133,7 +133,7 @@ public class SaveCharacter {
                 ", "+player.getAge()+
                 ", "+player.getCombatPoints()+
                 ", '"+player.getBackground()+ "" +
-                "', '"+player.getCharacteristics()+ "" +
+                //"', '"+player.getCharacteristics()+ "" +
                 "', "+player.getRaud()+
                 ", "+player.getMovement()+
                 ", '"+player.getReligion()+"');";
@@ -214,7 +214,7 @@ public class SaveCharacter {
                 " ("+player.getDbCharId()+", 13, "+skills.getCulture().getOrcish()+")," +
                 " ("+player.getDbCharId()+", 14, "+skills.getEntertainment().getSkillLevel()+")," +
                 " ("+player.getDbCharId()+", 15, "+skills.getGeography().getWestland()+")," +
-                " ("+player.getDbCharId()+", 16, "+skills.getGeography().getMidland()+")," +
+                " ("+player.getDbCharId()+", 16, "+skills.getGeography().getMidlands()+")," +
                 " ("+player.getDbCharId()+", 17, "+skills.getGeography().getEastheim()+")," +
                 " ("+player.getDbCharId()+", 18, "+skills.getGeography().getSoj()+")," +
                 " ("+player.getDbCharId()+", 19, "+skills.getGeography().getNhoordland()+")," +

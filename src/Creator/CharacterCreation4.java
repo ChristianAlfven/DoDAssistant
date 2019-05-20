@@ -213,10 +213,10 @@ public class CharacterCreation4 implements Initializable {
                     errorAlert.showAndWait();
                 } else {
                     try {
-                        character.getSkillset().getCombat().setSkillLevel(Integer.parseInt(idCombatBox.getText()));         //COMBAT
+                        character.getSkillset().getCombat().addSkillLevel(Integer.parseInt(idCombatBox.getText()));         //COMBAT
                         character.getSkillset().getSurvival().addSkillLevel(Integer.parseInt(idSurvivalBox.getText()));     //SURVIVAL
-                        character.getSkillset().getSeafaring().setSkillLevel(Integer.parseInt(idSeafaringBox.getText()));   //SEAFARING
-                        character.getSkillset().getHunting().setSkillLevel(Integer.parseInt(idHuntingBox.getText()));       //HUNTING
+                        character.getSkillset().getSeafaring().addSkillLevel(Integer.parseInt(idSeafaringBox.getText()));   //SEAFARING
+                        character.getSkillset().getHunting().addSkillLevel(Integer.parseInt(idHuntingBox.getText()));       //HUNTING
                         character.getSkillset().getNature().addHomeland(character, Integer.parseInt(idNatureBox.getText()));//NATURE
                         character.setRaud(Integer.parseInt(idRaudBox.getText()));                                           // RAUD
 
@@ -252,8 +252,8 @@ public class CharacterCreation4 implements Initializable {
                     errorAlert.showAndWait();
                 } else {
                     try {
-                        character.getSkillset().getRiding().setSkillLevel(Integer.parseInt(idRidingBox.getText()));         //COMBAT
-                        character.getSkillset().getManagement().setFarm(Integer.parseInt(idManagementBox.getText()));     //MANAGEMENT
+                        character.getSkillset().getRiding().addSkillLevel(Integer.parseInt(idRidingBox.getText()));         //COMBAT
+                        character.getSkillset().getManagement().addFarm(Integer.parseInt(idManagementBox.getText()));     //MANAGEMENT
                         character.getSkillset().getSpeech().addMotherTongue(character, Integer.parseInt(idSpeechBox.getText()));   //SEAFARING
                         character.getSkillset().getCulture().addHomeland(character, Integer.parseInt(idCultureBox.getText()));       //HUNTING
                         character.setRaud(Integer.parseInt(idRaudBox.getText()));
@@ -310,7 +310,7 @@ public class CharacterCreation4 implements Initializable {
                         && idSpeechChoiceBox.getText() != null && idTheoreticalBox1.getText() != null && idHPBox.getText() != null
                         && idRaudBox.getText() != null && idTheoreticalBox2.getText() != null){
                     try {
-                        character.getSkillset().getMedicine().setSkillLevel(Integer.parseInt(idMedicineBox.getText()));
+                        character.getSkillset().getMedicine().addSkillLevel(Integer.parseInt(idMedicineBox.getText()));
                         character.getSkillset().getSpeech().addMotherTongue(character, Integer.parseInt(idSpeechBox.getText()));
                         character.getSkillset().getNature().addHomeland(character,Integer.parseInt(idNatureBox.getText()));
                         character.setRaud(Integer.parseInt(idRaudBox.getText()));
@@ -438,7 +438,7 @@ public class CharacterCreation4 implements Initializable {
         }
         rollCrafting();
 
-        character.getSkillset().getCrafting().setMetal(Integer.parseInt(idCraftingBox.getText()));
+        character.getSkillset().getCrafting().addMetal(Integer.parseInt(idCraftingBox.getText()));
     }
 
     @FXML
@@ -449,7 +449,7 @@ public class CharacterCreation4 implements Initializable {
         rollCrafting();
 
 
-        character.getSkillset().getCrafting().setStone(Integer.parseInt(idCraftingBox.getText()));
+        character.getSkillset().getCrafting().addStone(Integer.parseInt(idCraftingBox.getText()));
     }
 
     @FXML
@@ -459,7 +459,7 @@ public class CharacterCreation4 implements Initializable {
         }
         rollCrafting();
 
-        character.getSkillset().getCrafting().setWood(Integer.parseInt(idCraftingBox.getText()));
+        character.getSkillset().getCrafting().addWood(Integer.parseInt(idCraftingBox.getText()));
     }
 
     @FXML
@@ -469,7 +469,7 @@ public class CharacterCreation4 implements Initializable {
         }
         rollCrafting();
 
-        character.getSkillset().getCrafting().setSoft(Integer.parseInt(idCraftingBox.getText()));
+        character.getSkillset().getCrafting().addSoft(Integer.parseInt(idCraftingBox.getText()));
     }
 
     //-----------------------------------------
@@ -505,7 +505,7 @@ public class CharacterCreation4 implements Initializable {
         } else {
             disableSpeech();
         }
-        character.getSkillset().getSpeech().setVrok(Integer.parseInt(idSpeechChoiceBox.getText()));
+        character.getSkillset().getSpeech().addVrok(Integer.parseInt(idSpeechChoiceBox.getText()));
     }
 
     @FXML
@@ -514,7 +514,7 @@ public class CharacterCreation4 implements Initializable {
             idSpeechChoiceBox.setText(Integer.toString(rollDice(6)));
         }
         disableSpeech();
-        character.getSkillset().getSpeech().setRona(Integer.parseInt(idSpeechChoiceBox.getText()));
+        character.getSkillset().getSpeech().addRona(Integer.parseInt(idSpeechChoiceBox.getText()));
     }
 
     @FXML
@@ -525,7 +525,7 @@ public class CharacterCreation4 implements Initializable {
         } else {
             disableSpeech();
         }
-        character.getSkillset().getSpeech().setFuthark(Integer.parseInt(idSpeechChoiceBox.getText()));
+        character.getSkillset().getSpeech().addFuthark(Integer.parseInt(idSpeechChoiceBox.getText()));
     }
 
     @FXML
@@ -536,7 +536,7 @@ public class CharacterCreation4 implements Initializable {
         } else {
             disableSpeech();
         }
-        character.getSkillset().getSpeech().setOrcish(Integer.parseInt(idSpeechChoiceBox.getText()));
+        character.getSkillset().getSpeech().addOrcish(Integer.parseInt(idSpeechChoiceBox.getText()));
     }
 
     @FXML
@@ -546,7 +546,7 @@ public class CharacterCreation4 implements Initializable {
         }
         disableSpeech();
 
-        character.getSkillset().getSpeech().setEika(Integer.parseInt(idSpeechChoiceBox.getText()));
+        character.getSkillset().getSpeech().addEika(Integer.parseInt(idSpeechChoiceBox.getText()));
     }
 
     //------------------------------ACADEMIC---------------------------------
@@ -571,7 +571,7 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getAlchemy().setSkillLevel(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getAlchemy().addSkillLevel(Integer.parseInt(idTheoreticalBox1.getText()));
                     firstSkill = 1;
                     idSkill1.setText("Alchemy");
 
@@ -580,7 +580,7 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
                     idTheoreticalBox2.setEditable(false);
-                    character.getSkillset().getAlchemy().setSkillLevel(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getAlchemy().addSkillLevel(Integer.parseInt(idTheoreticalBox2.getText()));
                     disableButtons();
                     idSkill2.setText("Alchemy");
 
@@ -593,7 +593,7 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getSpeech().setVrok(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getSpeech().addVrok(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
                     firstSkill = 21;
                     firstPick = 0;
@@ -602,7 +602,7 @@ public class CharacterCreation4 implements Initializable {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getSpeech().setVrok(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getSpeech().addVrok(Integer.parseInt(idTheoreticalBox2.getText()));
                     disableButtons();
 
                 }
@@ -614,7 +614,7 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getNature().setWestlands(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getNature().addWestlands(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
                     firstSkill = 51;
 
@@ -622,7 +622,7 @@ public class CharacterCreation4 implements Initializable {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getNature().setWestlands(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getNature().addWestlands(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
                 }
@@ -635,7 +635,7 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getGeography().setWestland(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getGeography().addWestland(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
                     firstSkill = 61;
                     firstPick = 0;
@@ -645,7 +645,7 @@ public class CharacterCreation4 implements Initializable {
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
-                    }character.getSkillset().getGeography().setWestland(Integer.parseInt(idTheoreticalBox2.getText()));
+                    }character.getSkillset().getGeography().addWestland(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
 
@@ -673,7 +673,7 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getNature().setMidlands(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getNature().addMidlands(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
 
@@ -681,7 +681,7 @@ public class CharacterCreation4 implements Initializable {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getNature().setMidlands(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getNature().addMidlands(Integer.parseInt(idTheoreticalBox2.getText()));
                     disableButtons();
                 }
                 firstSkill = 52;
@@ -694,14 +694,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getGeography().setMidland(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getGeography().addMidlands(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getGeography().setMidland(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getGeography().addMidlands(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
                 }
@@ -722,13 +722,13 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getSpellcasting().setSkillLevel(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getSpellcasting().addSkillLevel(Integer.parseInt(idTheoreticalBox1.getText()));
                     idSkill1.setText("Spellcasting");
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getSpellcasting().setSkillLevel(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getSpellcasting().addSkillLevel(Integer.parseInt(idTheoreticalBox2.getText()));
                     idSkill2.setText("Spellcasting");
                     resetButtons();
                     disableButtons();
@@ -744,14 +744,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getSpeech().setRona(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getSpeech().addRona(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getNature().setMidlands(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getNature().addMidlands(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
                 }
@@ -767,14 +767,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getNature().setMidlands(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getNature().addMidlands(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getNature().setMidlands(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getNature().addMidlands(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
                 }
@@ -788,14 +788,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getGeography().setMidland(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getGeography().addMidlands(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getGeography().setMidland(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getGeography().addMidlands(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
 
@@ -818,7 +818,7 @@ public class CharacterCreation4 implements Initializable {
                     }
                     lockFirst();
                     idTheoreticalBtn4.setDisable(true);
-                    character.getSkillset().getMedicine().setSkillLevel(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getMedicine().addSkillLevel(Integer.parseInt(idTheoreticalBox1.getText()));
                     firstSkill = 4;
                     idTheoreticalBtn4.setDisable(true);
                     idSkill1.setText("Medicine");
@@ -828,7 +828,7 @@ public class CharacterCreation4 implements Initializable {
                         idSkill2.setText("Medicine");
                     }
                     idTheoreticalBox2.setEditable(false);
-                    character.getSkillset().getMedicine().setSkillLevel(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getMedicine().addSkillLevel(Integer.parseInt(idTheoreticalBox2.getText()));
                     disableButtons();
 
                 }
@@ -839,14 +839,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getSpeech().setEika(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getSpeech().addEika(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getSpeech().setEika(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getSpeech().addEika(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
                 }
@@ -861,14 +861,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getNature().setSoj(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getNature().addSoj(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getNature().setSoj(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getNature().addSoj(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
 
@@ -883,14 +883,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getGeography().setSoj(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getGeography().addSoj(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getGeography().setSoj(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getGeography().addSoj(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
                 }
@@ -920,14 +920,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getSpeech().setFuthark(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getSpeech().addFuthark(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getSpeech().setFuthark(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getSpeech().addFuthark(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
                 }
@@ -942,14 +942,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getNature().setNhordlands(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getNature().addNhordlands(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getNature().setNhordlands(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getNature().addNhordlands(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
 
@@ -964,14 +964,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getGeography().setNhoordland(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getGeography().addNhoordland(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getGeography().setNhoordland(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getGeography().addNhoordland(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
                 }
@@ -1001,14 +1001,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getSpeech().setOrcish(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getSpeech().addOrcish(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getSpeech().setOrcish(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getSpeech().addOrcish(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
                 }
@@ -1023,14 +1023,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getNature().setUnderworld(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getNature().addUnderworld(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getNature().setUnderworld(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getNature().addUnderworld(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
 
@@ -1045,14 +1045,14 @@ public class CharacterCreation4 implements Initializable {
                         idTheoreticalBox1.setText(Integer.toString(rollDice(6)));
                     }
                     lockFirst();
-                    character.getSkillset().getGeography().setUnderworld(Integer.parseInt(idTheoreticalBox1.getText()));
+                    character.getSkillset().getGeography().addUnderworld(Integer.parseInt(idTheoreticalBox1.getText()));
                     resetButtons();
 
                 } else {
                     if (idTheoreticalBox2.getText().isEmpty()) {
                         idTheoreticalBox2.setText(Integer.toString(rollDice(6)));
                     }
-                    character.getSkillset().getGeography().setUnderworld(Integer.parseInt(idTheoreticalBox2.getText()));
+                    character.getSkillset().getGeography().addUnderworld(Integer.parseInt(idTheoreticalBox2.getText()));
                     resetButtons();
                     disableButtons();
                 }

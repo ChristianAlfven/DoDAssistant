@@ -95,11 +95,11 @@ public class CharacterTest {
         Assert.assertEquals(character.getBackground(),"Background");
     }
 
-    @Test
-    public void setCharacteristics() {
-        character.setCharacteristics("Scarred");
-        Assert.assertEquals(character.getCharacteristics(),"Scarred");
-    }
+    //@Test
+    //public void setCharacteristics() {
+    //    character.setCharacteristics("Scarred");
+    //    Assert.assertEquals(character.getCharacteristics(),"Scarred");
+    //}
 
     @Test
     public void setRaud() {

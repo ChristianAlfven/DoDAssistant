@@ -1,13 +1,12 @@
 package CharacterFile.Skills;
 
 import CharacterFile.Character;
-import CharacterFile.*;
 
 public class Geography extends Skill {
 
     private int skillLevel;
     private int westland;
-    private int midland;
+    private int midlands;
     private int eastheim;
     private int soj;
     private int nhordland;
@@ -15,7 +14,7 @@ public class Geography extends Skill {
 
     public Geography() {
         westland = 0;
-        midland = 0;
+        midlands = 0;
         eastheim = 0;
         nhordland = 0;
         soj = 0;
@@ -26,23 +25,23 @@ public class Geography extends Skill {
         return westland;
     }
 
-    public void setWestland(int westland) {
+    public void addWestland(int westland) {
         this.westland += westland;
     }
 
-    public int getMidland() {
-        return midland;
+    public int getMidlands() {
+        return midlands;
     }
 
-    public void setMidland(int midland) {
-        this.midland += midland;
+    public void addMidlands(int midland) {
+        this.midlands += midland;
     }
 
     public int getEastheim() {
         return eastheim;
     }
 
-    public void setEastheim(int eastheim) {
+    public void addEastheim(int eastheim) {
         this.eastheim += eastheim;
     }
 
@@ -50,7 +49,7 @@ public class Geography extends Skill {
         return nhordland;
     }
 
-    public void setNhoordland(int nhoordland) {
+    public void addNhoordland(int nhoordland) {
         this.nhordland += nhoordland;
     }
 
@@ -58,7 +57,7 @@ public class Geography extends Skill {
         return soj;
     }
 
-    public void setSoj(int soj) {
+    public void addSoj(int soj) {
         this.soj += soj;
     }
 
@@ -66,7 +65,7 @@ public class Geography extends Skill {
         return underworld;
     }
 
-    public void setUnderworld(int underworld) {
+    public void addUnderworld(int underworld) {
         this.underworld += underworld;
     }
 
@@ -74,33 +73,33 @@ public class Geography extends Skill {
         switch (character.getRace()) {
             case Human:
                 if (character.getSubrace() == Character.SubRace.Stormlander) {
-                    setEastheim(getEastheim() + value);
+                    addEastheim(getEastheim() + value);
                 } else if (character.getSubrace() == Character.SubRace.Midlander) {
-                    setMidland(getMidland() + value);
+                    addMidlands(getMidlands() + value);
                 } else {
-                    setWestland(getWestland() + value);
+                    addWestland(getWestland() + value);
                 }
                 break;
             case Elf:
-                setSoj(getSoj() + value);
+                addSoj(getSoj() + value);
                 break;
             case Dwarf:
-                setUnderworld(getUnderworld() + value);
+                addUnderworld(getUnderworld() + value);
                 break;
             case HalfBlood:
                 switch (character.getNationality()) {
                     case Human:
                     case Orc:
                         if (character.getRegion() == Character.Region.Eastheim) {
-                            setEastheim(getEastheim() + value);
+                            addEastheim(getEastheim() + value);
                         } else if (character.getRegion() == Character.Region.Westlands) {
-                            setWestland(getWestland() + value);
+                            addWestland(getWestland() + value);
                         } else {
-                            setMidland(getMidland() + value);
+                            addMidlands(getMidlands() + value);
                         }
                         break;
                     case Elf:
-                        setSoj(getSoj() + value);
+                        addSoj(getSoj() + value);
                         break;
                 }
                 break;
@@ -117,7 +116,7 @@ public class Geography extends Skill {
         String homeland = null;
         if (westland != 0) {
             homeland = "(Westland):";
-        } else if (midland != 0) {
+        } else if (midlands != 0) {
             homeland = "(Midland):";
         } else if (eastheim != 0) {
             homeland = "(Eastheim):";
@@ -129,6 +128,30 @@ public class Geography extends Skill {
             homeland = "(Underworld):";
         }
         return homeland;
+    }
+
+    public void setWestland(int westland) {
+        this.westland = westland;
+    }
+
+    public void setMidlands(int midlands) {
+        this.midlands = midlands;
+    }
+
+    public void setEastheim(int eastheim) {
+        this.eastheim = eastheim;
+    }
+
+    public void setSoj(int soj) {
+        this.soj = soj;
+    }
+
+    public void setNhordland(int nhordland) {
+        this.nhordland = nhordland;
+    }
+
+    public void setUnderworld(int underworld) {
+        this.underworld = underworld;
     }
 }
 

@@ -4,7 +4,7 @@ import CharacterFile.Character;
 
 public class Culture extends Skill{
 
-    private int skillLevel;
+    //private int skillLevel;
     private int elvish;
     private int dwarfish;
     private int westlands;
@@ -25,7 +25,7 @@ public class Culture extends Skill{
         return elvish;
     }
 
-    public void setElvish(int elvish) {
+    public void addElvish(int elvish) {
         this.elvish += elvish;
     }
 
@@ -33,7 +33,7 @@ public class Culture extends Skill{
         return dwarfish;
     }
 
-    public void setDwarfish(int dwarfish) {
+    public void addDwarfish(int dwarfish) {
         this.dwarfish += dwarfish;
     }
 
@@ -41,7 +41,7 @@ public class Culture extends Skill{
         return westlands;
     }
 
-    public void setWestlands(int westlands) {
+    public void addWestlands(int westlands) {
         this.westlands += westlands;
     }
 
@@ -49,7 +49,7 @@ public class Culture extends Skill{
         return midlands;
     }
 
-    public void setMidlands(int midlands) {
+    public void addMidlands(int midlands) {
         this.midlands += midlands;
     }
 
@@ -57,7 +57,7 @@ public class Culture extends Skill{
         return eastheim;
     }
 
-    public void setEastheim(int eastheim) {
+    public void addEastheim(int eastheim) {
         this.eastheim += eastheim;
     }
 
@@ -65,7 +65,7 @@ public class Culture extends Skill{
         return orcish;
     }
 
-    public void setOrcish(int orcish) {
+    public void addOrcish(int orcish) {
         this.orcish += orcish;
     }
 
@@ -105,12 +105,12 @@ public class Culture extends Skill{
                 break;
 
         }
-        skillLevel = value;
+        //skillLevel = value;
     }
 
-    public int getSkillLevel() {
-        return skillLevel;
-    }
+    //public int getSkillLevel() {
+    //    return skillLevel;
+    //}
 
     public String getHomeland() {
         String homeland = null;
@@ -130,4 +130,27 @@ public class Culture extends Skill{
         return homeland;
     }
 
+    public void setElvish(int elvish) {
+        this.elvish = elvish;
+    }
+
+    public void setDwarfish(int dwarfish) {
+        this.dwarfish = dwarfish;
+    }
+
+    public void setWestlands(int westlands) {
+        this.westlands = westlands;
+    }
+
+    public void setMidlands(int midlands) {
+        this.midlands = midlands;
+    }
+
+    public void setEastheim(int eastheim) {
+        this.eastheim = eastheim;
+    }
+
+    public void setOrcish(int orcish) {
+        this.orcish = orcish;
+    }
 }

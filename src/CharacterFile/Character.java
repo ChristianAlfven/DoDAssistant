@@ -13,8 +13,8 @@ public class Character {
     public enum SpecialTrait{Strength, Physique, Agility, Spirituality, Intelligence, Psyche, Charisma}
 
 
-    Health health;
-    Armor armor;
+    Health health = new Health(0);
+    Armor armor = new Armor();
     Skillset skillset = new Skillset();
     //Inventory inventory;
 
@@ -41,8 +41,8 @@ public class Character {
     private int weight;
     private int age;
     private int combatPoints;
-    private String background = null;
-    //private String Characteristics = null;
+    private String background = "";
+    //private String Characteristics = "";
     private int raud;
     private int totalExp;
     private int unusedExp;

@@ -31,6 +31,7 @@ public class CharacterCreation implements Initializable {
     @FXML private URL location;
     @FXML private Label idNameLabel;
     @FXML private TextField idNamebox;
+    @FXML private TextField idPlayerbox;
     @FXML private Label idRaceLabel;
     @FXML private Label idSubraceLabel;
     @FXML private Label idProfessionLabel;
@@ -148,6 +149,7 @@ public class CharacterCreation implements Initializable {
         {
             try {
                 character.setName(idNamebox.getText());
+                character.setPlayerName(idPlayerbox.getText());
                 character.setBackground(idBackgroundBox.getText());
                 character.setHeight(Integer.parseInt(idHeightBox.getText()));
                 character.setWeight(Integer.parseInt(idWeightBox.getText()));
@@ -335,8 +337,7 @@ public class CharacterCreation implements Initializable {
             //System.out.println("Set Region westlands");
         }
     }
-
-    public void setSubrace2 (ActionEvent event){
+        public void setSubrace2 (ActionEvent event){
             if (character.getRace() == Character.Race.Human) {
                 character.setSubrace(Character.SubRace.Midlander);
                 character.setNationality(Human);
@@ -381,7 +382,7 @@ public class CharacterCreation implements Initializable {
             }
         }
 
-    public void setSubrace3 (ActionEvent event){
+        public void setSubrace3 (ActionEvent event){
             if (character.getRace() == Character.Race.Human) {
                 character.setSubrace(Character.SubRace.Virann);
                 character.setNationality(Human);

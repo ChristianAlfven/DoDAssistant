@@ -66,7 +66,7 @@ public class SaveCharacter {
                     " DELETE FROM "+query+"" +
                     " where charId = "+dbCharId+";"));
         } catch (SQLException ex) {
-            System.out.println("error on executing the query");
+            System.out.println("error on executing the query (Save - deleteTable)");
         }
     }
 
@@ -89,7 +89,7 @@ public class SaveCharacter {
         try {
             connector.statement.execute(query);
         } catch (SQLException ex) {
-            System.out.println("error on executing the query");
+            System.out.println("error on executing the query (Save - storeData: "+query);
         }
     }
 
@@ -267,7 +267,7 @@ public class SaveCharacter {
                 }
             }
         } catch (SQLException ex) {
-            System.out.println("error on executing the query");
+            System.out.println("error on executing the query (Save - characterExists)");
         }
         return false;
     }

@@ -240,7 +240,7 @@ public class ControllerNewGame implements Initializable {
             }
             Party.getParty().setNextCharId(dbCharId + 1);
         } catch (SQLException ex) {
-            System.out.println("error on executing the query");
+            System.out.println("error on executing the query (NewGame - dbGetLastCharId");
         }
     }
 

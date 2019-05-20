@@ -145,7 +145,7 @@ public class LoadCharacter {
             }
 
         } catch (SQLException ex) {
-            System.out.println("error on executing the query");
+            System.out.println("error on executing the query (Load - loadPlayerCharacterTable)");
         }
     }
 
@@ -157,7 +157,7 @@ public class LoadCharacter {
                 unusedExp = rs.getInt(3);
             }
         } catch (SQLException ex) {
-            System.out.println("error on executing the query");
+            System.out.println("error on executing the query (Load - loadPlayerExperienceTable)");
         }
     }
 
@@ -209,7 +209,7 @@ public class LoadCharacter {
                 }
             }
         } catch (SQLException ex) {
-            System.out.println("error on executing the query");
+            System.out.println("error on executing the query (Load - loadPlayerHealthArmorTable)");
         }
     }
 
@@ -265,7 +265,7 @@ public class LoadCharacter {
             rs.next(); skills.getSurvival().setSkillLevel(rs.getInt(2));
             rs.next(); skills.getTrade().setSkillLevel(rs.getInt(2));
         } catch (SQLException ex) {
-            System.out.println("error on executing the query");
+            System.out.println("error on executing the query (Load - loadPlayerSkillsTable)");
         }
     }
 
@@ -291,7 +291,7 @@ public class LoadCharacter {
                 traitIndex++;
             }
         } catch (SQLException ex) {
-            System.out.println("error on executing the query");
+            System.out.println("error on executing the query (Load - loadPlayerTraitTable)");
         }
     }
 

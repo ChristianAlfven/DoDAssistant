@@ -1016,7 +1016,7 @@ public class CharacterCreation5 implements Initializable {
         cultOrcish = character.getSkillset().getCulture().getOrcish();
         entertainment = character.getSkillset().getEntertainment().getSkillLevel();
         geoEastheim = character.getSkillset().getGeography().getEastheim();
-        geoMidlands = character.getSkillset().getGeography().getMidland();
+        geoMidlands = character.getSkillset().getGeography().getMidlands();
         geoNhordlands = character.getSkillset().getGeography().getNhoordland();
         geoSoj = character.getSkillset().getGeography().getSoj();
         geoUnderworld = character.getSkillset().getGeography().getUnderworld();
@@ -1088,11 +1088,11 @@ public class CharacterCreation5 implements Initializable {
         character.getSkillset().getSpeech().setVrok(vrok);
 
         character.getSkillset().getGeography().setUnderworld(geoUnderworld);
-        character.getSkillset().getGeography().setNhoordland(geoNhordlands);
+        character.getSkillset().getGeography().setNhordland(geoNhordlands);
         character.getSkillset().getGeography().setSoj(geoSoj);
         character.getSkillset().getGeography().setWestland(geoWestlands);
         character.getSkillset().getGeography().setEastheim(geoEastheim);
-        character.getSkillset().getGeography().setMidland(geoMidlands);
+        character.getSkillset().getGeography().setMidlands(geoMidlands);
 
         character.getSkillset().getCrafting().setSoft(soft);
         character.getSkillset().getCrafting().setWood(wood);

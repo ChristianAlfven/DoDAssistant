@@ -171,15 +171,17 @@ public class CharacterCreation implements Initializable {
                 }
 
                 if (idGerbanis.isSelected()) {
-                    character.getSkillset().getReligion().setMainReligion(1);
+                    character.getSkillset().getReligion().chooseMain(1);
                 } else if (idOstroseden.isSelected()){
-                    character.getSkillset().getReligion().setMainReligion(2);
+                    character.getSkillset().getReligion().chooseMain(2);
                 } else if (idNidendomen.isSelected()){
-                    character.getSkillset().getReligion().setMainReligion(3);
+                    character.getSkillset().getReligion().chooseMain(3);
                 } else if (idHamingjes.isSelected()){
-                    character.getSkillset().getReligion().setMainReligion(4);
+                    character.getSkillset().getReligion().chooseMain(4);
                 } else if (idThuldom.isSelected()){
-                    character.getSkillset().getReligion().setMainReligion(5);
+                    character.getSkillset().getReligion().chooseMain(5);
+                } else {
+                    character.getSkillset().getReligion().chooseMain(1);
                 }
 
                 System.out.println(character.debug());
@@ -333,7 +335,8 @@ public class CharacterCreation implements Initializable {
             //System.out.println("Set Region westlands");
         }
     }
-        public void setSubrace2 (ActionEvent event){
+
+    public void setSubrace2 (ActionEvent event){
             if (character.getRace() == Character.Race.Human) {
                 character.setSubrace(Character.SubRace.Midlander);
                 character.setNationality(Human);
@@ -378,7 +381,7 @@ public class CharacterCreation implements Initializable {
             }
         }
 
-        public void setSubrace3 (ActionEvent event){
+    public void setSubrace3 (ActionEvent event){
             if (character.getRace() == Character.Race.Human) {
                 character.setSubrace(Character.SubRace.Virann);
                 character.setNationality(Human);

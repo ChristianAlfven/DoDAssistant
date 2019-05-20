@@ -20,6 +20,25 @@ public class Religion extends Skill{
 
     public void chooseMain(int i){
         mainReligion = i;
+
+    }
+
+    public String getReligionName(){
+        switch (mainReligion){
+            case 1:
+                return "Gerbanis";
+            case 2:
+                return "Ostroseden";
+            case 3:
+                return "Nidendomen";
+            case 4:
+                return "Hamingjes";
+            case 5:
+                return "Thuldom";
+            default:
+                return "Unfaithful";
+        }
+
     }
 
     public int getMainReligion(){
@@ -42,15 +61,15 @@ public class Religion extends Skill{
     public void setMainReligion(int i){
         switch (mainReligion){
             case 1:
-                setGerbanis(i);
+                addGerbanis(i);
             case 2:
-                setOstroseden(i);
+                addOstroseden(i);
             case 3:
-                setNidendomen(i);
+                addNidendomen(i);
             case 4:
-                setHamingjes(i);
+                addHamingjes(i);
             case 5:
-                setThuldom(i);
+                addThuldom(i);
         }
     }
 
@@ -58,7 +77,7 @@ public class Religion extends Skill{
         return gerbanis;
     }
 
-    public void setGerbanis(int gerbanis) {
+    public void addGerbanis(int gerbanis) {
         this.gerbanis += gerbanis;
     }
 
@@ -66,7 +85,7 @@ public class Religion extends Skill{
         return ostroseden;
     }
 
-    public void setOstroseden(int ostroseden) {
+    public void addOstroseden(int ostroseden) {
         this.ostroseden += ostroseden;
     }
 
@@ -74,7 +93,7 @@ public class Religion extends Skill{
         return nidendomen;
     }
 
-    public void setNidendomen(int nidendomen) {
+    public void addNidendomen(int nidendomen) {
         this.nidendomen += nidendomen;
     }
 
@@ -82,7 +101,7 @@ public class Religion extends Skill{
         return hamingjes;
     }
 
-    public void setHamingjes(int hamingjes) {
+    public void addHamingjes(int hamingjes) {
         this.hamingjes += hamingjes;
     }
 
@@ -90,7 +109,27 @@ public class Religion extends Skill{
         return thuldom;
     }
 
-    public void setThuldom(int thuldom) {
+    public void addThuldom(int thuldom) {
         this.thuldom += thuldom;
+    }
+
+    public void setGerbanis(int gerbanis) {
+        this.gerbanis = gerbanis;
+    }
+
+    public void setOstroseden(int ostroseden) {
+        this.ostroseden = ostroseden;
+    }
+
+    public void setNidendomen(int nidendomen) {
+        this.nidendomen = nidendomen;
+    }
+
+    public void setHamingjes(int hamingjes) {
+        this.hamingjes = hamingjes;
+    }
+
+    public void setThuldom(int thuldom) {
+        this.thuldom = thuldom;
     }
 }

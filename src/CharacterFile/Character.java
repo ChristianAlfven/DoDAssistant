@@ -47,7 +47,7 @@ public class Character {
     private int totalExp;
     private int unusedExp;
     private int movement;
-    //private String religion;
+    private String religion;
 
 
     public int getDbCharId() {
@@ -296,13 +296,13 @@ public class Character {
         this.movement = movement;
     }
 
-    //public String getReligion() {
-    //    return religion;
-    //}
+    public String getReligion() {
+        return religion;
+    }
 
-    //public void setReligion(String religion) {
-    //    this.religion = religion;
-    //}
+    public void setReligion(String religion) {
+        this.religion = skillset.getReligion().getReligionName();
+    }
 
     public String debug() {
         return "Character{" +

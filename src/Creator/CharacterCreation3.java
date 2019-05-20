@@ -1,7 +1,6 @@
 package Creator;
 
 import ActiveChars.Party;
-import Lobby.Lobby;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -215,18 +214,18 @@ public class CharacterCreation3 implements Initializable {
                 && idCultureBox.getText()!= null && idSoftBox.getText()!=null && idWoodBox.getText()!=null&&idStoneBox.getText()!=null)
         {
             try{
-                character.getSkillset().getCombat().setSkillLevel(Integer.parseInt(idCombatBox.getText()));
-                character.getSkillset().getMobility().setSkillLevel(Integer.parseInt(idMobilityBox.getText()));
-                character.getSkillset().getEntertainment().setSkillLevel(Integer.parseInt(idEntertainmentBox.getText()));
-                character.getSkillset().getRiding().setSkillLevel(Integer.parseInt(idRidingBox.getText()));
-                character.getSkillset().getCrime().setSkillLevel(Integer.parseInt(idCrimeBox.getText()));
+                character.getSkillset().getCombat().addSkillLevel(Integer.parseInt(idCombatBox.getText()));
+                character.getSkillset().getMobility().addSkillLevel(Integer.parseInt(idMobilityBox.getText()));
+                character.getSkillset().getEntertainment().addSkillLevel(Integer.parseInt(idEntertainmentBox.getText()));
+                character.getSkillset().getRiding().addSkillLevel(Integer.parseInt(idRidingBox.getText()));
+                character.getSkillset().getCrime().addSkillLevel(Integer.parseInt(idCrimeBox.getText()));
                 character.setPosTrait1Level(Integer.parseInt(idPosBox1.getText()));
                 character.setPosTrait2Level(Integer.parseInt(idPosBox2.getText()));
                 character.setNegTraitLevel(Integer.parseInt(idNegBox.getText()));
-                character.getSkillset().getCrafting().setMetal(Integer.parseInt(idMetalBox.getText()));
-                character.getSkillset().getCrafting().setStone(Integer.parseInt(idStoneBox.getText()));
-                character.getSkillset().getCrafting().setSoft(Integer.parseInt(idSoftBox.getText()));
-                character.getSkillset().getCrafting().setWood(Integer.parseInt(idWoodBox.getText()));
+                character.getSkillset().getCrafting().addMetal(Integer.parseInt(idMetalBox.getText()));
+                character.getSkillset().getCrafting().addStone(Integer.parseInt(idStoneBox.getText()));
+                character.getSkillset().getCrafting().addSoft(Integer.parseInt(idSoftBox.getText()));
+                character.getSkillset().getCrafting().addWood(Integer.parseInt(idWoodBox.getText()));
                 if (Integer.parseInt(IdWpnBox.getText()) <= 14) {
                     character.setWeaponHand(Character.WeaponHand.Right);
                 }else if (Integer.parseInt(IdWpnBox.getText()) <= 18){
@@ -263,83 +262,83 @@ public class CharacterCreation3 implements Initializable {
                     case Human:
                         switch (character.getSubrace()){
                             case Stormlander:
-                                character.getSkillset().getSpeech().setVrok(Integer.parseInt(idSpeechBox.getText()));
-                                character.getSkillset().getNature().setEastheim(Integer.parseInt(idNatureBox.getText()));
-                                character.getSkillset().getGeography().setEastheim(Integer.parseInt(idGeographyBox.getText()));
-                                character.getSkillset().getCulture().setEastheim(Integer.parseInt(idCultureBox.getText()));
+                                character.getSkillset().getSpeech().addVrok(Integer.parseInt(idSpeechBox.getText()));
+                                character.getSkillset().getNature().addEastheim(Integer.parseInt(idNatureBox.getText()));
+                                character.getSkillset().getGeography().addEastheim(Integer.parseInt(idGeographyBox.getText()));
+                                character.getSkillset().getCulture().addEastheim(Integer.parseInt(idCultureBox.getText()));
                                 break;
                             case Midlander:
-                                character.getSkillset().getSpeech().setRona(Integer.parseInt(idSpeechBox.getText()));
-                                character.getSkillset().getNature().setMidlands(Integer.parseInt(idNatureBox.getText()));
-                                character.getSkillset().getGeography().setMidland(Integer.parseInt(idGeographyBox.getText()));
-                                character.getSkillset().getCulture().setMidlands(Integer.parseInt(idCultureBox.getText()));
+                                character.getSkillset().getSpeech().addRona(Integer.parseInt(idSpeechBox.getText()));
+                                character.getSkillset().getNature().addMidlands(Integer.parseInt(idNatureBox.getText()));
+                                character.getSkillset().getGeography().addMidlands(Integer.parseInt(idGeographyBox.getText()));
+                                character.getSkillset().getCulture().addMidlands(Integer.parseInt(idCultureBox.getText()));
                                 break;
                             case Virann:
-                                character.getSkillset().getSpeech().setRona(Integer.parseInt(idSpeechBox.getText()));
-                                character.getSkillset().getNature().setWestlands(Integer.parseInt(idNatureBox.getText()));
-                                character.getSkillset().getGeography().setWestland(Integer.parseInt(idGeographyBox.getText()));
-                                character.getSkillset().getCulture().setWestlands(Integer.parseInt(idCultureBox.getText()));
+                                character.getSkillset().getSpeech().addRona(Integer.parseInt(idSpeechBox.getText()));
+                                character.getSkillset().getNature().addWestlands(Integer.parseInt(idNatureBox.getText()));
+                                character.getSkillset().getGeography().addWestland(Integer.parseInt(idGeographyBox.getText()));
+                                character.getSkillset().getCulture().addWestlands(Integer.parseInt(idCultureBox.getText()));
                                 break;
                         }
                         break;
                     case Dwarf:
-                        character.getSkillset().getSpeech().setFuthark(Integer.parseInt(idSpeechBox.getText()));
-                        character.getSkillset().getNature().setUnderworld(Integer.parseInt(idNatureBox.getText()));
-                        character.getSkillset().getGeography().setUnderworld(Integer.parseInt(idGeographyBox.getText()));
-                        character.getSkillset().getCulture().setDwarfish(Integer.parseInt(idCultureBox.getText()));
+                        character.getSkillset().getSpeech().addFuthark(Integer.parseInt(idSpeechBox.getText()));
+                        character.getSkillset().getNature().addUnderworld(Integer.parseInt(idNatureBox.getText()));
+                        character.getSkillset().getGeography().addUnderworld(Integer.parseInt(idGeographyBox.getText()));
+                        character.getSkillset().getCulture().addDwarfish(Integer.parseInt(idCultureBox.getText()));
                         break;
                     case Elf:
-                        character.getSkillset().getSpeech().setEika(Integer.parseInt(idSpeechBox.getText()));
-                        character.getSkillset().getNature().setSoj(Integer.parseInt(idNatureBox.getText()));
-                        character.getSkillset().getGeography().setSoj(Integer.parseInt(idGeographyBox.getText()));
-                        character.getSkillset().getCulture().setElvish(Integer.parseInt(idCultureBox.getText()));
+                        character.getSkillset().getSpeech().addEika(Integer.parseInt(idSpeechBox.getText()));
+                        character.getSkillset().getNature().addSoj(Integer.parseInt(idNatureBox.getText()));
+                        character.getSkillset().getGeography().addSoj(Integer.parseInt(idGeographyBox.getText()));
+                        character.getSkillset().getCulture().addElvish(Integer.parseInt(idCultureBox.getText()));
                         break;
                     case HalfBlood:
                         switch (character.getNationality()) {
                             case Human:
                                 switch (character.getRegion()) {
                                     case Eastheim:
-                                        character.getSkillset().getSpeech().setVrok(Integer.parseInt(idSpeechBox.getText()));
-                                        character.getSkillset().getNature().setEastheim(Integer.parseInt(idNatureBox.getText()));
-                                        character.getSkillset().getGeography().setEastheim(Integer.parseInt(idGeographyBox.getText()));
-                                        character.getSkillset().getCulture().setEastheim(Integer.parseInt(idCultureBox.getText()));
+                                        character.getSkillset().getSpeech().addVrok(Integer.parseInt(idSpeechBox.getText()));
+                                        character.getSkillset().getNature().addEastheim(Integer.parseInt(idNatureBox.getText()));
+                                        character.getSkillset().getGeography().addEastheim(Integer.parseInt(idGeographyBox.getText()));
+                                        character.getSkillset().getCulture().addEastheim(Integer.parseInt(idCultureBox.getText()));
                                         break;
                                     case Midlands:
-                                        character.getSkillset().getSpeech().setRona(Integer.parseInt(idSpeechBox.getText()));
-                                        character.getSkillset().getNature().setMidlands(Integer.parseInt(idNatureBox.getText()));
-                                        character.getSkillset().getGeography().setMidland(Integer.parseInt(idGeographyBox.getText()));
-                                        character.getSkillset().getCulture().setMidlands(Integer.parseInt(idCultureBox.getText()));
+                                        character.getSkillset().getSpeech().addRona(Integer.parseInt(idSpeechBox.getText()));
+                                        character.getSkillset().getNature().addMidlands(Integer.parseInt(idNatureBox.getText()));
+                                        character.getSkillset().getGeography().addMidlands(Integer.parseInt(idGeographyBox.getText()));
+                                        character.getSkillset().getCulture().addMidlands(Integer.parseInt(idCultureBox.getText()));
                                         break;
                                     case Westlands:
-                                        character.getSkillset().getSpeech().setRona(Integer.parseInt(idSpeechBox.getText()));
-                                        character.getSkillset().getNature().setWestlands(Integer.parseInt(idNatureBox.getText()));
-                                        character.getSkillset().getGeography().setWestland(Integer.parseInt(idGeographyBox.getText()));
-                                        character.getSkillset().getCulture().setWestlands(Integer.parseInt(idCultureBox.getText()));
+                                        character.getSkillset().getSpeech().addRona(Integer.parseInt(idSpeechBox.getText()));
+                                        character.getSkillset().getNature().addWestlands(Integer.parseInt(idNatureBox.getText()));
+                                        character.getSkillset().getGeography().addWestland(Integer.parseInt(idGeographyBox.getText()));
+                                        character.getSkillset().getCulture().addWestlands(Integer.parseInt(idCultureBox.getText()));
                                         break;
                                 }break;
                             case Elf:
-                                character.getSkillset().getSpeech().setEika(Integer.parseInt(idSpeechBox.getText()));
-                                character.getSkillset().getNature().setSoj(Integer.parseInt(idNatureBox.getText()));
-                                character.getSkillset().getGeography().setSoj(Integer.parseInt(idGeographyBox.getText()));
-                                character.getSkillset().getCulture().setElvish(Integer.parseInt(idCultureBox.getText()));
+                                character.getSkillset().getSpeech().addEika(Integer.parseInt(idSpeechBox.getText()));
+                                character.getSkillset().getNature().addSoj(Integer.parseInt(idNatureBox.getText()));
+                                character.getSkillset().getGeography().addSoj(Integer.parseInt(idGeographyBox.getText()));
+                                character.getSkillset().getCulture().addElvish(Integer.parseInt(idCultureBox.getText()));
                                 break;
                             case Orc:
-                                character.getSkillset().getSpeech().setOrcish(Integer.parseInt(idSpeechBox.getText()));
+                                character.getSkillset().getSpeech().addOrcish(Integer.parseInt(idSpeechBox.getText()));
                                 switch (character.getRegion()) {
                                     case Westlands:
-                                        character.getSkillset().getNature().setWestlands(Integer.parseInt(idNatureBox.getText()));
-                                        character.getSkillset().getGeography().setWestland(Integer.parseInt(idGeographyBox.getText()));
-                                        character.getSkillset().getCulture().setWestlands(Integer.parseInt(idCultureBox.getText()));
+                                        character.getSkillset().getNature().addWestlands(Integer.parseInt(idNatureBox.getText()));
+                                        character.getSkillset().getGeography().addWestland(Integer.parseInt(idGeographyBox.getText()));
+                                        character.getSkillset().getCulture().addWestlands(Integer.parseInt(idCultureBox.getText()));
                                         break;
                                     case Midlands:
-                                        character.getSkillset().getNature().setMidlands(Integer.parseInt(idNatureBox.getText()));
-                                        character.getSkillset().getGeography().setMidland(Integer.parseInt(idGeographyBox.getText()));
-                                        character.getSkillset().getCulture().setMidlands(Integer.parseInt(idCultureBox.getText()));
+                                        character.getSkillset().getNature().addMidlands(Integer.parseInt(idNatureBox.getText()));
+                                        character.getSkillset().getGeography().addMidlands(Integer.parseInt(idGeographyBox.getText()));
+                                        character.getSkillset().getCulture().addMidlands(Integer.parseInt(idCultureBox.getText()));
                                         break;
                                     case Eastheim:
-                                        character.getSkillset().getNature().setEastheim(Integer.parseInt(idNatureBox.getText()));
-                                        character.getSkillset().getGeography().setEastheim(Integer.parseInt(idGeographyBox.getText()));
-                                        character.getSkillset().getCulture().setEastheim(Integer.parseInt(idCultureBox.getText()));
+                                        character.getSkillset().getNature().addEastheim(Integer.parseInt(idNatureBox.getText()));
+                                        character.getSkillset().getGeography().addEastheim(Integer.parseInt(idGeographyBox.getText()));
+                                        character.getSkillset().getCulture().addEastheim(Integer.parseInt(idCultureBox.getText()));
                                         break;
                                 }
                                 break;

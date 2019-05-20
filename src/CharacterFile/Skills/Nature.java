@@ -25,7 +25,7 @@ public class Nature extends Skill{
         return westlands;
     }
 
-    public void setWestlands(int westlands) {
+    public void addWestlands(int westlands) {
         this.westlands += westlands;
     }
 
@@ -33,7 +33,7 @@ public class Nature extends Skill{
         return midlands;
     }
 
-    public void setMidlands(int midlands) {
+    public void addMidlands(int midlands) {
         this.midlands += midlands;
     }
 
@@ -41,7 +41,7 @@ public class Nature extends Skill{
         return eastheim;
     }
 
-    public void setEastheim(int eastheim) {
+    public void addEastheim(int eastheim) {
         this.eastheim += eastheim;
     }
 
@@ -49,7 +49,7 @@ public class Nature extends Skill{
         return soj;
     }
 
-    public void setSoj(int soj) {
+    public void addSoj(int soj) {
         this.soj += soj;
     }
 
@@ -57,7 +57,7 @@ public class Nature extends Skill{
         return nhordlands;
     }
 
-    public void setNhordlands(int nhordlands) {
+    public void addNhordlands(int nhordlands) {
         this.nhordlands += nhordlands;
     }
 
@@ -65,7 +65,7 @@ public class Nature extends Skill{
         return underworld;
     }
 
-    public void setUnderworld(int underworld) {
+    public void addUnderworld(int underworld) {
         this.underworld += underworld;
     }
 
@@ -74,33 +74,33 @@ public class Nature extends Skill{
         switch (character.getRace()){
             case Human:
                 if (character.getSubrace()== Character.SubRace.Stormlander){
-                    setEastheim(getEastheim() + value);
+                    addEastheim(getEastheim() + value);
                 } else if (character.getSubrace()== Character.SubRace.Midlander) {
-                    setMidlands(getMidlands() + value);
+                    addMidlands(getMidlands() + value);
                 } else {
-                    setWestlands(getWestlands() + value);
+                    addWestlands(getWestlands() + value);
                 }
                 break;
             case Elf:
-                setSoj(getSoj() + value);
+                addSoj(getSoj() + value);
                 break;
             case Dwarf:
-                setUnderworld(getUnderworld() + value);
+                addUnderworld(getUnderworld() + value);
                 break;
             case HalfBlood:
                 switch (character.getNationality()){
                     case Human:
                     case Orc:
                         if (character.getRegion() == Character.Region.Eastheim){
-                            setEastheim(getEastheim()+value);
+                            addEastheim(getEastheim()+value);
                         }else if (character.getRegion()== Character.Region.Westlands){
-                            setWestlands(getWestlands()+value);
+                            addWestlands(getWestlands()+value);
                         } else {
-                            setMidlands(getMidlands() + value);
+                            addMidlands(getMidlands() + value);
                         }
                         break;
                     case Elf:
-                        setSoj(getSoj()+value);
+                        addSoj(getSoj()+value);
                         break;
                 }break;
         }
@@ -128,6 +128,28 @@ public class Nature extends Skill{
         return homeland;
     }
 
+    public void setWestlands(int westlands) {
+        this.westlands = westlands;
+    }
 
+    public void setMidlands(int midlands) {
+        this.midlands = midlands;
+    }
+
+    public void setEastheim(int eastheim) {
+        this.eastheim = eastheim;
+    }
+
+    public void setSoj(int soj) {
+        this.soj = soj;
+    }
+
+    public void setNhordlands(int nhordlands) {
+        this.nhordlands = nhordlands;
+    }
+
+    public void setUnderworld(int underworld) {
+        this.underworld = underworld;
+    }
 }
 

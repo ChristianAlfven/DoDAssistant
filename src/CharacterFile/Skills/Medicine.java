@@ -12,8 +12,11 @@ public class Medicine extends Skill{
         return skillLevel;
     }
 
-    public void setSkillLevel(int skillLevel) {
+    public void addSkillLevel(int skillLevel) {
         this.skillLevel += skillLevel;
     }
 
+    public void setSkillLevel(int skillLevel) {
+        this.skillLevel = skillLevel;
+    }
 }

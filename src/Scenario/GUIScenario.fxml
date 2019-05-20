@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Light?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="358.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenario.ScenarioController">
+   <children>
+      <AnchorPane layoutX="2.0" layoutY="15.0" prefHeight="395.0" prefWidth="606.0" style="-fx-background-color: #000;">
+         <children>
+            <ImageView fitHeight="415.0" fitWidth="620.0" layoutX="-7.0" layoutY="-15.0">
+               <image>
+                  <Image url="@../Resources/parchment.png" />
+               </image>
+            </ImageView>
+            <TextArea fx:id="idResultsTextArea" editable="false" layoutX="71.0" layoutY="209.0" prefHeight="141.0" prefWidth="345.0">
+               <effect>
+                  <Lighting diffuseConstant="1.05" surfaceScale="1.51">
+                     <bumpInput>
+                        <Shadow height="0.0" radius="0.0" width="0.0" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbf80" />
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextArea>
+            <Label fx:id="idBackgroundLabel" layoutX="468.0" layoutY="63.0" text="Characters">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="idRoll" layoutX="463.0" layoutY="330.0" mnemonicParsing="false" onAction="#buttonRoll" prefHeight="25.0" prefWidth="82.0" text="Roll" textAlignment="CENTER">
+               <effect>
+                  <Lighting diffuseConstant="1.26">
+                     <bumpInput>
+                        <Shadow color="#ffc57d" height="1.0" radius="0.0" width="0.0" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ff9640" />
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <RadioButton fx:id="idSelectSkills" layoutX="71.0" layoutY="64.0" mnemonicParsing="false" onAction="#selectSkills" text="Skills">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbf7f" />
+                     </light>
+                  </Lighting>
+               </effect>
+               <toggleGroup>
+                  <ToggleGroup fx:id="SkillOrTrait" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="idSelectTraits" layoutX="266.0" layoutY="64.0" mnemonicParsing="false" onAction="#selectTraits" text="Traits" toggleGroup="$SkillOrTrait">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow height="8.4" radius="3.8499999999999996" width="9.0" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbf7f" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </RadioButton>
+            <Button fx:id="idBack" alignment="CENTER" layoutX="71.0" layoutY="355.0" mnemonicParsing="false" onAction="#buttonBack" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color:#FFF ;" text="&lt;&lt;Back">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow height="6.17" radius="1.0425" width="0.0" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#a19c9c" />
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="252.0" layoutY="14.0" text="Scenario">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="idCheckbox1" layoutX="467.0" layoutY="91.0" mnemonicParsing="false" text="CheckBox">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbe82" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </CheckBox>
+            <ChoiceBox fx:id="idSkillChoice" disable="true" layoutX="71.0" layoutY="87.0" prefWidth="150.0">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbe82" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ChoiceBox>
+            <ChoiceBox fx:id="idTraitChoice" disable="true" layoutX="266.0" layoutY="87.0" prefWidth="150.0">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbe82" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ChoiceBox>
+            <CheckBox fx:id="idCheckbox2" disable="true" layoutX="467.0" layoutY="118.0" mnemonicParsing="false" opacity="0.0" text="CheckBox">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbe82" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </CheckBox>
+            <CheckBox fx:id="idCheckbox3" disable="true" layoutX="467.0" layoutY="145.0" mnemonicParsing="false" opacity="0.0" text="CheckBox">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbe82" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </CheckBox>
+            <CheckBox fx:id="idCheckbox4" disable="true" layoutX="467.0" layoutY="173.0" mnemonicParsing="false" opacity="0.0" text="CheckBox">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbe82" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </CheckBox>
+            <CheckBox fx:id="idCheckbox5" disable="true" layoutX="467.0" layoutY="201.0" mnemonicParsing="false" opacity="0.0" text="CheckBox">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbe82" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </CheckBox>
+            <CheckBox fx:id="idCheckbox6" disable="true" layoutX="467.0" layoutY="229.0" mnemonicParsing="false" opacity="0.0" text="CheckBox">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbe82" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </CheckBox>
+            <CheckBox fx:id="idCheckbox7" disable="true" layoutX="467.0" layoutY="258.0" mnemonicParsing="false" opacity="0.0" text="CheckBox">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbe82" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </CheckBox>
+            <CheckBox fx:id="idCheckbox8" disable="true" layoutX="467.0" layoutY="285.0" mnemonicParsing="false" opacity="0.0" text="CheckBox">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffbe82" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </CheckBox>
+            <Label fx:id="idBackgroundLabel1" layoutX="71.0" layoutY="173.0" text="Required Value:">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="idRequiredValueText" layoutX="185.0" layoutY="171.0" prefHeight="25.0" prefWidth="48.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

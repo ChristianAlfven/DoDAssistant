@@ -56,6 +56,7 @@ public class ControllerNewGame implements Initializable {
     @FXML private TableView<Character> idTableView;
     @FXML private TableColumn<Integer, Character> idHealthColumn;
     @FXML private TableColumn<String, Character> idCharacterColumn;
+    @FXML private TableColumn<String, Character> idPlayerColumn;
 
     ObservableList<Character> list = FXCollections.observableArrayList();
 
@@ -70,7 +71,7 @@ public class ControllerNewGame implements Initializable {
     @FXML
     void buttonDummy(ActionEvent event) {
         createDummy();
-        updateTable();
+        getCharacters();
     }
 
     @FXML
@@ -96,6 +97,7 @@ public class ControllerNewGame implements Initializable {
         for (int i = 0; i < list.size(); i++) {
             idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
             idCharacterColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            idPlayerColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
         }
         index++;
     }
@@ -128,24 +130,32 @@ public class ControllerNewGame implements Initializable {
     }
 
     @FXML
-    void buttonInspect(ActionEvent event) throws IOException {
-        Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
+    void buttonInspect(ActionEvent event) {
+        try {
+            Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
 
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("../Game/GUIInspectCharacter.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../Game/GUIInspectCharacter.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            System.out.println("Select a character");
+        }
+
     }
 
     @FXML
     void buttonRemove(ActionEvent event) {
-        Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
-        Party.getParty().removeCharacter(Party.getParty().getIndex());
+        try {
+            Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
+            Party.getParty().removeCharacter(Party.getParty().getIndex());
 
-        idTableView.getItems().clear();
-        getCharacters();
+            getCharacters();
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Select a character");
+        }
     }
 
     @FXML
@@ -155,6 +165,8 @@ public class ControllerNewGame implements Initializable {
 
 
     void getCharacters() {
+        idTableView.getItems().clear();
+
         for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
             list.add(Party.getParty().getCharacter(i));
         }
@@ -162,6 +174,7 @@ public class ControllerNewGame implements Initializable {
         for (int i = 0; i < list.size(); i++) {
             idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
             idCharacterColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            idPlayerColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
         }
     }
 
@@ -190,8 +203,8 @@ public class ControllerNewGame implements Initializable {
             character1.setNationality(Character.Nationality.Human);
             character1.constructHealth(100);
             character1.setTotalExp(100);
-            //character1.setCharacteristics("Characteristics");
             character1.setCombatPoints(2000);
+            character1.setPlayerName("Player Name 1");
 
             partyInstance.addCharacter(character1);
             y++;
@@ -230,11 +243,12 @@ public class ControllerNewGame implements Initializable {
             character2.getSkillset().getCrafting().setStone(3);
             character2.getSkillset().getCrafting().setWood(4);
             character2.getSkillset().getGeography().addHomeland(character2,2);
+            character2.setPlayerName("Player Name 2");
 
-
-            partyInstance.addCharacter(character2);
+            Party.getParty().addCharacter(character2);
             y--;
         }
+//        getCharacters();
     }
 
     public void dbGetLastCharId(){

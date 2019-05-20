@@ -4,6 +4,7 @@ import ActiveChars.Party;
 import CharacterFile.Armor;
 import CharacterFile.Character;
 import CharacterFile.Health;
+import Database.DB_Connector;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,12 +16,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
 import static CharacterFile.Character.Nationality.Human;
 
 public class CharacterCreation implements Initializable {
+    private DB_Connector connector = new DB_Connector();
 
 //    Image image = new Image("sample/sample.fxml");
 
@@ -80,6 +84,8 @@ public class CharacterCreation implements Initializable {
         Parent root;
         Scene scene;
         character = new Character();
+
+        dbGetLastCharId();
     }
 
 
@@ -179,6 +185,7 @@ public class CharacterCreation implements Initializable {
                 }
 
                 System.out.println(character.debug());
+                character.setDbCharId(getNextDbCharId());
 
                 Party.getParty().addCharacter(character);
 
@@ -365,4 +372,26 @@ public class CharacterCreation implements Initializable {
     public void setBard(ActionEvent event){character.setProfession(Character.Profession.Bard);}
     public void setScholar(ActionEvent event){character.setProfession(Character.Profession.Warrior);}
 
+
+    public void dbGetLastCharId(){
+        String dbScript;
+        int dbCharId = 0;
+        dbScript = String.format("SELECT charId FROM `character`;");
+        try {
+            ResultSet rs = connector.statement.executeQuery(dbScript);
+            while(rs.next()){
+                dbCharId = rs.getInt(1);
+            }
+            Party.getParty().setNextCharId(dbCharId + 1);
+        } catch (SQLException ex) {
+            System.out.println("error on executing the query");
+        }
+    }
+
+    public int getNextDbCharId(){
+        int nextCharId;
+        nextCharId = Party.getParty().getNextCharId();
+        Party.getParty().setNextCharId(nextCharId + 1);
+        return nextCharId + 1;
+    }
 }

@@ -4,6 +4,7 @@ import ActiveChars.Party;
 import CharacterFile.Character;
 import CharacterFile.Health;
 import CharacterFile.Armor;
+import CharacterFile.Skillset;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +17,7 @@ public class SaveCharacter {
     private ArrayList<Character> partyList;
     private Character player;
     private int index;
+    private Skillset skills;
 
 
     private static SaveCharacter ourInstance = null;
@@ -33,6 +35,7 @@ public class SaveCharacter {
 
         while(index < partyList.size()){
             player = partyList.get(index);
+            skills = player.getSkillset();
             if (characterExists(player.getDbCharId())){
                 deleteCharacter(player.getDbCharId());
                 storeCharacter(player);
@@ -72,13 +75,13 @@ public class SaveCharacter {
         String queryE = queryExperience(player);
         String queryH = queryHealth(player);
         String queryT = queryTraits(player);
-        String queryS = querySkills(player);
+        String queryS = querySkills(player, skills);
 
         storeData(queryC);
         storeData(queryE);
         storeData(queryH);
         storeData(queryT);
-        //storeData(queryS);
+        storeData(queryS);
 
     }
 
@@ -108,8 +111,8 @@ public class SaveCharacter {
                 " weight," +
                 " age," +
                 " combatPoints," +
-                //" background," +
-                //" characteristics," +
+                " background," +
+                " characteristics," +
                 " raud," +
                 " movement," +
                 " religion)" +
@@ -129,12 +132,12 @@ public class SaveCharacter {
                 ", "+player.getWeight()+
                 ", "+player.getAge()+
                 ", "+player.getCombatPoints()+
-                //", '"+player.getBackground()+
-                //"', '"+player.getCharacteristics()+ "', " +
-                ", "+player.getRaud()+
+                ", '"+player.getBackground()+ "" +
+                "', '"+player.getCharacteristics()+ "" +
+                "', "+player.getRaud()+
                 ", "+player.getMovement()+
                 ", '"+player.getReligion()+"');";
-        System.out.println(query);
+        //System.out.println(query);
         return query;
     }
 
@@ -148,7 +151,7 @@ public class SaveCharacter {
                 " ("+player.getDbCharId()+
                 ", "+player.getTotalExp()+
                 ", "+player.getUnusedExp()+");";
-        System.out.println(query);
+        //System.out.println(query);
         return query;
     }
 
@@ -171,7 +174,7 @@ public class SaveCharacter {
                 " ("+player.getDbCharId()+",'Stomach', "+hp.getStomach()+", "+hp.getMaxStomach()+", "+armor.getStomach()+")," +
                 " ("+player.getDbCharId()+",'RightLeg', "+hp.getRightLeg()+", "+hp.getMaxRightLeg()+", "+armor.getRightLeg()+")," +
                 " ("+player.getDbCharId()+",'LeftLeg', "+hp.getLeftLeg()+", "+hp.getMaxLeftLeg()+", "+armor.getLeftLeg()+");";
-        System.out.println(query);
+        //System.out.println(query);
         return query;
     }
 
@@ -185,43 +188,66 @@ public class SaveCharacter {
                 " ("+player.getDbCharId()+", '"+player.getPositiveTrait1()+"', "+player.getPosTrait1Level()+")," +
                 " ("+player.getDbCharId()+", '"+player.getPositiveTrait2()+"', "+player.getPosTrait2Level()+")," +
                 " ("+player.getDbCharId()+", '"+player.getNegativeTrait()+"', "+player.getNegTraitLevel()+");";
-        System.out.println(query);
+        //System.out.println(query);
         return query;
     }
 
-    private String querySkills(Character player){
+    private String querySkills(Character player, Skillset skills){
         String query = "" +
                 " INSERT INTO character_has_skill(" +
                 " character_has_skill.charId," +
                 " character_has_skill.skillId," +
                 " value)" +
                 " VALUES" +
-                " ("+player.getDbCharId()+", 1, 0)," +
-                " ("+player.getDbCharId()+", 2, 0)," +
-                " ("+player.getDbCharId()+", 3, 16)," +
-                " ("+player.getDbCharId()+", 4, 0)," +
-                " ("+player.getDbCharId()+", 5, 6)," +
-                " ("+player.getDbCharId()+", 6, 18)," +
-                " ("+player.getDbCharId()+", 7, 4)," +
-                " ("+player.getDbCharId()+", 8, 3)," +
-                " ("+player.getDbCharId()+", 9, 5)," +
-                " ("+player.getDbCharId()+", 10, 3)," +
-                " ("+player.getDbCharId()+", 11, 6)," +
-                " ("+player.getDbCharId()+", 12, 0)," +
-                " ("+player.getDbCharId()+", 13, 6)," +
-                " ("+player.getDbCharId()+", 14, 0)," +
-                " ("+player.getDbCharId()+", 15, 8)," +
-                " ("+player.getDbCharId()+", 16, 12)," +
-                " ("+player.getDbCharId()+", 17, 0)," +
-                " ("+player.getDbCharId()+", 18, 0)," +
-                " ("+player.getDbCharId()+", 19, 6)," +
-                " ("+player.getDbCharId()+", 20, 0)," +
-                " ("+player.getDbCharId()+", 21, 20)," +
-                " ("+player.getDbCharId()+", 22, 8)," +
-                " ("+player.getDbCharId()+", 23, 3)," +
-                " ("+player.getDbCharId()+", 24, 1)," +
-                " ("+player.getDbCharId()+", 25, 5),";
-        System.out.println(query);
+                " ("+player.getDbCharId()+", 1, "+skills.getAlchemy().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 2, "+skills.getCombat().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 3, "+skills.getCrafting().getMetal()+")," +
+                " ("+player.getDbCharId()+", 4, "+skills.getCrafting().getSoft()+")," +
+                " ("+player.getDbCharId()+", 5, "+skills.getCrafting().getStone()+")," +
+                " ("+player.getDbCharId()+", 6, "+skills.getCrafting().getWood()+")," +
+                " ("+player.getDbCharId()+", 7, "+skills.getCrime().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 8, "+skills.getCulture().getElvish()+")," +
+                " ("+player.getDbCharId()+", 9, "+skills.getCulture().getDwarfish()+")," +
+                " ("+player.getDbCharId()+", 10, "+skills.getCulture().getWestlands()+")," +
+                " ("+player.getDbCharId()+", 11, "+skills.getCulture().getMidlands()+")," +
+                " ("+player.getDbCharId()+", 12, "+skills.getCulture().getEastheim()+")," +
+                " ("+player.getDbCharId()+", 13, "+skills.getCulture().getOrcish()+")," +
+                " ("+player.getDbCharId()+", 14, "+skills.getEntertainment().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 15, "+skills.getGeography().getWestland()+")," +
+                " ("+player.getDbCharId()+", 16, "+skills.getGeography().getMidland()+")," +
+                " ("+player.getDbCharId()+", 17, "+skills.getGeography().getEastheim()+")," +
+                " ("+player.getDbCharId()+", 18, "+skills.getGeography().getSoj()+")," +
+                " ("+player.getDbCharId()+", 19, "+skills.getGeography().getNhoordland()+")," +
+                " ("+player.getDbCharId()+", 20, "+skills.getGeography().getUnderworld()+")," +
+                " ("+player.getDbCharId()+", 21, "+skills.getHunting().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 22, "+skills.getJester().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 23, "+skills.getManagement().getFarm()+")," +
+                " ("+player.getDbCharId()+", 24, "+skills.getManagement().getCity()+")," +
+                " ("+player.getDbCharId()+", 25, "+skills.getManagement().getWar()+")," +
+                " ("+player.getDbCharId()+", 26, "+skills.getMedicine().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 27, "+skills.getMobility().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 28, "+skills.getNature().getWestlands()+")," +
+                " ("+player.getDbCharId()+", 29, "+skills.getNature().getMidlands()+")," +
+                " ("+player.getDbCharId()+", 30, "+skills.getNature().getEastheim()+")," +
+                " ("+player.getDbCharId()+", 31, "+skills.getNature().getSoj()+")," +
+                " ("+player.getDbCharId()+", 32, "+skills.getNature().getNhordlands()+")," +
+                " ("+player.getDbCharId()+", 33, "+skills.getNature().getUnderworld()+")," +
+                " ("+player.getDbCharId()+", 34, "+skills.getReligion().getGerbanis()+")," +
+                " ("+player.getDbCharId()+", 35, "+skills.getReligion().getOstroseden()+")," +
+                " ("+player.getDbCharId()+", 36, "+skills.getReligion().getNidendomen()+")," +
+                " ("+player.getDbCharId()+", 37, "+skills.getReligion().getHamingjes()+")," +
+                " ("+player.getDbCharId()+", 38, "+skills.getReligion().getThuldom()+")," +
+                " ("+player.getDbCharId()+", 39, "+skills.getRiding().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 40, "+skills.getSeafaring().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 41, "+skills.getSpeech().getVrok()+")," +
+                " ("+player.getDbCharId()+", 42, "+skills.getSpeech().getRona()+")," +
+                " ("+player.getDbCharId()+", 43, "+skills.getSpeech().getEika()+")," +
+                " ("+player.getDbCharId()+", 44, "+skills.getSpeech().getFuthark()+")," +
+                " ("+player.getDbCharId()+", 45, "+skills.getSpeech().getOrcish()+")," +
+                " ("+player.getDbCharId()+", 46, "+skills.getSpellcasting().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 47, "+skills.getSurvival().getSkillLevel()+")," +
+                " ("+player.getDbCharId()+", 48, "+skills.getTrade().getSkillLevel()+");";
+        //System.out.println(query);
         return query;
     }
 

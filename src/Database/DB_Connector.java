@@ -5,13 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-class DB_Connector {
+public class DB_Connector {
 
-    String url = "jdbc:mysql://localhost:3306/da216a_project?user=root&password=root&serverTimezone=UTC";
+    private String url = "jdbc:mysql://localhost:3306/da216a_project?user=root&password=root&serverTimezone=UTC";
 
-    Statement statement;
+    public Statement statement;
 
-    DB_Connector() {
+    public DB_Connector() {
         try {
             Connection c = DriverManager.getConnection(url);
             statement = c.createStatement();

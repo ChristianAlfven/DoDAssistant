@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Light?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
@@ -13,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="629.0" prefWidth="570.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.InspectCharacter">
+<AnchorPane prefHeight="629.0" prefWidth="570.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.InspectCharacter">
    <children>
       <ImageView fitHeight="650.0" fitWidth="576.0" layoutX="-2.0" layoutY="-3.0">
          <image>
@@ -140,7 +139,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="idReligion" layoutX="82.0" layoutY="61.0" prefHeight="19.0" prefWidth="112.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="lorem ipsum">
+      <TextField fx:id="idCharReligion" layoutX="82.0" layoutY="61.0" prefHeight="19.0" prefWidth="112.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="lorem ipsum">
          <font>
             <Font size="11.0" />
          </font>
@@ -460,127 +459,167 @@
             <Font size="11.0" />
          </font>
       </TextField>
-      <Label layoutX="319.0" layoutY="192.0" text="Hitpoints">
+      <Label layoutX="264.0" layoutY="189.0" text="Hitpoints">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="321.0" layoutY="217.0" prefHeight="17.0" prefWidth="71.0" text="Body Part">
+      <Label layoutX="266.0" layoutY="214.0" prefHeight="17.0" prefWidth="71.0" text="Body Part">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="394.0" layoutY="217.0" prefHeight="17.0" prefWidth="71.0" text="Current HP">
+      <Label layoutX="339.0" layoutY="214.0" prefHeight="17.0" prefWidth="71.0" text="Current HP">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="467.0" layoutY="217.0" prefHeight="17.0" prefWidth="71.0" text="Max HP">
+      <Label layoutX="411.0" layoutY="214.0" prefHeight="17.0" prefWidth="71.0" text="Max HP">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="321.0" layoutY="234.0" prefHeight="17.0" prefWidth="71.0" text="Head:">
+      <Label layoutX="266.0" layoutY="231.0" prefHeight="17.0" prefWidth="71.0" text="Head:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="321.0" layoutY="251.0" prefHeight="17.0" prefWidth="71.0" text="Right Arm:">
+      <Label layoutX="266.0" layoutY="248.0" prefHeight="17.0" prefWidth="71.0" text="Right Arm:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="321.0" layoutY="285.0" prefHeight="17.0" prefWidth="71.0" text="Chest:">
+      <Label layoutX="266.0" layoutY="282.0" prefHeight="17.0" prefWidth="71.0" text="Chest:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="321.0" layoutY="268.0" prefHeight="17.0" prefWidth="71.0" text="Left Arm:">
+      <Label layoutX="266.0" layoutY="265.0" prefHeight="17.0" prefWidth="71.0" text="Left Arm:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="321.0" layoutY="317.0" prefHeight="17.0" prefWidth="71.0" text="Right Leg:">
+      <Label layoutX="266.0" layoutY="314.0" prefHeight="17.0" prefWidth="71.0" text="Right Leg:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="321.0" layoutY="334.0" prefHeight="17.0" prefWidth="71.0" text="Left Leg:">
+      <Label layoutX="266.0" layoutY="331.0" prefHeight="17.0" prefWidth="71.0" text="Left Leg:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="321.0" layoutY="300.0" prefHeight="17.0" prefWidth="71.0" text="Stomach:">
+      <Label layoutX="266.0" layoutY="297.0" prefHeight="17.0" prefWidth="71.0" text="Stomach:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="idCurrentLeftLeg" layoutX="392.0" layoutY="335.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idCurrentLeftLeg" layoutX="337.0" layoutY="332.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idCurrentStomach" layoutX="392.0" layoutY="301.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idCurrentStomach" layoutX="337.0" layoutY="298.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idCurrentRightLeg" layoutX="392.0" layoutY="318.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idCurrentRightLeg" layoutX="337.0" layoutY="315.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idCurrentLeftArm" layoutX="392.0" layoutY="267.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idCurrentLeftArm" layoutX="337.0" layoutY="264.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idCurrentChest" layoutX="392.0" layoutY="284.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idCurrentChest" layoutX="337.0" layoutY="281.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idCurrentRightArm" layoutX="392.0" layoutY="249.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idCurrentRightArm" layoutX="337.0" layoutY="246.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idCurrentHead" layoutX="392.0" layoutY="232.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idCurrentHead" layoutX="337.0" layoutY="229.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idMaxHead" layoutX="465.0" layoutY="232.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idMaxHead" layoutX="411.0" layoutY="229.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idMaxRightArm" layoutX="465.0" layoutY="249.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idMaxRightArm" layoutX="410.0" layoutY="246.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idMaxChest" layoutX="465.0" layoutY="284.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idMaxChest" layoutX="410.0" layoutY="281.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idMaxLeftArm" layoutX="465.0" layoutY="267.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idMaxLeftArm" layoutX="410.0" layoutY="264.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idMaxRightLeg" layoutX="465.0" layoutY="318.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idMaxRightLeg" layoutX="410.0" layoutY="315.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idMaxStomach" layoutX="465.0" layoutY="301.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idMaxStomach" layoutX="410.0" layoutY="298.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="idMaxLeftLeg" layoutX="465.0" layoutY="335.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+      <TextField fx:id="idMaxLeftLeg" layoutX="410.0" layoutY="332.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <Label layoutX="467.0" layoutY="214.0" prefHeight="17.0" prefWidth="71.0" text="Armor">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idArmorHead" layoutX="464.0" layoutY="230.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorRightArm" layoutX="463.0" layoutY="247.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorChest" layoutX="463.0" layoutY="282.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorLeftArm" layoutX="463.0" layoutY="265.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorRightLeg" layoutX="463.0" layoutY="316.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorStomach" layoutX="463.0" layoutY="299.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idArmorLeftLeg" layoutX="463.0" layoutY="333.0" prefHeight="19.0" prefWidth="60.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="0">
          <font>
             <Font size="11.0" />
          </font>

@@ -6,6 +6,7 @@ import ActiveChars.Party;
 import CharacterFile.Character;
 import CharacterFile.Armor;
 import CharacterFile.Health;
+import Database.DB_Connector;
 import Database.LoadCharacter;
 
 import java.net.MalformedURLException;
@@ -15,9 +16,12 @@ import Creator.*;
 
 
 import Database.LoadCharacter;
+import Database.SaveCharacter;
 import com.sun.javafx.scene.control.IntegerField;
 import javafx.fxml.Initializable;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -34,16 +38,19 @@ import javafx.stage.Stage;
 
 
 public class ControllerNewGame implements Initializable {
+    private DB_Connector connector = new DB_Connector();
     Character character;
 
     private Party partyInstance = Party.getParty();
     private LoadCharacter charLoader = LoadCharacter.charLoader();
+    private SaveCharacter charSaver = SaveCharacter.charSaver();
 
     @FXML private Button idRemove;
     @FXML private Button idNewCharacter;
     @FXML private Button idStartGame;
     @FXML private Button idExit;
     @FXML private Button idLoadCharacter;
+    @FXML private Button idSaveCharacter;
     @FXML private Button idEdit;
 
     @FXML private TableView<Character> idTableView;
@@ -55,6 +62,7 @@ public class ControllerNewGame implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         getCharacters();
+        dbGetLastCharId();
     }
 
 
@@ -67,11 +75,16 @@ public class ControllerNewGame implements Initializable {
 
     @FXML
     void buttonLoadCharacter(ActionEvent event) {
-        charLoader.loadCharacter(1);
-        updateTable();
-        charLoader.loadCharacter(2);
-        updateTable();
-        //idLoadCharacter.setDisable(true);
+        for (int i = 1; i < Party.getParty().getNextCharId(); i++) {
+            charLoader.loadCharacter(i);
+            updateTable();
+        }
+        idLoadCharacter.setDisable(true);
+    }
+
+    @FXML
+    void buttonSaveCharacter(ActionEvent event) {
+        charSaver.storeCharacters();
     }
 
 
@@ -224,6 +237,19 @@ public class ControllerNewGame implements Initializable {
         }
     }
 
-
+    public void dbGetLastCharId(){
+        String dbScript;
+        int dbCharId = 0;
+        dbScript = String.format("SELECT charId FROM `character`;");
+        try {
+            ResultSet rs = connector.statement.executeQuery(dbScript);
+            while(rs.next()){
+                dbCharId = rs.getInt(1);
+            }
+            Party.getParty().setNextCharId(dbCharId + 1);
+        } catch (SQLException ex) {
+            System.out.println("error on executing the query");
+        }
+    }
 
 }

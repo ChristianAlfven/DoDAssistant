@@ -24,7 +24,6 @@ import java.util.Scanner;
 import static CharacterFile.Character.Nationality.Human;
 
 public class CharacterCreation implements Initializable {
-    private DB_Connector connector = new DB_Connector();
 
 //    Image image = new Image("sample/sample.fxml");
 
@@ -84,8 +83,6 @@ public class CharacterCreation implements Initializable {
         Parent root;
         Scene scene;
         character = new Character();
-
-        dbGetLastCharId();
     }
 
 
@@ -372,21 +369,6 @@ public class CharacterCreation implements Initializable {
     public void setBard(ActionEvent event){character.setProfession(Character.Profession.Bard);}
     public void setScholar(ActionEvent event){character.setProfession(Character.Profession.Warrior);}
 
-
-    public void dbGetLastCharId(){
-        String dbScript;
-        int dbCharId = 0;
-        dbScript = String.format("SELECT charId FROM `character`;");
-        try {
-            ResultSet rs = connector.statement.executeQuery(dbScript);
-            while(rs.next()){
-                dbCharId = rs.getInt(1);
-            }
-            Party.getParty().setNextCharId(dbCharId + 1);
-        } catch (SQLException ex) {
-            System.out.println("error on executing the query");
-        }
-    }
 
     public int getNextDbCharId(){
         int nextCharId;

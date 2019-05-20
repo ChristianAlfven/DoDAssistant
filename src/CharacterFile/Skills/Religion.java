@@ -22,7 +22,7 @@ public class Religion extends Skill{
         mainReligion = i;
     }
 
-    public int getMain(){
+    public int getMainReligion(){
         switch (mainReligion){
             case 1:
                 return gerbanis;

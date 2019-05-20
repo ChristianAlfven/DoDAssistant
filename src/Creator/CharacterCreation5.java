@@ -1034,7 +1034,7 @@ public class CharacterCreation5 implements Initializable {
         natSoj = character.getSkillset().getNature().getSoj();
         natUnderworld = character.getSkillset().getNature().getUnderworld();
         natWestlands = character.getSkillset().getNature().getWestlands();
-        religion = character.getSkillset().getReligion().getMain();
+        religion = character.getSkillset().getReligion().getMainReligion();
         riding = character.getSkillset().getRiding().getSkillLevel();
         seafaring = character.getSkillset().getSeafaring().getSkillLevel();
         spellcasting = character.getSkillset().getSpellcasting().getSkillLevel();

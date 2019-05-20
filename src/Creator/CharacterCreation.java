@@ -31,6 +31,7 @@ public class CharacterCreation implements Initializable {
     @FXML private URL location;
     @FXML private Label idNameLabel;
     @FXML private TextField idNamebox;
+    @FXML private TextField idPlayerbox;
     @FXML private Label idRaceLabel;
     @FXML private Label idSubraceLabel;
     @FXML private Label idProfessionLabel;
@@ -148,6 +149,7 @@ public class CharacterCreation implements Initializable {
         {
             try {
                 character.setName(idNamebox.getText());
+                character.setPlayerName(idPlayerbox.getText());
                 character.setBackground(idBackgroundBox.getText());
                 character.setHeight(Integer.parseInt(idHeightBox.getText()));
                 character.setWeight(Integer.parseInt(idWeightBox.getText()));
@@ -171,14 +173,19 @@ public class CharacterCreation implements Initializable {
 
                 if (idGerbanis.isSelected()) {
                     character.getSkillset().getReligion().setMainReligion(1);
+                    character.setReligion("Gerbanis");
                 } else if (idOstroseden.isSelected()){
                     character.getSkillset().getReligion().setMainReligion(2);
+                    character.setReligion("Ostroseden");
                 } else if (idNidendomen.isSelected()){
                     character.getSkillset().getReligion().setMainReligion(3);
+                    character.setReligion("Nidendom");
                 } else if (idHamingjes.isSelected()){
                     character.getSkillset().getReligion().setMainReligion(4);
+                    character.setReligion("Hamingjes");
                 } else if (idThuldom.isSelected()){
                     character.getSkillset().getReligion().setMainReligion(5);
+                    character.setReligion("Thuldom");
                 }
 
                 System.out.println(character.debug());
@@ -210,6 +217,7 @@ public class CharacterCreation implements Initializable {
     // RACE METHODS
     public void setHuman(ActionEvent event){
         character.setRace(Character.Race.Human);
+        character.setNationality(Character.Nationality.Human);
         idSubraceLabel.setDisable(false);
         idSubrace1.setDisable(false);
         idSubrace1.setSelected(false);
@@ -225,6 +233,7 @@ public class CharacterCreation implements Initializable {
     }
     public void setDwarf(ActionEvent event){
         character.setRace(Character.Race.Dwarf);
+        character.setNationality(Character.Nationality.Dwarf);
         idSubraceLabel.setDisable(false);
         idSubrace1.setDisable(false);
         idSubrace1.setSelected(false);
@@ -241,6 +250,7 @@ public class CharacterCreation implements Initializable {
     }
     public void setElf(ActionEvent event){
         character.setRace(Character.Race.Elf);
+        character.setNationality(Character.Nationality.Elf);
         idSubraceLabel.setDisable(false);
         idSubrace1.setDisable(false);
         idSubrace1.setSelected(false);
@@ -275,10 +285,13 @@ public class CharacterCreation implements Initializable {
     public void setSubrace1(ActionEvent event) {
         if (character.getRace() == Character.Race.Human) {
             character.setSubrace(Character.SubRace.Stormlander);
+            character.setRegion(Character.Region.Eastheim);
         } else if (character.getRace() == Character.Race.Elf) {
             character.setSubrace(Character.SubRace.Korpikalla);
+            character.setRegion(Character.Region.Soj);
         } else if (character.getRace() == Character.Race.Dwarf) {
             character.setSubrace(Character.SubRace.Borjornikka);
+            character.setRegion(Character.Region.Underworld);
         } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == null)) {
             character.setSubrace(Character.SubRace.HalfElf);
             idSubrace1.setSelected(false);
@@ -312,10 +325,13 @@ public class CharacterCreation implements Initializable {
         public void setSubrace2 (ActionEvent event){
             if (character.getRace() == Character.Race.Human) {
                 character.setSubrace(Character.SubRace.Midlander);
+                character.setRegion(Character.Region.Midlands);
             } else if (character.getRace() == Character.Race.Elf) {
                 character.setSubrace(Character.SubRace.Illmalaina);
+                character.setRegion(Character.Region.Soj);
             } else if (character.getRace() == Character.Race.Dwarf) {
                 character.setSubrace(Character.SubRace.Zvorda);
+                character.setRegion(Character.Region.Underworld);
             } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == null)) {
                 character.setSubrace(Character.SubRace.HalfOrc);
                 idSubrace2.setSelected(false);
@@ -344,8 +360,10 @@ public class CharacterCreation implements Initializable {
         public void setSubrace3 (ActionEvent event){
             if (character.getRace() == Character.Race.Human) {
                 character.setSubrace(Character.SubRace.Virann);
+                character.setRegion(Character.Region.Westlands);
             } else if (character.getRace() == Character.Race.Dwarf) {
                 character.setSubrace(Character.SubRace.Buratja);
+                character.setRegion(Character.Region.Underworld);
             } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfOrc) && character.getNationality() == Human) {
                 character.setRegion(Character.Region.Eastheim);
             } else if ((character.getRace() == Character.Race.HalfBlood) && (character.getSubrace() == Character.SubRace.HalfElf) && character.getNationality() == Human) {
@@ -374,6 +392,6 @@ public class CharacterCreation implements Initializable {
         int nextCharId;
         nextCharId = Party.getParty().getNextCharId();
         Party.getParty().setNextCharId(nextCharId + 1);
-        return nextCharId + 1;
+        return nextCharId;
     }
 }

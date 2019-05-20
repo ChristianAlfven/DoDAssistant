@@ -62,7 +62,7 @@ public class ControllerNewGame implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         getCharacters();
-        dbGetLastCharId();
+        //dbGetLastCharId();
     }
 
 
@@ -190,7 +190,7 @@ public class ControllerNewGame implements Initializable {
             character1.setNationality(Character.Nationality.Human);
             character1.constructHealth(100);
             character1.setTotalExp(100);
-            character1.setCharacteristics("Characteristics");
+            //character1.setCharacteristics("Characteristics");
             character1.setCombatPoints(2000);
 
             partyInstance.addCharacter(character1);

@@ -9,7 +9,7 @@ public class Character {
     public enum WeaponHand {Right, Left, Dual}
     public enum Nationality {Human, Orc, Elf, Dwarf}
     public enum Environment{Nature, Country, City, Academic}
-    public enum Region {Westlands, Midlands, Eastheim, Nhordland, Soj, Underworld}
+    public enum Region {Eastheim, Midlands, Westlands, Soj, Underworld, }
     public enum SpecialTrait{Strength, Physique, Agility, Spirituality, Intelligence, Psyche, Charisma}
 
 

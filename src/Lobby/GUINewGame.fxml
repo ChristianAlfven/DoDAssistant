@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="409.0" prefWidth="493.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Lobby.ControllerNewGame">
+<AnchorPane prefHeight="409.0" prefWidth="493.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Lobby.ControllerNewGame">
    <children>
       <ImageView fitHeight="370.0" fitWidth="518.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -31,7 +33,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="idLoadCharacter" alignment="CENTER" layoutX="66.0" layoutY="185.0" mnemonicParsing="false" onAction="#buttonLoadCharacter" prefHeight="40.0" prefWidth="160.0" text="Load Character">
+      <Button fx:id="idLoadCharacter" alignment="CENTER" layoutX="66.0" layoutY="185.0" mnemonicParsing="false" onAction="#buttonLoadCharacter" prefHeight="40.0" prefWidth="160.0" text="Load Characters">
          <effect>
             <Lighting>
                <bumpInput>
@@ -106,7 +108,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="idDummy" layoutX="208.0" layoutY="264.0" mnemonicParsing="false" onAction="#buttonDummy" text="Dummy" />
+      <Button fx:id="idDummy" layoutX="199.0" layoutY="306.0" mnemonicParsing="false" onAction="#buttonDummy" text="Dummy" />
       <TableView fx:id="idTableView" layoutX="257.0" layoutY="58.0" prefHeight="189.0" prefWidth="200.0">
          <columns>
             <TableColumn fx:id="idHealthColumn" editable="false" prefWidth="33.0" sortable="false" text="HP" />
@@ -123,5 +125,20 @@
             </Lighting>
          </effect>
       </TableView>
+      <Button fx:id="idSaveCharacter" alignment="CENTER" layoutX="66.0" layoutY="242.0" mnemonicParsing="false" onAction="#buttonSaveCharacter" prefHeight="40.0" prefWidth="160.0" text="Save Characters">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -1,6 +1,7 @@
 package Game;
 
 import ActiveChars.Party;
+import CharacterFile.Armor;
 import CharacterFile.Character;
 import CharacterFile.Health;
 import CharacterFile.Skillset;
@@ -20,24 +21,27 @@ public class InspectCharacter implements Initializable {
     Character character;
     Skillset skillset;
     Health health;
+    Armor armor;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         character = Party.getParty().getCharacter(Party.getParty().getIndex());
         skillset = character.getSkillset();
         health = character.getHealth();
+        armor = character.getArmor();
 
         //TOP LEFT
         idCharacter.setText(String.valueOf(character.toString()));
         idGenderText.setText(String.valueOf(character.getGender()));
         idSubRaceText.setText(String.valueOf(character.getSubrace()));
-//        idReligion.setText(String.valueOf(Party.getParty().getCharacter(Party.getParty().getIndex()).getReligion));
+        idCharReligion.setText(String.valueOf(character.getReligion()));
+        System.out.println(character.getReligion());
         idEnvironmentText.setText(String.valueOf(character.getEnvironment()));
         idWeaponHand.setText(String.valueOf(character.getWeaponHand()));
         idAgeText.setText(String.valueOf(character.getAge()));
         idHeightText.setText(String.valueOf(character.getHeight()));
         idWeightText.setText(String.valueOf(character.getWeight()));
-//        idMovement.setText(String.valueOf(Party.getParty().getCharacter(Party.getParty().getIndex()).getMovement()));
+        idMovement.setText(String.valueOf(character.getMovement()));
         idPointsTotalText.setText(String.valueOf(character.getCombatPoints()));
 
         //MIDDLE
@@ -68,7 +72,7 @@ public class InspectCharacter implements Initializable {
         idCulture.setText(String.valueOf(skillset.getCulture().getSkillLevel()));
         idMedicine.setText(String.valueOf(skillset.getMedicine().getSkillLevel()));
         idCrime.setText(String.valueOf(skillset.getCrime().getSkillLevel()));
-//        RELIGION
+        idReligion.setText(String.valueOf(skillset.getReligion().getMainReligion()));
         idRiding.setText(String.valueOf(skillset.getRiding().getSkillLevel()));
         idMobility.setText(String.valueOf(skillset.getMobility().getSkillLevel()));
         idSeafaring.setText(String.valueOf(skillset.getSeafaring().getSkillLevel()));
@@ -92,83 +96,209 @@ public class InspectCharacter implements Initializable {
         idCurrentRightLeg.setText(String.valueOf(health.getRightLeg()));
         idCurrentLeftLeg.setText(String.valueOf(health.getLeftLeg()));
         //MAX HP
+        idMaxHead.setText(String.valueOf(health.getMaxHead()));
+        idMaxRightArm.setText(String.valueOf(health.getMaxRightArm()));
+        idMaxLeftArm.setText(String.valueOf(health.getMaxLeftArm()));
+        idMaxChest.setText(String.valueOf(health.getMaxChest()));
+        idMaxStomach.setText(String.valueOf(health.getMaxStomach()));
+        idMaxRightLeg.setText(String.valueOf(health.getMaxRightLeg()));
+        idMaxLeftLeg.setText(String.valueOf(health.getMaxLeftLeg()));
+        // Armor
+        idArmorHead.setText(String.valueOf(armor.getHead()));
+        idArmorRightArm.setText(String.valueOf(armor.getRightArm()));
+        idArmorLeftArm.setText(String.valueOf(armor.getLeftArm()));
+        idArmorChest.setText(String.valueOf(armor.getChest()));
+        idArmorStomach.setText(String.valueOf(armor.getStomach()));
+        idArmorRightLeg.setText(String.valueOf(armor.getRightLeg()));
+        idArmorLeftLeg.setText(String.valueOf(armor.getLeftLeg()));
 
     }
 
     @FXML
-    private TextField idGenderText;
+    private Button idClose;
 
     @FXML
-    private TextField idReligionSub;
+    private TextField idAgeText;
 
     @FXML
-    private TextField idCombat;
+    private TextField idHeightText;
 
     @FXML
-    private TextField idCurrentHead;
-
-    @FXML
-    private TextField idCulture;
-
-    @FXML
-    private TextField idMaxLeftArm;
-
-    @FXML
-    private TextField idCultureSub;
-
-    @FXML
-    private TextField idAlchemy;
-
-    @FXML
-    private TextField idManagementCity;
-
-    @FXML
-    private TextField idCurrentLeftLeg;
-
-    @FXML
-    private TextField idSpcTraitMinus;
-
-    @FXML
-    private TextField idSpeech;
-
-    @FXML
-    private TextField idMaxRightArm;
-
-    @FXML
-    private TextField idRiding;
+    private TextField idWeightText;
 
     @FXML
     private TextField idEnvironmentText;
 
     @FXML
-    private TextField idSpeechSub;
+    private TextField idSubRaceText;
 
     @FXML
-    private TextField idCraftingStone;
+    private TextField idGenderText;
 
     @FXML
-    private TextField idSpcTraitMinusValue;
+    private TextField idPointsTotalText;
 
     @FXML
-    private TextField idCurrentRightLeg;
+    private TextField idSpcTraitPlus1;
+
+    @FXML
+    private TextField idSpcTraitPlus2;
+
+    @FXML
+    private TextField idSpcTraitMinus;
+
+    @FXML
+    private TextField idCharacter;
+
+    @FXML
+    private TextArea idBackground;
+
+    @FXML
+    private TextField idCharReligion;
+
+    @FXML
+    private TextField idWeaponHand;
+
+    @FXML
+    private TextField idRaud;
+
+    @FXML
+    private TextField idSpcTraitPlus1Value;
 
     @FXML
     private TextField idSpcTraitPlus2Value;
 
     @FXML
-    private TextField idEntertainment;
+    private TextField idSpcTraitMinusValue;
+
+    @FXML
+    private TextField idMovement;
+
+    @FXML
+    private TextField idGeographySub;
+
+    @FXML
+    private TextField idCultureSub;
+
+    @FXML
+    private TextField idReligionSub;
+
+    @FXML
+    private TextField idSpeechSub;
 
     @FXML
     private TextField idNatureSub;
 
     @FXML
+    private TextField idSpellCasting;
+
+    @FXML
+    private TextField idAlchemy;
+
+    @FXML
+    private TextField idJester;
+
+    @FXML
+    private TextField idGeography;
+
+    @FXML
+    private TextField idCraftingMetal;
+
+    @FXML
+    private TextField idTrade;
+
+    @FXML
+    private TextField idCulture;
+
+    @FXML
+    private TextField idMedicine;
+
+    @FXML
+    private TextField idCraftingWood;
+
+    @FXML
+    private TextField idHunting;
+
+    @FXML
+    private TextField idCraftingStone;
+
+    @FXML
+    private TextField idCraftingSoft;
+
+    @FXML
+    private TextField idSeafaring;
+
+    @FXML
+    private TextField idManagementFarm;
+
+    @FXML
+    private TextField idRiding;
+
+    @FXML
+    private TextField idMobility;
+
+    @FXML
+    private TextField idReligion;
+
+    @FXML
+    private TextField idCrime;
+
+    @FXML
+    private TextField idEntertainment;
+
+    @FXML
+    private TextField idNature;
+
+    @FXML
+    private TextField idCombat;
+
+    @FXML
+    private TextField idSpeech;
+
+    @FXML
+    private TextField idManagementWar;
+
+    @FXML
+    private TextField idManagementCity;
+
+    @FXML
+    private TextField idSurvival;
+
+    @FXML
+    private TextField idCurrentLeftLeg;
+
+    @FXML
+    private TextField idCurrentStomach;
+
+    @FXML
+    private TextField idCurrentRightLeg;
+
+    @FXML
+    private TextField idCurrentLeftArm;
+
+    @FXML
     private TextField idCurrentChest;
 
     @FXML
-    private TextField idMaxRightLeg;
+    private TextField idCurrentRightArm;
 
     @FXML
-    private TextArea idBackground;
+    private TextField idCurrentHead;
+
+    @FXML
+    private TextField idMaxHead;
+
+    @FXML
+    private TextField idMaxRightArm;
+
+    @FXML
+    private TextField idMaxChest;
+
+    @FXML
+    private TextField idMaxLeftArm;
+
+    @FXML
+    private TextField idMaxRightLeg;
 
     @FXML
     private TextField idMaxStomach;
@@ -177,112 +307,25 @@ public class InspectCharacter implements Initializable {
     private TextField idMaxLeftLeg;
 
     @FXML
-    private TextField idHeightText;
+    private TextField idArmorHead;
 
     @FXML
-    private TextField idSurvival;
+    private TextField idArmorRightArm;
 
     @FXML
-    private TextField idManagementWar;
+    private TextField idArmorChest;
 
     @FXML
-    private TextField idSpellCasting;
+    private TextField idArmorLeftArm;
 
     @FXML
-    private TextField idMaxChest;
+    private TextField idArmorRightLeg;
 
     @FXML
-    private TextField idMaxHead;
+    private TextField idArmorStomach;
 
     @FXML
-    private TextField idSeafaring;
-
-    @FXML
-    private TextField idGeographySub;
-
-    @FXML
-    private TextField idAgeText;
-
-    @FXML
-    private TextField idManagementFarm;
-
-    @FXML
-    private TextField idCurrentLeftArm;
-
-    @FXML
-    private TextField idPointsTotalText;
-
-    @FXML
-    private TextField idJester;
-
-    @FXML
-    private TextField idNature;
-
-    @FXML
-    private TextField idCurrentStomach;
-
-    @FXML
-    private TextField idCraftingSoft;
-
-    @FXML
-    private TextField idCraftingWood;
-
-    @FXML
-    private TextField idCharacter;
-
-    @FXML
-    private TextField idWeightText;
-
-    @FXML
-    private TextField idCraftingMetal;
-
-    @FXML
-    private TextField idHunting;
-
-    @FXML
-    private Button idClose;
-
-    @FXML
-    private TextField idWeaponHand;
-
-    @FXML
-    private TextField idSubRaceText;
-
-    @FXML
-    private TextField idRaud;
-
-    @FXML
-    private TextField idMovement;
-
-    @FXML
-    private TextField idTrade;
-
-    @FXML
-    private TextField idCrime;
-
-    @FXML
-    private TextField idCurrentRightArm;
-
-    @FXML
-    private TextField idSpcTraitPlus2;
-
-    @FXML
-    private TextField idMedicine;
-
-    @FXML
-    private TextField idSpcTraitPlus1;
-
-    @FXML
-    private TextField idSpcTraitPlus1Value;
-
-    @FXML
-    private TextField idMobility;
-
-    @FXML
-    private TextField idGeography;
-
-    @FXML
-    private TextField idReligion;
+    private TextField idArmorLeftLeg;
 
     @FXML
     void buttonClose(ActionEvent event) {

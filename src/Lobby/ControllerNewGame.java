@@ -4,25 +4,17 @@ import java.io.IOException;
 
 import ActiveChars.Party;
 import CharacterFile.Character;
-import CharacterFile.Armor;
-import CharacterFile.Health;
 import Database.DB_Connector;
 import Database.LoadCharacter;
 
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
-import Creator.*;
 
 
-import Database.LoadCharacter;
 import Database.SaveCharacter;
-import com.sun.javafx.scene.control.IntegerField;
 import javafx.fxml.Initializable;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -220,16 +212,16 @@ public class ControllerNewGame implements Initializable {
             character2.constructHealth(3);
             character2.setTotalExp(32);
             character2.setCombatPoints(3);
-            character2.getSkillset().getSpeech().setRona(10);
-            character2.getSkillset().getNature().setMidlands(10);
-            character2.getSkillset().getCulture().setMidlands(1);
-            character2.getSkillset().getSpellcasting().setSkillLevel(10);
-            character2.getSkillset().getAlchemy().setSkillLevel(3);
+            character2.getSkillset().getSpeech().addRona(10);
+            character2.getSkillset().getNature().addMidlands(10);
+            character2.getSkillset().getCulture().addMidlands(1);
+            character2.getSkillset().getSpellcasting().addSkillLevel(10);
+            character2.getSkillset().getAlchemy().addSkillLevel(3);
             character2.setWeaponHand(Character.WeaponHand.Right);
-            character2.getSkillset().getCrafting().setMetal(1);
-            character2.getSkillset().getCrafting().setSoft(2);
-            character2.getSkillset().getCrafting().setStone(3);
-            character2.getSkillset().getCrafting().setWood(4);
+            character2.getSkillset().getCrafting().addMetal(1);
+            character2.getSkillset().getCrafting().addSoft(2);
+            character2.getSkillset().getCrafting().addStone(3);
+            character2.getSkillset().getCrafting().addWood(4);
             character2.getSkillset().getGeography().addHomeland(character2,2);
 
 

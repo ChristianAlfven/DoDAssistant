@@ -29,11 +29,11 @@ public class Speech extends Skill{
         return Orcish;
     }
 
-    public void setOrcish(int orcish) {
+    public void addOrcish(int orcish) {
         this.Orcish += orcish;
     }
 
-    public void setVrok(int vrok) {
+    public void addVrok(int vrok) {
         this.Vrok += vrok;
     }
 
@@ -41,7 +41,7 @@ public class Speech extends Skill{
         return Rona;
     }
 
-    public void setRona(int rona) {
+    public void addRona(int rona) {
         this.Rona += rona;
     }
 
@@ -49,7 +49,7 @@ public class Speech extends Skill{
         return Eika;
     }
 
-    public void setEika(int eika) {
+    public void addEika(int eika) {
         this.Eika += eika;
     }
 
@@ -57,7 +57,7 @@ public class Speech extends Skill{
         return Futhark;
     }
 
-    public void setFuthark(int futhark) {
+    public void addFuthark(int futhark) {
         this.Futhark += futhark;
     }
 
@@ -65,31 +65,31 @@ public class Speech extends Skill{
         switch (character.getRace()){
             case Human:
                 if (character.getSubrace()== Character.SubRace.Stormlander){
-                    setRona(getRona() + value);
+                    addRona(getRona() + value);
                 } else {
-                    setVrok(getVrok() + value);
+                    addVrok(getVrok() + value);
                 }
                 break;
             case Elf:
-                setEika(getEika() + value);
+                addEika(getEika() + value);
                 break;
             case Dwarf:
-                setFuthark(getFuthark() + value);
+                addFuthark(getFuthark() + value);
                 break;
             case HalfBlood:
                 switch (character.getNationality()){
                     case Human:
                         if (character.getRegion() == Character.Region.Eastheim){
-                            setRona(getRona()+value);
+                            addRona(getRona()+value);
                         }else {
-                            setVrok(getVrok()+value);
+                            addVrok(getVrok()+value);
                         }
                         break;
                     case Elf:
-                        setEika(getEika()+value);
+                        addEika(getEika()+value);
                         break;
                     case Orc:
-                        setOrcish(getOrcish()+value);
+                        addOrcish(getOrcish()+value);
                         break;
                 }break;
 
@@ -131,4 +131,23 @@ public class Speech extends Skill{
         return skillLevel;
     }
 
+    public void setVrok(int vrok) {
+        Vrok = vrok;
+    }
+
+    public void setRona(int rona) {
+        Rona = rona;
+    }
+
+    public void setEika(int eika) {
+        Eika = eika;
+    }
+
+    public void setFuthark(int futhark) {
+        Futhark = futhark;
+    }
+
+    public void setOrcish(int orcish) {
+        Orcish = orcish;
+    }
 }

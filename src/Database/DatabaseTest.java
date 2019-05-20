@@ -49,7 +49,7 @@ public class DatabaseTest {
         cultOrcish = character.getSkillset().getCulture().getOrcish();
         entertainment = character.getSkillset().getEntertainment().getSkillLevel();
         geoEastheim = character.getSkillset().getGeography().getEastheim();
-        geoMidlands = character.getSkillset().getGeography().getMidland();
+        geoMidlands = character.getSkillset().getGeography().getMidlands();
         geoNhordlands = character.getSkillset().getGeography().getNhoordland();
         geoSoj = character.getSkillset().getGeography().getSoj();
         geoUnderworld = character.getSkillset().getGeography().getUnderworld();

@@ -115,7 +115,7 @@ public class LoadCharacter {
         loadPlayerExperienceTable();
         loadPlayerHealthArmorTable();
         loadPlayerTraitTable();
-        //loadPlayerSkillsTable();
+        loadPlayerSkillsTable();
     }
 
     private void loadPlayerCharacterTable() {
@@ -216,9 +216,54 @@ public class LoadCharacter {
     private void loadPlayerSkillsTable(){
         try {
             ResultSet rs = connector.statement.executeQuery(scriptSkills);
-            while(rs.next()){
-                // Function to be implemented!
-            }
+            rs.next(); skills.getAlchemy().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getCombat().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getCrafting().setMetal(rs.getInt(2));
+            rs.next(); skills.getCrafting().setSoft(rs.getInt(2));
+            rs.next(); skills.getCrafting().setStone(rs.getInt(2));
+            rs.next(); skills.getCrafting().setWood(rs.getInt(2));
+            rs.next(); skills.getCrime().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getCulture().setElvish(rs.getInt(2));
+            rs.next(); skills.getCulture().setDwarfish(rs.getInt(2));
+            rs.next(); skills.getCulture().setWestlands(rs.getInt(2));
+            rs.next(); skills.getCulture().setMidlands(rs.getInt(2));
+            rs.next(); skills.getCulture().setEastheim(rs.getInt(2));
+            rs.next(); skills.getCulture().setOrcish(rs.getInt(2));
+            rs.next(); skills.getEntertainment().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getGeography().setWestland(rs.getInt(2));
+            rs.next(); skills.getGeography().setMidland(rs.getInt(2));
+            rs.next(); skills.getGeography().setEastheim(rs.getInt(2));
+            rs.next(); skills.getGeography().setSoj(rs.getInt(2));
+            rs.next(); skills.getGeography().setNhoordland(rs.getInt(2));
+            rs.next(); skills.getGeography().setUnderworld(rs.getInt(2));
+            rs.next(); skills.getHunting().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getJester().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getManagement().setFarm(rs.getInt(2));
+            rs.next(); skills.getManagement().setCity(rs.getInt(2));
+            rs.next(); skills.getManagement().setWar(rs.getInt(2));
+            rs.next(); skills.getMedicine().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getMobility().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getNature().setWestlands(rs.getInt(2));
+            rs.next(); skills.getNature().setMidlands(rs.getInt(2));
+            rs.next(); skills.getNature().setEastheim(rs.getInt(2));
+            rs.next(); skills.getNature().setSoj(rs.getInt(2));
+            rs.next(); skills.getNature().setNhordlands(rs.getInt(2));
+            rs.next(); skills.getNature().setUnderworld(rs.getInt(2));
+            rs.next(); skills.getReligion().setGerbanis(rs.getInt(2));
+            rs.next(); skills.getReligion().setOstroseden(rs.getInt(2));
+            rs.next(); skills.getReligion().setNidendomen(rs.getInt(2));
+            rs.next(); skills.getReligion().setHamingjes(rs.getInt(2));
+            rs.next(); skills.getReligion().setThuldom(rs.getInt(2));
+            rs.next(); skills.getRiding().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getSeafaring().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getSpeech().setVrok(rs.getInt(2));
+            rs.next(); skills.getSpeech().setRona(rs.getInt(2));
+            rs.next(); skills.getSpeech().setEika(rs.getInt(2));
+            rs.next(); skills.getSpeech().setFuthark(rs.getInt(2));
+            rs.next(); skills.getSpeech().setOrcish(rs.getInt(2));
+            rs.next(); skills.getSpellcasting().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getSurvival().setSkillLevel(rs.getInt(2));
+            rs.next(); skills.getTrade().setSkillLevel(rs.getInt(2));
         } catch (SQLException ex) {
             System.out.println("error on executing the query");
         }
@@ -295,6 +340,6 @@ public class LoadCharacter {
 
 
         //Set Skill values
-
+        player.setSkillset(skills);
     }
 }

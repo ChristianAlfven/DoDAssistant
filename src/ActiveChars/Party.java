@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Party {
 
     private int index;
+    private int nextCharId;
     private ArrayList<Character> party;
     private static Party ourParty = null;
 
@@ -51,4 +52,11 @@ public class Party {
         return index;
     }
 
+    public int getNextCharId() {
+        return nextCharId;
+    }
+
+    public void setNextCharId(int nextCharId) {
+        this.nextCharId = nextCharId;
+    }
 }

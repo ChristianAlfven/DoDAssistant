@@ -62,6 +62,10 @@ public class Character {
         return skillset;
     }
 
+    public void setSkillset(Skillset skillset) {
+        this.skillset = skillset;
+    }
+
     public String getName() {
         return name;
     }

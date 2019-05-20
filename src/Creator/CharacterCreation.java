@@ -122,8 +122,6 @@ public class CharacterCreation implements Initializable {
     Scanner Scan = new Scanner(System.in);
 
 
-
-
     @FXML
     void buttonBack(ActionEvent event) throws IOException {
         Stage stage;

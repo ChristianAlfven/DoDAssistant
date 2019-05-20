@@ -21,7 +21,7 @@
    <children>
       <AnchorPane layoutX="2.0" layoutY="15.0" prefHeight="395.0" prefWidth="606.0" style="-fx-background-color: #000;">
          <children>
-            <ImageView fitHeight="415.0" fitWidth="620.0" layoutX="-7.0" layoutY="-15.0">
+            <ImageView fitHeight="415.0" fitWidth="694.0" layoutX="-7.0" layoutY="-15.0">
                <image>
                   <Image url="@../Resources/parchment.png" />
                </image>
@@ -108,7 +108,7 @@
                   <Font name="System Bold Italic" size="22.0" />
                </font>
             </Label>
-            <CheckBox fx:id="idCheckbox1" layoutX="467.0" layoutY="91.0" mnemonicParsing="false" text="CheckBox">
+            <CheckBox fx:id="idCheckbox1" layoutX="467.0" layoutY="91.0" mnemonicParsing="false">
                <effect>
                   <Lighting>
                      <bumpInput>

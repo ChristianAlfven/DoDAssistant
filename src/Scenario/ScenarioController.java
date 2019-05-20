@@ -102,7 +102,7 @@ public class ScenarioController implements Initializable {
     void buttonRoll(ActionEvent event) {
 
         try {
-
+            setActive();
             if (idSelectSkills.isSelected()){
 
                 rollSkills(idSkillChoice.getSelectionModel().getSelectedItem());
@@ -536,7 +536,7 @@ public class ScenarioController implements Initializable {
                 rollValues[i] = rollDice(20);
                 playerValues[i] += requiredValue;
 
-                if (rollValues[i] <= requiredValue + playerValues[i]) {
+                if (rollValues[i] <= (playerValues[i])) {
                     idResultsTextArea.appendText(party.getCharacter(i).toString() + ": PASSED (" + rollValues[i] + " / " + playerValues[i] + ") \n");
                 } else {
                     idResultsTextArea.appendText(party.getCharacter(i).toString() + ": FAILED (" + rollValues[i] + " / " + playerValues[i] + ") \n");
@@ -552,6 +552,7 @@ public class ScenarioController implements Initializable {
         playerValues = new int[party.getArray()];
         rollValues = new int[party.getArray()];
         active = new boolean[party.getArray()];
+        String name;
 
         switch (party.getArray()){
             case 8:
@@ -561,31 +562,31 @@ public class ScenarioController implements Initializable {
             case 7:
                 idCheckbox7.setDisable(false);
                 idCheckbox7.setOpacity(100);
-                idCheckbox8.setText(party.getCharacter(6).toString());
+                idCheckbox7.setText(party.getCharacter(6).toString());
             case 6:
                 idCheckbox6.setDisable(false);
                 idCheckbox6.setOpacity(100);
-                idCheckbox8.setText(party.getCharacter(5).toString());
+                idCheckbox6.setText(party.getCharacter(5).toString());
             case 5:
                 idCheckbox5.setDisable(false);
                 idCheckbox5.setOpacity(100);
-                idCheckbox8.setText(party.getCharacter(4).toString());
+                idCheckbox5.setText(party.getCharacter(4).toString());
             case 4:
                 idCheckbox4.setDisable(false);
                 idCheckbox4.setOpacity(100);
-                idCheckbox8.setText(party.getCharacter(3).toString());
+                idCheckbox4.setText(party.getCharacter(3).toString());
             case 3:
                 idCheckbox3.setDisable(false);
                 idCheckbox3.setOpacity(100);
-                idCheckbox8.setText(party.getCharacter(2).toString());
+                idCheckbox3.setText(party.getCharacter(2).toString());
             case 2:
                 idCheckbox2.setDisable(false);
                 idCheckbox2.setOpacity(100);
-                idCheckbox8.setText(party.getCharacter(1).toString());
+                idCheckbox2.setText(party.getCharacter(1).toString());
             case 1:
                 idCheckbox1.setDisable(false);
                 idCheckbox1.setOpacity(100);
-                idCheckbox8.setText(party.getCharacter(0).toString());
+                idCheckbox1.setText(party.getCharacter(0).toString());
         }
 
         ObservableList<String> skillChoices = FXCollections.observableArrayList(

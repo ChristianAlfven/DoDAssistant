@@ -52,7 +52,7 @@ public class GameLobby implements Initializable {
         }
         gmInstance = GmList.createGmList();
 
-        idScenario.setDisable(true); //Disabled until scenario is implemented.
+        //idScenario.setDisable(true); //Disabled until scenario is implemented.
     }
 
     @FXML
@@ -76,7 +76,15 @@ public class GameLobby implements Initializable {
 
     @FXML
     void buttonScenario(ActionEvent event) {
-
+        try {
+            stage = (Stage) idScenario.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("../Scenario/GUIScenario.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @FXML

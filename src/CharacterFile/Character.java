@@ -9,7 +9,7 @@ public class Character {
     public enum WeaponHand {Right, Left, Dual}
     public enum Nationality {Human, Orc, Elf, Dwarf}
     public enum Environment{Nature, Country, City, Academic}
-    public enum Region {Eastheim, Midlands, Westlands}
+    public enum Region {Eastheim, Midlands, Westlands, Soj, Underworld, }
     public enum SpecialTrait{Strength, Physique, Agility, Spirituality, Intelligence, Psyche, Charisma}
 
 
@@ -42,12 +42,12 @@ public class Character {
     private int age;
     private int combatPoints;
     private String background = null;
-    private String Characteristics = null;
+    //private String Characteristics = null;
     private int raud;
     private int totalExp;
     private int unusedExp;
     private int movement;
-    private String religion;
+    //private String religion;
 
 
     public int getDbCharId() {
@@ -90,6 +90,10 @@ public class Character {
 
     public void setArmor(Armor armor) {
         this.armor = armor;
+    }
+
+    public void constructArmor(){
+        this.armor = new Armor();
     }
 
     public Profession getProfession() {
@@ -180,13 +184,13 @@ public class Character {
         this.background = background;
     }
 
-    public String getCharacteristics() {
-        return Characteristics;
-    }
+    //public String getCharacteristics() {
+    //    return Characteristics;
+    //}
 
-    public void setCharacteristics(String characteristics) {
-        Characteristics = characteristics;
-    }
+    //public void setCharacteristics(String characteristics) {
+    //    Characteristics = characteristics;
+    //}
 
     public int getRaud() {
         return raud;
@@ -292,13 +296,13 @@ public class Character {
         this.movement = movement;
     }
 
-    public String getReligion() {
-        return religion;
-    }
+    //public String getReligion() {
+    //    return religion;
+    //}
 
-    public void setReligion(String religion) {
-        this.religion = religion;
-    }
+    //public void setReligion(String religion) {
+    //    this.religion = religion;
+    //}
 
     public String debug() {
         return "Character{" +

@@ -22,7 +22,7 @@ public class Party {
     }
 
     private Party() {
-        party = new ArrayList<Character>(6);
+        party = new ArrayList<Character>();
     }
 
     public void addCharacter(Character character){

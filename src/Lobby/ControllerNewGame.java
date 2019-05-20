@@ -69,7 +69,6 @@ public class ControllerNewGame implements Initializable {
     void buttonLoadCharacter(ActionEvent event) {
         for (int i = 1; i < Party.getParty().getNextCharId(); i++) {
             charLoader.loadCharacter(i);
-            System.out.println(i);
             updateTable();
         }
         idLoadCharacter.setDisable(true);

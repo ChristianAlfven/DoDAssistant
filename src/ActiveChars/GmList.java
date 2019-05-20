@@ -22,7 +22,6 @@ public class GmList {
     private GmList() {
         gmList = new ArrayList<Combatant>();
         createTestUnits();
-
     }
 
     public void addCombatant(Combatant combatant){

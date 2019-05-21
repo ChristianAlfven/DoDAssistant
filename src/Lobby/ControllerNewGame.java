@@ -49,6 +49,7 @@ public class ControllerNewGame implements Initializable {
     @FXML private TableView<Character> idTableView;
     @FXML private TableColumn<Integer, Character> idHealthColumn;
     @FXML private TableColumn<String, Character> idCharacterColumn;
+    @FXML private TableColumn<String, Character> idPlayerColumn;
 
     ObservableList<Character> list = FXCollections.observableArrayList();
 
@@ -84,6 +85,7 @@ public class ControllerNewGame implements Initializable {
         for (int i = 0; i < list.size(); i++) {
             idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
             idCharacterColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            idPlayerColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
         }
         index++;
     }
@@ -116,24 +118,32 @@ public class ControllerNewGame implements Initializable {
     }
 
     @FXML
-    void buttonInspect(ActionEvent event) throws IOException {
-        Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
+    void buttonInspect(ActionEvent event) {
+        try {
+            Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
 
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("../Game/GUIInspectCharacter.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../Game/GUIInspectCharacter.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            System.out.println("Select a character");
+        }
+
     }
 
     @FXML
     void buttonRemove(ActionEvent event) {
-        Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
-        Party.getParty().removeCharacter(Party.getParty().getIndex());
+        try {
+            Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
+            Party.getParty().removeCharacter(Party.getParty().getIndex());
 
-        idTableView.getItems().clear();
-        getCharacters();
+            getCharacters();
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Select a character");
+        }
     }
 
     @FXML
@@ -143,6 +153,8 @@ public class ControllerNewGame implements Initializable {
 
 
     void getCharacters() {
+        idTableView.getItems().clear();
+
         for (int i = 0; i <= Party.getParty().getArray() - 1; i++) {
             list.add(Party.getParty().getCharacter(i));
         }
@@ -150,6 +162,7 @@ public class ControllerNewGame implements Initializable {
         for (int i = 0; i < list.size(); i++) {
             idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
             idCharacterColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            idPlayerColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
         }
     }
 

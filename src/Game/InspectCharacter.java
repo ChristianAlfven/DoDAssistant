@@ -34,8 +34,7 @@ public class InspectCharacter implements Initializable {
         idCharacter.setText(String.valueOf(character.toString()));
         idGenderText.setText(String.valueOf(character.getGender()));
         idSubRaceText.setText(String.valueOf(character.getSubrace()));
-        idCharReligion.setText(String.valueOf(character.getSkillset().getReligion().getReligionName()));
-        //System.out.println(character.getReligion());
+        idCharReligion.setText(String.valueOf(character.getReligion()));
         idEnvironmentText.setText(String.valueOf(character.getEnvironment()));
         idWeaponHand.setText(String.valueOf(character.getWeaponHand()));
         idAgeText.setText(String.valueOf(character.getAge()));
@@ -69,7 +68,7 @@ public class InspectCharacter implements Initializable {
         idCraftingWood.setText(String.valueOf(skillset.getCrafting().getWood()));
         idHunting.setText(String.valueOf(skillset.getHunting().getSkillLevel()));
         idCultureSub.setText(skillset.getCulture().getHomeland());
-        //idCulture.setText(String.valueOf(skillset.getCulture().getSkillLevel()));
+        idCulture.setText(String.valueOf(skillset.getCulture().getSkillLevel()));
         idMedicine.setText(String.valueOf(skillset.getMedicine().getSkillLevel()));
         idCrime.setText(String.valueOf(skillset.getCrime().getSkillLevel()));
         idReligion.setText(String.valueOf(skillset.getReligion().getMainReligion()));

@@ -28,7 +28,8 @@ public class GameLobby implements Initializable {
 
     @FXML private TableView<Character> idTableView;
     @FXML private TableColumn<Integer, Character> idHealthColumn;
-    @FXML private TableColumn<ToString, Character> idCharacterColumn;
+    @FXML private TableColumn<String, Character> idCharacterColumn;
+    @FXML private TableColumn<String, Character> idPlayerColumn;
 
     @FXML private Button idCombat;
     @FXML private Button idScenario;
@@ -49,6 +50,7 @@ public class GameLobby implements Initializable {
             idHealthColumn.setCellValueFactory(new PropertyValueFactory<>("health"));
 //            idCharacterColumn.getCellFactory();   //Why isn't this working properly, want to call toString in Class.Character
             idCharacterColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            idPlayerColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
         }
         gmInstance = GmList.createGmList();
 
@@ -88,15 +90,20 @@ public class GameLobby implements Initializable {
     }
 
     @FXML
-    void buttonInspect(ActionEvent event) throws IOException {
-        Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
+    void buttonInspect(ActionEvent event) {
+        try {
+            Party.getParty().setIndex(idTableView.getSelectionModel().getSelectedIndex());
 
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("GUIInspectCharacter.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("GUIInspectCharacter.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            System.out.println("Select a character");
+        }
+
     }
 
 }

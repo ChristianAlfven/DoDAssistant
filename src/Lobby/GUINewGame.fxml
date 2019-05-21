@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -11,14 +17,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="409.0" prefWidth="493.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Lobby.ControllerNewGame">
+<AnchorPane prefHeight="409.0" prefWidth="493.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Lobby.ControllerNewGame">
    <children>
       <ImageView fitHeight="370.0" fitWidth="518.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Resources/parchment.png" />
          </image>
       </ImageView>
-      <Button fx:id="idNewCharacter" alignment="CENTER" layoutX="66.0" layoutY="132.0" mnemonicParsing="false" onAction="#buttonNewCharacter" prefHeight="40.0" prefWidth="160.0" text="New Character">
+      <Button fx:id="idNewCharacter" alignment="CENTER" layoutX="29.0" layoutY="110.0" mnemonicParsing="false" onAction="#buttonNewCharacter" prefHeight="40.0" prefWidth="160.0" text="New Character">
          <effect>
             <Lighting>
                <bumpInput>
@@ -33,7 +39,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="idLoadCharacter" alignment="CENTER" layoutX="66.0" layoutY="185.0" mnemonicParsing="false" onAction="#buttonLoadCharacter" prefHeight="40.0" prefWidth="160.0" text="Load Characters">
+      <Button fx:id="idLoadCharacter" alignment="CENTER" layoutX="29.0" layoutY="163.0" mnemonicParsing="false" onAction="#buttonLoadCharacter" prefHeight="40.0" prefWidth="160.0" text="Load Characters">
          <effect>
             <Lighting>
                <bumpInput>
@@ -48,7 +54,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="idStartGame" alignment="CENTER" layoutX="66.0" layoutY="80.0" mnemonicParsing="false" onAction="#buttonStartGame" prefHeight="40.0" prefWidth="160.0" text="Start Game">
+      <Button fx:id="idStartGame" alignment="CENTER" layoutX="29.0" layoutY="58.0" mnemonicParsing="false" onAction="#buttonStartGame" prefHeight="40.0" prefWidth="160.0" text="Start Game">
          <effect>
             <Lighting>
                <bumpInput>
@@ -111,7 +117,8 @@
       <TableView fx:id="idTableView" layoutX="257.0" layoutY="58.0" prefHeight="189.0" prefWidth="200.0">
          <columns>
             <TableColumn fx:id="idHealthColumn" editable="false" prefWidth="33.0" sortable="false" text="HP" />
-            <TableColumn fx:id="idCharacterColumn" editable="false" prefWidth="166.0" sortable="false" text="Character" />
+            <TableColumn fx:id="idCharacterColumn" editable="false" prefWidth="107.0" sortable="false" text="Character" />
+            <TableColumn fx:id="idPlayerColumn" prefWidth="114.0" text="Player" />
          </columns>
          <effect>
             <Lighting>

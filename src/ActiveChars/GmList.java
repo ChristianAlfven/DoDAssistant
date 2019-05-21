@@ -21,7 +21,6 @@ public class GmList {
 
     private GmList() {
         gmList = new ArrayList<Combatant>();
-        createTestUnits();
     }
 
     public void addCombatant(Combatant combatant){
@@ -36,16 +35,6 @@ public class GmList {
 
     public void setGmList(ArrayList<Combatant> gmList){
         this.gmList = gmList;
-    }
-
-    private void createTestUnits(){
-        Health hp = new Health(25);
-        Combatant orc = new Combatant("Orc1", 20, hp, false);
-        gmList.add(orc);
-        orc = new Combatant("Orc2", 20, hp, false);
-        gmList.add(orc);
-        orc = new Combatant("Orc3", 20, hp, false);
-        gmList.add(orc);
     }
 
     public boolean isPlayersAdded() { return playersAdded; }

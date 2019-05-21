@@ -133,7 +133,7 @@ public class SaveCharacter {
                 ", "+player.getAge()+
                 ", "+player.getCombatPoints()+
                 ", '"+player.getBackground()+ "" +
-                //"', '"+player.getCharacteristics()+ "" +
+                "', '"+player.getCharacteristics()+ "" +
                 "', "+player.getRaud()+
                 ", "+player.getMovement()+
                 ", '"+player.getReligion()+"');";

@@ -29,7 +29,7 @@ public class LoadCharacter {
     private int age;
     private int combatPoints;
     private String background;
-    //private String characteristics;
+    private String characteristics;
     private int raud;
     private int movement;
     private String religion;
@@ -141,7 +141,7 @@ public class LoadCharacter {
                 age = rs.getInt(14);
                 combatPoints = rs.getInt(15);
                 background = rs.getString(16);
-                //characteristics = rs.getString(17);
+                characteristics = rs.getString(17);
                 raud = rs.getInt(18);
                 movement = rs.getInt(19);
                 religion = rs.getString(20);
@@ -317,7 +317,7 @@ public class LoadCharacter {
         player.setAge(age);
         player.setCombatPoints(combatPoints);
         player.setBackground(background);
-        //player.setCharacteristics(characteristics);
+        player.setCharacteristics(characteristics);
         player.setRaud(raud);
         player.setMovement(movement);
         player.setReligion(religion);

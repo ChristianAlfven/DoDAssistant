@@ -79,9 +79,6 @@ public class ControllerInitiative {
         combatList = gmInstance.getGmList();
         partyList = partyInstance.getPartyList();
 
-
-        //dummyPlayer();
-
         i = 0;
 
         combatOrder = new Combatant[combatList.size()+partyList.size()];
@@ -197,6 +194,8 @@ public class ControllerInitiative {
                 combatant = new Combatant(player.getName(), player.getCombatPoints(), player.getHealth(), true);
                 combatant.setPlayerIndex(i);
                 combatant.setArmor(player.getArmor());
+                combatant.setTotCombatPoints(player.getSkillset().getCombat().getSkillLevel());
+                combatant.setRemainingCombatPoints(player.getSkillset().getCombat().getSkillLevel());
                 combatList.add(combatant);
             }
             i++;
@@ -257,36 +256,5 @@ public class ControllerInitiative {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    public void dummyPlayer(){
-        Health hp = new Health(30);
-        Armor armor = new Armor();
-        armor.setHead(10);
-        armor.setRightArm(5);
-        armor.setLeftArm(5);
-        armor.setChest(10);
-        armor.setStomach(8);
-        armor.setRightLeg(7);
-        armor.setLeftLeg(7);
-
-        Character character1 = new Character();
-
-        character1.setName("Pelle2");
-        character1.setGender(Character.Gender.Female);
-        character1.setAge(12);
-        character1.setHeight(123);
-        character1.setWeight(10);
-        character1.setRace(Character.Race.Human);
-        character1.setSubrace(Character.SubRace.Borjornikka);
-        character1.setProfession(Character.Profession.Priest);
-        character1.setEnvironment(Character.Environment.City);
-        character1.setBackground("Hej");
-        character1.setCombatPoints(100);
-        character1.setHealth(hp);
-        character1.setArmor(armor);
-
-        partyList.add(character1);
-        partyInstance.setPartyList(partyList);
     }
 }

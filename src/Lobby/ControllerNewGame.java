@@ -44,6 +44,7 @@ public class ControllerNewGame implements Initializable {
     @FXML private Button idLoadCharacter;
     @FXML private Button idSaveCharacter;
     @FXML private Button idEdit;
+    @FXML private Button idCreateCombatantButton;
 
     @FXML private TableView<Character> idTableView;
     @FXML private TableColumn<Integer, Character> idHealthColumn;
@@ -59,11 +60,6 @@ public class ControllerNewGame implements Initializable {
 
 
     int index = 0;
-    @FXML
-    void buttonDummy(ActionEvent event) {
-        createDummy();
-        updateTable();
-    }
 
     @FXML
     void buttonLoadCharacter(ActionEvent event) {
@@ -157,78 +153,6 @@ public class ControllerNewGame implements Initializable {
         }
     }
 
-
-    int y = 0;
-    void createDummy() {
-        if (y==0) {
-            Character character1 = new Character();
-
-            character1.setName("Pelle");
-            character1.setGender(Character.Gender.Female);
-            character1.setAge(12);
-            character1.setHeight(123);
-            character1.setWeight(10);
-            character1.setRace(Character.Race.Human);
-            character1.setSubrace(Character.SubRace.Borjornikka);
-            character1.setProfession(Character.Profession.Priest);
-            character1.setEnvironment(Character.Environment.City);
-            character1.setBackground("Background lorem ipsum");
-            character1.setPositiveTrait1(Character.SpecialTrait.Charisma);
-            character1.setPositiveTrait2(Character.SpecialTrait.Psyche);
-            character1.setPosTrait1Level(10);
-            character1.setPosTrait2Level(15);
-            character1.setNegativeTrait(Character.SpecialTrait.Agility);
-            character1.setNegTraitLevel(30);
-            character1.setNationality(Character.Nationality.Human);
-            character1.constructHealth(100);
-            character1.setTotalExp(100);
-            //character1.setCharacteristics("Characteristics");
-            character1.setCombatPoints(2000);
-
-            partyInstance.addCharacter(character1);
-            y++;
-        } else {
-            Character character2 = new Character();
-
-            character2.setName("Lorem ipsum");
-            character2.setGender(Character.Gender.Male);
-            character2.setAge(1);
-            character2.setHeight(2);
-            character2.setWeight(3);
-            character2.setRegion(Character.Region.Eastheim);
-            character2.setRace(Character.Race.Dwarf);
-            character2.setSubrace(Character.SubRace.Virann);
-            character2.setProfession(Character.Profession.Mage);
-            character2.setEnvironment(Character.Environment.Nature);
-            character2.setBackground("lorem ipsum 2");
-            character2.setPositiveTrait1(Character.SpecialTrait.Agility);
-            character2.setPositiveTrait2(Character.SpecialTrait.Spirituality);
-            character2.setPosTrait1Level(13);
-            character2.setPosTrait2Level(3);
-            character2.setNegativeTrait(Character.SpecialTrait.Strength);
-            character2.setNegTraitLevel(1);
-            character2.setNationality(Character.Nationality.Orc);
-            character2.constructHealth(3);
-            character2.setTotalExp(32);
-            character2.setCombatPoints(3);
-            character2.getSkillset().getSpeech().addRona(10);
-            character2.getSkillset().getNature().addMidlands(10);
-            character2.getSkillset().getCulture().addMidlands(1);
-            character2.getSkillset().getSpellcasting().addSkillLevel(10);
-            character2.getSkillset().getAlchemy().addSkillLevel(3);
-            character2.setWeaponHand(Character.WeaponHand.Right);
-            character2.getSkillset().getCrafting().addMetal(1);
-            character2.getSkillset().getCrafting().addSoft(2);
-            character2.getSkillset().getCrafting().addStone(3);
-            character2.getSkillset().getCrafting().addWood(4);
-            character2.getSkillset().getGeography().addHomeland(character2,2);
-
-
-            partyInstance.addCharacter(character2);
-            y--;
-        }
-    }
-
     public void dbGetLastCharId(){
         String dbScript;
         int dbCharId = 0;
@@ -242,5 +166,17 @@ public class ControllerNewGame implements Initializable {
         } catch (SQLException ex) {
             System.out.println("error on executing the query (NewGame - dbGetLastCharId");
         }
+    }
+
+    @FXML
+    void createCombatant(ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
+
+        stage = (Stage) idCreateCombatantButton.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("../Creator/GUICombatantCreation.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

@@ -42,7 +42,7 @@ public class Character {
     private int age;
     private int combatPoints;
     private String background = "";
-    //private String Characteristics = "";
+    private String Characteristics = "";
     private int raud;
     private int totalExp;
     private int unusedExp;
@@ -184,13 +184,13 @@ public class Character {
         this.background = background;
     }
 
-    //public String getCharacteristics() {
-    //    return Characteristics;
-    //}
+    public String getCharacteristics() {
+        return Characteristics;
+    }
 
-    //public void setCharacteristics(String characteristics) {
-    //    Characteristics = characteristics;
-    //}
+    public void setCharacteristics(String characteristics) {
+        Characteristics = characteristics;
+    }
 
     public int getRaud() {
         return raud;

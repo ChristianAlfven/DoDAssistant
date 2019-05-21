@@ -108,7 +108,6 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="idDummy" layoutX="199.0" layoutY="306.0" mnemonicParsing="false" onAction="#buttonDummy" text="Dummy" />
       <TableView fx:id="idTableView" layoutX="257.0" layoutY="58.0" prefHeight="189.0" prefWidth="200.0">
          <columns>
             <TableColumn fx:id="idHealthColumn" editable="false" prefWidth="33.0" sortable="false" text="HP" />
@@ -126,6 +125,21 @@
          </effect>
       </TableView>
       <Button fx:id="idSaveCharacter" alignment="CENTER" layoutX="66.0" layoutY="242.0" mnemonicParsing="false" onAction="#buttonSaveCharacter" prefHeight="40.0" prefWidth="160.0" text="Save Characters">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffbf80" />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="idCreateCombatantButton" alignment="CENTER" layoutX="66.0" layoutY="298.0" mnemonicParsing="false" onAction="#createCombatant" prefHeight="40.0" prefWidth="160.0" text="Create Combatant">
          <effect>
             <Lighting>
                <bumpInput>

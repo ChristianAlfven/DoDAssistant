@@ -10,6 +10,7 @@ public class Speech extends Skill{
     private int Eika;
     private int Futhark;
     private int Orcish;
+    private int mothertongue;
 
     public Speech(){
         Vrok = 0;
@@ -101,25 +102,33 @@ public class Speech extends Skill{
         switch (character.getRace()){
             case Human:
                 if (character.getSubrace()== Character.SubRace.Stormlander){
+                    mothertongue = 1;
                     return "(Rona):";
                 } else {
+                    mothertongue = 2;
                     return "(Vrok):";
                 }
             case Elf:
+                mothertongue = 3;
                 return "(Eika):";
             case Dwarf:
+                mothertongue = 4;
                 return "(Futhark):";
             case HalfBlood:
                 switch (character.getNationality()){
                     case Human:
                         if (character.getRegion() == Character.Region.Eastheim){
+                            mothertongue = 1;
                             return "(Rona):";
                         }else {
+                            mothertongue = 2;
                             return "(Vrok):";
                         }
                     case Elf:
+                        mothertongue = 3;
                         return "(Eika):";
                     case Orc:
+                        mothertongue = 5;
                         return "(Orcish):";
                 }
 
@@ -149,5 +158,22 @@ public class Speech extends Skill{
 
     public void setOrcish(int orcish) {
         Orcish = orcish;
+    }
+
+    public int getMothertongueValue(){
+        switch(mothertongue) {
+            case 1:
+                return Rona;
+            case 2:
+                return Vrok;
+            case 3:
+                return Eika;
+            case 4:
+                return Futhark;
+            case 5:
+                return Orcish;
+            default:
+                return 0;
+        }
     }
 }

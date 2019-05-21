@@ -11,6 +11,7 @@ public class Culture extends Skill{
     private int midlands;
     private int eastheim;
     private int orcish;
+    private int homeLandIndex;
 
     public Culture(){
         elvish = 0;
@@ -74,17 +75,22 @@ public class Culture extends Skill{
             case Human:
                 if (character.getSubrace() == Character.SubRace.Stormlander) {
                     setEastheim(getEastheim() + value);
+                    homeLandIndex = 1;
                 } else if (character.getSubrace() == Character.SubRace.Midlander) {
                     setMidlands(getMidlands() + value);
+                    homeLandIndex = 2;
                 } else {
                     setWestlands(getWestlands() + value);
+                    homeLandIndex = 3;
                 }
                 break;
             case Elf:
                 setElvish(getElvish() + value);
+                homeLandIndex = 4;
                 break;
             case Dwarf:
                 setDwarfish(getDwarfish() + value);
+                homeLandIndex = 5;
                 break;
             case HalfBlood:
                 switch (character.getNationality()) {
@@ -92,14 +98,18 @@ public class Culture extends Skill{
                     case Orc:
                         if (character.getRegion() == Character.Region.Eastheim) {
                             setEastheim(getEastheim() + value);
+                            homeLandIndex = 1;
                         } else if (character.getRegion() == Character.Region.Westlands) {
                             setWestlands(getWestlands() + value);
+                            homeLandIndex = 2;
                         } else {
                             setMidlands(getMidlands() + value);
+                            homeLandIndex = 3;
                         }
                         break;
                     case Elf:
                         setElvish(getElvish() + value);
+                        homeLandIndex = 4;
                         break;
                 }
                 break;
@@ -112,22 +122,67 @@ public class Culture extends Skill{
     //    return skillLevel;
     //}
 
-    public String getHomeland() {
-        String homeland = null;
-        if (elvish != 0) {
-            homeland = "(Elvish):";
-        } else if (dwarfish != 0) {
-            homeland = "(Dwarfish):";
-        } else if (westlands != 0) {
-            homeland = "(Westlands):";
-        } else if (midlands != 0) {
-            homeland = "(Midlands):";
-        } else if (eastheim != 0) {
-            homeland = "(Eastheim):";
-        } else if (orcish != 0) {
-            homeland = "(Orcish):";
+    public String getHomeland(Character character) {
+        switch (character.getRace()) {
+            case Human:
+                if (character.getSubrace() == Character.SubRace.Stormlander) {
+                    homeLandIndex = 1;
+                    return "(Eastheim):";
+                } else if (character.getSubrace() == Character.SubRace.Midlander) {
+                    homeLandIndex = 2;
+                    return "(Midland):";
+                } else {
+                    homeLandIndex = 3;
+                    return "(Westland):";
+                }
+            case Elf:
+                homeLandIndex = 4;
+                return "(Elvish):";
+            case Dwarf:
+                homeLandIndex = 5;
+                return "(Dwarfish):";
+            case HalfBlood:
+                switch (character.getNationality()) {
+                    case Human:
+                        if (character.getRegion() == Character.Region.Eastheim) {
+                            homeLandIndex = 1;
+                            return "(Eastheim):";
+                        } else if (character.getRegion() == Character.Region.Midlands) {
+                            homeLandIndex = 2;
+                            return "(Midlands):";
+                        } else {
+                            homeLandIndex = 3;
+                            return "(Westlands):";
+                        }
+                    case Orc:
+                        homeLandIndex = 6;
+                        return "(Orcish):";
+                    case Elf:
+                        homeLandIndex = 4;
+                        return "(Elvish):";
+                }
+            default:
+                return "";
         }
-        return homeland;
+    }
+
+    public int getHomelandValue() {
+        switch(homeLandIndex){
+            case 1:
+                return eastheim;
+            case 2:
+                return midlands;
+            case 3:
+                return westlands;
+            case 4:
+                return elvish;
+            case 5:
+                return dwarfish;
+            case 6:
+                return orcish;
+            default:
+                return 0;
+        }
     }
 
     public void setElvish(int elvish) {

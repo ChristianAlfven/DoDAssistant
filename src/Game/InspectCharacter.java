@@ -58,8 +58,8 @@ public class InspectCharacter implements Initializable {
         //SKILLS
         idSpellCasting.setText(String.valueOf(skillset.getSpellcasting().getSkillLevel()));
         idAlchemy.setText(String.valueOf(skillset.getAlchemy().getSkillLevel()));
-        idGeographySub.setText(skillset.getGeography().getHomeland());
-        idGeography.setText(String.valueOf(skillset.getGeography().getSkillLevel()));
+        idGeographySub.setText(skillset.getGeography().getHomeland(character));
+        idGeography.setText(String.valueOf(skillset.getGeography().getHomelandValue()));
         idJester.setText(String.valueOf(skillset.getJester().getSkillLevel()));
         idTrade.setText(String.valueOf(skillset.getTrade().getSkillLevel()));
         idCraftingMetal.setText(String.valueOf(skillset.getCrafting().getMetal()));
@@ -67,8 +67,8 @@ public class InspectCharacter implements Initializable {
         idCraftingStone.setText(String.valueOf(skillset.getCrafting().getStone()));
         idCraftingWood.setText(String.valueOf(skillset.getCrafting().getWood()));
         idHunting.setText(String.valueOf(skillset.getHunting().getSkillLevel()));
-        idCultureSub.setText(skillset.getCulture().getHomeland());
-        idCulture.setText(String.valueOf(skillset.getCulture().getSkillLevel()));
+        idCultureSub.setText(skillset.getCulture().getHomeland(character));
+        idCulture.setText(String.valueOf(skillset.getCulture().getHomelandValue()));
         idMedicine.setText(String.valueOf(skillset.getMedicine().getSkillLevel()));
         idCrime.setText(String.valueOf(skillset.getCrime().getSkillLevel()));
         idReligion.setText(String.valueOf(skillset.getReligion().getMainReligion()));
@@ -80,10 +80,10 @@ public class InspectCharacter implements Initializable {
         idManagementWar.setText(String.valueOf(skillset.getManagement().getWar()));
         idCombat.setText(String.valueOf(skillset.getCombat().getSkillLevel()));
         idSpeechSub.setText(skillset.getSpeech().getMotherTongue(character));
-        idSpeech.setText(String.valueOf(skillset.getSpeech().getSkillLevel()));
+        idSpeech.setText(String.valueOf(skillset.getSpeech().getMothertongueValue()));
         idEntertainment.setText(String.valueOf(skillset.getEntertainment().getSkillLevel()));
-        idNatureSub.setText(skillset.getNature().getHomeland());
-        idNature.setText(String.valueOf(skillset.getNature().getSkillLevel()));
+        idNatureSub.setText(skillset.getNature().getHomeland(character));
+        idNature.setText(String.valueOf(skillset.getNature().getHomelandValue()));
         idSurvival.setText(String.valueOf(skillset.getSurvival().getSkillLevel()));
 
         //MID SCREEN CURRENT HP

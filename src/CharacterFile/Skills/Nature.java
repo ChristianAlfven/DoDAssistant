@@ -11,6 +11,7 @@ public class Nature extends Skill{
     private int soj;
     private int nhordlands;
     private int underworld;
+    private int homeLandIndex;
 
     public Nature(){
         westlands = 0;
@@ -110,22 +111,67 @@ public class Nature extends Skill{
         return skillLevel;
     }
 
-    public String getHomeland() {
-        String homeland = null;
-        if (westlands != 0) {
-            homeland = "(Westland):";
-        } else if (midlands != 0) {
-            homeland = "(Midland):";
-        } else if (eastheim != 0) {
-            homeland = "(Eastheim):";
-        } else if (nhordlands != 0) {
-            homeland = "(Nhordland):";
-        } else if (soj != 0) {
-            homeland = "(Soj):";
-        } else if (underworld != 0) {
-            homeland = "(Underworld):";
+    public String getHomeland(Character character) {
+        switch (character.getRace()) {
+            case Human:
+                if (character.getSubrace() == Character.SubRace.Stormlander) {
+                    homeLandIndex = 1;
+                    return "(Eastheim):";
+                } else if (character.getSubrace() == Character.SubRace.Midlander) {
+                    homeLandIndex = 2;
+                    return "(Midland):";
+                } else {
+                    homeLandIndex = 3;
+                    return "(Westland):";
+                }
+            case Elf:
+                homeLandIndex = 4;
+                return "(Soj):";
+            case Dwarf:
+                homeLandIndex = 5;
+                return "(Underworld):";
+            case HalfBlood:
+                switch (character.getNationality()) {
+                    case Human:
+                        if (character.getRegion() == Character.Region.Eastheim) {
+                            homeLandIndex = 1;
+                            return "(Eastheim):";
+                        } else if (character.getRegion() == Character.Region.Midlands) {
+                            homeLandIndex = 2;
+                            return "(Midland):";
+                        } else {
+                            homeLandIndex = 3;
+                            return "(Westland):";
+                        }
+                    case Orc:
+                        homeLandIndex = 6;
+                        return "(Nhordland):";
+                    case Elf:
+                        homeLandIndex = 4;
+                        return "(Soj):";
+                }
+            default:
+                return "";
         }
-        return homeland;
+    }
+
+    public int getHomelandValue() {
+        switch(homeLandIndex){
+            case 1:
+                return eastheim;
+            case 2:
+                return midlands;
+            case 3:
+                return westlands;
+            case 4:
+                return soj;
+            case 5:
+                return underworld;
+            case 6:
+                return nhordlands;
+            default:
+                return 0;
+        }
     }
 
     public void setWestlands(int westlands) {

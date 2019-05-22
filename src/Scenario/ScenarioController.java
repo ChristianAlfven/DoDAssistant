@@ -104,7 +104,7 @@ public class ScenarioController implements Initializable {
         Parent root;
 
         stage = (Stage) idBack.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("Game/GUIGameLobby.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Game/GUIGameLobby.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

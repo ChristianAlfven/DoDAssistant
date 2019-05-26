@@ -180,9 +180,6 @@ public class InspectCharacter implements Initializable {
     private TextField idCultureSub;
 
     @FXML
-    private TextField idReligionSub;
-
-    @FXML
     private TextField idSpeechSub;
 
     @FXML

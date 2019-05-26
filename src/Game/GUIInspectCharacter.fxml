@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -12,7 +18,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="629.0" prefWidth="570.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.InspectCharacter">
+<AnchorPane prefHeight="629.0" prefWidth="570.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.InspectCharacter">
    <children>
       <ImageView fitHeight="650.0" fitWidth="576.0" layoutX="-2.0" layoutY="-3.0">
          <image>
@@ -249,7 +255,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="46.0" layoutY="439.0" prefHeight="4.0" text="Religion">
+      <Label layoutX="46.0" layoutY="439.0" prefHeight="4.0" text="Religion:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -315,11 +321,6 @@
          </font>
       </TextField>
       <TextField fx:id="idCultureSub" alignment="CENTER" layoutX="89.0" layoutY="387.0" prefHeight="19.0" prefWidth="73.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="(Westlands):">
-         <font>
-            <Font name="System Bold" size="11.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="idReligionSub" alignment="CENTER" layoutX="91.0" layoutY="438.0" prefHeight="19.0" prefWidth="82.0" style="-fx-background-color: none; -fx-padding: 1 3;" text="(Ostroseden):">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>

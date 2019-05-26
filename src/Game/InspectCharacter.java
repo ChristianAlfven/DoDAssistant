@@ -34,7 +34,7 @@ public class InspectCharacter implements Initializable {
         idCharacter.setText(String.valueOf(character.toString()));
         idGenderText.setText(String.valueOf(character.getGender()));
         idSubRaceText.setText(String.valueOf(character.getSubrace()));
-        idCharReligion.setText(String.valueOf(character.getReligion()));
+        idCharReligion.setText(String.valueOf(skillset.getReligion().getReligionName()));
         idEnvironmentText.setText(String.valueOf(character.getEnvironment()));
         idWeaponHand.setText(String.valueOf(character.getWeaponHand()));
         idAgeText.setText(String.valueOf(character.getAge()));

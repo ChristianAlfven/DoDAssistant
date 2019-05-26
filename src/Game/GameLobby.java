@@ -54,7 +54,7 @@ public class GameLobby implements Initializable {
         }
         gmInstance = GmList.createGmList();
 
-        //idScenario.setDisable(true); //Disabled until scenario is implemented.
+//        idScenario.setDisable(true); //Disabled until scenario is implemented.
     }
 
     @FXML

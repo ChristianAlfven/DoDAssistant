@@ -56,7 +56,7 @@ public class ControllerNewGame implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         getCharacters();
-//        dbGetLastCharId();
+        dbGetLastCharId();
     }
 
 

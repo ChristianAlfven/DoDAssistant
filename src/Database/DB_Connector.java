@@ -20,6 +20,5 @@ public class DB_Connector {
             ex.printStackTrace();
         }
     }
-
 }
 

@@ -4,7 +4,8 @@
       <root url="file://$PATH_TO_FX$/lib" />
       <root url="file://$PATH_TO_FX$" />
       <root url="jar://$USER_HOME$/Studier/Libraries/mysql-connector-java-8.0.13/mysql-connector-java-8.0.13/mysql-connector-java-8.0.13.jar!/" />
-      <root url="jar://$USER_HOME$/OneDrive/DA216A_ProjectWork/mysql-connector-java-8.0.13/mysql-connector-java-8.0.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../DA216A_ProjectWork/mysql-connector-java-8.0.13/mysql-connector-java-8.0.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Studier/DA216A_ProjectWork/mysql-connector-java-8.0.13/mysql-connector-java-8.0.13.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

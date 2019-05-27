@@ -112,11 +112,6 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="idInitiativeInfoLabel" layoutX="234.0" layoutY="200.0" text="To skip a player/combatant enter 0">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
       <TextField fx:id="idActivityText" editable="false" layoutX="271.0" layoutY="260.0">
          <effect>
             <Lighting diffuseConstant="1.07">

@@ -36,7 +36,6 @@ public class ControllerInitiative {
     @FXML private Label idInitiativeDiceLabel;
     @FXML private TextField idInitiativeValueText;
     @FXML private Button idInitiativeButton;
-    @FXML private Label idInitiativeInfoLabel;
     @FXML private TextField idActivityText;
     @FXML private Button idAttackButton;
     @FXML private Button idStandbyButton;
@@ -56,8 +55,6 @@ public class ControllerInitiative {
 
     public ArrayList<Combatant> combatList;
     public ArrayList<Character> partyList;
-    //private ObservableList<Combatant> playerTableList;
-    //private ObservableList<Combatant> combatantTableList;
 
 
     public Combatant[] combatOrder;
